@@ -1,15 +1,13 @@
 ---
 layout: page
 title: About
-featured_image: /assets/images/pages/about.jpg
+featured_image: /assets/images/pages/about-me.jpg
 ---
 
-Daniel Bennett is a senior developer from Vilnius, Lithuania. After graduating from The College with a degree in **Computer Science**, he worked for three small web shops where he honed his development skills and love for JavaScript.
+Thorsten Hans lives in the most beautiful state of the world, called Saarland in the southwest of Germany. He's working as a consultant at Thinktecture, a German software consultancy.
 
-His work has been recognized by Communication Arts, IBM, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. **Net** magazine named him a person to watch in 2018.
+Thorsten is currently focusing on cloud-native application architectures using serverless- and container-technologies powered by Microsoft Azure. He's also well known for his experiences and enthusiasm about Infrastructure as a Code, especially with HashiCorp's Terraform.
 
->The world always seems brighter when you’ve just made something that wasn’t there before. <cite>Neil Gaiman</cite>
-
-As a hobby, Daniel authors the most influential JavaScript blog in Lithuania with over 100,000 page views a month. He lives in Vilnius with his beautiful wife, two boys and one girl.
+Besides work and community activities is only limited room for spare-time. If possible, Thorsten enjoys running in nature and doing black and white photography with his beautiful Olympus PEN-F.
 
 *Thank You for reading!*
