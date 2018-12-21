@@ -58,6 +58,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-tagsgenerator
+  tzinfo-data
 
 BUNDLED WITH
    1.17.2
