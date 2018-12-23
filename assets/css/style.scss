@@ -927,12 +927,16 @@
 @media only screen and (min-width: 785px) {
   blockquote,
   .post-content img[src$='#left'] {
-    margin-left: calc(360px - 47vw);
+        width: 94vw;
+        margin-left: auto;
+        margin-right: auto;
   }
 
   blockquote,
   .post-content img[src$='#right'] {
-    margin-right: calc(360px - 47vw);
+        width: 94vw;
+        margin-left: auto;
+        margin-right: auto;
   }
 
   .post-full .post-thumbnail,
