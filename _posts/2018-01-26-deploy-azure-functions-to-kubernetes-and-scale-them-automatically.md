@@ -74,7 +74,8 @@ kubectl config get-contexts
 
 You’ll receive a list of registered contexts, where one of those is marked as current context (in the first column).
 
-![Contexts for kubectl]({{"/assets/images/posts/2018/azure-functions-kubernetes-1.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-1.png" 
+title="Contexts for kubectl" caption="Contexts for kubectl" %}
 
 We will be using minikube for this post, so let’s ensure minikube is up and running and change the `kubectl` context to `minikube`. 
 
@@ -88,7 +89,8 @@ minikube addons list
 
 ```
 
-![Minikube add-ons with disabled heapster]({{"/assets/images/posts/2018/azure-functions-kubernetes-2.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-2.png" 
+title="Minikube add-ons with disabled heapster" caption="Minikube add-ons with disabled heapster" %}
 
 As you can see, **heapster** is disabled, let’s enable it now. 
 
@@ -99,7 +101,8 @@ minikube addons enable heapster
 
 > It’s important to enable heapster before deploying our docker image yo the cluster
 
-![Minikube add-ons: heapster enabled]({{"/assets/images/posts/2018/azure-functions-kubernetes-3.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-3.png" 
+title="Minikube add-ons: heapster enabled" caption="Minikube add-ons: heapster enabled" %}
 
 ## Deploying to the Kubernetes cluster 
 
@@ -131,7 +134,8 @@ minikube service azure-function-on-kubernetes --url
 
 *Minikube* will immediately print the URL where you can access the *Azure Function* at. Give it a try, open a browser and navigate to the url, first you should see the Azure Function welcome page. In order to access the actual function, you’ve to append the path to the function which is `/api/httpfunction/?name=<%YOUR_NAME%>`. So in my case, the absolute url is `http://192.168.99.100:30518%5D/api/httpfunction/?name=Thorsten`.
 
-![The Sample Azure Function has been invoked successfully]({{"/assets/images/posts/2018/azure-functions-kubernetes-4.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-4.png" 
+title="The Sample Azure Function has been invoked successfully" caption="The Sample Azure Function has been invoked successfully" %}
 
 ## Enable Autoscaling 
 
@@ -191,13 +195,15 @@ But there is another way how to see the autoscaling action. You can have a look 
 
 Inside the *Kubernetes dashboard* you find all information about your k8s cluster. As you can see in the picture below, Kubernetes already scaled my deployment, I’ve right now 10 instances of my *Pod* running and dealing with the incoming load. If you pay attention to the Age column, you see that those pods have different ages.
 
-![Kubernetes cluster with autoscaled deployment]({{"/assets/images/posts/2018/azure-functions-kubernetes-5.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-5.png" 
+title="Kubernetes cluster with autoscaled deployment" caption="Kubernetes cluster with autoscaled deployment" %}
 
 ## Stop the Load and verify downscaling 
 
 Stop the load generation as described above. Depending on your custom downscale delay it’ll take some time until Kubernetes will kill some of your pods. Navigate to the k8s Dashboard and see the pods disappearing 😀
 
-![Kubernetes cluster with downscaled deployment]({{"/assets/images/posts/2018/azure-functions-kubernetes-6.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-6.png" 
+title="Kubernetes cluster with downscaled deployment" caption="Kubernetes cluster with downscaled deployment" %}
 
 ## Recap
 

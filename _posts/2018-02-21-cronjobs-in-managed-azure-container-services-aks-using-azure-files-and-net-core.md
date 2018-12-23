@@ -18,7 +18,8 @@ If you want some nice cron string generator, go and check [crontab.guru](https:/
 
 For demonstration purpose, we’ll use a simple .NET Core Console Application. Each time you execute the app, a new text file with a unique name will be written to an output folder. In this case, the output folder is an *Azure File Share* created and powered by a simple *Azure Storage Account*. If you follow the instructions, you’ll end up - as shown in the picture below -  with a new unique file on your *Azure File Share* every minute.
 
-![Files create by the CronJob on Azure Files]({{"/assets/images/posts/2018/kubernetes-cronjob-azure-file-share.png" | absolute_url }})
+{% include image-caption.html imageurl="/assets/images/posts/2018/kubernetes-cronjob-azure-file-share.png" 
+title="Files create by the CronJob on Azure Files" caption="Files create by the CronJob on Azure Files" %}
 
 ## Kubernetes prerequisites 
 

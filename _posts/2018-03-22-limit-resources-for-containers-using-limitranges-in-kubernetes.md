@@ -118,7 +118,9 @@ kubectl describe pod demo-nginx --namespace=restricted
 
 The requests should only be applied to the Pod running in namespace restricted
 
-![Resource-Limits and -Requests automatically applied to all Containers in a dedicated namespace]({{ "assets/images/posts/2018/kubernetes-limitranges.png" | absolute_uri}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/kubernetes-limitranges.png" 
+title="Resource-Limits and -Requests automatically applied to all Containers in a dedicated namespace" caption="Resource-Limits and -Requests automatically applied to all Containers in a dedicated namespace" %}
+
 
 ## Recap
 As you can see, defining default `resource-requests` and `-limits` is quite easy using *LimitRanges*. If you don’t specify resource-requests or -limits for the containers you deploy, Kubernetes will automatically assign the pre-defined values from the LimitRange. That said, it’s only **a default value**.

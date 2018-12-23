@@ -74,7 +74,8 @@ Also in this snippet, `--query` is used to pull the only relevant information 
 Open the [Azure Portal](https://portal.azure.com/) in your Browser and Navigate to the AD App Registration you created a minute ago. From the Azure *DASHBOARD* go to *AZURE ACTIVE DIRECTORY* and open the *APP REGISTRATIONS* blade. Here, select the Registration named: `aks-demo-kv-reader` from the list of all registrations.
 Click on *SETTINGS* (purple square), *KEYS* (green square), provide a new description and set an expiration date for the *Key* (yellow square).
 
-![Create a new Key for the App Registration]({{"/assets/images/posts/2018/azure-key-vault-acs.png" | absolute_url}})
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-key-vault-acs.png" 
+title="Create a new Key for the App Registration" caption="Create a new Key for the App Registration" %} 
 
 Once finished press *SAVE*, now the portal will show the value *copy the value, it won’t be displayed anymore*. It represents our `ClientSecret`, the `ClientId` can be found directly on the App Registration and it’s labeled as `Application ID` (starting with `ffd…` in the image above). 
 
