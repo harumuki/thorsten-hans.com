@@ -365,6 +365,12 @@ img {
     border-radius: 3px;
 }
 
+.post-content figure>img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 /* Text meant only for screen readers */
 .screen-reader-text,
 .site-logo+.site-title {
