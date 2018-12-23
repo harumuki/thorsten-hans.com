@@ -1,9 +1,9 @@
 ---
-title: Jade-up your Angular2 markup
+title: Pug-up your Angular markup
 layout: post
-permalink: jade-up-your-angular2-markup
+permalink: pug-up-your-angular-markup
 published: true
-tags: []
+tags: [Angular, Pug]
 excerpt: null
 featured_image: /assets/images/posts/feature_images/2016-02-05-jade-up-your-angular2-markup.jpg
 ---
