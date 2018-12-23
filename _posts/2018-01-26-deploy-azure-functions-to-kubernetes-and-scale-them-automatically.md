@@ -13,6 +13,7 @@ featured_image: /assets/images/posts/feature_images/2018-01-26-deploy-azure-func
 ---
 
 *Azure Functions* has become my standard framework to build *serverless* backends for *Single Page Applications* (SPAs). It’s easy to get started with *Azure Functions*, although the platform itself is really powerful and highly configurable. I really love the cloud hosting capabilities for *Azure Functions*, but from time to time, it’s not allowed to use the public cloud as the deployment target.
+
 *Azure Functions* can easily be hosted in different environments. You can download the entire runtime and execute it on-premises (if you have to) or you can use the existing *Docker* image and deploy your serverless backend to *Kubernetes*. And that’s exactly what this post will describe, you’ll create a sample Azure Function including a docker container, deploy it to a Kubernetes cluster and let it automatically scale based on CPU utilization. 
 
 ## What do you need
