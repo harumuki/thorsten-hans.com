@@ -1,7 +1,7 @@
 ---
 title: How to use a private Azure Container Registry with Kubernetes
 layout: post
-permalink: how-to-use-a-private-azure-container-registry-with-kubernetes
+permalink: how-to-use-private-azure-container-registry-with-kubernetes
 published: true
 tags:
   - Kubernetes
