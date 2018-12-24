@@ -4,7 +4,7 @@ layout: post
 permalink: setting-electron-app-icons-for-windows-from-macos
 published: true
 tags: [Electron]
-excerpt: null
+excerpt: Every app has to have a nice looking app icon. It's one of the first things users recognize. A relatively simple task may become more complex, especially if you have to deal with multiple platforms. This article explains how to set app icons for Electron-based Windows apps from macOS.
 featured_image: /assets/images/posts/feature_images/2016-01-16-setting-electron-app-icons-for-windows-from-macos.jpg
 ---
 
