@@ -38,6 +38,12 @@ post_class: post-template
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}">Facebook</a>
                 </div><!-- .share-post -->
             </footer>
+
+            {% if page.unsplash_user_name %}
+            {% include unsplash-ref.html name=page.unsplash_user_name ref=page.unsplash_user_ref %}
+            {% endif %}
+
+
             <div class="author-box">
                 <div class="author-avatar"><img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}" alt="{{ site.author.name }}'s Picture"
                         class="avatar"></div>
