@@ -6,6 +6,8 @@ published: true
 tags: [Terminal, Tools, Productivity]
 excerpt: 'Learn how to configure iTerm2 to work like Guake, the popular Linux terminal. Boost your productivity and access iTerm2 quickly from everywhere.'
 featured_image: /assets/images/posts/feature_images/2016-10-15-treat-your-iterm2-like-guake.jpg
+unsplash_user_ref: grohsfabian
+unsplash_user_name: Fabian Grohs
 ---
 [*iTerm2*](https://www.iterm2.com/index.html) is a real productivity boost for *macOS* users. There are numerous great features built in the terminal replacement. This article will explain how to configure the *hotkey window* *iTerm* is offering.
 
