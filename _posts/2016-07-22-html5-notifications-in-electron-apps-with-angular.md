@@ -74,10 +74,12 @@ public notifiy() {
 
 Here the corresponding template associated with the component.
 
+{%raw %}
 ```html
 <span>{{hero.level}}</span>
 
 ```
+{%endraw %}
 
 Fortunately, Angular provides already a perfect solution for scenarios like this. `NgZone` from `@angular/core` is used to trigger change detection manually. Review the public API offered by `NgZone`, it’s self-explaining and well documented.
 

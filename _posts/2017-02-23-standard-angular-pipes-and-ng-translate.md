@@ -53,6 +53,7 @@ export class RootComponent implements OnInit {
 
 Once languages were added, you can utilize the `TranslateService.use` method to switch between the registered languages at runtime. Imagine you’ve implemented a simple language switcher component like shown below.
 
+{%raw %}
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
@@ -60,7 +61,7 @@ import { TranslateService } from 'ng2-translate';
 @Component({
     selector: 'language-switcher',
     template: `<ul>
-      <li *ngFor="let l of languages" (click)="use(l)>{{l}}</li>
+      <li *ngFor="let language of languages" (click)="use(language)>{{language}}</li>
      </ul>`})
  export class LanguageSwitcherComponent implements OnInit {
  
@@ -78,6 +79,7 @@ import { TranslateService } from 'ng2-translate';
  }
 
  ```
+ {%endraw %}
 
 Having this up and running in your app, it may be a bit frustrating to see `DatePipe` and all the others not respecting the language change. But there is a simple way to achieve this, without rewriting the logic provided by Angular as part of the Pipes.
 
