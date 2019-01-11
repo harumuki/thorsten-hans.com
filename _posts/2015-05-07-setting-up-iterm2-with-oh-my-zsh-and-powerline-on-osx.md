@@ -1,5 +1,5 @@
 ---
-title: Setting up iTerm2 with oh-my-zsh and powerline on OSX
+title: Setting up iTerm2 with OH-MY-ZSH and Powerline on OSX
 layout: post
 permalink: setting-up-iterm2-with-oh-my-zsh-and-powerline-on-osx
 published: true
