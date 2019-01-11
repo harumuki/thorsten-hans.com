@@ -30,7 +30,7 @@ touch src/main/index.js src/assets/package.json
 touch src/frontend/index.html
 touch src/frontend/app/boot.ts src/frontend/app/components/app.ts
 npm init --y
-npm install typescript live-server gulp del run-sequence typings --D --no-progress
+npm install typescript live-server gulp del run-sequence typings --save-dev --no-progress
 
 ```
 After executing those commands, your project directory should look like shown in the picture.
@@ -308,7 +308,7 @@ Now all required files should be created within the `dist/electron-package` fold
 There are two different ways how you can start the cross-platform app. The first and most straightforward way is to use `electron-prebuilt` which is good for development time. Install `electron-prebuilt` using npm:
 
 ```bash
-npm install electron-prebuilt --D --no-progress
+npm install electron-prebuilt --save-dev --no-progress
 ```
 
 From this point, you can either execute the app manually or add another `npm script` for that. Let’s keep it simple and start the electron app directly from the terminal by executing:
@@ -333,7 +333,7 @@ However, for now, let’s keep the default icons and get everything up and runni
 Install `gulp-atom-electron`, and it’s dependency symdest using npm:
 
 ```bash
-npm i gulp-atom-electron gulp-symdest --D --no-progress
+npm i gulp-atom-electron gulp-symdest --save-dev --no-progress
 
 ```
 
