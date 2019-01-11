@@ -4,28 +4,23 @@ description: "Experiences from real-world projects. Focussing Microsoft Azure, K
 meta_description: "Thorsten Hans shares his experiences from real-world projects. Focussing Microsoft Azure, Kubernetes and Infrastructure as Code."
 logo: "assets/images/logo.png"
 favicon: "assets/images/favicon.ico"
-? baseurl
+baseurl:
 production_url: https://horace.netlify.com/
-disqus: "justgoodthemes"
 mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
 cover_image: bc_1.jpg
 # Add your GA Tracking Id
-? ga_analytics
+ga_analytics:
 
 # Author
 author:
   name: "Thorsten Hans"
   image: "thorsten-hans.jpg"
   greetings: "Hi there!"
-  description: "My name is Thorsten. I'm a passionate Consultant from the beautiful south-west area in Germany. I love my zsh-shell, Apple, containers, and Microsoft Azure."
-  bio: "Daniel is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious."
+  description: "My name is Thorsten. I'm a passionate Consultant from the beautiful south-west area in Germany. I love my zsh-shell, Apple, Electron, containers, and Microsoft Azure."
+  bio: "Thorsten is a developer, consultant, photographer and speaker from the beautiful south-west area in Germany. He loves his zsh-shell, Electron, containers, and Microsoft Azure. "
 
-# Contact form setings
 email: thorsten.hans@gmail.com
-contact_page_description: "Are you a developer and looking for assistance? Do you have feedback on any of my articles? Or do you have a general question for me?\nDon't be afraid.\nEither use the contact form or tweet at me."
-thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
-# Social links
 twitter: "ThorstenHans"
 github: "ThorstenHans"
 medium: "@ThorstenHans"
@@ -40,8 +35,8 @@ navigation:
     url: /talks-and-publications/
   - text: About
     url: /about/
-  - text: Contact Me
-    url: /contact/
+  - text: Supporters
+    url: /supporters/
 
 # Required Plugins
 plugins_dir:
