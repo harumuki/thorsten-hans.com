@@ -47,7 +47,7 @@ plugins_dir:
 
 # Pagination
 paginate: 10
-paginate_path: /page:num/
+paginate_path: /page-:num/
 
 # Permalinks
 permalink: /:title
