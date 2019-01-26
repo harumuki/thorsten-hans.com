@@ -5,5 +5,7 @@ permalink: slides-from-net-usergroup-frankfurt-single-page-apps-for-sharepoint
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2014-03-19-slides-from-net-usergroup-frankfurt-single-page-apps-for-sharepoint.jpg
+featured_image: /assets/images/posts/feature_images/conference.jpg
+unsplash_user_name: Headway
+unsplash_user_ref: headwayio
 ---

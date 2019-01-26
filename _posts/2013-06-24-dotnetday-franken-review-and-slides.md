@@ -5,5 +5,7 @@ permalink: dotnetday-franken-review-and-slides
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2013-06-24-dotnetday-franken-review-and-slides.jpg
+featured_image: /assets/images/posts/feature_images/conference.jpg
+unsplash_user_name: Headway
+unsplash_user_ref: headwayio
 ---

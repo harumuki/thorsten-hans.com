@@ -5,5 +5,7 @@ permalink: top-14-spc14-sessions-announced
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2013-10-18-top-14-spc14-sessions-announced.jpg
+featured_image: /assets/images/posts/feature_images/conference.jpg
+unsplash_user_name: Headway
+unsplash_user_ref: headwayio
 ---

@@ -5,5 +5,7 @@ permalink: our-sharepoint-power-hour-from-teched-north-america
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2014-05-19-our-sharepoint-power-hour-from-teched-north-america.jpg
+featured_image: /assets/images/posts/feature_images/conference.jpg
+unsplash_user_name: Headway
+unsplash_user_ref: headwayio
 ---

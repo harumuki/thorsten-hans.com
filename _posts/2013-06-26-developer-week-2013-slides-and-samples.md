@@ -5,5 +5,7 @@ permalink: developer-week-2013-slides-and-samples
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2013-06-26-developer-week-2013-slides-and-samples.jpg
+featured_image: /assets/images/posts/feature_images/conference.jpg
+unsplash_user_name: Headway
+unsplash_user_ref: headwayio
 ---
