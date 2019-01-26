@@ -11,6 +11,10 @@ cover_image: bc_1.jpg
 # Add your GA Tracking Id
 ga_analytics:
 
+# RSS Feed settings
+
+feed:
+  path: feed/index.xml
 # Author
 author:
   name: "Thorsten Hans"
@@ -44,6 +48,7 @@ plugins_dir:
   - jekyll-tagsgenerator
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-feed
 
 # Pagination
 paginate: 10
