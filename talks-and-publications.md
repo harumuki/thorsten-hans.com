@@ -28,6 +28,8 @@ With more than **300** public talks on software development related topics, it's
  * New York City CodeCamps
  * NRWConf
  * SharePoint Saturdays in great cities (eg: Oslo, Stockholm)
+ * Azure Saturdays
+ * Global Azure Bootcamps
 
 ---
 ## Publications

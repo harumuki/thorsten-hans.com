@@ -1,7 +1,7 @@
 ---
 layout: page
+title: Legal Disclosure
 ---
-## Legal Disclosure
 
 Information in accordance with Section 5 TMG 
 
@@ -9,15 +9,15 @@ Thorsten Hans<br/>
 Bühlrech 10<br/>
 66620 Nonnweiler
 
-### Contact Information
+## Contact Information
 Telephone: 068737506<br/>
 E-Mail: thorsten.hans@gmail.com<br/>
 Internet address: https://www.thorsten-hans.com
 
-### Graphics and Image Sources
+## Graphics and Image Sources
 [https://unsplash.com/](https://unsplash.com/){:target="_blank"}
 
-### Disclaimer
+## Disclaimer
 
 *Accountability for content*
 
