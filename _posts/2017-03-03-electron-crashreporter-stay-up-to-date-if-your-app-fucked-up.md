@@ -94,7 +94,7 @@ The implementation is pretty much, straight forward. *CrashReporter* will send a
 
 ```json
 { 
-  _companyName: 'xPlatform.rocks',
+  _companyName: 'Thorsten Hans',
   _productName: 'TaskApp',
   _version: '0.1.1',
   guid: 'e47569a7-da27–4632–9bf8–1cef7f8b44b9',
