@@ -177,10 +177,8 @@ The setup and configuration can be verified by consulting the logs from the *NMI
 
 In the case of misspelling something, you'll find errors in the *MIC's log*. However, if you configured everything correctly, logs will show messages similar to
 
-```
-'binding applied' Binding demo_aad_identity_binding applied on node aks-default-00000000-2 for pod sample-pod-000000000-0000
 
-```
+`'binding applied' Binding demo_aad_identity_binding applied on node aks-default-00000000-2 for pod sample-pod-000000000-0000`
 
 ## Azure AD Pod Identity pitfalls and glitches
 
