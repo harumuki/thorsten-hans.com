@@ -9,7 +9,7 @@ excerpt: null
 featured_image: /assets/images/posts/feature_images/2016-02-04-be-more-productive-with-pug.jpg
 ---
 
-*Pug* (previously known as *Jade*) is like *HTML* on steroids. Once learned, you’ll never miss it. This article isn’t my first post on *Pug*. I had already written an article about it back in 2013 when it still was called *Jade*. If you didn’t read it yet, take your time, [go and read through the Pug introduction]({{ "/an-introduction-to-jade" | absolute_url }}).
+*Pug* (previously known as *Jade*) is like *HTML* on steroids. Once learned, you’ll never miss it. This article isn’t my first post on *Pug*. I had already written an article about it back in 2013 when it still was called *Jade*. If you didn’t read it yet, take your time, [go and read through the Pug introduction]({% post_url 2013-10-22-an-introduction-to-jade %}).
 
 This post covers only a few but powerful features *Pug* is offering to make you a more productive frontend developer.
 
@@ -325,7 +325,7 @@ The cool thing here is, it doesn’t matter how many arguments you pass to the `
 
 As you can see, *Pug* is a fresh and powerful language that makes you more productive when writing markup. It’s worth looking into it and learning those language features. By combining all those simple things, you could quickly build big projects in almost no time.
 
-All code written [here is also available on *GitHub*](https://github.com/ThorstenHans/jade-introduction).
+All code written [here is also available on *GitHub*](https://github.com/ThorstenHans/jade-introduction){:target="_blank"}.
 
 I hope you enjoyed this tutorial! Leave a comment and share your opinion about *Pug* or perhaps your experience gathered while using *Pug* in the wild.
 

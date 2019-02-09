@@ -15,10 +15,10 @@ If you haven’t heard of _Electron_ (formerly known as _Atom Shell_) you should
 
 In this post, I will not provide an introduction for all the different tools and frameworks. It’s more a walkthrough that should give you some hints on how to get things up and to run with the following stack.
 
-- [Electron](https://github.com/atom/electron)
-- [AngularJS](http://angularjs.org)
-- ES6 using [Babel](https://babeljs.io) as transpiler
-- [SystemJS](https://github.com/systemjs/systemjs) as module-loader
+- [Electron](https://github.com/atom/electron){:target="_blank"}
+- [AngularJS](http://angularjs.org){:target="_blank"}
+- ES6 using [Babel](https://babeljs.io){:target="_blank"} as transpiler
+- [SystemJS](https://github.com/systemjs/systemjs){:target="_blank"} as module-loader
 
 ## Getting started
 
@@ -26,7 +26,7 @@ First of all, you’ve to ensure that all dependencies are installed on your sys
 
 I’ve created a small shell script which will care about those tasks.
 
-You can download the script from [here](https://github.com/ThorstenHans/electron-angular-es6/blob/master/init.sh).
+You can download the script from [here](https://github.com/ThorstenHans/electron-angular-es6/blob/master/init.sh){:target="_blank"}.
 
 The script will install the following global node modules:
 
@@ -192,7 +192,7 @@ angular.module('sampleApp', []).controller('splashCtrl', SplashCtrl);
 
 ## The electron bootstrap script
 
-The only piece of code that is missing to get our sample working is the `app/index.es6.js` file. The following code is pretty much the same as shown in [Electron's Getting Started guide on GitHub](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md). There are only two things specific to our sample app
+The only piece of code that is missing to get our sample working is the `app/index.es6.js` file. The following code is pretty much the same as shown in [Electron's Getting Started guide on GitHub](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md){:target="_blank"}. There are only two things specific to our sample app
 
 1. It’s using ES6 language features
 2. It’s providing the `browser/index.html` for the main window
@@ -237,4 +237,4 @@ title="The sample application on macOS" caption="The sample application on macOS
 
 I’m currently working on a yeoman generator for exactly this combination, and hopefully, it will be available by the end of the week. A yeoman generator can do all those basic things. Which means you as a dev can focus on actually building your app.
 
-The entire sample is [available on GitHub](https://github.com/ThorstenHans/electron-angular-es6).
+The entire sample is [available on GitHub](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}.

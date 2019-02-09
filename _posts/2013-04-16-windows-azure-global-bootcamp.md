@@ -20,6 +20,6 @@ Therefore almost every SharePoint dev should be familiar with Windows Azure and 
 
 Worldwide there are almost 100 locations where you can join the BootCamp for free! This is an excellent chance for the SharePoint folks to dig into Microsoft’s Cloud Services and learn how to build scalable Apps for SharePoint.
 
-Visit the Global Azure BootCamp Website to register for the event. ([http://globalwindowsazure.azurewebsites.net/](http://globalwindowsazure.azurewebsites.net/))
+Visit the Global Azure BootCamp Website to register for the event. ([http://globalwindowsazure.azurewebsites.net/](http://globalwindowsazure.azurewebsites.net/){:target="_blank"})
 
 

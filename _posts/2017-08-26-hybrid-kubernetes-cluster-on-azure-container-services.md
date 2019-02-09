@@ -21,7 +21,7 @@ When starting from scratch, you need only a few things:
  * a Microsoft Azure Account
  * a Text Editor
  * a local installation of `kubectl`
- * [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/overview) installed on your machine
+ * [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"} installed on your machine
 
 ## Configuring Azure CLI
 
@@ -51,14 +51,14 @@ az account list-locations -o table
 
 ```
 
-Azure offers [a website showing all types of resources and the regions](https://azure.microsoft.com/en-us/regions/services/) they’re available at.
+Azure offers [a website showing all types of resources and the regions](https://azure.microsoft.com/en-us/regions/services/){:target="_blank"} they’re available at.
 
 ## Configure your Kubernetes cluster using acs-engine
 ACS provides default configurations for various container orchestrators like *Kubernetes*. Those default configurations are deploying regular Linux Nodes if considering a *Kubernetes* cluster. It’s definitely a good starting point, but currently, there are no default configurations for hybrid clusters.
 
-Fortunately, you can [use acs-engine to create your own cluster configurations](https://github.com/Azure/acs-engine).*acs-engine* is a small binary used to translate cluster configurations to Azure Resource Manager Templates. acs-engine is available for all platforms. 
+Fortunately, you can [use acs-engine to create your own cluster configurations](https://github.com/Azure/acs-engine){:target="_blank"}.*acs-engine* is a small binary used to translate cluster configurations to Azure Resource Manager Templates. acs-engine is available for all platforms. 
 
- > You can either install [the pre-compiled binaries](https://github.com/Azure/acs-engine/releases) Or build it directly from source following [these instructions](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source). 
+ > You can either install [the pre-compiled binaries](https://github.com/Azure/acs-engine/releases){:target="_blank"} Or build it directly from source following [these instructions](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source){:target="_blank"}. 
  
 Verify the installation by executing `acs-engine version`. Depending on the chosen version you should get a similar result like
 
@@ -276,6 +276,6 @@ title="NGINX running on a Linux node in our Kubernetes cluster" caption="NGINX r
 
 Hybrid *Kubernetes* clusters are the best runtime for complex applications. Different developer teams can use their favorite frameworks, languages, and tools to build and ship their applications. *Kubernetes* will allow them to scale and manage deployments easily. Because of the seamless integration, *Kubernetes* and Azure are taking containers to another level.
 
-If you want to use *Kubernetes* in production or for development you should also consider using a private *Azure Container Registry* (ACR) and connect it to your cluster. I’ve published [an article on how to connect those over here]({{"/how-to-use-private-azure-container-registry-with-kubernetes" | absolute_url}}).
+If you want to use *Kubernetes* in production or for development you should also consider using a private *Azure Container Registry* (ACR) and connect it to your cluster. I’ve published [an article on how to connect those over here]({% post_url 2017-08-18-how-to-use-a-private-azure-container-registry-with-kubernetes %}).
 
 I hope you enjoyed the read and got some insights into ACS and hybrid *Kubernetes* clusters. Share this article on Facebook and Twitter and help other developers with their first steps on *Kubernetes* and Azure Container services.

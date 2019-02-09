@@ -11,7 +11,7 @@ unsplash_user_name: Danny Howe
 unsplash_user_ref: dannyhowe
 ---
 
-Windows Azure’s IaaS components have just reached GA (General Availability) status. There is also a SharePoint Template existing which can be used to host SharePoint 2013 Farms on Windows Azure IaaS. Microsoft is also providing a whitepaper describing how to scale and create a SharePoint Farm on Windows Azure using all the great features offered by the Windows Azure Cloud. You can find the whitepaper here ([http://go.microsoft.com/fwlink/?LinkID=288782&clcid=0x409](http://go.microsoft.com/fwlink/?LinkID=288782&clcid=0x409 "http://go.microsoft.com/fwlink/?LinkID=288782&clcid=0x409"))
+Windows Azure’s IaaS components have just reached GA (General Availability) status. There is also a SharePoint Template existing which can be used to host SharePoint 2013 Farms on Windows Azure IaaS. Microsoft is also providing a whitepaper describing how to scale and create a SharePoint Farm on Windows Azure using all the great features offered by the Windows Azure Cloud. You can find the whitepaper here ([http://go.microsoft.com/fwlink/?LinkID=288782&clcid=0x409](http://go.microsoft.com/fwlink/?LinkID=288782&clcid=0x409){:target="_blank"})
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/azure-iaas-ga-1.png"
 title="Azure IaaS Catalog with SharePoint machines" caption="Azure IaaS Catalog with SharePoint machines" %}

@@ -16,7 +16,7 @@ However, I found myself repeating almost the same markup multiple times while bu
 
 At this point, *Pug* enters the stage. *Pug* offers stunning but simple mechanisms to make you even more productive. You could easily build compassable `mixins`, derived templates and other cool things. Besides all the advantages like maintainability, readability or the time you save, it’s also fun to use it!
 
-> If you have not used Pug before, see my other posts on Pug [here]({{ "/an-introduction-to-jade " | absolute_url }}) and [here]({{ "/be-more-productive-with-pug" | absolute_url }})
+> If you have not used Pug before, see my other posts on Pug [here]({% post_url 2013-10-22-an-introduction-to-jade %}) and [here]({% post_url 2016-02-04-be-more-productive-with-pug %})
 
 **Fasten your seatbelt** and prepare for some extra time that you can spend with your friends and family instead of waisting this time with tons of markup code.
 
@@ -207,7 +207,7 @@ This is a regular *Angular* component. There is no need for changing something h
 
 You may ask where all the magic happens. Well, it’s inside of a `gulp task`.
 
-> If you’ve never used gulp or need a refreshment, [check out my series of posts on Gulp]( {{ "/frontend-build-series-introduction" | absolute_url }} ), it is worth reading it!
+> If you’ve never used gulp or need a refreshment, [check out my series of posts on Gulp]({% post_url 2015-10-08-frontend-build-series-introduction %}), it is worth reading it!
 
 Once *Gulp.js* is up and running in your *Angular* project, there is only a single new dependency you’ve to install to have things you need.
 

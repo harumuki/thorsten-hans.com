@@ -35,9 +35,9 @@ Restart the terminal or source the config file `source ~/.zshrc` and you’re do
 
 Enabling autocompletion for `kubectl` heavily depends on the shell you’re using. To be honest, I don’t know if each shell is able to provide autocompletion for `kubectl`. That’s the point when *oh-my-zsh* enters the stage. That shell is awesome, easy to configure and it has a minimal *time-to-code*.
 
-*time-to-code* is a term that describes the time you spent from unboxing your shiny new notebook till writing the first line of code or executing the first command in this case. (hopefully, neither [Andrew Connell](https://twitter.com/andrewconnell) nor [Chris Johnson](https://twitter.com/c_f_johnson) have a trademark for that term).
+*time-to-code* is a term that describes the time you spent from unboxing your shiny new notebook till writing the first line of code or executing the first command in this case. (hopefully, neither [Andrew Connell](https://twitter.com/andrewconnell){:target="_blank"} nor [Chris Johnson](https://twitter.com/c_f_johnson){:target="_blank"} have a trademark for that term).
 
-Once you’ve [installed *oh-my-zsh*](http://ohmyz.sh/)😃, you can easily enable the **kubectl** plugin by adding `kubectl` to the list of plugins in your `.zshrc`. That should look similar to this:
+Once you’ve [installed *oh-my-zsh*](http://ohmyz.sh/){:target="_blank"}😃, you can easily enable the **kubectl** plugin by adding `kubectl` to the list of plugins in your `.zshrc`. That should look similar to this:
 
 ```bash
 # somewhere in your zshrc

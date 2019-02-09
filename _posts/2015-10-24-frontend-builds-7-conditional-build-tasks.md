@@ -14,25 +14,25 @@ unsplash_user_ref: iurte
 ## The Frontend Builds article series
  Welcome to the seventh and last part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started ]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 
 ## Idea
 
-During the last post, we made our BaaS configurable so that you can align the build to work with different folder structures, filenames or module configurations. Now it’s time to take our build to another level. Many developers are using things like [less](http://lesscss.org/), [Sass](http://sass-lang.com/) to build their stylesheets. Others use [CoffeeScript](http://coffeescript.org/), [BabelJS](https://babeljs.io/) or [TypeScript](http://www.typescriptlang.org/) to build their JavaScript. Exactly those tasks are missing in our BaaS solution, so let’s add them.
+During the last post, we made our BaaS configurable so that you can align the build to work with different folder structures, filenames or module configurations. Now it’s time to take our build to another level. Many developers are using things like [less](http://lesscss.org/){:target="_blank"}, [Sass](http://sass-lang.com/){:target="_blank"} to build their stylesheets. Others use [CoffeeScript](http://coffeescript.org/){:target="_blank"}, [BabelJS](https://babeljs.io/){:target="_blank"} or [TypeScript](http://www.typescriptlang.org/){:target="_blank"} to build their JavaScript. Exactly those tasks are missing in our BaaS solution, so let’s add them.
 
 However, instead of adding all those tasks simple to our `gulp.pipe` chain, we want to put some more logic in our gulp-tasks to make the entire build more flexible.
 
 ----
 
-To demonstrate how such a conditional build may look like, we’ll add both CSS and JavaScript transpiling support to [xplatform-build](https://github.com/ThorstenHans/xplatform-build) and let the developer choose for every project if she wants to use those tasks or not. If you’re already familiar with Gulp.js. `gulp-if` may come into your mind. `gulp-if` works great for some situations but in my case, I don’t want to ship possible dependencies like `gulp-sass` to every system no matter if the consumer needs it or not. This leads to a situation where `gulp-if`  doesn’t work!
+To demonstrate how such a conditional build may look like, we’ll add both CSS and JavaScript transpiling support to [xplatform-build](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and let the developer choose for every project if she wants to use those tasks or not. If you’re already familiar with Gulp.js. `gulp-if` may come into your mind. `gulp-if` works great for some situations but in my case, I don’t want to ship possible dependencies like `gulp-sass` to every system no matter if the consumer needs it or not. This leads to a situation where `gulp-if`  doesn’t work!
 
 ## Refactoring our BaaS
 
@@ -111,7 +111,7 @@ var tasks = {
 
 ```
 
-Notice that there is neither `gulp-less` nor any other transpiling module loaded at this point. See the entire `gulpfile.js`[here in the repo](https://github.com/ThorstenHans/xplatform-build/tree/master/src).
+Notice that there is neither `gulp-less` nor any other transpiling module loaded at this point. See the entire `gulpfile.js`[here in the repo](https://github.com/ThorstenHans/xplatform-build/tree/master/src){:target="_blank"}.
 
 ## Updating our web build to support transpiling
 
@@ -220,4 +220,4 @@ So our less got transpiled as expected. 🙂
 
 ## Checkout the repos
 
-See [master branch of xplatform-build here](https://github.com/ThorstenHans/xplatform-build) and the [BaaS branch of x-note over here on GitHub](https://github.com/ThorstenHans/x-note/tree/baas).
+See [master branch of xplatform-build here](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and the [BaaS branch of x-note over here on GitHub](https://github.com/ThorstenHans/x-note/tree/baas){:target="_blank"}.

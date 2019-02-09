@@ -11,11 +11,11 @@ featured_image: /assets/images/posts/feature_images/2013-10-18-yeoman-the-web-de
 
 See other posts on ‘Branding SharePoint sites with yeoman’.
 
-1. [Introduction]({{ "from-zero-to-hero-how-we-brand-sharepoint-using-yeoman" | absolute_url }})
-2. [Yeoman the web development workflow]({{ "yeoman-the-web-development-workflow" | absolute_url }})
-3. [An Introduction to Pug (aka Jade)]({{ "an-introduction-to-jade" | absolute_url }})
-4. [An Introduction to CoffeeScript]({{ "an-introduction-to-coffeescript" | absolute_url }})
-5. [An Introduction to SASS]({{ "an-introduction-to-sass" | absolute_url }})
+1. [Introduction]({% post_url 2013-10-08-from-zero-to-hero-how-we-brand-sharepoint-using-yeoman %})
+2. [Yeoman the web development workflow]({% post_url 2013-10-18-yeoman-the-web-development-workflow%})
+3. [An Introduction to Pug (aka Jade)]({% post_url  2013-10-22-an-introduction-to-jade %})
+4. [An Introduction to CoffeeScript]({% post_url 2014-02-14-an-introduction-to-coffeescript %})
+5. [An Introduction to SASS]({% post_url 2014-02-18-an-introduction-to-sass %})
 
 Okay — let’s get started with _yeoman_. As I mentioned within the introduction, _yeoman_ is more a web development workflow for front-end apps than a single tool. Yeoman has been founded by leading JavaScript developers from the community (Paul Irish for example) and is maintained by Google and the community. The most important fact about _yeoman_ is that _yeoman_ is based on Node.JS, which makes _yeoman_ available on all popular platforms such as Windows, Linux and of course macOS.
 
@@ -25,10 +25,10 @@ Through all articles, you’ll see screenshots and commands which I use to get t
 
 Yeoman is built on top of Node.JS and uses Git for managing dependencies and loading packages from the web. If you’d like to use Compass within your projects you’ve also to install Ruby and Compass on your development machine. We’re using Compass within out SharePoint related generators, so the final list of dependencies looks like this.
 
-1. [Node.js](http://nodejs.org)
-2. [Git](http://git-scm.com)
-3. [Ruby](http://ruby-lang.org)
-4. [Compass](http://compass-style.org)
+1. [Node.js](http://nodejs.org){:target="_blank"}
+2. [Git](http://git-scm.com){:target="_blank"}
+3. [Ruby](http://ruby-lang.org){:target="_blank"}
+4. [Compass](http://compass-style.org){:target="_blank"}
 
 See detailed installation documentation linked behind the dependencies.
 
@@ -49,7 +49,7 @@ Because almost every project is different from another, yeoman uses generators t
 
 Most generators are also available as NPM package and can be installed by using the `npm` command. Before I install a new generator, it’s an excellent point to get an overview of which generators are currently available.
 
-By executing `npm search generator-*` you can get a list of all yeoman generators available through NPM. Alternatively, you can browse the list on yeoman’s homepage at [http://yeoman.io/community-generators.html](http://yeoman.io/community-generators.html)
+By executing `npm search generator-*` you can get a list of all yeoman generators available through NPM. Alternatively, you can browse the list on yeoman’s homepage at [http://yeoman.io/community-generators.html](http://yeoman.io/community-generators.html){:target="_blank"}
 
 Let’s install the most simple generator right now by executing.
 
@@ -156,7 +156,7 @@ The copy-task has two sub-tasks (`dist` and `styles`). The generator requires tw
 
 The `dist` sub-task is going to copy all files that match the source pattern (`src`) from the current working directory (`cwd`) and will copy them into the given destination (`dest`). The expand property a unique property! By setting it to `true`, you tell the engine that it should build the array of files dynamically instead of defining the files manually. The engine is going to use the combination of all other properties (src, dest, cwd,…).
 
-As you can see, grunt-tasks are very flexible and provide solutions for almost every scenario. Further details see the grunt documentation on [http://gruntjs.com](http://gruntjs.com/) or the specific documentation on the grunt-task you’re currently working on. (Almost every grunt task is hosted on github _hooray_)
+As you can see, grunt-tasks are very flexible and provide solutions for almost every scenario. Further details see the grunt documentation on [http://gruntjs.com](http://gruntjs.com/){:target="_blank"} or the specific documentation on the grunt-task you’re currently working on. (Almost every grunt task is hosted on github _hooray_)
 
 ### The CLI
 

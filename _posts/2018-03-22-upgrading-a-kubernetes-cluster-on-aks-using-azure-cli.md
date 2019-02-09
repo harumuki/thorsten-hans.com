@@ -14,7 +14,7 @@ featured_image: /assets/images/posts/feature_images/2018-03-22-upgrading-a-kuber
 ---
 Upgrading an on-premises *Kubernetes* cluster can be very cumbersome and time-consuming task. It’s not just a single upgrade command that you can execute and everything happens magically behind the scenes. A single command for upgrading an entire Kubernetes cluster would be awesome 💚 and that’s exactly what’s provided by the AKS team. A single command to upgrade all your masters and nodes. 
 
-My fellow MVP [Tobias Zimmergren](https://zimmergren.net) wrote a [great post on how to upgrade AKS clusters](https://zimmergren.net/azure-container-services-aks-upgrade-kubernetes/) a couple of weeks ago. But technology and tools are **changing quickly** these days.
+My fellow MVP [Tobias Zimmergren](https://zimmergren.net){:target="_blank"} wrote a [great post on how to upgrade AKS clusters](https://zimmergren.net/azure-container-services-aks-upgrade-kubernetes/){:target="_blank"} a couple of weeks ago. But technology and tools are **changing quickly** these days.
 
 When you follow the instructions described by Tobias, you’ll result in some ugly warnings. This is because the `az aks get-versions` command is outdated and will be deprecated in the future.
 
@@ -32,7 +32,7 @@ az aks get-upgrades
 
 ```
 
-The command is using the [JMESPath query language](http://jmespath.org/) to extract the essential properties from the response. You should now see a JSON object similar to this one:
+The command is using the [JMESPath query language](http://jmespath.org/){:target="_blank"} to extract the essential properties from the response. You should now see a JSON object similar to this one:
 
 ```json
 {

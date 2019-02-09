@@ -9,12 +9,12 @@ excerpt: Should you use Yammer or SharePoint's social features? Which challenges
 featured_image: /assets/images/posts/feature_images/2013-02-26-yammer-vs-sp-social-in-2013.jpg
 ---
 
-There are several discussions on SharePoint’s social strategy going on at the moment. I had some great discussions with my MVP mate [Adis](http://blog.sharedove.com/adisjugo/ "Adis Jugo") during Summit last week. Since #SPC12 almost every SharePoint addicted developer, it-pro, power user has reviewed Yammer. If you don’t know what Yammer is, here a short introduction.
+There are several discussions on SharePoint’s social strategy going on at the moment. I had some great discussions with my MVP mate [Adis Jugo](http://blog.sharedove.com/adisjugo/){:target="_blank"} during Summit last week. Since #SPC12 almost every SharePoint addicted developer, it-pro, power user has reviewed Yammer. If you don’t know what Yammer is, here a short introduction.
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/yammer.png"
 title="Yammer - The enterprise social network" caption="Yammer - The enterprise social network" %}
 
-Yammer is an enterprise social network, which allows you and your coworkers to communicate in a modern way as on Facebook. The vast difference between Facebook and Yammer is, Yammer is private. That means only people from your organization or the people you’ve invited to join your network can see and take part in the conversation which is going on in your Yammer network. With the common understanding of Yammer, you should be able to follow up the ongoing discussions. Adis wrote [a great post](http://blog.sharedove.com/adisjugo/index.php/2013/02/20/my-2-when-will-yammer-really-matter/ "a great post"), summarizing his thoughts on SharePoint and Yammer integration and the upcoming social future. I agree with Adis; many things are missing at the moment. However, here my thoughts on Yammer vs. SPSocial
+Yammer is an enterprise social network, which allows you and your coworkers to communicate in a modern way as on Facebook. The vast difference between Facebook and Yammer is, Yammer is private. That means only people from your organization or the people you’ve invited to join your network can see and take part in the conversation which is going on in your Yammer network. With the common understanding of Yammer, you should be able to follow up the ongoing discussions. Adis wrote [a great post](http://blog.sharedove.com/adisjugo/index.php/2013/02/20/my-2-when-will-yammer-really-matter/){:target="_blank"}, summarizing his thoughts on SharePoint and Yammer integration and the upcoming social future. I agree with Adis; many things are missing at the moment. However, here my thoughts on Yammer vs. SPSocial
 
 ## Leak of integration
 

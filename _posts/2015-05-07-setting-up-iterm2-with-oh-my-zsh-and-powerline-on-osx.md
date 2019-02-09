@@ -22,9 +22,9 @@ I’ll use the chance to explain my setup a bit…
 
 ## iTerm2
 
-[iTerm2](https://www.iterm2.com/index.html) is an alternative to Apple’s OOB Terminal App. Both can be installed side by side. So no worry, you will not break anything when installing it.
+[iTerm2](https://www.iterm2.com/index.html){:target="_blank"} is an alternative to Apple’s OOB Terminal App. Both can be installed side by side. So no worry, you will not break anything when installing it.
 
-Either you can download iTerm2 from [here](https://www.iterm2.com/downloads.html) or you can install it using **homebrew** by executing
+Either you can download iTerm2 from [here](https://www.iterm2.com/downloads.html){:target="_blank"} or you can install it using **homebrew** by executing
 
 ```bash
 # install cask if you haven't
@@ -71,7 +71,7 @@ Powerline font is responsible for bringing some kind and helpful icons to the te
 {% include image-caption.html imageurl="/assets/images/posts/2015/powerline-iterm2-oh-my-zsh-prompt.png"
 title="My prompt with Powerline font in iTerm2 with OH-MY-ZSH" caption="My prompt with Powerline font in iTerm2 with OH-MY-ZSH" %}
 
-You can download the font from [here](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf), install this font on your system and then apply it in *iTerm2* through
+You can download the font from [here](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf){:target="_blank"}, install this font on your system and then apply it in *iTerm2* through
 
 *iTerm -> preferences -> profiles -> text*
 
@@ -87,5 +87,5 @@ Plugins can either extend the  *auto-completion tab*, create new key bindings or
 
 ## That’s it for iTerm, but ...
 
-Now you’ve installed and configured a good starting point. However, you should not stop here. I’ve written another article on how to setup NVM on your system to switch and maintain multiple Node.JS installations easily. [Go and read the article now!]({{ "/managing-node-js-and-io-js-with-nvm" | absolute_url }})
+Now you’ve installed and configured a good starting point. However, you should not stop here. I’ve written another article on how to setup NVM on your system to switch and maintain multiple Node.JS installations easily. [Go and read the article now!]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %})
 

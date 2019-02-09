@@ -13,9 +13,9 @@ featured_image: /assets/images/posts/feature_images/2018-02-21-cronjobs-in-manag
 ---
 Tasks need to be executed repeatedly in almost every application. We all know requirements like these. Perhaps you have to clean up some tables in the database or you’ve to delete temporary files, no matter which requirement you’ve exactly, but *CronJobs* in *Kubernetes* are exactly designed for scenarios like these.
 *Kubernetes* offers *CronJobs* as first-class citizen objects. In the scope of *Kubernetes*, a *CronJob* should be used if you want to execute a piece of software either at a specified point in time or repeatedly at specified points in time. 
-Technically it’s just a regular Pod with a schedule definition. You’ve to provide your schedule using the good old [cron format](https://en.wikipedia.org/wiki/Cron).
+Technically it’s just a regular Pod with a schedule definition. You’ve to provide your schedule using the good old [cron format](https://en.wikipedia.org/wiki/Cron){:target="_blank"}.
 
-If you want some nice cron string generator, go and check [crontab.guru](https://crontab.guru/).
+If you want some nice cron string generator, go and check [crontab.guru](https://crontab.guru/){:target="_blank"}.
 
 For demonstration purpose, we’ll use a simple .NET Core Console Application. Each time you execute the app, a new text file with a unique name will be written to an output folder. In this case, the output folder is an *Azure File Share* created and powered by a simple *Azure Storage Account*. If you follow the instructions, you’ll end up - as shown in the picture below -  with a new unique file on your *Azure File Share* every minute.
 
@@ -24,7 +24,7 @@ title="Files create by the CronJob on Azure Files" caption="Files create by the 
 
 ## Kubernetes prerequisites 
 
-In order to use *CronJobs*, the *Kubernetes* cluster needs to be at least on version `1.8.0`. For earlier versions of Kubernetes, you have to enable `batch/v2alpha1` explicitly by sending `--runtime-config=batch/v2alpha1=true` to the *Kubernetes API server*. If you need further assistance on that task, [see the official docs here](https://kubernetes.io/docs/admin/cluster-management/#turn-on-or-off-an-api-version-for-your-cluster).
+In order to use *CronJobs*, the *Kubernetes* cluster needs to be at least on version `1.8.0`. For earlier versions of Kubernetes, you have to enable `batch/v2alpha1` explicitly by sending `--runtime-config=batch/v2alpha1=true` to the *Kubernetes API server*. If you need further assistance on that task, [see the official docs here](https://kubernetes.io/docs/admin/cluster-management/#turn-on-or-off-an-api-version-for-your-cluster){:target="_blank"}.
 
 You can easily check the version by executing `kubectl version` which will print both client and server version.
 
@@ -251,8 +251,8 @@ Now it’s the perfect time to grab a cup of coffee. Let the CronJob do its work
 
 Once back. You can either mount the share to your host using *Windows Explorer* and *Finder* or you can just use the *Azure Portal*. You should immediately find some logs in the file share and every minute a new one should appear.
 
-Integrating *Azure Files* is fairly easy, but depending on your use-case and the number of write operations you may consider other storage options. You can also use *Azure Disks* in the same way, the PC specification can deal with tons of different storage services. A complete list of all currently supported storage services is available [in the official kubernetes documentation](https://kubernetes.io/docs/admin/cluster-management/#turn-on-or-off-an-api-version-for-your-cluster).
+Integrating *Azure Files* is fairly easy, but depending on your use-case and the number of write operations you may consider other storage options. You can also use *Azure Disks* in the same way, the PC specification can deal with tons of different storage services. A complete list of all currently supported storage services is available [in the official kubernetes documentation](https://kubernetes.io/docs/admin/cluster-management/#turn-on-or-off-an-api-version-for-your-cluster){:target="_blank"}.
 
-The entire sample is also [available on GitHub, go, download the code and play around](https://github.com/ThorstenHans/kubernetes-samples/tree/master/CronJob-with-Azure-Files).
+The entire sample is also [available on GitHub, go, download the code and play around](https://github.com/ThorstenHans/kubernetes-samples/tree/master/CronJob-with-Azure-Files){:target="_blank"}.
 
 Using external storage services is essential when building cloud-native applications. Containers can and will fail. Saving important, persistent files to the filesystem of a container should not happen in your application. That said, you should definitely be familiar with integrating services like Azure Files or Azure Disks.

@@ -120,7 +120,7 @@ notification.onclick = () => {
 
 Okay, that was impressive. The simple API provided by *HTML5* was used by the *Electron*-team to wrap existing, complicated operating system APIs. You managed it to create, enhance and even integrate native desktop notifications inside of *Electron* apps. Also, the fantastic API of `NgZone` made it easy to ensure a smooth integration in Angular.
 
-Do you have more ideas? Alternatively, do you want to use this sample as a starting point? That’s great. Grab the implementation [here on GitHub](https://github.com/ThorstenHans/electron-ts-ng2). You’ve never used GitHub’s electron before? No problem, there is my [definitive guide on Angular and Electron](/angular-and-electron-the-definitive-guide/) already waiting for you.
+Do you have more ideas? Alternatively, do you want to use this sample as a starting point? That’s great. Grab the implementation [here on GitHub](https://github.com/ThorstenHans/electron-ts-ng2){:target="_blank"}. You’ve never used GitHub’s electron before? No problem, there is my [definitive guide on Angular and Electron](/angular-and-electron-the-definitive-guide/){:target="_blank"} already waiting for you.
 
 
 

@@ -13,7 +13,7 @@ When building cross-platform apps using *GitHub Electron*, you may run into the 
 
 I was using `gulp-atom-electron` to build the apps automatically. It has a dependency on `rcedit` which is a small Windows executable that is responsible for updating either *Windows Assemblies or Windows Executables* to make resource changes from outside. *GitHub* itself has published a corresponding npm module which uses `wine` to execute `wine rcedit app-name.exe --set-icon app-icon.ico` if you’re executing the code on a *macOS* or *Linux* system.
 
-"Sounds great, should work?!". However, there is a platform switch in `gulp-atom-electron` that prevents `rcedit` from being invoked. That’s why I’ve ended up with a public fork of `gulp-atom-electron` called [**gulp-awesome-electron**](https://github.com/ThorstenHans/gulp-awesome-electron) that doesn’t prevent the execution of `rcedit`.
+"Sounds great, should work?!". However, there is a platform switch in `gulp-atom-electron` that prevents `rcedit` from being invoked. That’s why I’ve ended up with a public fork of `gulp-atom-electron` called [**gulp-awesome-electron**](https://github.com/ThorstenHans/gulp-awesome-electron){:target="_blank"} that doesn’t prevent the execution of `rcedit`.
 
 > The package isn’t available on npm-js! For installation instructions, continue reading.
 
@@ -42,7 +42,7 @@ npm install https://github.com/ThorstenHans/gulp-awesome-electron --save-dev
 
 ## The Gulpfile
 
-Configuration for `gulp-awesome-electron` is the same as for `gulp-atom-electron`. If you haven’t used it yet, go and [read the plugin's docs](https://github.com/joaomoreno/gulp-atom-electron) first.
+Configuration for `gulp-awesome-electron` is the same as for `gulp-atom-electron`. If you haven’t used it yet, go and [read the plugin's docs](https://github.com/joaomoreno/gulp-atom-electron){:target="_blank"} first.
 
 ```javascript
 const gulp = require('gulp'),

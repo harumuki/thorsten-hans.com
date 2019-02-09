@@ -13,18 +13,18 @@ unsplash_user_ref: iurte
 ## The Frontend Builds article series
  Welcome to the fourth part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## The Idea
 
-During this post, I’ll explain how to bring x-note to various mobile platforms using [Apache Cordova](http://cordova.apache.org). x-note has been built using Angular Material, so it can easily fit on any resolution no matter if customers are using a 27” Cinema Display or a 5” cellphone. We’ll extend our build process to build and run mobile apps automatically.
+During this post, I’ll explain how to bring x-note to various mobile platforms using [Apache Cordova](http://cordova.apache.org){:target="_blank"}. x-note has been built using Angular Material, so it can easily fit on any resolution no matter if customers are using a 27” Cinema Display or a 5” cellphone. We’ll extend our build process to build and run mobile apps automatically.
 
 I’ll cover *iOS* and *Android* in this post, Cordova is, of course, supporting more platforms, but most customers only care about those popular platforms, so let’s start with them. You can easily extend the build scripts to target other platforms like *Firefox OS*, *Ubuntu OS* or *Windows Phone*.
 
@@ -37,9 +37,9 @@ npm install cordova -g
 
 ```
 
-For *iOS* and *Android* are different platform guides available online. Follow [these guides](http://cordova.apache.org/docs/en/5.1.1/guide/platforms/index.html) to turn your machine into an App Developer Machine now 🙂
+For *iOS* and *Android* are different platform guides available online. Follow [these guides](http://cordova.apache.org/docs/en/5.1.1/guide/platforms/index.html){:target="_blank"} to turn your machine into an App Developer Machine now 🙂
 
-The *Android* guide tells you to use *Google’s Android emulator* for testing apps. The *stock Android emulator* is good, but you should check out [Genymotion](https://www.genymotion.com/#!/), compared to the regular emulator it’s freaking fast.
+The *Android* guide tells you to use *Google’s Android emulator* for testing apps. The *stock Android emulator* is good, but you should check out [Genymotion](https://www.genymotion.com/#!/){:target="_blank"}, compared to the regular emulator it’s freaking fast.
 
 ## Create the x-note cordova project
 
@@ -204,6 +204,6 @@ title="Mobile Apps running on Android and iOS" caption="Mobile Apps running on A
 
 ## Go ahead ...
 
-.. so read the [next article in the "Frontend Build" article series]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}}).
+.. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %}).
 
 

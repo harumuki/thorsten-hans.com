@@ -20,7 +20,7 @@ It’s **not okay** to trust in your strength and the robustness of your app for
 
 *CrashReporter* will send unexpected, occurred at runtime to a remote Server using either `HTTP` or `HTTPS`.
 
-Electron’s *CrashReporter* is an implementation of [Crashpad](https://chromium.googlesource.com/crashpad/crashpad/+/master/README.md), a powerful crash-reporting engine. Crashpad has been integrated into Google Chromium for macOS back in March 2015 and replaced the previous library called Breakpad. **Breakpad, on the other hand, is still being used for Electron on Windows and Linux**. That’s important as you’ll notice in a few seconds.
+Electron’s *CrashReporter* is an implementation of [Crashpad](https://chromium.googlesource.com/crashpad/crashpad/+/master/README.md){:target="_blank"}, a powerful crash-reporting engine. Crashpad has been integrated into Google Chromium for macOS back in March 2015 and replaced the previous library called Breakpad. **Breakpad, on the other hand, is still being used for Electron on Windows and Linux**. That’s important as you’ll notice in a few seconds.
 
 ----
 
@@ -61,13 +61,13 @@ crashReporter.start({
 
 ## Hint for Angular developers
 
-If you’re writing your web app based on *Angular*, you should [check out ngx-electron](https://www.npmjs.com/package/ngx-electron), a small library which makes consuming *Electron APIs* in *TypeScript* and *Angular* frictionless.
+If you’re writing your web app based on *Angular*, you should [check out ngx-electron](https://www.npmjs.com/package/ngx-electron){:target="_blank"}, a small library which makes consuming *Electron APIs* in *TypeScript* and *Angular* frictionless.
 
 ## The server-side
 There are already two open source projects that you can use to get the server-side API up and running:
 
- * [mini-breakpad-server](https://github.com/electron/mini-breakpad-server)
- * [socorro](https://github.com/mozilla/socorro)
+ * [mini-breakpad-server](https://github.com/electron/mini-breakpad-server){:target="_blank"}
+ * [socorro](https://github.com/mozilla/socorro){:target="_blank"}
 
 If you want to get it up and running in no time, go and take one of these. Personally, I prefer integrating the server-side logic into the project’s API over having a second, dedicated API.
 

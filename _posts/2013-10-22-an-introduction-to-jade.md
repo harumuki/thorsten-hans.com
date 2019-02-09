@@ -11,11 +11,11 @@ featured_image: /assets/images/posts/feature_images/2013-10-22-an-introduction-t
 
 ‘An Introduction to **Pug**’ is part of my article series ‘Branding SharePoint sites with **yeoman**’ see the list of all related articles here.
 
-1. [Introduction]( {{ "from-zero-to-hero-how-we-brand-sharepoint-using-yeoman" | absolute_url }})
-2. [Yeoman the web development workflow]({{ "yeoman-the-web-development-workflow" | absolute_url }})
-3. [An Introduction to Pug (aka Jade)]({{ "an-introduction-to-jade" | absolute_url }})
-4. [An Introduction to CoffeeScript]({{ "an-introduction-to-coffeescript" | absolute_url }})
-5. [An Introduction to SASS]({{ "an-introduction-to-sass" | absolute_url }})
+1. [Introduction]({% post_url 2013-10-08-from-zero-to-hero-how-we-brand-sharepoint-using-yeoman %})
+2. [Yeoman the web development workflow]({% post_url 2013-10-18-yeoman-the-web-development-workflow%})
+3. [An Introduction to Pug (aka Jade)]({% post_url  2013-10-22-an-introduction-to-jade %})
+4. [An Introduction to CoffeeScript]({% post_url 2014-02-14-an-introduction-to-coffeescript %})
+5. [An Introduction to SASS]({% post_url 2014-02-18-an-introduction-to-sass %})
 
 ## Why Pug (aka Jade)?
 
@@ -25,7 +25,7 @@ By using Pug, we can ensure that our HTML is well-formed and valid. Almost every
 
 ## Sample code is available on GitHub
 
-During this post I often refer to several files, you can find all these files within this [**GitHub repository**](https://github.com/ThorstenHans/jade-introduction).
+During this post I often refer to several files, you can find all these files within this [**GitHub repository**](https://github.com/ThorstenHans/jade-introduction){:target="_blank"}.
 
 ## Installing Pug
 
@@ -257,8 +257,8 @@ You will receive the following _HTML_ markup:
 
 ## Further Pug Features
 
-With all these features you’re prepared to start with Pug, more features and tricks from Pug can be found on Pug’s GitHub repository at ([https://github.com/visionmedia/jade](https://github.com/visionmedia/jade)) or on the Pug language site at ([http://jade-lang.com/](http://jade-lang.com/)).
+With all these features you’re prepared to start with Pug, more features and tricks from Pug can be found on Pug’s GitHub repository at ([https://github.com/visionmedia/jade](https://github.com/visionmedia/jade){:target="_blank"}) or on the Pug language site at ([http://jade-lang.com/](http://jade-lang.com/){:target="_blank"}).
 
 ## Update
 
-See my recent post [on more advance Pug language features here]({{ "be-more-productive-with-pug" | absolute_url }}).
+See my recent post [on more advance Pug language features here]({% post_url 2016-02-04-be-more-productive-with-pug %}).

@@ -177,7 +177,7 @@ export class TransformServiceRef extends TransformService {
 ```
 
 ## HTTP
-Get rid of `Http` 😜. Instead of using *Angular’s* Http Service, you could either use the `fetch` API or at least create an abstraction layer on top of *Angular’s* `http`. In this post, I’ll demonstrate how to implement `fetch` instead of abstracting `http`. Unfortunately `fetch` isn’t supported by all browsers, but there is a [tiny polyfill for `fetch`](https://github.com/github/fetch).
+Get rid of `Http` 😜. Instead of using *Angular’s* Http Service, you could either use the `fetch` API or at least create an abstraction layer on top of *Angular’s* `http`. In this post, I’ll demonstrate how to implement `fetch` instead of abstracting `http`. Unfortunately `fetch` isn’t supported by all browsers, but there is a [tiny polyfill for `fetch`](https://github.com/github/fetch){:target="_blank"}.
 
 See the following sample, it’s demonstrating how to use `fetch` inside of a simple TypeScript class.
 
@@ -243,7 +243,7 @@ npm install @types/isomorphic-fetch --save-dev
 
 ```
 
-*Microsoft* will include typings for fetch according to [this issue on GitHub](https://github.com/Microsoft/TypeScript/issues/4948)
+*Microsoft* will include typings for fetch according to [this issue on GitHub](https://github.com/Microsoft/TypeScript/issues/4948){:target="_blank"}
 
 ## Involve the server  - if possible
 

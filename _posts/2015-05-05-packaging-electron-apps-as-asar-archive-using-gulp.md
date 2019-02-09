@@ -13,7 +13,7 @@ unsplash_user_ref: benchaccounting
 
  A couple of weeks ago I open-sourced a sample on how to build an electron app using Angular and ES6. The sample has become popular on Github, so I sat down and updated the sample a bit. All changes are about distributing the electron app.
 
-[https://github.com/ThorstenHans/electron-angular-es6](https://github.com/ThorstenHans/electron-angular-es6)
+[https://github.com/ThorstenHans/electron-angular-es6](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}
 
 Instead of writing down all the bits, I’ve started Camtasia and recorded a short webcast.
 

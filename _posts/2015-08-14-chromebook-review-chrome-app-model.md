@@ -10,7 +10,7 @@ featured_image: /assets/images/posts/feature_images/2015-08-14-chromebook-review
 unsplash_user_ref: nate_dumlao
 unsplash_user_name: Nathan Dumlao
 ---
-Today I received my **Acer C720P Touch** Chromebook. I’ve used it now for around about two hours. It is a stunning device, double check the price on Amazon it’s about $280 (199€ in Germany) [Amazon Deeplink](http://www.amazon.com/Acer-Chromebook-11-6-Inch-Touchscreen-Moonstone/dp/B00H7WF22K/ref=sr_1_1?ie=UTF8&qid=1439573518&sr=8-1&keywords=acer+c720p)!
+Today I received my **Acer C720P Touch** Chromebook. I’ve used it now for around about two hours. It is a stunning device, double check the price on Amazon it’s about $280 (199€ in Germany) [Amazon Deeplink](http://www.amazon.com/Acer-Chromebook-11-6-Inch-Touchscreen-Moonstone/dp/B00H7WF22K/ref=sr_1_1?ie=UTF8&qid=1439573518&sr=8-1&keywords=acer+c720p){:target="_blank"}!
 
 ## Some technical details
 
@@ -38,7 +38,7 @@ The touchpad supports some basic gestures, but after 10 minutes I’ve connected
 
 There was only one reason, the Chrome App Model. The Chrome App Model gives you a small set of powerful API’s which you — as a dev — can use to build Apps for all platforms. Moreover, with “all” I mean all, not only desktop platforms. Because Chrome Apps are built using conventional frontend technologies such as HTML, JavaScript (or DART) and CSS you can use tools like Cordova or Ionic to bring the same codebase also to mobile platforms.
 
-Google is Offering Chrome Apps for Mobile (MCA) which is a superset on top of Apache Cordova, bringing all the `chrome` APIs to the mobile platform. MCA is available for free at [https://github.com/MobileChromeApps/mobile-chrome-apps.](https://github.com/MobileChromeApps/mobile-chrome-apps.)
+Google is Offering Chrome Apps for Mobile (MCA) which is a superset on top of Apache Cordova, bringing all the `chrome` APIs to the mobile platform. MCA is available for free at [https://github.com/MobileChromeApps/mobile-chrome-apps](https://github.com/MobileChromeApps/mobile-chrome-apps){:target="_blank"}.
 
 ## What does all platforms mean
 
@@ -66,7 +66,7 @@ Chrome Apps should be designed offline-first. However, what does that mean? Offl
 {% include image-caption.html imageurl="/assets/images/posts/2015/chrombook-todo-mvc.png"
 title="Chrome Apps on the Chromebook and on Android" caption="Chrome Apps on the Chromebook and on Android" %}
 
-Source: [https://github.com/MobileChromeApps/mobile-chrome-apps](https://github.com/MobileChromeApps/mobile-chrome-apps)
+Source: [https://github.com/MobileChromeApps/mobile-chrome-apps](https://github.com/MobileChromeApps/mobile-chrome-apps){:target="_blank"}
 
 ## What’s next
 

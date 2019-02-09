@@ -118,6 +118,6 @@ As you can see, IntelliSense is working perfectly in IDEs like *WebStorm* or edi
 {% include image-caption.html imageurl="/assets/images/posts/2017/ngx-electron-1.png" 
 title="IntelliSense for Electron's APIs in Angular" caption="IntelliSense for Electron's APIs in Angular" %}
 
-You can find the package on [npmjs](https://www.npmjs.com/) and of course, all [code is hosted on GitHub](https://github.com/ThorstenHans/ngx-electron/). If you’ve any other Electron API that’s missing in the current version, either submit a pull request or file an issue. 
+You can find the package on [npmjs](https://www.npmjs.com/){:target="_blank"} and of course, all [code is hosted on GitHub](https://github.com/ThorstenHans/ngx-electron/){:target="_blank"}. If you’ve any other Electron API that’s missing in the current version, either submit a pull request or file an issue. 
 
 I hope `ngx-electron` will make integration of *Angular* and *Electron* APIs a bit easier for *Angular* developers out there. If you like the post please share it on Twitter 😜

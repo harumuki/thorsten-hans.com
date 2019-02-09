@@ -27,7 +27,7 @@ Of course are all my articles stored in a *private repository*. I use *GitHub* a
 
 Only books, for every book I wrote, a dedicated repository has been created. Books are too big, and perhaps you want to set up webhooks to automatically generated previews for your book on each and every `push`.
 
-In the beginning, I was also using [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) and created dedicated feature branches for every article. To be honest, that was too much 😜. I ended up in just working on my `develop` branch. I merge to `master` once I’ve finished an article and associate a proper `w` to the merge commit.
+In the beginning, I was also using [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank"} and created dedicated feature branches for every article. To be honest, that was too much 😜. I ended up in just working on my `develop` branch. I merge to `master` once I’ve finished an article and associate a proper `w` to the merge commit.
 
 {% include image-caption.html imageurl="/assets/images/posts/2017/technical-writing-1.png" 
 title="Releases on GitHub" caption="Releases on GitHub" %}
@@ -37,7 +37,7 @@ If you assign a tag to a commit in git, it becomes a **release** on GitHub. So I
 ## Markdown
 
 That’s no surprise. I use *Markdown* to write my stuff. *Markdown* offers everything I need to produce technical articles. Because technical articles grow fast, I wanted to be able to split articles into separate markdown files. Unfortunately, this isn’t supported by the current Markdown standard out of the box. But that’s where tooling comes into play.
-A lot of writing tools like [iA Writer](https://ia.net/writer) are supporting exactly this feature.
+A lot of writing tools like [iA Writer](https://ia.net/writer){:target="_blank"} are supporting exactly this feature.
 
 It’s dead simple. You just provide the path for the markdown file you want to include and you’re done. *But this reference has to be placed in its own row*.
 
@@ -101,11 +101,11 @@ Last, but not least I have dedicated folders for `previews` and `deliverables`, 
 
 ## Writing Tools
 
-I’m always trying to find better tooling. You should never stop looking for new opportunities or alternatives to things you currently use. In these days I prefer [iA Writer](https://ia.net/writer), it’s easy to use and it supports embedding partial markdown files 🤘🏼. It’s also possible to use custom themes, to ensure that your articles either follow a given corporate identity or reuse your preferred fonts, colors, margins, ...
+I’m always trying to find better tooling. You should never stop looking for new opportunities or alternatives to things you currently use. In these days I prefer [iA Writer](https://ia.net/writer){:target="_blank"}, it’s easy to use and it supports embedding partial markdown files 🤘🏼. It’s also possible to use custom themes, to ensure that your articles either follow a given corporate identity or reuse your preferred fonts, colors, margins, ...
 
 ## Generating previews and deliverables
 
-For generating previews or deliverables, I use either the export function offered by *iA Writer* or [*Pandoc*](http://pandoc.org/). *Pandoc* is also able to read the include statements for partial markdown files I mentioned earlier.
+For generating previews or deliverables, I use either the export function offered by *iA Writer* or [*Pandoc*](http://pandoc.org/){:target="_blank"}. *Pandoc* is also able to read the include statements for partial markdown files I mentioned earlier.
 
 
 ## Recap

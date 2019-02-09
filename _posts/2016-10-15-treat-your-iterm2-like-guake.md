@@ -10,7 +10,7 @@ featured_image: /assets/images/posts/feature_images/2016-10-15-treat-your-iterm2
 unsplash_user_ref: grohsfabian
 unsplash_user_name: Fabian Grohs
 ---
-[*iTerm2*](https://www.iterm2.com/index.html) is a real productivity boost for *macOS* users. There are numerous great features built in the terminal replacement. This article will explain how to configure the *hotkey window* *iTerm* is offering.
+[*iTerm2*](https://www.iterm2.com/){:target="_blank"} is a real productivity boost for *macOS* users. There are numerous great features built in the terminal replacement. This article will explain how to configure the *hotkey window* *iTerm* is offering.
 
 Over the past couple of weeks, I found myself using *Ubuntu* quiet often. Unfortunately, *iTerm2* isn’t available for *Ubuntu*, but there is *Guake* which is another powerful terminal. The experience and integration *Guake* is offering for *Linux* distributions is amazing, *Guake* registers a global shortcut to easily open the terminal no matter where you’re currently working on.
 

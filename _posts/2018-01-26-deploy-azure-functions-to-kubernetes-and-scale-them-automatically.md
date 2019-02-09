@@ -21,11 +21,11 @@ featured_image: /assets/images/posts/feature_images/2018-01-26-deploy-azure-func
 
 In order to follow the instructions in this article, you need several things installed and configured on your system.
 
- * [.NET Core 2.0](https://www.microsoft.com/net/)
- * [Docker](https://www.docker.com/)
- * An account for a Docker Registry (eg. [Docker Hub](https://hub.docker.com/) or [ACR](https://azure.microsoft.com/en-us/services/container-registry/))
- * Access to a Kubernetes cluster (eg. [AKS](https://azure.microsoft.com/en-us/services/container-service/), [Minikube](https://github.com/kubernetes/minikube), [GCE](https://cloud.google.com/kubernetes-engine/docs/?hl=de) , …)
- * [Functions Core Tools 2.0](https://github.com/Azure/azure-functions-cli) (previously known as Azure Functions CLI)
+ * [.NET Core 2.0](https://www.microsoft.com/net/){:target="_blank"}
+ * [Docker](https://www.docker.com/){:target="_blank"}
+ * An account for a Docker Registry (eg. [Docker Hub](https://hub.docker.com/){:target="_blank"} or [ACR](https://azure.microsoft.com/en-us/services/container-registry/){:target="_blank"})
+ * Access to a Kubernetes cluster (eg. [AKS](https://azure.microsoft.com/en-us/services/container-service/){:target="_blank"}, [Minikube](https://github.com/kubernetes/minikube){:target="_blank"}, [GCP](https://cloud.google.com/kubernetes-engine/docs/?hl=de){:target="_blank"} , …)
+ * [Functions Core Tools 2.0](https://github.com/Azure/azure-functions-cli){:target="_blank"} (previously known as Azure Functions CLI)
   
 Once you’ve installed and configured those tools, you’re set and it’s time to get started.
 
@@ -44,7 +44,7 @@ That’s it. Our new Azure Function has been created, including the required `Do
 
 ## Create the Docker image
 
-I’ll use public [Docker Hub](https://hub.docker.com/) for now, but I’ll also work with your ACR service running in Azure. So let’s build the docker image by leveraging the generated `Dockerfile`. Remember to tag your image properly – depending on your registry.
+I’ll use public [Docker Hub](https://hub.docker.com/){:target="_blank"} for now, but I’ll also work with your ACR service running in Azure. So let’s build the docker image by leveraging the generated `Dockerfile`. Remember to tag your image properly – depending on your registry.
 
 ```bash
 docker build -t <%YOUR_REPOSITORY%>/azfunction-on-k8s .
@@ -117,7 +117,7 @@ kubectl run azure-function-on-kubernetes
 
 ```
 
-This creates a new *Kubernetes deployment* named `azure-function-on-kubernetes` based on your docker image. It’ll expose the port `80`. By specifying `--requests=cpu=100m`, we request *100 millicpu* for our container. So it’s *0,1 actual CPU*. (Further [details on resource management for containers and pods can be found here](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/)).
+This creates a new *Kubernetes deployment* named `azure-function-on-kubernetes` based on your docker image. It’ll expose the port `80`. By specifying `--requests=cpu=100m`, we request *100 millicpu* for our container. So it’s *0,1 actual CPU*. (Further [details on resource management for containers and pods can be found here](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/){:target="_blank"}).
 
 Once your deployment has the desired state (check it by querying `kubectl get deploy`), we need to expose it using a `service`. Normally you would use a service of type `LoadBalancer`, but allocating external IP addresses (that’s what the `LoadBalancer` also has to do…) is only implemented by (private and public) cloud vendors. As an alternative, we’ll use a service of type `NodePort` and query the `url` manually from *minikube*.
 

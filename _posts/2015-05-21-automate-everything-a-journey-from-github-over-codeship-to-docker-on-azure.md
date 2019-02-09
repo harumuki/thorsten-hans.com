@@ -24,7 +24,7 @@ If you don’t know those things go for google. There are tons of introductions 
 
 ## The Sample App
 
-Is hosted on GitHub at [https://github.com/thorstenhans/ci-test](https://github.com/thorstenhans/ci-test), nothing special… an almost plain website. JS is written using ECMAScript6 features… to have some tasks that have to be done during build time … See `Gulpfile.js` in the repo for more information…
+Is hosted on GitHub at [https://github.com/thorstenhans/ci-test](https://github.com/thorstenhans/ci-test){:target="_blank"}, nothing special… an almost plain website. JS is written using ECMAScript6 features… to have some tasks that have to be done during build time … See `Gulpfile.js` in the repo for more information…
 
 ## CodeShip CI
 
@@ -40,7 +40,7 @@ npm install
 
 ```
 
-**Is NVM not yet installed** on your system? No Problem, I’ve written an article on how to do it the right way. [Read it here]({{ "/managing-node-js-and-io-js-with-nvm" | absolute_url }}).
+**Is NVM not yet installed** on your system? No Problem, I’ve written an article on how to do it the right way. [Read it here]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %}).
 
 The actual test command is even simpler.
 

@@ -17,7 +17,7 @@ Here at *Thinktecture*, we’re focusing on cross-platform apps, and we’re opt
 
 ## What you need
 
-Well, you need three things in your system. First, you need a good configured terminal. If you’re still using the default OS-X terminal, go and read [my article on how to setup iTerm and the incredible oh-my-zsh on your Mac]({{ "/setting-up-iterm2-with-oh-my-zsh-and-powerline-on-osx" | absolute_url }}). Second is, of course, a working installation of *Node.JS*. I highly recommend you to use NVM for dealing with different Node.JS versions on a single system in no-time. There is [also an article that covers nvm]({{ "/managing-node-js-and-io-js-with-nvm" | absolute_url}}). Check those out, they're worth reading! Last but not least you will need a good editor to write all the build tasks. I’m using *Sublime Text 3* for most of the time. So you should double-check *Sublime Text 3* and make yourself comfortable with all the *plugins*, *themes*, and *settings*.
+Well, you need three things in your system. First, you need a good configured terminal. If you’re still using the default OS-X terminal, go and read [my article on how to setup iTerm and the incredible oh-my-zsh on your Mac]({% post_url 2015-05-07-setting-up-iterm2-with-oh-my-zsh-and-powerline-on-osx %}). Second is, of course, a working installation of *Node.JS*. I highly recommend you to use NVM for dealing with different Node.JS versions on a single system in no-time. There is [also an article that covers nvm]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %}). Check those out, they're worth reading! Last but not least you will need a good editor to write all the build tasks. I’m using *Sublime Text 3* for most of the time. So you should double-check *Sublime Text 3* and make yourself comfortable with all the *plugins*, *themes*, and *settings*.
 
 ## What you will get
 
@@ -35,11 +35,11 @@ Within the first post, I’ll share a sample SPA project on GitHub which I’m u
 
 ## Get started ...
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started ]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})

@@ -15,7 +15,7 @@ Another *Angular quickie* for today!😉 *Angular* introduces the *Elvis* operat
 {% include image-caption.html imageurl="/assets/images/posts/2016/angular-quickie-elvis.gif"
 title="Elvis in tha Angular House" caption="Elvis in tha Angular House" %}
 
-The [official Angular documentation](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#expression-operators) gives you a few examples of how to use the *Elvis* operator.
+The [official Angular documentation](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#expression-operators){:target="_blank"} gives you a few examples of how to use the *Elvis* operator.
 
 The good thing about the *Elvis* operator is that you can use it in chains like shown below:
 
@@ -104,6 +104,6 @@ Update the sample HTML to match the following:
 ```
 {%endraw %}
 
-I’ve created a [small plnkr sample](https://embed.plnkr.co/D1AWgU/) that uses the combination of `*ngFor`, `*ngIf` and `?` the Elvis operator.
+I’ve created a [small plnkr sample](https://embed.plnkr.co/D1AWgU/){:target="_blank"} that uses the combination of `*ngFor`, `*ngIf` and `?` the Elvis operator.
 
 

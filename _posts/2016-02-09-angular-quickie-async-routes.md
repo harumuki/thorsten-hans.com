@@ -94,6 +94,6 @@ declare var System: any;
 
 ```
 
-There is more. Check out [Minko’s post, he describes in detail how to create virtual proxies to push async loading to another level](http://blog.mgechev.com/2015/09/30/lazy-loading-components-routes-services-router-angular-2).
+There is more. Check out [Minko’s post, he describes in detail how to create virtual proxies to push async loading to another level](http://blog.mgechev.com/2015/09/30/lazy-loading-components-routes-services-router-angular-2){:target="_blank"}.
 
 

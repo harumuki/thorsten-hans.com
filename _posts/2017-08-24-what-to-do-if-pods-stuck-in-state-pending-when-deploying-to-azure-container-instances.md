@@ -15,7 +15,7 @@ featured_image: /assets/images/posts/feature_images/2017-08-24-what-to-do-if-pod
 
 *Azure Container Instances* (*ACI*) allows you to spin up containers in the cloud without creating or managing any kind of infrastructure. It’s really bringing container as a service to you. That said, *ACI* is no replacement for Container Orchestration Systems like *Kubernetes*. It’s more an underlying infrastructure for hosting/running containers itself.
 
-*ACI* integrates seamlessly with orchestrators like *Kubernetes*. You can use the *ACI connector for Kubernetes* to create an *ACI* node on your Kubernetes cluster. See [this repo for more details](https://github.com/Azure/aci-connector-k8s). 
+*ACI* integrates seamlessly with orchestrators like *Kubernetes*. You can use the *ACI connector for Kubernetes* to create an *ACI* node on your Kubernetes cluster. See [this repo for more details](https://github.com/Azure/aci-connector-k8s){:target="_blank"}. 
 
 When you deploy *Pods* to *ACI* through *Kubernetes*, you may recognize that all Pods stuck in state **Pending** when they’re meant to be deployed to the `aci-connector` node (aci-connector is the default name for the ACI node). You may ask why all pods stuck at this stage. To get more insights let us examine the cluster a bit
 

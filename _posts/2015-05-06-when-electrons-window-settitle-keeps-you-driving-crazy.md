@@ -11,7 +11,7 @@ unsplash_user_name: Jeff Sheldon
 unsplash_user_ref: ugmonk
 ---
 
-As a reaction on my initial post about Electron, [Ingo Richter](https://github.com/ingorichter) came up with a comment on setting the window's title. He described that he get errors when trying to set the window title to the app’s name.
+As a reaction on my initial post about Electron, [Ingo Richter](https://github.com/ingorichter){:target="_blank"} came up with a comment on setting the window's title. He described that he get errors when trying to set the window title to the app’s name.
 
 `browser-window` is exposing the `setTitle` function and `app` is exposing the `getName` function. So my first impression was “well, that should be easy to realize”, but there is on common pitfall that I realized when trying to set the title of the window – which I’d like to share with you.
 
@@ -55,7 +55,7 @@ The root cause is that loading a page happens async, so there are two ways how t
 
 ## Get it working for sync code
 
-**HACK** a dirty little hack how to get that working in a few secs is to delete the `<title>bar</title>` from my HTML file. When now title node is present, **foo** will not be replaced after loading the page. See [the dirty implementation here on GitHub](https://github.com/ThorstenHans/electron-angular-es6/commit/00ffc75e4f25bdc94d29dcd5bcc554ed54d8b66a?diff=unified)
+**HACK** a dirty little hack how to get that working in a few secs is to delete the `<title>bar</title>` from my HTML file. When now title node is present, **foo** will not be replaced after loading the page. See [the dirty implementation here on GitHub](https://github.com/ThorstenHans/electron-angular-es6/commit/00ffc75e4f25bdc94d29dcd5bcc554ed54d8b66a?diff=unified){:target="_blank"}
 
 
 ## Get it working the right (async) way
@@ -82,7 +82,7 @@ app.on('ready', () => {
 
 ```
 
-Also, the title of your window will be set to your app’s name. [See the correct (async) implementation right here on GitHub](https://github.com/ThorstenHans/electron-angular-es6/commit/3db7c3ba285b262405be41da2ef0be09746c7142?diff=unified)
+Also, the title of your window will be set to your app’s name. [See the correct (async) implementation right here on GitHub](https://github.com/ThorstenHans/electron-angular-es6/commit/3db7c3ba285b262405be41da2ef0be09746c7142?diff=unified){:target="_blank"}
 
 I think this post was worth writing because it can save other electron developers a few **WTFs** when building their electron apps. 🙂
 

@@ -14,7 +14,7 @@ excerpt: 'Learn how to integrate Azure Key Vault and Azure Container Services. T
 featured_image: /assets/images/posts/feature_images/2018-05-11-integrating-azure-keyvault-with-azure-container-services.jpg
 ---
 With *Azure Key Vault*, Microsoft is offering a dedicated and secure service to manage and maintain sensitive data like Connection-Strings, Certificates, or key-value pairs. 
-We’re hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq) mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you’ve to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
+We’re hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq){:target="_blank"} mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you’ve to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
 
 I wrote "**most**" because `ClientId`, `ClientSecret` and the Key Vault identifiers - which will be used to access the Azure Key Vault instance - still need to be persisted somewhere. **This drawback may be obsolete once we’ve native support for Azure Key Vault in AKS.**
 
@@ -72,7 +72,7 @@ Also in this snippet, `--query` is used to pull the only relevant information 
 
 ----
 
-Open the [Azure Portal](https://portal.azure.com/) in your Browser and Navigate to the AD App Registration you created a minute ago. From the Azure *DASHBOARD* go to *AZURE ACTIVE DIRECTORY* and open the *APP REGISTRATIONS* blade. Here, select the Registration named: `aks-demo-kv-reader` from the list of all registrations.
+Open the [Azure Portal](https://portal.azure.com/){:target="_blank"} in your Browser and Navigate to the AD App Registration you created a minute ago. From the Azure *DASHBOARD* go to *AZURE ACTIVE DIRECTORY* and open the *APP REGISTRATIONS* blade. Here, select the Registration named: `aks-demo-kv-reader` from the list of all registrations.
 Click on *SETTINGS* (purple square), *KEYS* (green square), provide a new description and set an expiration date for the *Key* (yellow square).
 
 {% include image-caption.html imageurl="/assets/images/posts/2018/azure-key-vault-acs.png" 

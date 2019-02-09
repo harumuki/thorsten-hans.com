@@ -18,7 +18,7 @@ Common scenarios are serving files from and writing important information to per
 
 Using Azure Files you can create SMB 3.0 file shares and access them from all over the world. No matter if you’re running a cloud-native application or working in a hybrid scenario, Azure Files can be accessed from everywhere. It’s easy to set up and reliable solution to deal with files from multiple places. Also if you build highly scalable applications in *Kubernetes*, Azure File Shares can easily be mounted using k8s volumes.
 
-See the following [link to get more detailed information about Azure Files and Azure File Shares](https://azure.microsoft.com/en-us/services/storage/files/).
+See the following [link to get more detailed information about Azure Files and Azure File Shares](https://azure.microsoft.com/en-us/services/storage/files/){:target="_blank"}.
 
 
 ## Creating a Managed Azure File Share
@@ -63,7 +63,7 @@ az storage share create
 
 ```
 
-The command `az storage share create` will simply respond with a `{ created: true }` JSON if the operation is finished. You can either mount the share on your operating system, use the Azure Portal or you can download and use [the *Azure Storage Explorer*](https://azure.microsoft.com/en-us/features/storage-explorer/) to upload files to your new *Azure File Share*. 
+The command `az storage share create` will simply respond with a `{ created: true }` JSON if the operation is finished. You can either mount the share on your operating system, use the Azure Portal or you can download and use [the *Azure Storage Explorer*](https://azure.microsoft.com/en-us/features/storage-explorer/){:target="_blank"} to upload files to your new *Azure File Share*. 
 
 Take the following image, save it as `docker.jpg` and upload it to the root of your Azure File Share.
 
@@ -124,7 +124,7 @@ ENTRYPOINT ["dotnet", "AzureFileShareDemo.API.dll"]
 
 First, we restore all NuGet packages and `publish` the project using the `microsoft/dotnet:2.0.0-sdk` image, once publish as succeeded, a way smaller image `microsoft/aspnetcore:2.0.0` (which is just providing the runtime for ASP.NET Core) is used to build our final docker image. Use `docker build -t azure-file-share-sample .` to build the docker image.
 
-Once you’ve successfully built the docker image, you’ve to publish it either to the public *docker hub* or to a private container registry. If you want to keep the image private, go and read [my article on how to use *Azure Container Registry* (*ACR*) with an existing *Kubernetes* cluster]({{ "/how-to-use-private-azure-container-registry-with-kubernetes" | absolute_url }}).
+Once you’ve successfully built the docker image, you’ve to publish it either to the public *docker hub* or to a private container registry. If you want to keep the image private, go and read [my article on how to use *Azure Container Registry* (*ACR*) with an existing *Kubernetes* cluster]({% post_url 2017-08-18-how-to-use-a-private-azure-container-registry-with-kubernetes %}).
 
 ## Create a Kubernetes deployment
 

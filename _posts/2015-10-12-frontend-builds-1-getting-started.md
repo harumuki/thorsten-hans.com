@@ -14,19 +14,19 @@ unsplash_user_ref: iurte
 ## The Frontend Builds article series
  Welcome to the very first part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started ]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 
 ## Idea
 
-As described during the introduction, here the link to the [sample frontend application](https://github.com/ThorstenHans/x-note). x-note is a small note-taking application which I’ll use for this series of posts. I’ve build the app using [AngularJS](https://angularjs.org/) and [angular-material](https://material.angularjs.org/latest/#/).
+As described during the introduction, here the link to the [sample frontend application](https://github.com/ThorstenHans/x-note){:target="_blank"}. x-note is a small note-taking application which I’ll use for this series of posts. I’ve build the app using [AngularJS](https://angularjs.org/){:target="_blank"} and [angular-material](https://material.angularjs.org/latest/#/){:target="_blank"}.
 
 Go and clone the repo now, all dependencies are managed using bower and npm. To install all development- and runtime-dependencies execute the following commands within the project folder.
 
@@ -104,6 +104,6 @@ Within the upcoming article, we’ll split the `gulpfile` and automate both thin
 
 ## Go ahead ...
 
-.. so read the [next article in the "Frontend Build" article series]({{ "/frontend-builds-2-readable-and-pluggable-gulpfiles" | absolute_url }}).
+.. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %}).
 
 

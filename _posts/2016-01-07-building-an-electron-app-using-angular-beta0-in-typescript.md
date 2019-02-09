@@ -16,7 +16,7 @@ You can build Angular apps using plain old *JavaScript* and *TypeScript*. I've b
 
 > THINK: When I use TypeScript I'll end in doing less keystrokes; That means I'll be faster 🤘
 
-Go and [checkout the repository on GitHub](https://github.com/ThorstenHans/electron-ngx-sample/tree/246f83da87d2598e732bb681be2a559dab0258c6). You can find the entire application there. To automate the build process I've created a `gulpfile.js`. It takes care about all the transpiling, copying and other required build steps to generate the *Electron* apps for all three major platforms (Windows, Linux and of course MacOS).
+Go and [checkout the repository on GitHub](https://github.com/ThorstenHans/electron-ngx-sample/tree/246f83da87d2598e732bb681be2a559dab0258c6){:target="_blank"}. You can find the entire application there. To automate the build process I've created a `gulpfile.js`. It takes care about all the transpiling, copying and other required build steps to generate the *Electron* apps for all three major platforms (Windows, Linux and of course MacOS).
 
 By using `gulp-typescript`, you can easily compile the *TypeScript* sources to plain *JavaScript* which is managed by `SystemJS` at runtime. 
 
@@ -30,11 +30,11 @@ gulp.task('private:build-app', function(){
 
 ```
 
-See the entire `gulpfile.js` [here](https://github.com/ThorstenHans/electron-ngx-sample/blob/246f83da87d2598e732bb681be2a559dab0258c6/gulpfile.js#L30).
+See the entire `gulpfile.js` [here](https://github.com/ThorstenHans/electron-ngx-sample/blob/246f83da87d2598e732bb681be2a559dab0258c6/gulpfile.js#L30){:target="_blank"}.
 
 More important are some pitfalls when combining *Angular* with *Electron*. There are plenty of demo applications available out there. However, a quick google didn’t bring up a single sample using angular’s new component router.
 
-As mentioned within angular’s developer guide on [angular.io](http://angular.io), the router requires a `<base href="/foo"/>` or `<base href="/">` in order to work as expected. If you don’t add the `base` node within `<head>` Angular throws an error like shown in figure 1.
+As mentioned within angular’s developer guide on [angular.io](http://angular.io){:target="_blank"}, the router requires a `<base href="/foo"/>` or `<base href="/">` in order to work as expected. If you don’t add the `base` node within `<head>` Angular throws an error like shown in figure 1.
 
 {% include image-caption.html imageurl="/assets/images/posts/2016/angular-beta0-electron-ts-1.png"
 title="Angular app with missing Base href" caption="Angular app with missing Base href" %}

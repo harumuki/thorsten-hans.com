@@ -17,14 +17,14 @@ During that time, I found some customers and blog readers asking me if they shou
 
 I’ve used both frameworks for real projects in the past, and both of them worked great for the given projects. Neither *Electron* nor *NW.js* is perfect (but they’re close to it) 😃. Each has its pitfalls. However, the communities behind those frameworks are fantastic and keep on answering quickly to questions popping up on GitHub or in tools like Gitter or Slack.
 
-There is already a post on the web comparing both from various perspectives, but the post [(available here)](http://tangiblejs.com/posts/nw-js-electron-compared) is a bit outdated. Especially *Electron* has evolved a lot since the linked post has been published. So it’s time to compare both frameworks again with all the information publicly available by **February 2016**.
+There is already a post on the web comparing both from various perspectives, but the post [(available here)](http://tangiblejs.com/posts/nw-js-electron-compared){:target="_blank"} is a bit outdated. Especially *Electron* has evolved a lot since the linked post has been published. So it’s time to compare both frameworks again with all the information publicly available by **February 2016**.
 
-I’ve created a [simple, public sheet on Google](https://docs.google.com/spreadsheets/d/1U56oAazygJiFepW7U2HSTSLox7OvG4Jc9ENUznGEICk/edit?usp=sharing) which allows anyone to **leave comments** in it. 
+I’ve created a [simple, public sheet on Google](https://docs.google.com/spreadsheets/d/1U56oAazygJiFepW7U2HSTSLox7OvG4Jc9ENUznGEICk/edit?usp=sharing){:target="_blank"} which allows anyone to **leave comments** in it. 
 
 
 ## Some soft-facts
 
-Since the first public release of [Visual Studio Code](http://code.visualstudio.com) -  which is built using *Electron* -, the framework gained a lot more attention and tracktion than before.
+Since the first public release of [Visual Studio Code](http://code.visualstudio.com){:target="_blank"} -  which is built using *Electron* -, the framework gained a lot more attention and tracktion than before.
 
 Since *July 2015*, we’re waiting for a new *NW.js* release which has to move all new features and the highly required dependency updates (like migrating from `io.js` to latest `Node.js`) from beta status to a release candidate. Testing stuff on beta software is excellent, but shipping "real-world" products on beta frameworks doesn't work!
 

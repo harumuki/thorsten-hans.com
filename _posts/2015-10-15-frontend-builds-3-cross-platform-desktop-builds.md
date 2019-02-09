@@ -13,18 +13,18 @@ unsplash_user_ref: iurte
 ## The Frontend Builds article series
  Welcome to the third part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## The idea
 
-Frontend Apps can quickly be built for a various range of platforms. You can use [Apache Crodova](http://cordova.apache.org) for building cross-platform mobile apps. For building cross-platform desktop apps, you can either use Electron or [NW.js](http://nwjs.io).
+Frontend Apps can quickly be built for a various range of platforms. You can use [Apache Crodova](http://cordova.apache.org){:target="_blank"} for building cross-platform mobile apps. For building cross-platform desktop apps, you can either use Electron or [NW.js](http://nwjs.io){:target="_blank"}.
 
 No matter which one you’re using (NW.js / Cordova / electron), all of them will utilize our Frontend App (x-note) and package it for distribution to the requested platforms. During this post I’d like to address desktop builds using NW.js, Cordova builds will be addressed within the upcoming post.
 
@@ -102,7 +102,7 @@ buildDir: tasks.path.join(process.cwd(), "desktop-build"),
 
 Many people asked me how to specify custom icons for desktop executables. For the Mac App, it’s pretty easy, specify the `macIcns` property and point it to your `.icns` file. `nw-builder` will automatically set the `icns` file as the application icon.
 
-If you’re building NW.js apps on Windows, you can specify the `winIco` and point to a `.ico` File. The build pipeline will take care of everything else. If you’re running on **OS-X or Linux**, follow this [Guide](https://github.com/nwjs/nw.js/wiki/Icons) to set up all required tools for including the `.ico` file into the executables from OS-X or Linux.
+If you’re building NW.js apps on Windows, you can specify the `winIco` and point to a `.ico` File. The build pipeline will take care of everything else. If you’re running on **OS-X or Linux**, follow this [Guide](https://github.com/nwjs/nw.js/wiki/Icons){:target="_blank"} to set up all required tools for including the `.ico` file into the executables from OS-X or Linux.
 
 In our x-note app, we specify the icon paths like this.
 
@@ -121,10 +121,10 @@ This property defaults to `false`.
 
 ## More properties for desktop builds
 
-There are plenty more properties available for `nw-builder` go and check out the [following documentation on github](https://github.com/nwjs/nw-builder).
+There are plenty more properties available for `nw-builder` go and check out the [following documentation on github](https://github.com/nwjs/nw-builder){:target="_blank"}.
 
 ## Go ahead ...
 
-.. so read the [next article in the "Frontend Build" article series]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}}).
+.. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %}).
 
 

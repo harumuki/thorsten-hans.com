@@ -12,7 +12,7 @@ Besides using the goodness of Azure Container Services (ACS). Different Azure se
 
 ## Setting up the Azure Container Registry
 
-Although the recent Azure portal is providing a rich user experience, all Azure related stuff in this post will be scripted using the latest Azure CLI 2.0. If you haven’t installed Azure CLI 2.0 yet, you can find [detailed instructions here](https://docs.microsoft.com/en-us/cli/azure/overview).
+Although the recent Azure portal is providing a rich user experience, all Azure related stuff in this post will be scripted using the latest Azure CLI 2.0. If you haven’t installed Azure CLI 2.0 yet, you can find [detailed instructions here](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"}.
 
 First, you need to login in order to get access to all your Azure subscriptions.
 
@@ -95,7 +95,7 @@ You can also pass the `client_secret` directly to the `docker login` command, bu
 
 ## Pushing a Docker image to ACR
 
-Once logged in, you can push any existing docker image to your *ACR* instance. Before you can push the image to a private registry, you’ve to ensure a proper image name. This can be achieved using the `docker tag` command. For demonstration purpose, we’ll use [Docker’s hello world image](https://store.docker.com/images/hello-world), rename it and push it to ACR.
+Once logged in, you can push any existing docker image to your *ACR* instance. Before you can push the image to a private registry, you’ve to ensure a proper image name. This can be achieved using the `docker tag` command. For demonstration purpose, we’ll use [Docker’s hello world image](https://store.docker.com/images/hello-world){:target="_blank"}, rename it and push it to ACR.
 
 ```bash
 # pulls hello-world from the public docker hub

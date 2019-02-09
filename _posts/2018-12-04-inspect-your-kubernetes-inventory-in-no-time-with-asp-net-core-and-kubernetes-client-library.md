@@ -280,6 +280,6 @@ Now you can use a tool like Postman or just your browser to examine the endpoint
 {% include image-caption.html imageurl="/assets/images/posts/2018/inspect-kubernetes-cluster-netcore.png" 
 title="Exposed Pods from the default namespace" caption="Exposed Pods from the default namespace" %}
 
-So as you can see, it’s really easy to query an existing Kubernetes cluster using the official client libraries. In addition, I think it’s a great example for .NET developers that explains how to get started with Kubernetes at all. If you want to query more data, you should definitely check out [the official repository](https://github.com/kubernetes-client/csharp).
+So as you can see, it’s really easy to query an existing Kubernetes cluster using the official client libraries. In addition, I think it’s a great example for .NET developers that explains how to get started with Kubernetes at all. If you want to query more data, you should definitely check out [the official repository](https://github.com/kubernetes-client/csharp){:target="_blank"}.
 
-If you’re more interested in different programming languages check out [all another official Kubernetes Client Libraries here](https://github.com/kubernetes-client).
+If you’re more interested in different programming languages check out [all another official Kubernetes Client Libraries here](https://github.com/kubernetes-client){:target="_blank"}.

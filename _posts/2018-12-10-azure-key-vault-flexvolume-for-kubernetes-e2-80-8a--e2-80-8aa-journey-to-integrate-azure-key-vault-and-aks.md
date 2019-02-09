@@ -13,11 +13,11 @@ redirect_from: /2018-12-10_Azure-Key-Vault-FlexVolume-for-Kubernetes---A-journey
 excerpt: Integrate Azure Key Vault and Azure Kubernetes services without leaking sensitive configuration data such as Service Principal credentials by using Azure AD Pod Identity and Azure Key Vault FlexVolume for Kubernetes
 featured_image: /assets/images/posts/feature_images/2018-12-10-azure-key-vault-flexvolume-for-kubernetes-e2-80-8a--e2-80-8aa-journey-to-integrate-azure-key-vault-and-aks.jpg
 ---
-This is the second part of the mini-series on Integrating *Azure Key Vault* and *AKS* (Azure Kubernetes Services). If you missed the [first part]({{"/azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault" | absolute_url}}), you should definitely read it before digging into this article. 
+This is the second part of the mini-series on Integrating *Azure Key Vault* and *AKS* (Azure Kubernetes Services). If you missed the [first part]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault%}), you should definitely read it before digging into this article. 
 
 ## Introducing Azure Key Vault FlexVolume for Kubernetes
 
-*Azure Key Vault FlexVolume for Kubernetes* is a driver that allows you to consume typed data from *Azure Key Vault* (like secrets, keys or certificates) and attach that data directly to Pods. You can find the project itself [directly on GitHub](https://github.com/Azure/kubernetes-keyvault-flexvol).
+*Azure Key Vault FlexVolume for Kubernetes* is a driver that allows you to consume typed data from *Azure Key Vault* (like secrets, keys or certificates) and attach that data directly to Pods. You can find the project itself [directly on GitHub](https://github.com/Azure/kubernetes-keyvault-flexvol){:target="_blank"}.
 
 > If you’re not familiar with Kubernetes FlexVolumes check the following readme on *FlexVolume* here
 
@@ -136,7 +136,7 @@ spec:
       imagePullPolicy: Always
 
 ```
-Did you recognize the `aadpodidbinding` label? It has to exactly the same as you provided for the Azure Identity Binding in the [first article of this series]({{"/azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault" | absolute_url}}). In order to connect the Azure Key Vault FlexVolume, we will use the well-known concept of `volumes` and `volumeMounts` from Kubernetes.
+Did you recognize the `aadpodidbinding` label? It has to exactly the same as you provided for the Azure Identity Binding in the [first article of this series]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault %}). In order to connect the Azure Key Vault FlexVolume, we will use the well-known concept of `volumes` and `volumeMounts` from Kubernetes.
 
 ```yaml
 apiVersion: v1
@@ -206,7 +206,7 @@ sample1 sample2
 ```
 
 Wow, that was a blast! But if you’ve followed all the instructions, you should now be able to pull secrets, keys, and certificates from Azure Key Vault using Azure AD Pod Identity and Azure Key Vault FlexVolume for Kubernetes.
-I’ve also published [this sample on GitHub](https://github.com/ThorstenHans/aks-keyvault). If you’re having trouble getting this up and running on your AKS instance, either use the comment area below or create an Issue on the sample repository.
+I’ve also published [this sample on GitHub](https://github.com/ThorstenHans/aks-keyvault){:target="_blank"}. If you’re having trouble getting this up and running on your AKS instance, either use the comment area below or create an Issue on the sample repository.
 
 ## Recap
 
@@ -214,4 +214,4 @@ Both, *Azure AD Pod Identity* and *Azure Key Vault FlexVolume for Kubernetes* ar
 
 Having the combination of both projects is finally an idea of how to answer an important question in the Kubernetes space — dealing with sensitive configuration data without using Kubernetes secrets due to their lack of encryption.
 
-The Azure Key Vault FlexVolume [team mentioned that this project is ready for use in production environments](https://github.com/Azure/kubernetes-keyvault-flexvol/issues/30). This may be the truth if you’re using a Service Principal, but at least from my point of view, the underlying Azure AD Pod Identity project has to stabilize before I would use it in a production environment. In addition, both projects need some more documentation. There is too much room for speculation right now, so it’s a kind of necessary to dive into the code and verify how things are wired up.
+The Azure Key Vault FlexVolume [team mentioned that this project is ready for use in production environments](https://github.com/Azure/kubernetes-keyvault-flexvol/issues/30){:target="_blank"}. This may be the truth if you’re using a Service Principal, but at least from my point of view, the underlying Azure AD Pod Identity project has to stabilize before I would use it in a production environment. In addition, both projects need some more documentation. There is too much room for speculation right now, so it’s a kind of necessary to dive into the code and verify how things are wired up.

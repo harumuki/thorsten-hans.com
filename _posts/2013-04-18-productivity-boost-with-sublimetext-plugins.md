@@ -11,7 +11,7 @@ unsplash_user_ref: carlheyerdahl
 unsplash_user_name: Carl Heyerdahl
 ---
 
-For developing native web languages I use SublimeText 2 ([http://www.sublimetext.com/](http://www.sublimetext.com/)). Like many other editors, SublimeText offers a great plugin ecosystem, which allows you as a developer to add various functionality by installing additional packages.
+For developing native web languages I use SublimeText 2 ([http://www.sublimetext.com/](http://www.sublimetext.com/){:target="_blank"}). Like many other editors, SublimeText offers a great plugin ecosystem, which allows you as a developer to add various functionality by installing additional packages.
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/sublime-logo.png"
 title="Sublime Text" caption="Sublime Text" %}

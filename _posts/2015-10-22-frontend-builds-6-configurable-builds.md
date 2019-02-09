@@ -13,25 +13,25 @@ unsplash_user_ref: iurte
 ## The Frontend Builds article series
  Welcome to the sixth part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({{ "/frontend-build-series-introduction" | absolute_url }})
- * [Frontend Builds 1: Getting Started]({{ "/frontend-builds-1-getting-started" | absolute_url}})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles]({{ "/frontend-builds-2-readable-and-pluggable-gulp-files" | absolute_url}})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({{ "/frontend-builds-3-cross-platform-desktop-builds" | absolute_url}})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({{ "/frontend-builds-4-building-cross-platform-mobile-apps" | absolute_url}})
- * [Frontend Builds 5: Build as a Service (BaaS)]({{ "/frontend-builds-5-build-as-a-service-baas" | absolute_url}})
- * [Frontend Builds 6: Configurable builds]({{ "/frontend-builds-6-configurable-builds" | absolute_url}})
- * [Frontend Builds 7: Conditional Build Tasks]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}})
+ * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+ * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+ * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+ * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+ * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+ * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+ * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+ * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 
 ## Idea
 
-BaaS is fine so far if you’re building your projects on the same structure I did for building [x-note](https://github.com/ThorstenHans/x-note). However, right now, we’re using **Build as a Service**, so it’s time to make everything configurable.
+BaaS is fine so far if you’re building your projects on the same structure I did for building [x-note](https://github.com/ThorstenHans/x-note){:target="_blank"}. However, right now, we’re using **Build as a Service**, so it’s time to make everything configurable.
 
 ## Dumping all the default config values
 
 BaaS should run successfully without any give user-config. That said, we need some `defaults`. I’ve added a new JavaScript file to `xplatform-build` at `src/defaults.js`. It exposes all default config values as you can see below.
 
-The script below is stripped to increase readability. See the entire file [here in the repo](https://github.com/ThorstenHans/xplatform-build/blob/master/src/defaults.js)
+The script below is stripped to increase readability. See the entire file [here in the repo](https://github.com/ThorstenHans/xplatform-build/blob/master/src/defaults.js){:target="_blank"}
 
 ```javascript
 (function(module){
@@ -81,7 +81,7 @@ All defaults where exported using the familiar `module.exports` mechanism.
 
 ## Refactor gulp-task-files
 
-Next, I refactored, of course, all `gulp-task-files`, again go and check out all the changes over [here](https://github.com/ThorstenHans/xplatform-build/tree/master/src/gulptasks). In summary, the method signature must accept another parameter and all
+Next, I refactored, of course, all `gulp-task-files`, again go and check out all the changes over [here](https://github.com/ThorstenHans/xplatform-build/tree/master/src/gulptasks){:target="_blank"}. In summary, the method signature must accept another parameter and all
 
 ```javascript
 (function(module) {
@@ -222,11 +222,11 @@ require('xplatform-build')({
 });
 ```
 
-Again, see [xplatform-build here](https://github.com/ThorstenHans/xplatform-build) and the [BaaS branch of x-note over here](https://github.com/ThorstenHans/x-note/tree/baas)
+Again, see [xplatform-build here](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and the [BaaS branch of x-note over here](https://github.com/ThorstenHans/x-note/tree/baas){:target="_blank"}
 
 
 ## Go ahead ...
 
-.. so read the [next article in the "Frontend Build" article series]({{ "/frontend-builds-7-conditional-build-tasks" | absolute_url}}).
+.. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %}).
 
 

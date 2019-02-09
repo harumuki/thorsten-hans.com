@@ -12,7 +12,7 @@ featured_image: /assets/images/posts/feature_images/2018-03-22-limit-resources-f
 
 When deploying applications to *Kubernetes* one of the most important things to specify are *resource-requests* and *-limits*. Having proper limits defined per Container makes it easier to optimize the hardware utilization for all worker nodes in a Kubernetes cluster.
 
-When creating deployments, you can set resource-requests and -limits by using the `resources` property on each container as part of the `podspec`. See the [official documentation for further information](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#container-v1-core).
+When creating deployments, you can set resource-requests and -limits by using the `resources` property on each container as part of the `podspec`. See the [official documentation for further information](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#container-v1-core){:target="_blank"}.
 
 Unfortunately, those properties are not mandatory, so every developer has to remember providing requests and limits for both **memory** and **cpu**.
 

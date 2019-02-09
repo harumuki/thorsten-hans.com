@@ -105,6 +105,6 @@ title="Angular Component rendered as WebComponent" caption="Angular Component re
 
 Using *WebComponents* you can ensure that your component is rendered as you want and not changed by stylesheets defined on an application-wide level.
 
-[Here is the entire app published as *plunkr*](https://embed.plnkr.co/8LG2Hm/), you will find the **buy milk caption in purple**. Feel free to play around.
+[Here is the entire app published as *plunkr*](https://embed.plnkr.co/8LG2Hm/){:target="_blank"}, you will find the **buy milk caption in purple**. Feel free to play around.
 
 

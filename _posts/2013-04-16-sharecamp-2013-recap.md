@@ -14,7 +14,7 @@ unsplash_user_ref: headwayio
 Last weekend we did our fourth ShareCamp at Microsoft’s German headquarter in Munich (Unterschleißheim). The ShareCamp is not a typical conference; it’s a BarCamp, BarCamps typically have no schedule until the conference starts. Every attendee can submit sessions, discussions or Hands-On Workshops.
 
 Therefore it’s great for people who’d never spoken at huge, favorite conferences. The entire audience **votes** for the session proposals and depending on these votes sessions are moved to bigger or smaller rooms. (More information on BarCamps can be found here 
-[http://en.wikipedia.org/wiki/BarCamp](http://en.wikipedia.org/wiki/BarCamp)).
+[http://en.wikipedia.org/wiki/BarCamp](http://en.wikipedia.org/wiki/BarCamp){:target="_blank"}).
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/sharecamp-2013-logo.png"
 title="ShareCamp 2013" caption="ShareCamp 2013" %}

@@ -8,7 +8,7 @@ tags: [Angular]
 excerpt: internationalization is important if you build Angular applications for a bigger audience. Learn how to use standard Angular pipes with ng-translate
 featured_image: /assets/images/posts/feature_images/2017-02-23-standard-angular-pipes-and-ng-translate.jpg
 ---
-Of course is *Angular* itself shipping with some *i18n* (internationalization) APIs, but [ng-translate](https://github.com/ngx-translate/core) has become the new default for many developers to provide translations within *Angular* apps.
+Of course is *Angular* itself shipping with some *i18n* (internationalization) APIs, but [ng-translate](https://github.com/ngx-translate/core){:target="_blank"} has become the new default for many developers to provide translations within *Angular* apps.
 
 Personally, I prefer `ng-translate` over built-in i18n APIs because it is fast, easy to explain and it allows to run multilingual apps without having the requirement to have dedicated hosting for each language.
 
@@ -125,4 +125,4 @@ export class AppModule {
 
 ```
 
-Now all the formats within your app should automatically be updated if you change the app display language using `ng-translate`. If you want to see a working sample, go and check [out my sample repo on GitHub](https://github.com/ThorstenHans/angular-i18n-by-example/).
+Now all the formats within your app should automatically be updated if you change the app display language using `ng-translate`. If you want to see a working sample, go and check [out my sample repo on GitHub](https://github.com/ThorstenHans/angular-i18n-by-example/){:target="_blank"}.

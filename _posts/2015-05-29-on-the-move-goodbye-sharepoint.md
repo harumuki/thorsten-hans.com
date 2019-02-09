@@ -25,7 +25,7 @@ Being a SharePoint Developer wasn’t always fun. Till 2013 we were forced to us
 - Integrated Spring.NET into SharePoint 2010
 - Promoted Languages such as CoffeeScript to the SharePoint Community to build good client-side apps
 - Introduced various yeoman generators for SharePoint and O365 Branding
-- Opensourced ShareCoffee at [sharecoffee.github.com](http://sharecoffee.github.io/)
+- Opensourced ShareCoffee at [sharecoffee.github.com](http://sharecoffee.github.io/){:target="_blank"}
 
 There are even crazier things I’ve done in the past to show that SharePoint Dev can be cool.
 
@@ -33,15 +33,15 @@ Right now we've got the O365 API, and people can start building Apps and integra
 
 In the bottom line, I’ve to say **THANK YOU** to all the folks out there in the world for supporting me in the SharePoint Area. It was a blast.
 
-I’m proud to know that our sixth BarCamp in Munich will happen this weekend (see [ShareCamp](http://www.sharecamp.de)) which is the biggest Community Event for SharePoint in the German-speaking area. The 2015 edition of ShareCamp was also the last one for me; I’ll no longer investigate in that area because my entire expertise will change in the upcoming future. For all those friends and community members that will join the ShareCamp this weekend:
+I’m proud to know that our sixth BarCamp in Munich will happen this weekend (see [ShareCamp](http://www.sharecamp.de){:target="_blank"}) which is the biggest Community Event for SharePoint in the German-speaking area. The 2015 edition of ShareCamp was also the last one for me; I’ll no longer investigate in that area because my entire expertise will change in the upcoming future. For all those friends and community members that will join the ShareCamp this weekend:
 
 **Have fun and happy coding** 😀
 
 ## So. What’s next?
 
-Well, I was telling my customers for a decade now that they should focus on mobile Apps consuming services such as O365 instead of backing everything into the host process itself. Unfortunately, I didn’t get the chance to run serious projects in that area here in Germany. Therefore I’m proud to have the chance to dig into the Cross-Platform development business by joining the excellent team of [Thinktecture](http://www.thinktecture.com/). Thinktecture is an incredible team focusing on Cross-Platform Apps with .NET backends!
+Well, I was telling my customers for a decade now that they should focus on mobile Apps consuming services such as O365 instead of backing everything into the host process itself. Unfortunately, I didn’t get the chance to run serious projects in that area here in Germany. Therefore I’m proud to have the chance to dig into the Cross-Platform development business by joining the excellent team of [Thinktecture](http://www.thinktecture.com/){:target="_blank"}. Thinktecture is an incredible team focusing on Cross-Platform Apps with .NET backends!
 
-Visit our website at [http://www.thinktecture.com/](http://www.thinktecture.com/) or drop me a [mail](mailto:thorsten.hans@gmail.com) to get even more information and see what we’re precisely offering for your business. I’m looking forward to the next months/years and happy to work together with passionate, professional and super smart people on exciting projects!
+Visit our website at [http://www.thinktecture.com/](http://www.thinktecture.com/){:target="_blank"} or drop me a [mail](mailto:thorsten.hans@gmail.com) to get even more information and see what we’re precisely offering for your business. I’m looking forward to the next months/years and happy to work together with passionate, professional and super smart people on exciting projects!
 
 ### Bridging two worlds
 

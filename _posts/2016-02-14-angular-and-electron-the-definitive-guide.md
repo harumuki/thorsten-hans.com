@@ -165,7 +165,7 @@ Because we want to execute our SPA later in the context of an Electron container
 
 ## Building the Single Page Application
 
-Okay, having all those things written down, it’s time to care about the build. We’ll use Gulp to transform our TypeScript code into JavaScript and copy all those assets required by our app. (See my [series on Gulp right here for more detailed guides]({{ "/gulp-article-series/" | absolute_url }}))
+Okay, having all those things written down, it’s time to care about the build. We’ll use Gulp to transform our TypeScript code into JavaScript and copy all those assets required by our app. (See my [series on Gulp right here for more detailed guides]({% post_url 2015-10-08-frontend-build-series-introduction %}))
 
 
 ```javascript
@@ -328,7 +328,7 @@ Having this mechanism for dev time is good, but not good enough when thinking ab
 
 ## Automate app packaging
 
-You can use `gulp-atom-electron` to build the app automatically. I’ve written [another article on packaging Windows Apps from the macOS including a custom app icon]( {{ "/setting-electron-app-icons-for-windows-from-macos" | absolute_url }}).
+You can use `gulp-atom-electron` to build the app automatically. I’ve written [another article on packaging Windows Apps from the macOS including a custom app icon]({% post_url 2016-01-16-setting-electron-app-icons-for-windows-from-macos %}).
 
 However, for now, let’s keep the default icons and get everything up and running.
 Install `gulp-atom-electron`, and it’s dependency symdest using npm:
