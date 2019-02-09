@@ -1,7 +1,7 @@
 ---
-title: 'Talking to SharePoint's REST Services with C# using RESTSharp'
+title: Talking to SharePoint's REST Services with C# using RESTSharp
 layout: post
-permalink: talking-to-sharepoints-rest-services-with-c-using-restsharp
+permalink: consume-sharepoints-rest-services-with-restsharp
 redirect_from: /2013-10-02_Talking-to-SharePoint-s-REST-Services-with-C--using-RESTSharp-bd01cf3e2c9e
 published: true
 tags: [SharePoint]
