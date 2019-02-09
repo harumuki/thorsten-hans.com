@@ -2,6 +2,7 @@
 title: Hybrid Kubernetes Cluster on Azure Container Services
 layout: post
 permalink: hybrid-kubernetes-cluster-on-azure-container-services
+redirect_from: /2017-08-26_Hybrid-Kubernetes-Cluster-on-Azure-Container-Services-ed6f11bf3cb2
 published: true
 tags:
   - Kubernetes

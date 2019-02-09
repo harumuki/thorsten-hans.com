@@ -1,7 +1,8 @@
 ---
-title: Limit resources for containers using LimitRanges in Kubernetes
+title: Limit resources for containers with LimitRanges in Kubernetes
 layout: post
-permalink: limit-resources-for-containers-using-limitranges-in-kubernetes
+permalink: limit-resources-for-containers-with-limitranges-in-kubernetes
+redirect_from: /2018-03-22_Limit-resources-for-containers-using-LimitRanges-in-Kubernetes-d494a62aaf0
 published: true
 tags:
   - Kubernetes

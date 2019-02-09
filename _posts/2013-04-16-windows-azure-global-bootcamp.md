@@ -2,9 +2,10 @@
 title: Windows Azure Global Bootcamp
 layout: post
 permalink: windows-azure-global-bootcamp
+redirect_from: /2013-04-16_Windows-Azure-Global-Bootcamp-4be2441f0427
 published: true
 excerpt: null
-tags: [Conferences, Azure]
+tags: [Talks, Azure]
 featured_image: /assets/images/posts/feature_images/conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio

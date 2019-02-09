@@ -2,6 +2,7 @@
 title: Launch modal dialogs from ECB CustomActions from within the HostWeb
 layout: post
 permalink: spscriptlet-4-launch-modal-dialogs-from-ecb-customactions-from-within-the-hostweb
+redirect_from: /2013-04-17_SPScriptlet-4--Launch-modal-dialogs-from-ECB-CustomActions-from-within-the-HostWeb-d972db91f2dc
 published: true
 tags: [SharePoint]
 excerpt: null

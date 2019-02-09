@@ -2,6 +2,7 @@
 title: Be more productive with Pug
 layout: post
 permalink: be-more-productive-with-pug
+redirect_from: /2016-02-04_Be-more-productive-with-Jade-4399fc253ba5
 published: true
 tags: [Pug]
 excerpt: null

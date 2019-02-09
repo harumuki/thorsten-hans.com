@@ -3,7 +3,8 @@ title: ShareCamp 2013 recap
 layout: post
 permalink: sharecamp-2013-recap
 published: true
-tags: [Conference, SharePoint, ShareCamp]
+redirect_from: /2013-04-16_ShareCamp-2013-recap-9dbbd8aae0b2
+tags: [Talks, SharePoint]
 excerpt: Read the Recap of ShareCamp 2013
 featured_image: /assets/images/posts/feature_images/conference.jpg
 unsplash_user_name: Headway

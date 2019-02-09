@@ -2,6 +2,7 @@
 title: Angular Quickie — How to structure your projects
 layout: post
 permalink: angular-quickie-structure-your-apps
+redirect_from: /2016-01-07_Angular2-Quicky---How-to-structure-your-projects-9b521b831de2
 published: true
 tags: [Angular]
 excerpt: Angular will become the next big thing for enterprise developers. That's why you should structure your source code correctly from the very beginning.

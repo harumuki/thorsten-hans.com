@@ -1,7 +1,8 @@
 ---
 title: 'AzureAD Pod Identity in AKS: A journey to integrate Azure Key Vault'
 layout: post
-permalink: azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault
+permalink: azuread-pod-identity-aks-integrate-azure-keyvault
+redirect_from: /2018-12-06_AzureAD-Pod-Identity-in-AKS--A-journey-to-integrate-Azure-Key-Vault-d09bc9f8f70b
 published: true
 tags:
   - Kubernetes

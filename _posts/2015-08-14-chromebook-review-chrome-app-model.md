@@ -2,6 +2,7 @@
 title: Chromebook review / Chrome App Model
 layout: post
 permalink: chromebook-review-chrome-app-model
+redirect_from: /2015-08-14_Chromebook-review---Chrome-App-Model-bb7bc7977a11
 published: true
 tags: [Tools]
 excerpt: I bought a Chromebook because I want to dig a bit deeper into the Chrome App Model from a developers perspective. Check out what happened...

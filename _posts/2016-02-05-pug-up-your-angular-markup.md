@@ -2,6 +2,7 @@
 title: Pug-up your Angular markup
 layout: post
 permalink: pug-up-your-angular-markup
+redirect_from: /2016-02-05_Jade-up-your-Angular2-markup-8a7d51514be9
 published: true
 tags: [Angular, Pug]
 excerpt: null

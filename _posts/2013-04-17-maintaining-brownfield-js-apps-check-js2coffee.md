@@ -2,8 +2,9 @@
 title: Maintaining Brownfield JS Apps? Check Js2Coffee
 layout: post
 permalink: maintaining-brownfield-js-apps-check-js2coffee
+redirect_from: /2013-04-17_Maintaining-Brownfield-JS-Apps--Check-Js2Coffee-1e800ca45cfc
 published: true
-tags: [CoffeeScript, JavaScript, Tools]
+tags: [Frontend, Tools]
 excerpt: null
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich

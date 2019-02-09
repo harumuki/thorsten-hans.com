@@ -2,6 +2,7 @@
 title: NW.js and Electron compared
 layout: post
 permalink: nw-js-and-electron-compared
+redirect_from: /2016-02-09_NW-js-and-Electron-compared-6addc46dc283
 published: true
 tags: [Electron, NWjs]
 excerpt: null

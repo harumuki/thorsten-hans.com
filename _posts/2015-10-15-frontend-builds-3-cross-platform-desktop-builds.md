@@ -2,6 +2,7 @@
 title: Frontend Builds 3 - Cross Platform Desktop Builds
 layout: post
 permalink: frontend-builds-3-cross-platform-desktop-builds
+redirect_from: /2015-10-15_Frontend-Builds-3---Cross-Platform-Desktop-Builds-712a2d6148da
 published: true
 tags: [Build, Electron, Gulp.js]
 excerpt: null

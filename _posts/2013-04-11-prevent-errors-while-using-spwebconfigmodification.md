@@ -2,6 +2,7 @@
 title: Prevent errors while using SPWebConfigModification
 layout: post
 permalink: prevent-errors-while-using-spwebconfigmodification
+redirect_from: /2013-04-11_Prevent-errors-while-using-SPWebConfigModification-75eaccc41531
 published: true
 tags: [SharePoint]
 excerpt: null

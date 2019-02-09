@@ -2,8 +2,9 @@
 title: An Introduction to Pug (aka Jade)
 layout: post
 permalink: an-introduction-to-jade
+redirect_from: /2013-10-22_An-Introduction-to-Jade-b11fe3dd6a16
 published: true
-tags: [Jade, Pug]
+tags: [Frontend]
 excerpt: null
 featured_image: /assets/images/posts/feature_images/2013-10-22-an-introduction-to-jade.jpg
 ---

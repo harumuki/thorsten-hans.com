@@ -2,6 +2,7 @@
 title: Electron CrashReporter - stay up to date if your app fucked up!
 layout: post
 permalink: electron-crashreporter-stay-up-to-date-if-your-app-fucked-up
+redirect_from: /2017-03-03_Electron-CrashReporter---stay-up-to-date-if-your-app-fucked-up--3e9a989cd0a0
 published: true
 tags: [Electron, Angular]
 excerpt: Learn how to deal with the unexpected. How can you deal with errors once you've shipped your Electron application. This post explains how to setup and use CrashPad on all platforms

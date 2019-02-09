@@ -2,6 +2,7 @@
 title: Angular Quickie - Component ViewEncapsulation and WebComponents
 layout: post
 permalink: angular-quickie-component-viewencapsulation-and-webcomponents
+redirect_from: /2016-01-08_Angular2-Quicky---Component-ViewEncapsulation-and-WebComponents-697d7e395aa9
 published: true
 tags: [Angular]
 excerpt: Angular and WebComponents? Sure! Learn how the different ViewEncapsulation settings work in Angular applications and which impact every setting does have on your resulting HTML output.

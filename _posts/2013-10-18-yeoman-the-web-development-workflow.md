@@ -2,15 +2,16 @@
 title: Yeoman the web development workflow
 layout: post
 permalink: yeoman-the-web-development-workflow
+redirect_from: /2013-10-18_Yeoman-the-web-development-workflow-87630ce36201
 published: true
-tags: [yeoman]
+tags: [Frontend]
 excerpt: null
 featured_image: /assets/images/posts/feature_images/2013-10-18-yeoman-the-web-development-workflow.jpg
 ---
 
 See other posts on ‘Branding SharePoint sites with yeoman’.
 
-1. [Introduction]( {{ "from-zero-to-hero-how-we-brand-sharepoint-using-yeoman" | absolute_url }})
+1. [Introduction]({{ "from-zero-to-hero-how-we-brand-sharepoint-using-yeoman" | absolute_url }})
 2. [Yeoman the web development workflow]({{ "yeoman-the-web-development-workflow" | absolute_url }})
 3. [An Introduction to Pug (aka Jade)]({{ "an-introduction-to-jade" | absolute_url }})
 4. [An Introduction to CoffeeScript]({{ "an-introduction-to-coffeescript" | absolute_url }})

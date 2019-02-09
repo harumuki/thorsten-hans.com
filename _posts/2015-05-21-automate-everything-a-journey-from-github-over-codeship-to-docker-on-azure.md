@@ -2,8 +2,9 @@
 title: Automate everything — A journey from GitHub over Codeship to Docker on Azure
 layout: post
 permalink: automate-everything-a-journey-from-github-over-codeship-to-docker-on-azure
+redirect_from: /2015-05-21_Automate-everything---A-journey-from-github-over-codeship-to-docker-on-azure-b52129d3c6bc
 published: true
-tags: [Build, DevOps]
+tags: [DevOps]
 excerpt: Learn how to connect a GitHub repository with Microsoft Azure using Codeship to realize a CI / CD pipeline for web applications using Docker images.
 featured_image: /assets/images/posts/feature_images/2015-05-21-automate-everything-a-journey-from-github-over-codeship-to-docker-on-azure.jpg
 unsplash_user_ref: freeche

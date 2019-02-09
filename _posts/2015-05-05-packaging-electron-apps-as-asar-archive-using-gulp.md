@@ -2,6 +2,7 @@
 title: Packaging Electron apps as ASAR archive using Gulp.js
 layout: post
 permalink: packaging-electron-apps-as-asar-archive-using-gulp
+redirect_from: /2015-05-05_Packaging-electron-apps-as-asar-archive-using-gulp-75423588613f
 published: true
 tags: [Electron, Angular, Gulp.js]
 excerpt: Do you want to ship Electorn Apps to your customers? Then you should always package application insights as ASAR. Learn how to get that done with Gulp.js
