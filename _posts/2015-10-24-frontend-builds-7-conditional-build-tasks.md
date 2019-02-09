@@ -26,17 +26,17 @@ unsplash_user_ref: iurte
 
 ## Idea
 
-During the last post, we made our BaaS configurable so that you can align the build to work with different folder structures, filenames or module configurations. Now it’s time to take our build to another level. Many developers are using things like [less](http://lesscss.org/){:target="_blank"}, [Sass](http://sass-lang.com/){:target="_blank"} to build their stylesheets. Others use [CoffeeScript](http://coffeescript.org/){:target="_blank"}, [BabelJS](https://babeljs.io/){:target="_blank"} or [TypeScript](http://www.typescriptlang.org/){:target="_blank"} to build their JavaScript. Exactly those tasks are missing in our BaaS solution, so let’s add them.
+During the last post, we made our BaaS configurable so that you can align the build to work with different folder structures, filenames or module configurations. Now it's time to take our build to another level. Many developers are using things like [less](http://lesscss.org/){:target="_blank"}, [Sass](http://sass-lang.com/){:target="_blank"} to build their stylesheets. Others use [CoffeeScript](http://coffeescript.org/){:target="_blank"}, [BabelJS](https://babeljs.io/){:target="_blank"} or [TypeScript](http://www.typescriptlang.org/){:target="_blank"} to build their JavaScript. Exactly those tasks are missing in our BaaS solution, so let's add them.
 
 However, instead of adding all those tasks simple to our `gulp.pipe` chain, we want to put some more logic in our gulp-tasks to make the entire build more flexible.
 
 ----
 
-To demonstrate how such a conditional build may look like, we’ll add both CSS and JavaScript transpiling support to [xplatform-build](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and let the developer choose for every project if she wants to use those tasks or not. If you’re already familiar with Gulp.js. `gulp-if` may come into your mind. `gulp-if` works great for some situations but in my case, I don’t want to ship possible dependencies like `gulp-sass` to every system no matter if the consumer needs it or not. This leads to a situation where `gulp-if`  doesn’t work!
+To demonstrate how such a conditional build may look like, we'll add both CSS and JavaScript transpiling support to [xplatform-build](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and let the developer choose for every project if she wants to use those tasks or not. If you're already familiar with Gulp.js. `gulp-if` may come into your mind. `gulp-if` works great for some situations but in my case, I don't want to ship possible dependencies like `gulp-sass` to every system no matter if the consumer needs it or not. This leads to a situation where `gulp-if`  doesn't work!
 
 ## Refactoring our BaaS
 
-`xplatform-build` needs only some small refactorings to support all those conditional tasks. Let’s extend every section of it right now.
+`xplatform-build` needs only some small refactorings to support all those conditional tasks. Let's extend every section of it right now.
 
 ## Updating default options
 
@@ -55,7 +55,7 @@ return {
 
 ## The new xplatform-build gulpfile
 
-The `gulpfile.js` get some updates. First I’ve refactored the method for overriding config values a bit to be more powerful and renamed it to `applyUserConfig`. See `applyUserConfig()` below.
+The `gulpfile.js` get some updates. First I've refactored the method for overriding config values a bit to be more powerful and renamed it to `applyUserConfig`. See `applyUserConfig()` below.
 
 ```javascript
 function applyUserConfig(original, uConfig) {
@@ -90,7 +90,7 @@ function loadCustomAddonIfInstalled(addOnName, tasks) {
 
 The `loadCustomAddonIfInstalled` is called for every object in `options.addOns`, which will be configured by `xplatform-build` consumers as you will read later.**
 
-Last but not least if installed and required `gulp-empty` which we’ll use in a few minutes.
+Last but not least if installed and required `gulp-empty` which we'll use in a few minutes.
 
 ```javascript
 var tasks = {
@@ -119,9 +119,9 @@ Next step is, of course, to support transpiling for both, JavaScript and CSS in 
 
 ## Transpiling JavaScript
 
-Let’s take care about JavaScript, we’ll add support for `gulp-typescript`, `gulp-coffee` and `gulp-babel` to your `private:app:js` gulptask.
+Let's take care about JavaScript, we'll add support for `gulp-typescript`, `gulp-coffee` and `gulp-babel` to your `private:app:js` gulptask.
 
-For a single project, only one of those three transpilers makes sense. However, gulp is a little bit limited when it comes to skipping things that are not needed in a given context. That’s why we added `gulp-empty` – which does nothing to files in the stream – to our project. It acts as a fallback task which will be invoked if the developer won't use any transpiler offered by `xplatform-build`.
+For a single project, only one of those three transpilers makes sense. However, gulp is a little bit limited when it comes to skipping things that are not needed in a given context. That's why we added `gulp-empty` – which does nothing to files in the stream – to our project. It acts as a fallback task which will be invoked if the developer won't use any transpiler offered by `xplatform-build`.
 
 See the refactored `private:app:js` task below. The task itself and the corresponding options are evaluated based on already loaded `addOns`.
 
@@ -145,7 +145,7 @@ If neither `coffee`, `babel` nor `typescript` is defined, `gulp-empty` will be i
 
 ## Transpiling CSS
 
-Let’s do the same for CSS. Should be a no-brainer right now. See `private:app:css` below
+Let's do the same for CSS. Should be a no-brainer right now. See `private:app:css` below
 
 ```javascript
 gulp.task('private:app:css', function() {
@@ -161,11 +161,11 @@ gulp.task('private:app:css', function() {
 });
 
 ```
-That’s all for `xplatform-build` let’s see how our actual project has to be updated.
+That's all for `xplatform-build` let's see how our actual project has to be updated.
 
 ## Refactoring our x-note project
 
-Now it’s time to update x-note. First I’ve replaced `src/styles/app.css` by `src/styles/app.less` and added some simple `less code` (copied form their website :D)
+Now it's time to update x-note. First I've replaced `src/styles/app.css` by `src/styles/app.less` and added some simple `less code` (copied form their website :D)
 
 ```less
 @base: #f938ab;
@@ -188,7 +188,7 @@ Now it’s time to update x-note. First I’ve replaced `src/styles/app.css` by 
 
 Having some less sources, I as a developer want to add `gulp-less` to my project by executing `npm i gulp-less --save-dev`
 
-Finally, we’ve to specify how `xplatform-build` should handle our stylesheet. See the updated `gulpfile.js` from x-note.
+Finally, we've to specify how `xplatform-build` should handle our stylesheet. See the updated `gulpfile.js` from x-note.
 
 ```javascript
 (function(require){
@@ -208,9 +208,9 @@ Finally, we’ve to specify how `xplatform-build` should handle our stylesheet. 
 
 ## Updating xplatform-build
 
-Either you can pull the recent version of `xplatform-build` from npm using `npm install xplatform-build --save-dev` or you can update it from your disk – if you’ve made all the changes to your working copy by using `npm install ../path-to-local-xplatform-build`
+Either you can pull the recent version of `xplatform-build` from npm using `npm install xplatform-build --save-dev` or you can update it from your disk – if you've made all the changes to your working copy by using `npm install ../path-to-local-xplatform-build`
 
-Give it a try and execute `gulp build` once you’ve saved all the files. If you’ve followed all the steps, you’ll find the following content in `dist/styles/app.min.css`
+Give it a try and execute `gulp build` once you've saved all the files. If you've followed all the steps, you'll find the following content in `dist/styles/app.min.css`
 
 ```css
 .box{color:#fe33ac;border-color:#fdcdea}.box div{-webkit-box-shadow:0 0 5px rgba(0,0,0,.3);box-shadow:0 0 5px rgba(0,0,0,.3)}

@@ -11,13 +11,13 @@ tags:
 excerpt: 'CronJobs build an essential part of many applications. Often, you''ve to persist some kind of data from application artifacts like CronJobs. This article demonstrates how to build such a CronJob with Azure Files and run it on a Kubernetes cluster. '
 featured_image: /assets/images/posts/feature_images/2018-02-21-cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core.jpg
 ---
-Tasks need to be executed repeatedly in almost every application. We all know requirements like these. Perhaps you have to clean up some tables in the database or you’ve to delete temporary files, no matter which requirement you’ve exactly, but *CronJobs* in *Kubernetes* are exactly designed for scenarios like these.
+Tasks need to be executed repeatedly in almost every application. We all know requirements like these. Perhaps you have to clean up some tables in the database or you've to delete temporary files, no matter which requirement you've exactly, but *CronJobs* in *Kubernetes* are exactly designed for scenarios like these.
 *Kubernetes* offers *CronJobs* as first-class citizen objects. In the scope of *Kubernetes*, a *CronJob* should be used if you want to execute a piece of software either at a specified point in time or repeatedly at specified points in time. 
-Technically it’s just a regular Pod with a schedule definition. You’ve to provide your schedule using the good old [cron format](https://en.wikipedia.org/wiki/Cron){:target="_blank"}.
+Technically it's just a regular Pod with a schedule definition. You've to provide your schedule using the good old [cron format](https://en.wikipedia.org/wiki/Cron){:target="_blank"}.
 
 If you want some nice cron string generator, go and check [crontab.guru](https://crontab.guru/){:target="_blank"}.
 
-For demonstration purpose, we’ll use a simple .NET Core Console Application. Each time you execute the app, a new text file with a unique name will be written to an output folder. In this case, the output folder is an *Azure File Share* created and powered by a simple *Azure Storage Account*. If you follow the instructions, you’ll end up - as shown in the picture below -  with a new unique file on your *Azure File Share* every minute.
+For demonstration purpose, we'll use a simple .NET Core Console Application. Each time you execute the app, a new text file with a unique name will be written to an output folder. In this case, the output folder is an *Azure File Share* created and powered by a simple *Azure Storage Account*. If you follow the instructions, you'll end up - as shown in the picture below -  with a new unique file on your *Azure File Share* every minute.
 
 {% include image-caption.html imageurl="/assets/images/posts/2018/kubernetes-cronjob-azure-file-share.png" 
 title="Files create by the CronJob on Azure Files" caption="Files create by the CronJob on Azure Files" %}
@@ -30,7 +30,7 @@ You can easily check the version by executing `kubectl version` which will print
 
 ## Azure prerequisites
 
-Obviously, you need an Azure subscription. Once you’ve access to an Azure subscription, an *Azure Storage Account* is the only additional requirement here. If you’re using AKS, ensure the *Storage Account* is created in the same *Resource Group*.
+Obviously, you need an Azure subscription. Once you've access to an Azure subscription, an *Azure Storage Account* is the only additional requirement here. If you're using AKS, ensure the *Storage Account* is created in the same *Resource Group*.
 
 ```bash
 # Login to Azure
@@ -60,7 +60,7 @@ az storage share create
 ```
 
 @@ The .NET Core Application
-The .NET Core Console application is very simple. It’s just *File->New Project->Console Application*. All application code belongs to the `Main` method within `Program.cs`.
+The .NET Core Console application is very simple. It's just *File->New Project->Console Application*. All application code belongs to the `Main` method within `Program.cs`.
 
 ```csharp
 # Program.cs
@@ -109,7 +109,7 @@ ENTRYPOINT ["dotnet", "CronSample.dll"]
 
 ```
 
-Because we’re using `microsoft/dotnet:runtime` as the base image, the final docker image will be way smaller than sticking with the SDK image. It’s about 1.8GB compared to 220MB.
+Because we're using `microsoft/dotnet:runtime` as the base image, the final docker image will be way smaller than sticking with the SDK image. It's about 1.8GB compared to 220MB.
 Use `docker build` to create the image. 
 
 ```bash
@@ -117,7 +117,7 @@ docker build -t somenamespace/cron-sample:latest .
 
 ```
 
-Don’t forget to push the image to a container registry. For demonstration purpose, I’ll just push it to the public docker hub.
+Don't forget to push the image to a container registry. For demonstration purpose, I'll just push it to the public docker hub.
 
 ```bash
 docker login
@@ -126,7 +126,7 @@ docker push somenamespace/cron-sample:latest
 ```
 
 ## Kubernetes resources
-Let’s get started with *Kubernetes*. Before we can concentrate on the *CronJob*, we’ve to ensure a proper integration of Azure Files. In order to do so, you need to provide Kubernetes with fundamental information required to connect to the Storage Account.
+Let's get started with *Kubernetes*. Before we can concentrate on the *CronJob*, we've to ensure a proper integration of Azure Files. In order to do so, you need to provide Kubernetes with fundamental information required to connect to the Storage Account.
 
 ### Secret
 First, we need to create a *Secret*, the secret will be responsible for providing the *Azure Storage Account Name* and the required *Key* in order to access to the *Azure File Share*.
@@ -155,7 +155,7 @@ Deploy the secret to Kubernetes using `kubectl apply -f azure-secret.yaml`
 
 ### Persistent Volume
 
-*Persistent Volumes* (*PV*) are cluster-wide storages, normally managed and attached by administrators. *PVs* are top-level kubernetes resources, that said, they’re not associated with the LiveCycle of other resources like *Pods* or *Deployments*. Once created, they are available until someone removes them from the cluster.
+*Persistent Volumes* (*PV*) are cluster-wide storages, normally managed and attached by administrators. *PVs* are top-level kubernetes resources, that said, they're not associated with the LiveCycle of other resources like *Pods* or *Deployments*. Once created, they are available until someone removes them from the cluster.
 
 ```yaml
 # persistent-volume.yaml
@@ -178,10 +178,10 @@ spec:
 
 ```
 
-As you can see, sensible information is pulled from the `azure-files-secret`, the share `aks-cron` is referenced with `readOnly` set to `false`. `claimRef` represents the binding between the *PV* and the *Persistent Volume Claim* (*PVC*) which we’ll create in a minute.
+As you can see, sensible information is pulled from the `azure-files-secret`, the share `aks-cron` is referenced with `readOnly` set to `false`. `claimRef` represents the binding between the *PV* and the *Persistent Volume Claim* (*PVC*) which we'll create in a minute.
 
 ### Persistent Volume Claim
-In Kubernetes, a *Persistent Volume Claim* (*PVC*) is a request for storage. You can compare it to a regular *Pod*, Pods are requesting CPU and Memory whereas PVC request storage. Let’s create another `yaml` and request the previously created PV.
+In Kubernetes, a *Persistent Volume Claim* (*PVC*) is a request for storage. You can compare it to a regular *Pod*, Pods are requesting CPU and Memory whereas PVC request storage. Let's create another `yaml` and request the previously created PV.
 
 ```yaml
 # persistent-volume-claim.yaml
@@ -207,7 +207,7 @@ kubectl create -f persistent-volume-claim.yaml
 ```
 
 ## CronJob
-Now it’s time to describe and deploy the most important thing, our *CronJob*. The CronJob will reuse the `podspec` you may already be familiar with.
+Now it's time to describe and deploy the most important thing, our *CronJob*. The CronJob will reuse the `podspec` you may already be familiar with.
 
 ```yaml
 # cronjob.yaml
@@ -237,7 +237,7 @@ spec:
 
 ```
 
-As you can see within the `podspec`, we mount the `volume` to `/var/cron-logsand` provide this path as environment variable (`CronJobOutputFolder`) which we’ve used in our .NET Core app previously.
+As you can see within the `podspec`, we mount the `volume` to `/var/cron-logsand` provide this path as environment variable (`CronJobOutputFolder`) which we've used in our .NET Core app previously.
 The second important aspect is, of course, the cron string at `spec.schedule`. Form demonstrating purpose I want the CronJob to be executed every minute. Deploy the CronJob to your cluster by executing
 
 ```bash
@@ -245,7 +245,7 @@ kubectl apply -f cronjob.yaml
 
 ```
 
-Now it’s the perfect time to grab a cup of coffee. Let the CronJob do its work for a couple of times.
+Now it's the perfect time to grab a cup of coffee. Let the CronJob do its work for a couple of times.
 
 ----
 

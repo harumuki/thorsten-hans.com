@@ -10,7 +10,7 @@ featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
 ---
 *"Component"* is perhaps the most overloaded term when it comes to *JavaScript* frameworks these days. Every single framework has its definition of what precisely a component is, also *Angular*.
 
-Components are the building blocks of *Angular* apps. By default, *Angular* embeds components into the `DOM`. When *Angular* renders your component, the entire contents of your template (string or loaded from the given *URL*) goes inbetween the component’s selector.
+Components are the building blocks of *Angular* apps. By default, *Angular* embeds components into the `DOM`. When *Angular* renders your component, the entire contents of your template (string or loaded from the given *URL*) goes inbetween the component's selector.
 
 There are two different ways how *Angular* is injecting the view for a given component. `ViewEncapsulation` is responsible for defining how Views are injected. If you create a component like this:
 
@@ -34,7 +34,7 @@ Angular uses `ViewEncapsulation.None`. Which results in the following `DOM`.
 {% include image-caption.html imageurl="/assets/images/posts/2016/angular-quickie-viewencapsulation-1.png"
 title="Angular Component with ViewEncapsulation.None" caption="Angular Component with ViewEncapsulation.None" %}
 
-As soon as you change your component definition and provide either inline styles using the `styles` property or reference a Stylesheet file using the `styleUrls` property, Angular will use `ViewEncapsulation.Emulated` which will result in the following `DOM`. Let’s review the updated `@Component` definition first:
+As soon as you change your component definition and provide either inline styles using the `styles` property or reference a Stylesheet file using the `styleUrls` property, Angular will use `ViewEncapsulation.Emulated` which will result in the following `DOM`. Let's review the updated `@Component` definition first:
 
 ```typescript
 @Component({
@@ -59,7 +59,7 @@ Those changes result in the following HTML
 {% include image-caption.html imageurl="/assets/images/posts/2016/angular-quickie-viewencapsulation-2.png"
 title="Updated HMTL of the Angular Component" caption="Updated HMTL of the Angular Component" %}
 
-Notice the `_ngcontent-uxg-2` attribute is added automatically to the template’s root node and `_nghost-uxg-2` added to the selector? Why does Angular add such an attribute? Open the inspector and double check the styles you’ve provided.
+Notice the `_ngcontent-uxg-2` attribute is added automatically to the template's root node and `_nghost-uxg-2` added to the selector? Why does Angular add such an attribute? Open the inspector and double check the styles you've provided.
 
 Angular is adding those classes to enforce CSS styles only for the given component. **It is emulating the Shadow DOM**. So your CSS looks similar to the following once rendered:
 
@@ -70,7 +70,7 @@ Angular is adding those classes to enforce CSS styles only for the given compone
 
 ```
 
-This works fine in most situations. However, there are situations where you need more control over your template. Let’s extend our example from above. Let’s say we’re referencing another stylesheet on an application-wide level with the following content.
+This works fine in most situations. However, there are situations where you need more control over your template. Let's extend our example from above. Let's say we're referencing another stylesheet on an application-wide level with the following content.
 
 ```css
 span {

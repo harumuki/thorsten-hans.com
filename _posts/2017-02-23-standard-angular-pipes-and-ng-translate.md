@@ -12,7 +12,7 @@ Of course is *Angular* itself shipping with some *i18n* (internationalization) A
 
 Personally, I prefer `ng-translate` over built-in i18n APIs because it is fast, easy to explain and it allows to run multilingual apps without having the requirement to have dedicated hosting for each language.
 
-One of the disadvantages is, that `ng-translate` doesn’t provide *Pipes* as *Angular* does. *Angular* ships twelve useful *Pipes*, including things like `DecimalPipe`, `DatePipe` or the `CurrencyPipe`. Some of those standard *Pipes* offer a simple way to format values directly within *HTML* templates. 
+One of the disadvantages is, that `ng-translate` doesn't provide *Pipes* as *Angular* does. *Angular* ships twelve useful *Pipes*, including things like `DecimalPipe`, `DatePipe` or the `CurrencyPipe`. Some of those standard *Pipes* offer a simple way to format values directly within *HTML* templates. 
 
 The standard *Angular* pipes are implemented relying on the `LOCALE_ID` value (which is consumed by Dependency Injection) and the actual formatting logic which unfortunately **NOT** injected by Dependency Injection. As a developer, you can specify the `LOCALE_ID` by using the `providers` array as Dependency Injection container configuration. This could be done for example within `NgModule` metadata.
 
@@ -33,7 +33,7 @@ export class AppModule {
 
 ```
 
-This works great when you want to set the language for your app once. **But it doesn’t work, if you want to change the language during runtime**.
+This works great when you want to set the language for your app once. **But it doesn't work, if you want to change the language during runtime**.
 
 
 ## Using ng-translate
@@ -52,7 +52,7 @@ export class RootComponent implements OnInit {
 
 ```
 
-Once languages were added, you can utilize the `TranslateService.use` method to switch between the registered languages at runtime. Imagine you’ve implemented a simple language switcher component like shown below.
+Once languages were added, you can utilize the `TranslateService.use` method to switch between the registered languages at runtime. Imagine you've implemented a simple language switcher component like shown below.
 
 {%raw %}
 ```typescript
@@ -86,9 +86,9 @@ Having this up and running in your app, it may be a bit frustrating to see `Date
 
 ## Creating proxy pipes
 
-Internally all the formatting Pipes from *Angular* are using static classes like `DateFormatter` instead of relying on DI. Because of this and because some initial validation and transforming is also implemented in the transform method itself, the best solution is to create a kind of proxy pipe. Having everything under control, you’ve just to ensure that both, the **selector** and the parameter handling for the **transform** method are identical to the original Pipe offered by the framework.
+Internally all the formatting Pipes from *Angular* are using static classes like `DateFormatter` instead of relying on DI. Because of this and because some initial validation and transforming is also implemented in the transform method itself, the best solution is to create a kind of proxy pipe. Having everything under control, you've just to ensure that both, the **selector** and the parameter handling for the **transform** method are identical to the original Pipe offered by the framework.
 
-The following snippet demonstrates how to implement a Proxy for *Angular’s* `DatePipe`:
+The following snippet demonstrates how to implement a Proxy for *Angular's* `DatePipe`:
 
 ```typescript
 import { DatePipe } from '@angular/common';
@@ -112,7 +112,7 @@ export class DatePipeProxy implements PipeTransform {
 
 ```
 
-As you can see, the `TranslateService` will be injected into the constructor and used within the `transform` method to pass the currently selected language to the default `DatePipe`. By reusing the entire `DatePipe`, you can ensure that formatting behaves like before. Once the Proxy Pipe has been implemented, you’ve to add it to the `declarations` section of your module.
+As you can see, the `TranslateService` will be injected into the constructor and used within the `transform` method to pass the currently selected language to the default `DatePipe`. By reusing the entire `DatePipe`, you can ensure that formatting behaves like before. Once the Proxy Pipe has been implemented, you've to add it to the `declarations` section of your module.
 
 ```typescript
 @NgModule({

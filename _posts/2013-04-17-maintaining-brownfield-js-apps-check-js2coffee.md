@@ -11,7 +11,7 @@ unsplash_user_name: John Schnobrich
 featured_image: /assets/images/posts/feature_images/demo-code.jpg
 ---
 
-Do you love *CoffeeScript*? Alternatively, you’ve to maintain Brownfield *JavaScript* based Applications?
+Do you love *CoffeeScript*? Alternatively, you've to maintain Brownfield *JavaScript* based Applications?
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/coffeescript-logo.png"
 title="CoffeeScript Logo" caption="CoffeeScript Logo" %}

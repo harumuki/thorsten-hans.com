@@ -10,7 +10,7 @@ featured_image: /assets/images/posts/feature_images/2018-12-04-inspect-your-kube
 ---
 Running and maintaining complex applications on Kubernetes often requires good monitoring capabilities. Sure, there are plenty of products available which can be deployed easily to an existing cluster to get insights about the current cluster inventory. But why not build your own? 
 
-In this post, I’ll guide you through the process of creating a simple ASP.NET Core Web API to expose your cluster’s inventory  -  such as Pods for example -  to other applications in order to get exactly those insights that are important for you. I used the following example frequently during public talks to explain the core concepts of *Kubernetes* to .NET developers. 
+In this post, I'll guide you through the process of creating a simple ASP.NET Core Web API to expose your cluster's inventory  -  such as Pods for example -  to other applications in order to get exactly those insights that are important for you. I used the following example frequently during public talks to explain the core concepts of *Kubernetes* to .NET developers. 
 
 ## Requirements
 In order to follow this guide, you need to have access to a /Kubernetes/ cluster and the following tools should be installed and configured on your developer machine
@@ -19,11 +19,11 @@ In order to follow this guide, you need to have access to a /Kubernetes/ cluster
  * `kubectl`
  * `dotnet`
   
-If you’re not yet familiar with `docker`, `kubectl` or `dotnet`,  check out one of the great online tutorials on those.
+If you're not yet familiar with `docker`, `kubectl` or `dotnet`,  check out one of the great online tutorials on those.
 
 ## The .NET Core API project
 
-Although I’ve chosen .NET as a framework, I prefer creating new projects from the command line. So let’s get started with the API itself. The following bash commands create a new ASP.NET Core project with all the required folders and files.
+Although I've chosen .NET as a framework, I prefer creating new projects from the command line. So let's get started with the API itself. The following bash commands create a new ASP.NET Core project with all the required folders and files.
 
 ```bash
 ~ mkdir KubeInspector && cd KubeInspector
@@ -40,7 +40,7 @@ touch Controller.csModels/PodListModel.cs
 
 ```
 
-For demonstration purpose, we’ll create a simple model to represent Pods when asking for a list of all pods in a given Namespace. Add the following code to `Models/PodListModel.cs`
+For demonstration purpose, we'll create a simple model to represent Pods when asking for a list of all pods in a given Namespace. Add the following code to `Models/PodListModel.cs`
 
 ```csharp
 namespace KubeInspector.Models
@@ -56,7 +56,7 @@ namespace KubeInspector.Models
 
 ```
 
-Next, it’s time to query all pods form Kubernetes using the `KubernetesClient` library. This is straightforward, especially if your code will be executed within the cluster. Add the following code to `Repositories/KubernetesRepository.cs`
+Next, it's time to query all pods form Kubernetes using the `KubernetesClient` library. This is straightforward, especially if your code will be executed within the cluster. Add the following code to `Repositories/KubernetesRepository.cs`
 
 ```csharp
 using System.Collections.Generic;
@@ -149,7 +149,7 @@ namespace KubeInspector.Controllers
 
 ```
 
-The final step in the API project is to change the `Startup.cs`, here several things have to be changed. For example, you’ve to register `KubernetesRepository` for the interface `IKubernetesRepository` in DI and you’ve to set up `MVC` itself.
+The final step in the API project is to change the `Startup.cs`, here several things have to be changed. For example, you've to register `KubernetesRepository` for the interface `IKubernetesRepository` in DI and you've to set up `MVC` itself.
 
 ```csharp
 using KubeInspector.Repositories;
@@ -183,11 +183,11 @@ namespace KubeInspector
 
 ```
 
-That’s it for the API. If you want to deploy this API to a production cluster, you should consider additional configurations like `compression`, `CORS` or `Authentication` and `Authorization`. For demonstration purpose, we keep it as it is for now.
+That's it for the API. If you want to deploy this API to a production cluster, you should consider additional configurations like `compression`, `CORS` or `Authentication` and `Authorization`. For demonstration purpose, we keep it as it is for now.
 
 ## Build and publish the Docker image
 
-Next, you’ve to create and publish the docker image. In my guide, I’ll use Azure Container Registry as a target. You can use your own private registry or public docker hub. Make sure, you are authenticated.
+Next, you've to create and publish the docker image. In my guide, I'll use Azure Container Registry as a target. You can use your own private registry or public docker hub. Make sure, you are authenticated.
 
 Add a `.dockerignore` to the root directory of the project and add the following content
 
@@ -197,7 +197,7 @@ obj/
 
 ```
 
-Next, add a `Dockerfile` to the root folder and let’s bring up a simple Dockerfile for a .NET Core application as shown below
+Next, add a `Dockerfile` to the root folder and let's bring up a simple Dockerfile for a .NET Core application as shown below
 
 ```dockerfile
 FROM microsoft/dotnet:2.1-sdk as builder
@@ -214,7 +214,7 @@ CMD ["dotnet", "KubeInspector.dll"]
 
 ```
 
-With both files in place, it’s time to build and publish the image
+With both files in place, it's time to build and publish the image
 
 ```bash
 docker build . -t yourregistry.azurecr.io/kubeinspector:latest
@@ -268,18 +268,18 @@ kubectl get pods -w
 
 ## Access the API
 
-Normally, you would deploy a Kubernetes Service to your cluster, which would make the API accessible. For demonstration purpose, let’s just set up a port-forwarding here:
+Normally, you would deploy a Kubernetes Service to your cluster, which would make the API accessible. For demonstration purpose, let's just set up a port-forwarding here:
 
 ```bash
 kubectl port-forward kubeinspector-deployment-some-id 8080:80
 
 ```
 
-Now you can use a tool like Postman or just your browser to examine the endpoint. Issue a `GET` request to `http://127.0.0.1:8080/api/kubernetes/pods/default` which will show all the pods in the namespace you’ve selected. For example, see the attached response from my demonstration cluster:
+Now you can use a tool like Postman or just your browser to examine the endpoint. Issue a `GET` request to `http://127.0.0.1:8080/api/kubernetes/pods/default` which will show all the pods in the namespace you've selected. For example, see the attached response from my demonstration cluster:
 
 {% include image-caption.html imageurl="/assets/images/posts/2018/inspect-kubernetes-cluster-netcore.png" 
 title="Exposed Pods from the default namespace" caption="Exposed Pods from the default namespace" %}
 
-So as you can see, it’s really easy to query an existing Kubernetes cluster using the official client libraries. In addition, I think it’s a great example for .NET developers that explains how to get started with Kubernetes at all. If you want to query more data, you should definitely check out [the official repository](https://github.com/kubernetes-client/csharp){:target="_blank"}.
+So as you can see, it's really easy to query an existing Kubernetes cluster using the official client libraries. In addition, I think it's a great example for .NET developers that explains how to get started with Kubernetes at all. If you want to query more data, you should definitely check out [the official repository](https://github.com/kubernetes-client/csharp){:target="_blank"}.
 
-If you’re more interested in different programming languages check out [all another official Kubernetes Client Libraries here](https://github.com/kubernetes-client){:target="_blank"}.
+If you're more interested in different programming languages check out [all another official Kubernetes Client Libraries here](https://github.com/kubernetes-client){:target="_blank"}.

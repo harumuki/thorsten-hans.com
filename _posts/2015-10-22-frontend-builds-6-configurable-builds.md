@@ -25,11 +25,11 @@ unsplash_user_ref: iurte
 
 ## Idea
 
-BaaS is fine so far if you’re building your projects on the same structure I did for building [x-note](https://github.com/ThorstenHans/x-note){:target="_blank"}. However, right now, we’re using **Build as a Service**, so it’s time to make everything configurable.
+BaaS is fine so far if you're building your projects on the same structure I did for building [x-note](https://github.com/ThorstenHans/x-note){:target="_blank"}. However, right now, we're using **Build as a Service**, so it's time to make everything configurable.
 
 ## Dumping all the default config values
 
-BaaS should run successfully without any give user-config. That said, we need some `defaults`. I’ve added a new JavaScript file to `xplatform-build` at `src/defaults.js`. It exposes all default config values as you can see below.
+BaaS should run successfully without any give user-config. That said, we need some `defaults`. I've added a new JavaScript file to `xplatform-build` at `src/defaults.js`. It exposes all default config values as you can see below.
 
 The script below is stripped to increase readability. See the entire file [here in the repo](https://github.com/ThorstenHans/xplatform-build/blob/master/src/defaults.js){:target="_blank"}
 
@@ -130,7 +130,7 @@ Last but not least the `src/gulpfile.js` has to be updated. A few things are goi
 - add the possibility to pass config to the `gulpfile.js`
 - load the default config
 - override default config with user-config
-- pass merged config to `gulp-task-files`’ `init` method
+- pass merged config to `gulp-task-files`' `init` method
 
 See the entire `gulpfile.js` here.
 
@@ -204,7 +204,7 @@ require('xplatform-build')();
 
 ```
 
-If you’d like to provide a custom `user-config` just pass it as `json` object to the call like shown below.
+If you'd like to provide a custom `user-config` just pass it as `json` object to the call like shown below.
 
 ```javascript
 // USE THIS SNIPPET ONLY IF YOU'D LIKE TO OVERRIDE 

@@ -14,13 +14,13 @@ excerpt: 'Learn how to integrate Azure Key Vault and Azure Container Services. T
 featured_image: /assets/images/posts/feature_images/2018-05-11-integrating-azure-keyvault-with-azure-container-services.jpg
 ---
 With *Azure Key Vault*, Microsoft is offering a dedicated and secure service to manage and maintain sensitive data like Connection-Strings, Certificates, or key-value pairs. 
-We’re hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq){:target="_blank"} mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you’ve to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
+We're hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq){:target="_blank"} mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you've to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
 
-I wrote "**most**" because `ClientId`, `ClientSecret` and the Key Vault identifiers - which will be used to access the Azure Key Vault instance - still need to be persisted somewhere. **This drawback may be obsolete once we’ve native support for Azure Key Vault in AKS.**
+I wrote "**most**" because `ClientId`, `ClientSecret` and the Key Vault identifiers - which will be used to access the Azure Key Vault instance - still need to be persisted somewhere. **This drawback may be obsolete once we've native support for Azure Key Vault in AKS.**
 
 ## Creating an Azure Key Vault instance
 
-Let’s get started with creating a new Azure Key Vault instance, it’s really straightforward using Azure CLI:
+Let's get started with creating a new Azure Key Vault instance, it's really straightforward using Azure CLI:
 
 ```bash
 az keyvault create 
@@ -68,7 +68,7 @@ az ad sp create
 
 ```
 
-Also in this snippet, `--query` is used to pull the only relevant information — the Service Principal’s Identifier. This Identifier is required later to define an access-policy for Azure KeyVault. Unfortunately, Azure CLI has no command to create a new key for the App Registration, this step has to be done using the Azure Portal for now.
+Also in this snippet, `--query` is used to pull the only relevant information — the Service Principal's Identifier. This Identifier is required later to define an access-policy for Azure KeyVault. Unfortunately, Azure CLI has no command to create a new key for the App Registration, this step has to be done using the Azure Portal for now.
 
 ----
 
@@ -78,11 +78,11 @@ Click on *SETTINGS* (purple square), *KEYS* (green square), provide a new descri
 {% include image-caption.html imageurl="/assets/images/posts/2018/azure-key-vault-acs.png" 
 title="Create a new Key for the App Registration" caption="Create a new Key for the App Registration" %} 
 
-Once finished press *SAVE*, now the portal will show the value *copy the value, it won’t be displayed anymore*. It represents our `ClientSecret`, the `ClientId` can be found directly on the App Registration and it’s labeled as `Application ID` (starting with `ffd…` in the image above). 
+Once finished press *SAVE*, now the portal will show the value *copy the value, it won't be displayed anymore*. It represents our `ClientSecret`, the `ClientId` can be found directly on the App Registration and it's labeled as `Application ID` (starting with `ffd…` in the image above). 
 
 ## Connecting the Service Principal with Azure Key Vault
 
-In order to integrate the new *Azure Service Principal* with Azure Key Vault, an *Access Policy* has to be defined. For demonstrating purpose, we’ll assign `GET` and `LIST` permissions to the *Service Principal* and limit it to `Secrets`. (Using both, CLI and Portal you can specify permissions for `Secrets`, `Certificates` and `Keys`).
+In order to integrate the new *Azure Service Principal* with Azure Key Vault, an *Access Policy* has to be defined. For demonstrating purpose, we'll assign `GET` and `LIST` permissions to the *Service Principal* and limit it to `Secrets`. (Using both, CLI and Portal you can specify permissions for `Secrets`, `Certificates` and `Keys`).
 
 ```bash
 az keyvault set-policy 
@@ -95,7 +95,7 @@ az keyvault set-policy
 
 ## Access Key Vault from a .NET Core API
 
-As an example, I’ll take a simple .NET Core Web API which will read the previously persisted value of `SampleSecret` and expose it over HTTP. Starting from a new .NET Core Web API project, several changes have to be made in `Program.cs`. .NET Core ships with built-in support for Azure Key Vault. That said, you need to use `ConfigurationBuilder` to instruct your app in order to read configuration values from Azure Key Vault.
+As an example, I'll take a simple .NET Core Web API which will read the previously persisted value of `SampleSecret` and expose it over HTTP. Starting from a new .NET Core Web API project, several changes have to be made in `Program.cs`. .NET Core ships with built-in support for Azure Key Vault. That said, you need to use `ConfigurationBuilder` to instruct your app in order to read configuration values from Azure Key Vault.
 
 ```csharp
 public class Program
@@ -130,7 +130,7 @@ public class Program
 
 As you can see, the implementation is still straightforward.  The Azure Key Vault configuration - three values (`ClientId`, `ClientSecret` and `KeyVault-Identifier`) - are read from environment variables.
 
-Now it’s time to read the `SampleSecret` we previously stored in Azure Key Vault and expose its value via HTTP by changing the default `ValuesController` as shown in the following snippet:
+Now it's time to read the `SampleSecret` we previously stored in Azure Key Vault and expose its value via HTTP by changing the default `ValuesController` as shown in the following snippet:
 
 ```csharp
 [Route("api/[controller]")]
@@ -172,7 +172,7 @@ ENTRYPOINT ["dotnet", "AzureKeyVaultDemoApi.dll"]
 
 ```
 
-I’m using Azure Container Registry (ACR) instead of public Docker Hub to store and consume Docker Images in Kubernetes. For my setup, the `docker build` command looks like this:
+I'm using Azure Container Registry (ACR) instead of public Docker Hub to store and consume Docker Images in Kubernetes. For my setup, the `docker build` command looks like this:
 
 ```bash
 docker build -t demoacr.azurecr.io/azkv-demo:0.0.1 .
@@ -269,7 +269,7 @@ kubectl port-forward azkv-demo-pod 8080:8080
 
 ```
 
-Now, issue an `HTTP GET` request to `http://localhost:8080/api/values` and you should receive the value you’ve persisted in Azure Key Vault previously. If you’ve installed `curl` on your machine, you can issue the request using the terminal, just invoke:
+Now, issue an `HTTP GET` request to `http://localhost:8080/api/values` and you should receive the value you've persisted in Azure Key Vault previously. If you've installed `curl` on your machine, you can issue the request using the terminal, just invoke:
 
 ```bash
 curl http://localhost:8080/api/values

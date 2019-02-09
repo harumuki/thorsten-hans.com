@@ -26,7 +26,7 @@ The good thing about the *Elvis* operator is that you can use it in chains like 
 ```
 {%endraw %}
 
-However, that’s only half of the truth. Only in a few situations, you want to display **nothing**. Most of the time you want to provide a kind of fallback value. Think about an App for buying and selling stuff. It displays messages dynamically. For example either
+However, that's only half of the truth. Only in a few situations, you want to display **nothing**. Most of the time you want to provide a kind of fallback value. Think about an App for buying and selling stuff. It displays messages dynamically. For example either
 
  * Thank you for selling 100 items
  * Thank you for buying 10 items
@@ -104,6 +104,6 @@ Update the sample HTML to match the following:
 ```
 {%endraw %}
 
-I’ve created a [small plnkr sample](https://embed.plnkr.co/D1AWgU/){:target="_blank"} that uses the combination of `*ngFor`, `*ngIf` and `?` the Elvis operator.
+I've created a [small plnkr sample](https://embed.plnkr.co/D1AWgU/){:target="_blank"} that uses the combination of `*ngFor`, `*ngIf` and `?` the Elvis operator.
 
 

@@ -9,7 +9,7 @@ excerpt: null
 featured_image: /assets/images/posts/feature_images/2013-10-22-an-introduction-to-jade.jpg
 ---
 
-‘An Introduction to **Pug**’ is part of my article series ‘Branding SharePoint sites with **yeoman**’ see the list of all related articles here.
+'An Introduction to **Pug**' is part of my article series 'Branding SharePoint sites with **yeoman**' see the list of all related articles here.
 
 1. [Introduction]({% post_url 2013-10-08-from-zero-to-hero-how-we-brand-sharepoint-using-yeoman %})
 2. [Yeoman the web development workflow]({% post_url 2013-10-18-yeoman-the-web-development-workflow%})
@@ -19,9 +19,9 @@ featured_image: /assets/images/posts/feature_images/2013-10-22-an-introduction-t
 
 ## Why Pug (aka Jade)?
 
-Well, _HTML_ MasterPages and PageLayouts are great, and this is precisely what we’re going to create, but instead of writing the _HTML_ directly we decided to use _Pug_ (which compiles into _HTML_) to build robust _HTML_ sites.
+Well, _HTML_ MasterPages and PageLayouts are great, and this is precisely what we're going to create, but instead of writing the _HTML_ directly we decided to use _Pug_ (which compiles into _HTML_) to build robust _HTML_ sites.
 
-By using Pug, we can ensure that our HTML is well-formed and valid. Almost every web-developer ran at least once into the issue of having unclosed tags in his/her HTML site. Pug is preventing us from making this mistake. Pug is handling closing tags, for example, depending on the indention of your Pug code. During compilation-time, the compiler throws build errors if the indention in your Pug-File isn’t correct. In the bottom line, I can say that Pug is another quality gate which prevents me from making mistakes in the front-end-layer.
+By using Pug, we can ensure that our HTML is well-formed and valid. Almost every web-developer ran at least once into the issue of having unclosed tags in his/her HTML site. Pug is preventing us from making this mistake. Pug is handling closing tags, for example, depending on the indention of your Pug code. During compilation-time, the compiler throws build errors if the indention in your Pug-File isn't correct. In the bottom line, I can say that Pug is another quality gate which prevents me from making mistakes in the front-end-layer.
 
 ## Sample code is available on GitHub
 
@@ -38,11 +38,11 @@ npm install pug –g
 
 Command. After executing this command, the Pug compiler will be installed globally and can easily be invoked by using the `pug` command from the command-line.
 
-## Let’s get started with Pug. Create your first Pug file.
+## Let's get started with Pug. Create your first Pug file.
 
 Creating Pug files is easy you need nothing than a text editor to create a Pug file. As you can imagine are Pug-files using the `.pug` extension.
 
-So let’s fire-up an editor and put the following lines of Jade into a new file and save the file as `01-getting-started-with-pug.pug`
+So let's fire-up an editor and put the following lines of Jade into a new file and save the file as `01-getting-started-with-pug.pug`
 
 ```pug
   head
@@ -53,7 +53,7 @@ So let’s fire-up an editor and put the following lines of Jade into a new file
 
 ```
 
-Let’s talk a little bit about the Jade-Source. You may have noticed that you can save some keystrokes using Pug. Pug doesn’t need to type the angle brackets, and because of the indention-convention, you can also ignore the closing tags.
+Let's talk a little bit about the Jade-Source. You may have noticed that you can save some keystrokes using Pug. Pug doesn't need to type the angle brackets, and because of the indention-convention, you can also ignore the closing tags.
 
 To compile the Jade-file into HTML open a command-line and navigate to the folder containing your Jade-file and execute
 
@@ -76,13 +76,13 @@ The Pug compiler will translate your source into HTML and create a corresponding
 
 ## Generating Tags with Attributes
 
-In every HTML document, you need to specify attributes on tags. Let’s take a hyperlink for example.
+In every HTML document, you need to specify attributes on tags. Let's take a hyperlink for example.
 
 ```html
 <a href="foo.bar" class="my-link" target="_blank">Foo</a>
 ```
 
-Writing the corresponding Pug is easy, it’s just
+Writing the corresponding Pug is easy, it's just
 
 ```pug
 a(href='foo.bar', class='my-link', target='_blank') Foo
@@ -192,13 +192,13 @@ It will again become the following HTML
 </div>
 ```
 
-Referencing mixins is also easy. First, you’ve to import the mixin.pug file by using the include command as shown in the upcoming picture. When included you can reference a mixin with the plus-sign (`+`) followed by the mixins name.
+Referencing mixins is also easy. First, you've to import the mixin.pug file by using the include command as shown in the upcoming picture. When included you can reference a mixin with the plus-sign (`+`) followed by the mixins name.
 
 If a `mixin` contains a single `block`, you can pass the block's value by nesting the code (one indention).
 
 ## Inheritance in Pug using the extends mechanism.
 
-Inheriting HTML structures has become a required for almost every language that compiles into HTML, in ASP.NET we call it MasterPages and also Pug is offering such a system. Pug offers the extends command which can be used to achieve precisely what MasterPages are offering. Let’s take the following Pug `05-a-simple-pug-layout.pug`
+Inheriting HTML structures has become a required for almost every language that compiles into HTML, in ASP.NET we call it MasterPages and also Pug is offering such a system. Pug offers the extends command which can be used to achieve precisely what MasterPages are offering. Let's take the following Pug `05-a-simple-pug-layout.pug`
 
 ```pug
 
@@ -257,7 +257,7 @@ You will receive the following _HTML_ markup:
 
 ## Further Pug Features
 
-With all these features you’re prepared to start with Pug, more features and tricks from Pug can be found on Pug’s GitHub repository at ([https://github.com/visionmedia/jade](https://github.com/visionmedia/jade){:target="_blank"}) or on the Pug language site at ([http://jade-lang.com/](http://jade-lang.com/){:target="_blank"}).
+With all these features you're prepared to start with Pug, more features and tricks from Pug can be found on Pug's GitHub repository at ([https://github.com/visionmedia/jade](https://github.com/visionmedia/jade){:target="_blank"}) or on the Pug language site at ([http://jade-lang.com/](http://jade-lang.com/){:target="_blank"}).
 
 ## Update
 

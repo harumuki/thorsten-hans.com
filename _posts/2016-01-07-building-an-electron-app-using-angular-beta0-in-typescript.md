@@ -32,16 +32,16 @@ gulp.task('private:build-app', function(){
 
 See the entire `gulpfile.js` [here](https://github.com/ThorstenHans/electron-ngx-sample/blob/246f83da87d2598e732bb681be2a559dab0258c6/gulpfile.js#L30){:target="_blank"}.
 
-More important are some pitfalls when combining *Angular* with *Electron*. There are plenty of demo applications available out there. However, a quick google didn’t bring up a single sample using angular’s new component router.
+More important are some pitfalls when combining *Angular* with *Electron*. There are plenty of demo applications available out there. However, a quick google didn't bring up a single sample using angular's new component router.
 
-As mentioned within angular’s developer guide on [angular.io](http://angular.io){:target="_blank"}, the router requires a `<base href="/foo"/>` or `<base href="/">` in order to work as expected. If you don’t add the `base` node within `<head>` Angular throws an error like shown in figure 1.
+As mentioned within angular's developer guide on [angular.io](http://angular.io){:target="_blank"}, the router requires a `<base href="/foo"/>` or `<base href="/">` in order to work as expected. If you don't add the `base` node within `<head>` Angular throws an error like shown in figure 1.
 
 {% include image-caption.html imageurl="/assets/images/posts/2016/angular-beta0-electron-ts-1.png"
 title="Angular app with missing Base href" caption="Angular app with missing Base href" %}
 
 Adding the `<base />` element works fine when running inside of the *Browser*. However, it prevents the app from finding the routes when executing the same source in *Electron*. You can alternatively configure the `base` within your application's bootstrap routine.
 
-**This is required when you’re loading scripts from within Electron's renderer process.**
+**This is required when you're loading scripts from within Electron's renderer process.**
 
 Snippet 1 shows the `boot.ts` file which is responsible for bootstrapping our Angular app.
 
@@ -56,7 +56,7 @@ bootstrap(AppComponent, [ROUTER_PROVIDERS,
 
 ```
 
-The essential and new part here is the usage of `provide` to tell angular where the new `base` is. However, there is more required. Angular is offering a `Location` service which is responsible for interacting with the browser’s URL. Check out `app.component.ts` (Snippet 2); the `RouteConfig` can take an optional `useAsDefault` property of type boolean. Setting this to true works fine when not using `provide` but the combination of `provide` and `useAsDefault: true` didn’t work for me here. That’s why I used the `Location` service (provided by *Angular's* DI container) to redirect the user immediately to the **Splash Component**.
+The essential and new part here is the usage of `provide` to tell angular where the new `base` is. However, there is more required. Angular is offering a `Location` service which is responsible for interacting with the browser's URL. Check out `app.component.ts` (Snippet 2); the `RouteConfig` can take an optional `useAsDefault` property of type boolean. Setting this to true works fine when not using `provide` but the combination of `provide` and `useAsDefault: true` didn't work for me here. That's why I used the `Location` service (provided by *Angular's* DI container) to redirect the user immediately to the **Splash Component**.
 
 ```typescript
 import { Component } from 'angular2/core';
@@ -81,10 +81,10 @@ export class AppComponent {
 
 ```
 
-Within the current publicly available version of this sample,I’ve to load the splash template by using the plain `template` property when using `templateUrl` as I did for the `app.component.ts` angular2 isn’t able to find the template. For now, it seems like the template is requested after the AppBaseHref is set and in combination with electron’s path handling Angular isn’t able to find the template at a given URL.
+Within the current publicly available version of this sample,I've to load the splash template by using the plain `template` property when using `templateUrl` as I did for the `app.component.ts` angular2 isn't able to find the template. For now, it seems like the template is requested after the AppBaseHref is set and in combination with electron's path handling Angular isn't able to find the template at a given URL.
 
 #### Action required
 
-If you’ve any idea how to fix that feel free to send me a pull request on *GitHub* or chat with me about it.
+If you've any idea how to fix that feel free to send me a pull request on *GitHub* or chat with me about it.
 
 

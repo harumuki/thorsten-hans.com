@@ -9,13 +9,13 @@ excerpt: null
 featured_image: /assets/images/posts/feature_images/2016-02-04-be-more-productive-with-pug.jpg
 ---
 
-*Pug* (previously known as *Jade*) is like *HTML* on steroids. Once learned, you’ll never miss it. This article isn’t my first post on *Pug*. I had already written an article about it back in 2013 when it still was called *Jade*. If you didn’t read it yet, take your time, [go and read through the Pug introduction]({% post_url 2013-10-22-an-introduction-to-jade %}).
+*Pug* (previously known as *Jade*) is like *HTML* on steroids. Once learned, you'll never miss it. This article isn't my first post on *Pug*. I had already written an article about it back in 2013 when it still was called *Jade*. If you didn't read it yet, take your time, [go and read through the Pug introduction]({% post_url 2013-10-22-an-introduction-to-jade %}).
 
 This post covers only a few but powerful features *Pug* is offering to make you a more productive frontend developer.
 
 ## Installing Pug using npm
 
-To get the following samples up and running, you’ve to install a *Pug* compiler. The most comfortable setup uses NPM. The upcoming commands show how to create a new directory and install all required packages that you’ll use throughout this post.
+To get the following samples up and running, you've to install a *Pug* compiler. The most comfortable setup uses NPM. The upcoming commands show how to create a new directory and install all required packages that you'll use throughout this post.
 
 ```bash
 mkdir pug-samples && cd pug-samples
@@ -34,11 +34,11 @@ scripts: {
 }
 ```
 
-You’ve just created two scripts that can be invoked from the terminal using `npm`. `build` starts the *Pug* compiler with some flags to keep HTML files readable, respect the folder structure and put all compiled files into the `dist` folder. The `start` script spins up a small HTTP server which you can use for testing.
+You've just created two scripts that can be invoked from the terminal using `npm`. `build` starts the *Pug* compiler with some flags to keep HTML files readable, respect the folder structure and put all compiled files into the `dist` folder. The `start` script spins up a small HTTP server which you can use for testing.
 
 ## Blocks
 
-You may have already used blocks in *Pug* by using the `block` keyword. However, there is more. You can also decide where your block of code is injected – immediately before or after the block statement – in the parent *Pug* file. Let’s create a bunch of files that we need for all the samples on blocks.
+You may have already used blocks in *Pug* by using the `block` keyword. However, there is more. You can also decide where your block of code is injected – immediately before or after the block statement – in the parent *Pug* file. Let's create a bunch of files that we need for all the samples on blocks.
 
 ```bash
 mkdir blocks
@@ -50,7 +50,7 @@ touch blocks/append-prepend.pug
 
 ```
 
-First, let’s create a layout. We use this layout for all samples on the blocks feature.
+First, let's create a layout. We use this layout for all samples on the blocks feature.
 
 ```pug
 // layout.pug
@@ -101,7 +101,7 @@ The compiled HTML in `dist/blocks/simple-blocks.html` looks like this
 
 ```
 
-As you can see `vendors.css` is replaced by the content of the block provided in `simple-blocks.pug`. This is good for some of the situations, but there are many scenarios where you want different behavior. Adding Stylesheets is just a simple example here. So let’s implement our `append-block.pug` also, use the `append` keyword to get both stylesheet references in the *HTML*.
+As you can see `vendors.css` is replaced by the content of the block provided in `simple-blocks.pug`. This is good for some of the situations, but there are many scenarios where you want different behavior. Adding Stylesheets is just a simple example here. So let's implement our `append-block.pug` also, use the `append` keyword to get both stylesheet references in the *HTML*.
 
 ```pug
 //append-block.pug
@@ -131,7 +131,7 @@ Recompile it using `npm run build` and you should receive the following HTML in 
 
 ```
 
-That’s cool. Besides `append` there is also `prepend`, demonstrated in the `blocks/prepend-block.pug` file.
+That's cool. Besides `append` there is also `prepend`, demonstrated in the `blocks/prepend-block.pug` file.
 
 ```pug
 extends ./layout
@@ -154,13 +154,13 @@ block content
 
 ```
 
-It’s also **important** to realize that as soon as you use either `append` or `prepend` the block becomes optional, and you don’t have to specify `block styles` explicitly.
+It's also **important** to realize that as soon as you use either `append` or `prepend` the block becomes optional, and you don't have to specify `block styles` explicitly.
 
 ## Filters
 
-Filters are another great feature of *Pug*. Because no website is entirely built from Markup, you’ve always to care about other languages. Filters can make this more natural and less error proven. Filters allow you to inject any content — concerning the HTML specs — into your HTML file. To get that working, you’ve to use `JavaScript Transformers`. Tons of those transformers are available on www.npmjs.org. I’ve chosen three different ones that I want to demonstrate.
+Filters are another great feature of *Pug*. Because no website is entirely built from Markup, you've always to care about other languages. Filters can make this more natural and less error proven. Filters allow you to inject any content — concerning the HTML specs — into your HTML file. To get that working, you've to use `JavaScript Transformers`. Tons of those transformers are available on www.npmjs.org. I've chosen three different ones that I want to demonstrate.
 
-Let’s start with an easy one, let’s start with `markdown`. To compile markdown directly into your HTML, you need `jstransformer-markdown` that we’ve already installed during the beginning of the article. However, there is no other manual step required here. The *Pug* compiler uses those transformers automatically.
+Let's start with an easy one, let's start with `markdown`. To compile markdown directly into your HTML, you need `jstransformer-markdown` that we've already installed during the beginning of the article. However, there is no other manual step required here. The *Pug* compiler uses those transformers automatically.
 
 Create the folder and files we need for our samples.
 
@@ -200,11 +200,11 @@ Again compile the sources using `npm run build` and take a look at the generated
 
 ```
 
-That’s cool!
+That's cool!
 
-We got a clean HTML file. However, there is more. Let’s take a look at `jstransformer-uglify-js`; it’s responsible for taking regular JavaScript and transforming it into a minified version.
+We got a clean HTML file. However, there is more. Let's take a look at `jstransformer-uglify-js`; it's responsible for taking regular JavaScript and transforming it into a minified version.
 
-Think about that. We’re invoking pre-processors as we usually do use things like `Gulp` or `Grunt` but without the configuration overhead. Everything works by indenting the sources one level underneath the filter `:uglify-js`.
+Think about that. We're invoking pre-processors as we usually do use things like `Gulp` or `Grunt` but without the configuration overhead. Everything works by indenting the sources one level underneath the filter `:uglify-js`.
 
 ```pug
 doctype html
@@ -233,7 +233,7 @@ becomes after compiling
 
 ```
 
-Moreover, let’s take a look at `jstransformer-typescript` which is also a mighty pre-processor which calls `tsc` (TypeScript Compiler) to transpile your TypeScript code directly to ES5 code. The `filters/typescript.pug` first
+Moreover, let's take a look at `jstransformer-typescript` which is also a mighty pre-processor which calls `tsc` (TypeScript Compiler) to transpile your TypeScript code directly to ES5 code. The `filters/typescript.pug` first
 
 ```pug
 doctype html
@@ -285,9 +285,9 @@ Finally, the corresponding HTML from `dist/filters/typescript.html`
 
 ## Mixins with Splats
 
-Last but not least, I’d like to show the combination of a `mixin` with a `splat`. Splats are well-known language constructs from languages like Ruby or CoffeeScript. It allows you to have a flexible method signature. So your method can receive a flexible range of arguments.
+Last but not least, I'd like to show the combination of a `mixin` with a `splat`. Splats are well-known language constructs from languages like Ruby or CoffeeScript. It allows you to have a flexible method signature. So your method can receive a flexible range of arguments.
 
-Again let’s create a folder and files first before bringing them to life.
+Again let's create a folder and files first before bringing them to life.
 
 ```bash
 mkdir mixin-with-splats
@@ -319,11 +319,11 @@ Once compiled, you receive the following HTML.
 
 ```
 
-The cool thing here is, it doesn’t matter how many arguments you pass to the `mixin`. It’s entirely up to the scenario.
+The cool thing here is, it doesn't matter how many arguments you pass to the `mixin`. It's entirely up to the scenario.
 
 ## Summary
 
-As you can see, *Pug* is a fresh and powerful language that makes you more productive when writing markup. It’s worth looking into it and learning those language features. By combining all those simple things, you could quickly build big projects in almost no time.
+As you can see, *Pug* is a fresh and powerful language that makes you more productive when writing markup. It's worth looking into it and learning those language features. By combining all those simple things, you could quickly build big projects in almost no time.
 
 All code written [here is also available on *GitHub*](https://github.com/ThorstenHans/jade-introduction){:target="_blank"}.
 

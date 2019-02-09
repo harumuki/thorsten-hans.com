@@ -13,7 +13,7 @@ featured_image: /assets/images/posts/feature_images/demo-code.jpg
 
 Today I ran into an issue with `SPWebConfigModification`.
 
-`SPWebConfigModification` can be used to make changes to SharePoint’s `web.config`. The advantage of using `SPWebConfigModification` - instead of manually changing `web.config` files on each server - is that changes are applied automatically to each Web Frontend Server (WFE) in the farm.
+`SPWebConfigModification` can be used to make changes to SharePoint's `web.config`. The advantage of using `SPWebConfigModification` - instead of manually changing `web.config` files on each server - is that changes are applied automatically to each Web Frontend Server (WFE) in the farm.
 
 Internally SharePoint is holding a collection of modifications (a collection of `SPWebConfigModification`) that should be applied to the `web.config` File. Once a modification failed, this particular instance of `SPWebConfigModification` may resist within the collection. Therefore you should always clear the collection directly before staging your modifications on an instance of `SPWebApplication`.
 
@@ -37,6 +37,6 @@ public override void FeatureActivated(SPFeatureReceiverProperties properties)
  
 ```
 
-Happy SharePoint’ing
+Happy SharePoint'ing
 
 

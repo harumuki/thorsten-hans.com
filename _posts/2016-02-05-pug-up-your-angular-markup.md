@@ -14,7 +14,7 @@ When building *SPAs* using *Angular* or *AngularJS*, you use custom *HTML* marku
 
 However, I found myself repeating almost the same markup multiple times while building different prototypes on *Angular*. To get rid of those duplications, `*ngFor` may be a solution, but concerning performance on mobile devices, you should avoid using those structural directives for such basic things.
 
-At this point, *Pug* enters the stage. *Pug* offers stunning but simple mechanisms to make you even more productive. You could easily build compassable `mixins`, derived templates and other cool things. Besides all the advantages like maintainability, readability or the time you save, it’s also fun to use it!
+At this point, *Pug* enters the stage. *Pug* offers stunning but simple mechanisms to make you even more productive. You could easily build compassable `mixins`, derived templates and other cool things. Besides all the advantages like maintainability, readability or the time you save, it's also fun to use it!
 
 > If you have not used Pug before, see my other posts on Pug [here]({% post_url 2013-10-22-an-introduction-to-jade %}) and [here]({% post_url 2016-02-04-be-more-productive-with-pug %})
 
@@ -22,9 +22,9 @@ At this point, *Pug* enters the stage. *Pug* offers stunning but simple mechanis
 
 ## Get started — baby steps
 
-FontAwesome is cool, it takes away much pain, like looking for the right images, integrating those in the build process, creating image-maps to reduce HTTP requests… you see, it’s cool!
+FontAwesome is cool, it takes away much pain, like looking for the right images, integrating those in the build process, creating image-maps to reduce HTTP requests… you see, it's cool!
 
-But it’s frustrating to write `<i class="fa fa-foo"></i>` for the 3242th time. Let’s build a `mixin` to get rid of that.
+But it's frustrating to write `<i class="fa fa-foo"></i>` for the 3242th time. Let's build a `mixin` to get rid of that.
 
 ```pug
 // mixins/base.pug
@@ -56,7 +56,7 @@ This will generate
 
 ## Creating Forms
 
-Let’s start with forms. Building forms (as soon as designing those in CSS is done) is a stupid task. It’s all about writing the same `input` node with tons of attributes multiple times. Here a short mixin for `bootstrap` based `input` nodes.
+Let's start with forms. Building forms (as soon as designing those in CSS is done) is a stupid task. It's all about writing the same `input` node with tons of attributes multiple times. Here a short mixin for `bootstrap` based `input` nodes.
 
 ```pug
 // mixins/forms.pug
@@ -68,7 +68,7 @@ mixin input(slug, title, type, placeholder, model)
 
 ```
 
-Usage is pretty the same as you’ve learned in the previous sample.
+Usage is pretty the same as you've learned in the previous sample.
 
 ```pug
 // index.pug
@@ -100,7 +100,7 @@ The interesting part here is all those *Angular* related directives. See `[(ngMo
 
 ## Combine mixin files
 
-So far we’ve created a `icn` and a `input` mixin, both are located in different files `mixins/base.pug` and `mixins/forms.pug`, let’s add `mixins/index.pug` to have a single file, containing all mixins.
+So far we've created a `icn` and a `input` mixin, both are located in different files `mixins/base.pug` and `mixins/forms.pug`, let's add `mixins/index.pug` to have a single file, containing all mixins.
 
 ```pug
 // mixins/index.pug
@@ -109,11 +109,11 @@ include ./forms.pug
 
 ```
 
-Now you can refactor your root `pug` file to just `include mixins/index.jade`, so you don’t have to specify each mixin file.
+Now you can refactor your root `pug` file to just `include mixins/index.jade`, so you don't have to specify each mixin file.
 
 ## More complex input directives
 
-The amount of *HTML* compared to the few lines of *Pug* is immersive. And the difference will grow even more if you create more powerful mixins. Let’s add some nice icons to our input form.   
+The amount of *HTML* compared to the few lines of *Pug* is immersive. And the difference will grow even more if you create more powerful mixins. Let's add some nice icons to our input form.   
 The sample shows the input we created a few seconds ago, it should still render without any image. So change the froms `mixin` to accept an additional icon argument:
 
 ```pug
@@ -132,7 +132,7 @@ mixin input(slug, title, type, placeholder, model, icon)
 
 The indentation is essential here. The ending `input` node is exactly on the same level as the `if` statement. So it gets rendered no matter if there is an icon or not. Another important piece is the usage of `+icn(icon)`.
 
-Yes, you’re right were starting to nest multiple mixins. Imagine that power? Using this mixin is again simple. Change the `index.jade` to match the following.
+Yes, you're right were starting to nest multiple mixins. Imagine that power? Using this mixin is again simple. Change the `index.jade` to match the following.
 
 ```pug
 // index.pug
@@ -163,7 +163,7 @@ Our `firstName` input remains without an icon. On the other-side will you find a
 
 ## Integration with Angular
 
-First, let’s take a look at a pure component responsible for rendering an edit form to allow users to change customer’s data.
+First, let's take a look at a pure component responsible for rendering an edit form to allow users to change customer's data.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -205,11 +205,11 @@ export class CustomerDetailComponent implements OnInit {
 
 This is a regular *Angular* component. There is no need for changing something here. The `templateUrl` remains `...detail.html`.
 
-You may ask where all the magic happens. Well, it’s inside of a `gulp task`.
+You may ask where all the magic happens. Well, it's inside of a `gulp task`.
 
-> If you’ve never used gulp or need a refreshment, [check out my series of posts on Gulp]({% post_url 2015-10-08-frontend-build-series-introduction %}), it is worth reading it!
+> If you've never used gulp or need a refreshment, [check out my series of posts on Gulp]({% post_url 2015-10-08-frontend-build-series-introduction %}), it is worth reading it!
 
-Once *Gulp.js* is up and running in your *Angular* project, there is only a single new dependency you’ve to install to have things you need.
+Once *Gulp.js* is up and running in your *Angular* project, there is only a single new dependency you've to install to have things you need.
 
 ```bash
 npm install gulp-jade --save-dev
@@ -227,12 +227,12 @@ gulp.task('private:build-ng2-templates', function(done){
 
 ```
 
-Hook up this task to the sequence of tasks being executed during a regular build, and you’re done.
+Hook up this task to the sequence of tasks being executed during a regular build, and you're done.
 
 ## Summary
 
-I know many people bashing about *Pug*. However, I don’t get why. (Most of the time those people were also bashing my beloved *CoffeeScript* in the past :D) However, in these days we’re using *TypeScript* to make *JavaScript* work, *Less* or *Sass* to make *CSS* easier and less painful. So why not using *Pug* to be more productive in markup?
+I know many people bashing about *Pug*. However, I don't get why. (Most of the time those people were also bashing my beloved *CoffeeScript* in the past :D) However, in these days we're using *TypeScript* to make *JavaScript* work, *Less* or *Sass* to make *CSS* easier and less painful. So why not using *Pug* to be more productive in markup?
 
-What's your opinion? Have you tried it with *Angular*? Do you have the same impressions I’ve shared here? Alternatively, may it adding too much complexity to your projects? **Leave a comment.**
+What's your opinion? Have you tried it with *Angular*? Do you have the same impressions I've shared here? Alternatively, may it adding too much complexity to your projects? **Leave a comment.**
 
 

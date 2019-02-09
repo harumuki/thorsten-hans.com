@@ -1,5 +1,5 @@
 ---
-title: Using Office365 API’s in MVC WebApps
+title: Using Office365 API's in MVC WebApps
 layout: post
 permalink: using-office365-apis-in-mvc-webapps
 redirect_from: /2014-05-13_Using-Office365-API-s-in-MVC-WebApps-e544eab2b184

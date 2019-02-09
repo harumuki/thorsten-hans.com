@@ -25,19 +25,19 @@ unsplash_user_ref: iurte
 
 ## The idea
 
-Most developers frequently create new projects, either for work or for just trying something new. This is also true for me. I found myself using yeoman to create new projects almost every day automatically. There are plenty of great generators available in the wild. Just visit the [yeoman website](http://yeoman.io){:target="_blank"} and discover the generator repository, it’s fantastic.
+Most developers frequently create new projects, either for work or for just trying something new. This is also true for me. I found myself using yeoman to create new projects almost every day automatically. There are plenty of great generators available in the wild. Just visit the [yeoman website](http://yeoman.io){:target="_blank"} and discover the generator repository, it's fantastic.
 
-I’ve also built several public and internal generators to generate `gulpfiles` for every new project. However, if you rely on (almost) the same stack for many projects, it makes no sense to maintain all those `gulpfiles` for every project. This makes just no sense!
+I've also built several public and internal generators to generate `gulpfiles` for every new project. However, if you rely on (almost) the same stack for many projects, it makes no sense to maintain all those `gulpfiles` for every project. This makes just no sense!
 
 At that point I started thinking about **Build as a Dependency** or you may also call it **Build as a Service (BaaS)**.
 
-Technically we will package our existing build into an npm package and publish it on [NPM](http://www.npmjs.com){:target="_blank"}, so we can quickly consume the full-fledged build directly from there and don’t have to repeat yourself for every project.
+Technically we will package our existing build into an npm package and publish it on [NPM](http://www.npmjs.com){:target="_blank"}, so we can quickly consume the full-fledged build directly from there and don't have to repeat yourself for every project.
 
 ## Implement the BaaS
 
-To keep things clean, I’ve created a new repo which will only host our build scripts. You can find the new repo [here](https://github.com/ThorstenHans/xplatform-build){:target="_blank"}.
+To keep things clean, I've created a new repo which will only host our build scripts. You can find the new repo [here](https://github.com/ThorstenHans/xplatform-build){:target="_blank"}.
 
-When discovering the project, you may realize that there is no additional code in that repo. It’s just the gulpfile, and all the contents from the `gulptasks` directory also with its own `package.json`. When building this an npm package, it’s important to set `main` within `package.json` to `src/gulpfile.js`.
+When discovering the project, you may realize that there is no additional code in that repo. It's just the gulpfile, and all the contents from the `gulptasks` directory also with its own `package.json`. When building this an npm package, it's important to set `main` within `package.json` to `src/gulpfile.js`.
 
 The entire build is publicly available on NPM with the name `xplatform-build`.
 
@@ -94,7 +94,7 @@ gulp build:mobile
 gulp build:desktop
 
 ```
-That’s awesome. 😀
+That's awesome. 😀
 
 ## Updated x-note on github
 

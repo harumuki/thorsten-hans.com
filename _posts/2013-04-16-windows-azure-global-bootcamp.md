@@ -18,7 +18,7 @@ title="Global Azure Bootcamp 2013" caption="Global Azure Bootcamp 2013" %}
 
 Therefore almost every SharePoint dev should be familiar with Windows Azure and it services. Microsoft Azure MVPs and the Microsoft Azure community are organizing a global BootCamp for Azure on 27th of April 2013.
 
-Worldwide there are almost 100 locations where you can join the BootCamp for free! This is an excellent chance for the SharePoint folks to dig into Microsoft’s Cloud Services and learn how to build scalable Apps for SharePoint.
+Worldwide there are almost 100 locations where you can join the BootCamp for free! This is an excellent chance for the SharePoint folks to dig into Microsoft's Cloud Services and learn how to build scalable Apps for SharePoint.
 
 Visit the Global Azure BootCamp Website to register for the event. ([http://globalwindowsazure.azurewebsites.net/](http://globalwindowsazure.azurewebsites.net/){:target="_blank"})
 

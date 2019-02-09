@@ -11,7 +11,7 @@ unsplash_user_ref: freeche
 unsplash_user_name: Thomas Kvistholt
 ---
 
-Do you want to go from code to (pre)production in a few seconds? No problem. I’ve used the last night to get that working. I want to share the journey with you guys right here.
+Do you want to go from code to (pre)production in a few seconds? No problem. I've used the last night to get that working. I want to share the journey with you guys right here.
 
 There are several services involved, but the glue between those services are a set of good old shell scripts 🙂 So, unfortunately, no introduction for services like
 
@@ -20,7 +20,7 @@ There are several services involved, but the glue between those services are a s
 - Microsoft Azure
 - Docker
 
-If you don’t know those things go for google. There are tons of introductions for each of those.
+If you don't know those things go for google. There are tons of introductions for each of those.
 
 ## The Sample App
 
@@ -40,7 +40,7 @@ npm install
 
 ```
 
-**Is NVM not yet installed** on your system? No Problem, I’ve written an article on how to do it the right way. [Read it here]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %}).
+**Is NVM not yet installed** on your system? No Problem, I've written an article on how to do it the right way. [Read it here]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %}).
 
 The actual test command is even simpler.
 
@@ -51,13 +51,13 @@ gulp build
 
 ## Docker on Azure
 
-To have a staging environment for my ultra-awesome app, I’m using a Docker server hosted on Azure. You can create such a virtual machine directly from the gallery.
+To have a staging environment for my ultra-awesome app, I'm using a Docker server hosted on Azure. You can create such a virtual machine directly from the gallery.
 
 Once the machine is created, map the internal port 80 to the external port 80 an ensure that you can log in using `ssh`. You should also configure authentication using your `ssh-key`. There are plenty of tutorials available that describe how to configure authentication using ssh keys instead of passwords. Go and ask google for it.
 
 ## Docker Base Image
 
-I’ve created a simple docker image for hosting my app. The docker image itself is derived from the default `ubuntu` docker image. On top of that, I’ve installed ‘nvm’.
+I've created a simple docker image for hosting my app. The docker image itself is derived from the default `ubuntu` docker image. On top of that, I've installed 'nvm'.
 
 Here the dockerfile (see inline comments for more information)
 
@@ -91,9 +91,9 @@ Create a new image using that Dockerfile and provide a proper name for it. Mine 
 
 ## Connecting Codeship and the Docker server
 
-Codeship is also exposing an ssh-key for each project you create; this can easily be added to your `authorized_keys` file on the docker server. Once this key is ‘marked’ as authorized-key, you can add a custom **Deployment Script** to your Codeship project. The script looks like the following for my configuration (again see comments in the script for hints and clarification)
+Codeship is also exposing an ssh-key for each project you create; this can easily be added to your `authorized_keys` file on the docker server. Once this key is 'marked' as authorized-key, you can add a custom **Deployment Script** to your Codeship project. The script looks like the following for my configuration (again see comments in the script for hints and clarification)
 
-Replace `$$UID$$` with your username, `$$DOCKER-NAME$$` with your server name and `$$SSH-PORT$$` with the port you’ve configured for SSH.
+Replace `$$UID$$` with your username, `$$DOCKER-NAME$$` with your server name and `$$SSH-PORT$$` with the port you've configured for SSH.
 
 ```shell
 cd ~/clone/
@@ -144,9 +144,9 @@ http-server .
 
 ```
 
-## That’s it!
+## That's it!
 
-Now you’ve your app up and running in the latest version, directly from GitHub over Codeship to docker. As you can see in the pic, the entire test and deployment (to an accessible public address) took roughly 60 seconds. That’s cute :)
+Now you've your app up and running in the latest version, directly from GitHub over Codeship to docker. As you can see in the pic, the entire test and deployment (to an accessible public address) took roughly 60 seconds. That's cute :)
 
 {% include image-caption.html imageurl="/assets/images/posts/2015/codeship-docker.png"
 title="Deployment via Codeship and Docker to Microsoft Azure" caption="Deployment via Codeship and Docker to Microsoft Azure" %}

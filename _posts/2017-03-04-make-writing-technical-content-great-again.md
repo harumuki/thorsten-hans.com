@@ -8,9 +8,9 @@ tags: [Writing, Tools]
 excerpt: How do you write your technical articles? A question I was often asked. This article is a quick overview of my writing workflow and the tools that I use to produce my articles
 featured_image: /assets/images/posts/feature_images/2017-03-04-make-writing-technical-content-great-again.jpg
 ---
-Like many other developers, I write articles for various print and online magazines. I do this for almost a decade now and I’ve used many different approaches to make writing as comfortable as possible for me. That said, I want to share the tools I use and the workflow I prefer.
+Like many other developers, I write articles for various print and online magazines. I do this for almost a decade now and I've used many different approaches to make writing as comfortable as possible for me. That said, I want to share the tools I use and the workflow I prefer.
 
-When writing about frameworks, programming languages or scripts, you’ve some slightly different requirements than authors of regular books or articles. You want to: 
+When writing about frameworks, programming languages or scripts, you've some slightly different requirements than authors of regular books or articles. You want to: 
  * create tables
  * highlight source code directly in the text
  * provide complex code snippets
@@ -23,23 +23,23 @@ I use *git* to manage all my articles. *git* makes editing, restoring and mergin
 
 Everything I create is under version control, so why should my articles be the only exception?
 
-Of course are all my articles stored in a *private repository*. I use *GitHub* and their $7 paid plan to create as many private repositories I want to. I’ve created dedicated repositories for all different kind of publications (print articles, online articles, white papers).
+Of course are all my articles stored in a *private repository*. I use *GitHub* and their $7 paid plan to create as many private repositories I want to. I've created dedicated repositories for all different kind of publications (print articles, online articles, white papers).
 
 Only books, for every book I wrote, a dedicated repository has been created. Books are too big, and perhaps you want to set up webhooks to automatically generated previews for your book on each and every `push`.
 
-In the beginning, I was also using [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank"} and created dedicated feature branches for every article. To be honest, that was too much 😜. I ended up in just working on my `develop` branch. I merge to `master` once I’ve finished an article and associate a proper `w` to the merge commit.
+In the beginning, I was also using [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank"} and created dedicated feature branches for every article. To be honest, that was too much 😜. I ended up in just working on my `develop` branch. I merge to `master` once I've finished an article and associate a proper `w` to the merge commit.
 
 {% include image-caption.html imageurl="/assets/images/posts/2017/technical-writing-1.png" 
 title="Releases on GitHub" caption="Releases on GitHub" %}
 
-If you assign a tag to a commit in git, it becomes a **release** on GitHub. So I could easily access any **final article** later using GitHub’s website and I don’t have to browse thru the repositories history. 
+If you assign a tag to a commit in git, it becomes a **release** on GitHub. So I could easily access any **final article** later using GitHub's website and I don't have to browse thru the repositories history. 
 
 ## Markdown
 
-That’s no surprise. I use *Markdown* to write my stuff. *Markdown* offers everything I need to produce technical articles. Because technical articles grow fast, I wanted to be able to split articles into separate markdown files. Unfortunately, this isn’t supported by the current Markdown standard out of the box. But that’s where tooling comes into play.
+That's no surprise. I use *Markdown* to write my stuff. *Markdown* offers everything I need to produce technical articles. Because technical articles grow fast, I wanted to be able to split articles into separate markdown files. Unfortunately, this isn't supported by the current Markdown standard out of the box. But that's where tooling comes into play.
 A lot of writing tools like [iA Writer](https://ia.net/writer){:target="_blank"} are supporting exactly this feature.
 
-It’s dead simple. You just provide the path for the markdown file you want to include and you’re done. *But this reference has to be placed in its own row*.
+It's dead simple. You just provide the path for the markdown file you want to include and you're done. *But this reference has to be placed in its own row*.
 
 ```bash
 # Article Headline
@@ -52,7 +52,7 @@ It’s dead simple. You just provide the path for the markdown file you want to 
 
 ```
 
-Let’s take a look at an artifact. `010-background.md` for example may contain both images and snippets.
+Let's take a look at an artifact. `010-background.md` for example may contain both images and snippets.
 
 ```markdown
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
@@ -66,7 +66,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 ```
 
 ## Convention over Configuration (CoC)
-I love the concept of *Convention over Configuration*, it’s easier to define a clean structure once and follow that “convention” instead of providing a “configuration” for each and every article.
+I love the concept of *Convention over Configuration*, it's easier to define a clean structure once and follow that “convention” instead of providing a “configuration” for each and every article.
 
 All my articles are structured using a simple schema.
 
@@ -87,7 +87,7 @@ All my articles are structured using a simple schema.
 
 ```
 
-First, there is the main article folder (here `recent-article`). This folder contains various files. The main article file `super-awesome-article.md` is, of course, the most important one. Next, to this, I store other markdown files containing notes, notes I use during the early stages when I need to do some research on a topic I’ve to cover as part of the article.
+First, there is the main article folder (here `recent-article`). This folder contains various files. The main article file `super-awesome-article.md` is, of course, the most important one. Next, to this, I store other markdown files containing notes, notes I use during the early stages when I need to do some research on a topic I've to cover as part of the article.
 
 The `artifacts` folder is a collection of small markdown files. I break my article into small chunks and arrange those chunks in `super-awesome-article.md`. Some artifacts are always pre-populated like `001-intro.md` and `999-outro.md`.
 
@@ -95,13 +95,13 @@ Images, surprisingly remain to the `images` subfolder and to stay consistent, al
 
 > Yes, I write all my snippets in markdown instead of just putting a raw code file there.
 
-The advantage of putting the snippet itself, again into a markdown file is just laziness. Each snippet starts with three back-ticks and also end with those. Having this format, I can copy, cut and paste just the single line to include that particular snippet in the text. Otherwise, I’ve to move around three lines (two lines with the three back-ticks and the include statement).
+The advantage of putting the snippet itself, again into a markdown file is just laziness. Each snippet starts with three back-ticks and also end with those. Having this format, I can copy, cut and paste just the single line to include that particular snippet in the text. Otherwise, I've to move around three lines (two lines with the three back-ticks and the include statement).
 
 Last, but not least I have dedicated folders for `previews` and `deliverables`, those folders normally contain generated PDF version of the article.
 
 ## Writing Tools
 
-I’m always trying to find better tooling. You should never stop looking for new opportunities or alternatives to things you currently use. In these days I prefer [iA Writer](https://ia.net/writer){:target="_blank"}, it’s easy to use and it supports embedding partial markdown files 🤘🏼. It’s also possible to use custom themes, to ensure that your articles either follow a given corporate identity or reuse your preferred fonts, colors, margins, ...
+I'm always trying to find better tooling. You should never stop looking for new opportunities or alternatives to things you currently use. In these days I prefer [iA Writer](https://ia.net/writer){:target="_blank"}, it's easy to use and it supports embedding partial markdown files 🤘🏼. It's also possible to use custom themes, to ensure that your articles either follow a given corporate identity or reuse your preferred fonts, colors, margins, ...
 
 ## Generating previews and deliverables
 

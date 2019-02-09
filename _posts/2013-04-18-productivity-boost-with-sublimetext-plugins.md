@@ -16,11 +16,11 @@ For developing native web languages I use SublimeText 2 ([http://www.sublimetext
 {% include image-caption.html imageurl="/assets/images/posts/2013/sublime-logo.png"
 title="Sublime Text" caption="Sublime Text" %}
 
-Within this post I’ll introduce some plugins I’m using to increase my developer performance.
+Within this post I'll introduce some plugins I'm using to increase my developer performance.
 
 ## Package Control
 
-Package Control is the most robust and vital plugin; it allows you to add new plugins to sublime without typing endless commands into the console or manually copying files to the application directory. To install Package Control, you’ve to execute the following script from Sublime Text’s Console
+Package Control is the most robust and vital plugin; it allows you to add new plugins to sublime without typing endless commands into the console or manually copying files to the application directory. To install Package Control, you've to execute the following script from Sublime Text's Console
 
 ```python
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen( 'http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
@@ -29,7 +29,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 
 ## Emmet
 
-Emmet (previously known as Zen Coding) is excellent for creating HTML elements because you’re typing a kind of CSS Selector style statements and Emmet is automatically creating the corresponding HTML for you.
+Emmet (previously known as Zen Coding) is excellent for creating HTML elements because you're typing a kind of CSS Selector style statements and Emmet is automatically creating the corresponding HTML for you.
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/sublime-emmet.png"
 title="Sublime Text - Emmet Plugin" caption="Sublime Text - Emmet Plugin" %}

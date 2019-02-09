@@ -18,7 +18,7 @@ Unfortunately, those properties are not mandatory, so every developer has to rem
 
 ## Introducing Limit Ranges
 You can address the potential issue by defining so-called *LimitRanges* on *Namespaces*. The main purpose of a *LimitRange* is to ensure, requests and/or limits are automatically associated with containers based on its specification.
-For demonstrating purpose, let’s create two independent *namespaces* on a Kubernetes cluster.
+For demonstrating purpose, let's create two independent *namespaces* on a Kubernetes cluster.
 
 ```yaml
 # namespaces.yaml
@@ -42,7 +42,7 @@ $ kubectl create -f namespaces.yaml
 
 ```
 
-Let’s move on and create a new `yaml` file called `limitrange.yaml`. Provide the following content:
+Let's move on and create a new `yaml` file called `limitrange.yaml`. Provide the following content:
 
 ```yaml
 # limitrange.yaml
@@ -97,7 +97,7 @@ spec:
 
 ```
 
-The Pod spec above doesn’t provide any resource-requests or -limits. It’s perhaps the most simple Pod you can define.
+The Pod spec above doesn't provide any resource-requests or -limits. It's perhaps the most simple Pod you can define.
 
 Deploy the Pod to both namespaces by invoking
 
@@ -124,6 +124,6 @@ title="Resource-Limits and -Requests automatically applied to all Containers in 
 
 
 ## Recap
-As you can see, defining default `resource-requests` and `-limits` is quite easy using *LimitRanges*. If you don’t specify resource-requests or -limits for the containers you deploy, Kubernetes will automatically assign the pre-defined values from the LimitRange. That said, it’s only **a default value**.
+As you can see, defining default `resource-requests` and `-limits` is quite easy using *LimitRanges*. If you don't specify resource-requests or -limits for the containers you deploy, Kubernetes will automatically assign the pre-defined values from the LimitRange. That said, it's only **a default value**.
 
 Your custom requests and limits will always overrule the LimitRanges.

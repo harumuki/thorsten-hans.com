@@ -12,7 +12,7 @@ Besides using the goodness of Azure Container Services (ACS). Different Azure se
 
 ## Setting up the Azure Container Registry
 
-Although the recent Azure portal is providing a rich user experience, all Azure related stuff in this post will be scripted using the latest Azure CLI 2.0. If you haven’t installed Azure CLI 2.0 yet, you can find [detailed instructions here](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"}.
+Although the recent Azure portal is providing a rich user experience, all Azure related stuff in this post will be scripted using the latest Azure CLI 2.0. If you haven't installed Azure CLI 2.0 yet, you can find [detailed instructions here](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"}.
 
 First, you need to login in order to get access to all your Azure subscriptions.
 
@@ -73,14 +73,14 @@ Before executing this script ensure that you replace all tokens being used in th
  * `Contributor`: (pull and push)
  * `Reader`: (pull only access)
   
-Once the service principal has been created, copy the `client_id` (named `appId` in the response) and the `client_secret` (named `password` in the response). You’ll need those in a few seconds.
+Once the service principal has been created, copy the `client_id` (named `appId` in the response) and the `client_secret` (named `password` in the response). You'll need those in a few seconds.
 
 {% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-1.png" 
 title="Create Service Principal Response" caption="Create Service Principal Response" %}
 
-To keep things simple, we’ll create a single service principal for now. For real-world scenarios, you may create multiple service principals with different roles. As a developer, you want to push new images to the registry. (So you become a `Contributor`). Your container cluster, on the other hand, may only pull images from the registry. So you should create a second service principal with the `Reader` assigned. 
+To keep things simple, we'll create a single service principal for now. For real-world scenarios, you may create multiple service principals with different roles. As a developer, you want to push new images to the registry. (So you become a `Contributor`). Your container cluster, on the other hand, may only pull images from the registry. So you should create a second service principal with the `Reader` assigned. 
 
-Once you made it through the previous steps, it’s time to take care of *Docker* and *Kubernetes*. Without any further configuration, both docker and kubernetes will push and pull images from the public docker hub. So let’s change this now and bring in the *ACR* goodness.
+Once you made it through the previous steps, it's time to take care of *Docker* and *Kubernetes*. Without any further configuration, both docker and kubernetes will push and pull images from the public docker hub. So let's change this now and bring in the *ACR* goodness.
 
 ## Login from Docker CLI
 
@@ -95,7 +95,7 @@ You can also pass the `client_secret` directly to the `docker login` command, bu
 
 ## Pushing a Docker image to ACR
 
-Once logged in, you can push any existing docker image to your *ACR* instance. Before you can push the image to a private registry, you’ve to ensure a proper image name. This can be achieved using the `docker tag` command. For demonstration purpose, we’ll use [Docker’s hello world image](https://store.docker.com/images/hello-world){:target="_blank"}, rename it and push it to ACR.
+Once logged in, you can push any existing docker image to your *ACR* instance. Before you can push the image to a private registry, you've to ensure a proper image name. This can be achieved using the `docker tag` command. For demonstration purpose, we'll use [Docker's hello world image](https://store.docker.com/images/hello-world){:target="_blank"}, rename it and push it to ACR.
 
 ```bash
 # pulls hello-world from the public docker hub
@@ -113,7 +113,7 @@ docker push <REGISTRY_NAME>/hello-world
 
 When creating *deployments*, *Replica Sets* or *Pods*, *Kubernetes* will try to use docker images already stored locally or pull them from the public docker hub. To change this, you need to specify the custom docker registry as part of your *Kubernetes* object configuration (`yaml` or `json`).
 
-Instead of specifying this directly in your configuration, we’ll use the concept of *Kubernetes Secrets*. You decouple the k8s object from the registry configuration by just referencing the secret by its name. But first, let’s create a new *Kubernetes Secret*.
+Instead of specifying this directly in your configuration, we'll use the concept of *Kubernetes Secrets*. You decouple the k8s object from the registry configuration by just referencing the secret by its name. But first, let's create a new *Kubernetes Secret*.
 
 ```bash
 kubectl create secret docker-registry <SECRET_NAME> 
@@ -130,7 +130,7 @@ If you want to prevent your `client_secret` from being stored in bash history, y
 
 ## Create Pods, Replica Sets, and Deployments using the Secret
 
-No matter which *Kubernetes* object you’re going to create, you can easily bring *Secrets* into consideration using the `spec.imagePullSecrets` configuration value. As an example see the following `yaml` file describing a simple pod which will pull the `hello-world` image from the *ACR* instance to your *Kubernetes* nodes and uses that image to create the containers.
+No matter which *Kubernetes* object you're going to create, you can easily bring *Secrets* into consideration using the `spec.imagePullSecrets` configuration value. As an example see the following `yaml` file describing a simple pod which will pull the `hello-world` image from the *ACR* instance to your *Kubernetes* nodes and uses that image to create the containers.
 
 ```yaml
 apiVersion: v1
@@ -159,4 +159,4 @@ Once your pod has been provisioned, you can see detailed information about the p
 {% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-2.png" 
 title="Pod Events listed by using kubectl describe pod" caption="Pod Events listed by using kubectl describe pod" %}
 
-That’s it. You’ve successfully deployed an *ACR*, configured it with a *docker* installation and hooked it up in *Kubernetes*. 🤘 🚀 
+That's it. You've successfully deployed an *ACR*, configured it with a *docker* installation and hooked it up in *Kubernetes*. 🤘 🚀 

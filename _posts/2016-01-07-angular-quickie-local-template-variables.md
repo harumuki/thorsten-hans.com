@@ -10,7 +10,7 @@ featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
 ---
 Local template variables in *Angular* can be used to reference *HTML* elements easily and use their properties either on sibling or child nodes.
 
-It’s pretty easy to create and use those local template variables. Let’s say you have got an input file for dealing the first name of someone.
+It's pretty easy to create and use those local template variables. Let's say you have got an input file for dealing the first name of someone.
 
 ```html
 <input type="text" placeholder="your name please" required maxlength="25" />
@@ -24,7 +24,7 @@ You can make the `HTMLInputField` available to sibling or child nodes using the 
 
 ```
 
-Next, let’s say we want to extend our small example to provide a char counter beside the element. Users will see how many characters are available until they hit the maximal length constraint. First, let’s add the corresponding `span` which is responsible for displaying this information.
+Next, let's say we want to extend our small example to provide a char counter beside the element. Users will see how many characters are available until they hit the maximal length constraint. First, let's add the corresponding `span` which is responsible for displaying this information.
 {% raw %}
 ```html
 <input type="text" #firstName placeholder="your name please" maxlength="25" required />
@@ -34,7 +34,7 @@ Next, let’s say we want to extend our small example to provide a char counter 
 ```
 {% endraw %}
 
-However, that’s not enough; if you execute the sample right now you see something like this:
+However, that's not enough; if you execute the sample right now you see something like this:
 
 ```html
 <input type="text" placeholder="your name please" required maxlength="25"/>
@@ -44,7 +44,7 @@ However, that’s not enough; if you execute the sample right now you see someth
 
 ```
 
-See the `0 / 25` right after the `textbox`. It is displaying the `maxlength` but and it’s not updating the actual length property of the value (**0** in this case). To fix that you can either hook up a function from your component, or you can use a small trick to let angular update the view as soon as the user does a keystroke. Update the sample above to look like the following.
+See the `0 / 25` right after the `textbox`. It is displaying the `maxlength` but and it's not updating the actual length property of the value (**0** in this case). To fix that you can either hook up a function from your component, or you can use a small trick to let angular update the view as soon as the user does a keystroke. Update the sample above to look like the following.
 
 {% raw %}
 ```html
@@ -55,9 +55,9 @@ See the `0 / 25` right after the `textbox`. It is displaying the `maxlength` but
 ```
 {% endraw %}
 
-## Passing data to a Component’s function
+## Passing data to a Component's function
 
-In the sample above, I’m using a simple app component with no logic
+In the sample above, I'm using a simple app component with no logic
 
 ```typescript
 import { Component } from '@angular/core';
@@ -68,7 +68,7 @@ export class AppComponent{
 }
 ```
 
-let’s extend the class to provide some super logic:
+let's extend the class to provide some super logic:
 
 ```typescript
 import { Component } from '@angular/core';
@@ -86,7 +86,7 @@ export class AppComponent{
 
 The `repeatName` method prints the value of `name` as many times as provided for the `times` parameter.
 
-Let’s reuse the things we’ve learned during this article and update the template to look like the following:
+Let's reuse the things we've learned during this article and update the template to look like the following:
 
 {% raw %}
 ```html

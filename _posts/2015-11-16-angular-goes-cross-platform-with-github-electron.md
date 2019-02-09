@@ -10,13 +10,13 @@ featured_image: /assets/images/posts/feature_images/2015-11-16-angular-goes-cros
 unsplash_user_name: Tim Bennett
 unsplash_user_ref: timbennettcreative
 ---
-A while ago I’ve posted a [sample on how to write an electron app using Angular 1.x with ES2015 and JSPM](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}.
+A while ago I've posted a [sample on how to write an electron app using Angular 1.x with ES2015 and JSPM](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}.
 
-Now having more than 100 stars on *GitHub*, it seems to be quiet important for the community. That’s why I’ve decided to take this sample to another level.
+Now having more than 100 stars on *GitHub*, it seems to be quiet important for the community. That's why I've decided to take this sample to another level.
 
-Angular2 is becoming more severe with each day. That’s why I’ve decided to publish another electron sample targeting Angular2. [Go and visit the repo right here on *GitHub*](https://github.com/ThorstenHans/electron-es2015-ng2){:target="_blank"}
+Angular2 is becoming more severe with each day. That's why I've decided to publish another electron sample targeting Angular2. [Go and visit the repo right here on *GitHub*](https://github.com/ThorstenHans/electron-es2015-ng2){:target="_blank"}
 
-Again, this is just a tech-demo. The app isn’t offering any functionality. Instead, it uses [Gulp.js](https://gulpjs.com/){:target="_blank"}, [Babel](https://babeljs.io/){:target="_blank"} and [Angular](https://angular.io){:target="_blank"} to build an entire app from scratch. The app itself is packaged using [gulp-atom-electron](https://www.npmjs.com/package/gulp-atom-electron){:target="_blank"} and automatically creates binaries for all three major platforms (Windows, Linux, and macOS)
+Again, this is just a tech-demo. The app isn't offering any functionality. Instead, it uses [Gulp.js](https://gulpjs.com/){:target="_blank"}, [Babel](https://babeljs.io/){:target="_blank"} and [Angular](https://angular.io){:target="_blank"} to build an entire app from scratch. The app itself is packaged using [gulp-atom-electron](https://www.npmjs.com/package/gulp-atom-electron){:target="_blank"} and automatically creates binaries for all three major platforms (Windows, Linux, and macOS)
 
 To clone the repo, install all required dependencies and start the build process use the following script
 

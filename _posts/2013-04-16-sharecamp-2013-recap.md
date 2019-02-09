@@ -11,15 +11,15 @@ unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---
 
-Last weekend we did our fourth ShareCamp at Microsoft’s German headquarter in Munich (Unterschleißheim). The ShareCamp is not a typical conference; it’s a BarCamp, BarCamps typically have no schedule until the conference starts. Every attendee can submit sessions, discussions or Hands-On Workshops.
+Last weekend we did our fourth ShareCamp at Microsoft's German headquarter in Munich (Unterschleißheim). The ShareCamp is not a typical conference; it's a BarCamp, BarCamps typically have no schedule until the conference starts. Every attendee can submit sessions, discussions or Hands-On Workshops.
 
-Therefore it’s great for people who’d never spoken at huge, favorite conferences. The entire audience **votes** for the session proposals and depending on these votes sessions are moved to bigger or smaller rooms. (More information on BarCamps can be found here 
+Therefore it's great for people who'd never spoken at huge, favorite conferences. The entire audience **votes** for the session proposals and depending on these votes sessions are moved to bigger or smaller rooms. (More information on BarCamps can be found here 
 [http://en.wikipedia.org/wiki/BarCamp](http://en.wikipedia.org/wiki/BarCamp){:target="_blank"}).
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/sharecamp-2013-logo.png"
 title="ShareCamp 2013" caption="ShareCamp 2013" %}
 
-But let’s come back to our ShareCamp. Early in 2013, we opened the registration, and within almost 2 weeks, the conference was sold out. 200 attendees (excluding the Orga-Team) filled up the registration form. That was just amazing! Another interesting fact is that more than half of the attendees were First-Timers.
+But let's come back to our ShareCamp. Early in 2013, we opened the registration, and within almost 2 weeks, the conference was sold out. 200 attendees (excluding the Orga-Team) filled up the registration form. That was just amazing! Another interesting fact is that more than half of the attendees were First-Timers.
 
 {% include image-caption.html imageurl="/assets/images/posts/2013/sharecamp-2013-1.png"
 title="ShareCamp 2013 Attendee Picture" caption="ShareCamp 2013 Attendee Picture" %}
@@ -67,6 +67,6 @@ Most Sponsors were presenting their products either at their booth or during a t
 {% include image-caption.html imageurl="/assets/images/posts/2013/sharecamp-2013-2.png"
 title="ShareCamp 2013 - SharePint" caption="ShareCamp 2013 - SharePint" %}
 
-Last, but not least I’d like to say Thank to the Orga-Team.
+Last, but not least I'd like to say Thank to the Orga-Team.
 
 

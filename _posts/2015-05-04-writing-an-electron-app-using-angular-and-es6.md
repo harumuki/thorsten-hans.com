@@ -11,9 +11,9 @@ unsplash_user_name: Anastasia Yılmaz
 unsplash_user_ref: anastasiayilmaz
 ---
 
-If you haven’t heard of _Electron_ (formerly known as _Atom Shell_) you should check out it's official website [here](https://github.com/atom/electron).
+If you haven't heard of _Electron_ (formerly known as _Atom Shell_) you should check out it's official website [here](https://github.com/atom/electron).
 
-In this post, I will not provide an introduction for all the different tools and frameworks. It’s more a walkthrough that should give you some hints on how to get things up and to run with the following stack.
+In this post, I will not provide an introduction for all the different tools and frameworks. It's more a walkthrough that should give you some hints on how to get things up and to run with the following stack.
 
 - [Electron](https://github.com/atom/electron){:target="_blank"}
 - [AngularJS](http://angularjs.org){:target="_blank"}
@@ -22,9 +22,9 @@ In this post, I will not provide an introduction for all the different tools and
 
 ## Getting started
 
-First of all, you’ve to ensure that all dependencies are installed on your system and a simple folder structure has been created for the sample project.
+First of all, you've to ensure that all dependencies are installed on your system and a simple folder structure has been created for the sample project.
 
-I’ve created a small shell script which will care about those tasks.
+I've created a small shell script which will care about those tasks.
 
 You can download the script from [here](https://github.com/ThorstenHans/electron-angular-es6/blob/master/init.sh){:target="_blank"}.
 
@@ -36,7 +36,7 @@ The script will install the following global node modules:
 
 After installing those global node modules, the folder structure for our project with some empty files will be created in the current directory. (More about the folders and their responsibility later in this post)
 
-Besides global dependencies, there are also some dependencies for the actual project. All npm packages are installed locally using the `save-dev` option because they’re only used during development time. Those packages are
+Besides global dependencies, there are also some dependencies for the actual project. All npm packages are installed locally using the `save-dev` option because they're only used during development time. Those packages are
 
 - `gulp-babel`
 - `gulp-run`
@@ -79,7 +79,7 @@ The `browser` folder holds all the assets, scripts, styles … for our render p
 
 ## Writing the Gulpfile
 
-The gulpfile for this sample is also pretty simple. Because we also want to write our App bootstrap file using ES6, we’ve to transpile this file to ES5 and in addition to this `task` there should also be a simple run task which will kick the `electron` executable and bypass the path to our app.
+The gulpfile for this sample is also pretty simple. Because we also want to write our App bootstrap file using ES6, we've to transpile this file to ES5 and in addition to this `task` there should also be a simple run task which will kick the `electron` executable and bypass the path to our app.
 
 ```javascript
 const gulp = require('gulp'),
@@ -126,7 +126,7 @@ Verify the configuration by executing `jspm install angular` After the script ex
 
 ### Fix config.js
 
-There is one small fix you’ve to accomplish to get dynamic-module-loading up and running for Electron with our folder structure. Open `browser/config.js` and change the second line (baseURL) to
+There is one small fix you've to accomplish to get dynamic-module-loading up and running for Electron with our folder structure. Open `browser/config.js` and change the second line (baseURL) to
 
 ```json
 {
@@ -194,8 +194,8 @@ angular.module('sampleApp', []).controller('splashCtrl', SplashCtrl);
 
 The only piece of code that is missing to get our sample working is the `app/index.es6.js` file. The following code is pretty much the same as shown in [Electron's Getting Started guide on GitHub](https://github.com/atom/electron/blob/master/docs/tutorial/quick-start.md){:target="_blank"}. There are only two things specific to our sample app
 
-1. It’s using ES6 language features
-2. It’s providing the `browser/index.html` for the main window
+1. It's using ES6 language features
+2. It's providing the `browser/index.html` for the main window
 
 ```javascript
 let app = require('app');
@@ -224,17 +224,17 @@ app.on('ready', () => {
 
 ```
 
-## Let’s try it
+## Let's try it
 
-During this post, you’ve written the `gulp run` task; now it’s time to invoke it.
+During this post, you've written the `gulp run` task; now it's time to invoke it.
 
-Open the terminal and move to your apps’ root directory and execute `gulp run`. Your app should look like the following and display the locally installed `electron-prebuilt` version which is `0.25.2` on my system.
+Open the terminal and move to your apps' root directory and execute `gulp run`. Your app should look like the following and display the locally installed `electron-prebuilt` version which is `0.25.2` on my system.
 
 {% include image-caption.html imageurl="/assets/images/posts/2015/electron-es6-babel-4.png"
 title="The sample application on macOS" caption="The sample application on macOS" %}
 
-## What’s next
+## What's next
 
-I’m currently working on a yeoman generator for exactly this combination, and hopefully, it will be available by the end of the week. A yeoman generator can do all those basic things. Which means you as a dev can focus on actually building your app.
+I'm currently working on a yeoman generator for exactly this combination, and hopefully, it will be available by the end of the week. A yeoman generator can do all those basic things. Which means you as a dev can focus on actually building your app.
 
 The entire sample is [available on GitHub](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}.

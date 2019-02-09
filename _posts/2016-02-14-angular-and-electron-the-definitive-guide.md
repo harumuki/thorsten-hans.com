@@ -8,18 +8,18 @@ tags: [Electron, Angular]
 excerpt: This article guides you through the process of creating an cross-platform desktop application using GitHub Electron and Angular as Single Page Application framework.
 featured_image: /assets/images/posts/feature_images/2016-02-14-angular-and-electron-the-definitive-guide.jpg
 ---
-Building cross-platform apps for desktop operating systems became simple compared to the past. With *GitHub’s Electron* is a framework available that takes away the pain for abstracting all common platform APIs from us as web developers.
+Building cross-platform apps for desktop operating systems became simple compared to the past. With *GitHub's Electron* is a framework available that takes away the pain for abstracting all common platform APIs from us as web developers.
 
-*Electron* makes it easy to host *Single Page Applications* (short *SPAs*) within a native application container which is available for *macOS*, *Linux*, and *Windows*. When looking at *Electron’s* architecture, you will find two main counterparts. 
+*Electron* makes it easy to host *Single Page Applications* (short *SPAs*) within a native application container which is available for *macOS*, *Linux*, and *Windows*. When looking at *Electron's* architecture, you will find two main counterparts. 
 
- * The **Main Process**, which is responsible for providing platform specific API’s and taking care of the application lifecycle. We use Node.js to host custom functionalities and to provide instructions for the main process.
- * The **Renderer Process** is responsible for serving the user interface. Electron is using Chromium to achieve this. That said, you’ve to realize that your SPA will always be hosted inside off a full-fledged Chrome engine. (With all it’s advantages such as having rock substantial Chrome Developer Tools available right inside of your desktop app)
+ * The **Main Process**, which is responsible for providing platform specific API's and taking care of the application lifecycle. We use Node.js to host custom functionalities and to provide instructions for the main process.
+ * The **Renderer Process** is responsible for serving the user interface. Electron is using Chromium to achieve this. That said, you've to realize that your SPA will always be hosted inside off a full-fledged Chrome engine. (With all it's advantages such as having rock substantial Chrome Developer Tools available right inside of your desktop app)
   
-Of course, there are plenty of cool things built into *Electron*, but right now let’s move on and get started with actually building a cross-platform desktop app using *Angular* and *Electron* itself.
+Of course, there are plenty of cool things built into *Electron*, but right now let's move on and get started with actually building a cross-platform desktop app using *Angular* and *Electron* itself.
 
 ## Project Setup
 
-Technically, there are no special requirements when building your first an app. For us (web developers), it’s just a regular frontend project. See the following lines of terminal code, which creates a project and initialize it with required files and some of the dependencies.
+Technically, there are no special requirements when building your first an app. For us (web developers), it's just a regular frontend project. See the following lines of terminal code, which creates a project and initialize it with required files and some of the dependencies.
 
 ```bash
 mkdir ng2-electron-sample && cd ng2-electron-sample
@@ -41,7 +41,7 @@ title="Angular and Electron folder structure" caption="Angular and Electron fold
 
 ## Creating the Single Page Application
  
-Open the `ng2-electron-sample` folder in your favorite editor. First, we’ll add all required *Angular* related dependencies, and some scripts for later use to the `package.json` file.
+Open the `ng2-electron-sample` folder in your favorite editor. First, we'll add all required *Angular* related dependencies, and some scripts for later use to the `package.json` file.
 
 ```json
 // stripped for better readability
@@ -78,7 +78,7 @@ Open the `ng2-electron-sample` folder in your favorite editor. First, we’ll ad
 
 Save both `package.json` and `typings.json`. Now you can execute `npm i --no-progress` from the terminal which pulls all *Angular* dependencies and the typings.
 
-Before moving to the *Angular* related things, we’ve to specify how *TypeScript* has to transpile our code to *JavaScript* by providing all required compiler instructions using `tsconfig.json`.
+Before moving to the *Angular* related things, we've to specify how *TypeScript* has to transpile our code to *JavaScript* by providing all required compiler instructions using `tsconfig.json`.
 
 ```json
 {
@@ -161,11 +161,11 @@ Last but not least there is the `index.html` file which is responsible for displ
 </html>
 ```
 
-Because we want to execute our SPA later in the context of an Electron container, it ‘s essential to provide all script paths **relative to the current document**. Ensure that there is **no leading slash** for your script references.
+Because we want to execute our SPA later in the context of an Electron container, it 's essential to provide all script paths **relative to the current document**. Ensure that there is **no leading slash** for your script references.
 
 ## Building the Single Page Application
 
-Okay, having all those things written down, it’s time to care about the build. We’ll use Gulp to transform our TypeScript code into JavaScript and copy all those assets required by our app. (See my [series on Gulp right here for more detailed guides]({% post_url 2015-10-08-frontend-build-series-introduction %}))
+Okay, having all those things written down, it's time to care about the build. We'll use Gulp to transform our TypeScript code into JavaScript and copy all those assets required by our app. (See my [series on Gulp right here for more detailed guides]({% post_url 2015-10-08-frontend-build-series-introduction %}))
 
 
 ```javascript
@@ -201,7 +201,7 @@ gulp.task('frontend', function(done){
 
 ```
 
-Now it’s time to give it a try, save all the files and move over to your *terminal*. By invoking the frontend script, our *Angular* app will be compiled, and we’ll use live-server by executing serve to `serve` it from the `dist` folder.
+Now it's time to give it a try, save all the files and move over to your *terminal*. By invoking the frontend script, our *Angular* app will be compiled, and we'll use live-server by executing serve to `serve` it from the `dist` folder.
 
 ```bash
 npm run frontend
@@ -239,17 +239,17 @@ mainWindow.on('closed', function() {
 
 ```
 
-By default, we enable Chrome’s Developer Tools within the `index.js` as shown above. If you want to hide the DevTools by default, go and remove the `mainWindow.webContents.openDevTools()` call from our instruction script.
+By default, we enable Chrome's Developer Tools within the `index.js` as shown above. If you want to hide the DevTools by default, go and remove the `mainWindow.webContents.openDevTools()` call from our instruction script.
 
-Besides our `index.js` there is another required artifact to get everything working as expected. We’ve to provide a `package.json` for out *Electron* app.
-
-----
-
-You can, of course, re-use the existing `package.json` from our projects `root` directory, to keep things simple here we’ve created a dedicated `package.json` inside `src/assets` with our initial script.
+Besides our `index.js` there is another required artifact to get everything working as expected. We've to provide a `package.json` for out *Electron* app.
 
 ----
 
-Let’s provide the required properties to `src/assets/package.json`:
+You can, of course, re-use the existing `package.json` from our projects `root` directory, to keep things simple here we've created a dedicated `package.json` inside `src/assets` with our initial script.
+
+----
+
+Let's provide the required properties to `src/assets/package.json`:
 
 ```json
 {
@@ -302,7 +302,7 @@ npm run build
 
 ```
 
-Now all required files should be created within the `dist/electron-package` folder. Let’s give it a try!
+Now all required files should be created within the `dist/electron-package` folder. Let's give it a try!
 
 ## Execute the app
 
@@ -312,7 +312,7 @@ There are two different ways how you can start the cross-platform app. The first
 npm install electron-prebuilt --save-dev --no-progress
 ```
 
-From this point, you can either execute the app manually or add another `npm script` for that. Let’s keep it simple and start the electron app directly from the terminal by executing:
+From this point, you can either execute the app manually or add another `npm script` for that. Let's keep it simple and start the electron app directly from the terminal by executing:
 
 ```bash
 ./node_modules/.bin/electron dist/electron-package
@@ -328,10 +328,10 @@ Having this mechanism for dev time is good, but not good enough when thinking ab
 
 ## Automate app packaging
 
-You can use `gulp-atom-electron` to build the app automatically. I’ve written [another article on packaging Windows Apps from the macOS including a custom app icon]({% post_url 2016-01-16-setting-electron-app-icons-for-windows-from-macos %}).
+You can use `gulp-atom-electron` to build the app automatically. I've written [another article on packaging Windows Apps from the macOS including a custom app icon]({% post_url 2016-01-16-setting-electron-app-icons-for-windows-from-macos %}).
 
-However, for now, let’s keep the default icons and get everything up and running.
-Install `gulp-atom-electron`, and it’s dependency symdest using npm:
+However, for now, let's keep the default icons and get everything up and running.
+Install `gulp-atom-electron`, and it's dependency symdest using npm:
 
 ```bash
 npm i gulp-atom-electron gulp-symdest --save-dev --no-progress
@@ -390,4 +390,4 @@ When you start the build using `npm run apps`, you can find all the executables 
 
 ## Summary
 
-Congratulations, you’ve just created a functional *Angular* app for all major desktop platforms using *GitHub Electron*. It's still a rocky road, because of the early *Angular* state. Once *Angular* has stabilized a bit more, building real cross-platform applications with *Electron* will become easier, and perhaps some *Gulp.js* code could be ignored.
+Congratulations, you've just created a functional *Angular* app for all major desktop platforms using *GitHub Electron*. It's still a rocky road, because of the early *Angular* state. Once *Angular* has stabilized a bit more, building real cross-platform applications with *Electron* will become easier, and perhaps some *Gulp.js* code could be ignored.
