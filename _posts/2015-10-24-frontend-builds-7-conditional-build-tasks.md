@@ -73,7 +73,7 @@ function applyUserConfig(original, uConfig) {
 
 ```
 
-Another improvement is the possibility to automatically load Node.JS modules if they were installed in the current scope.
+Another improvement is the possibility to automatically load *Node.js* modules if they were installed in the current scope.
 
 ```javascript
 function loadCustomAddonIfInstalled(addOnName, tasks) {

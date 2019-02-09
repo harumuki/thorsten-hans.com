@@ -17,13 +17,13 @@ See other posts on 'Branding SharePoint sites with yeoman'.
 4. [An Introduction to CoffeeScript]({% post_url 2014-02-14-an-introduction-to-coffeescript %})
 5. [An Introduction to SASS]({% post_url 2014-02-18-an-introduction-to-sass %})
 
-Okay ,  let's get started with *Yeoman*. As I mentioned within the introduction, *Yeoman* is more a web development workflow for front-end apps than a single tool. Yeoman has been founded by leading JavaScript developers from the community (Paul Irish for example) and is maintained by Google and the community. The most important fact about *Yeoman* is that *Yeoman* is based on Node.JS, which makes *Yeoman* available on all popular platforms such as Windows, Linux and of course macOS.
+Okay ,  let's get started with *Yeoman*. As I mentioned within the introduction, *Yeoman* is more a web development workflow for front-end apps than a single tool. Yeoman has been founded by leading JavaScript developers from the community (Paul Irish for example) and is maintained by Google and the community. The most important fact about *Yeoman* is that *Yeoman* is based on *Node.js*, which makes *Yeoman* available on all popular platforms such as Windows, Linux and of course macOS.
 
 Through all articles, you'll see screenshots and commands which I use to get things up and running or to achieve several requirements. I'm doing all my development stuff on a Mac, so don't be confused everything will also work on Windows. (Of course, I've got a virtualized Windows to do my regular SharePoint development…)
 
 ## Installing Yeoman
 
-*Yeoman* is built on top of Node.JS and uses Git for managing dependencies and loading packages from the web. If you'd like to use Compass within your projects you've also to install Ruby and Compass on your development machine. We're using Compass within out SharePoint related generators, so the final list of dependencies looks like this.
+*Yeoman* is built on top of *Node.js* and uses Git for managing dependencies and loading packages from the web. If you'd like to use Compass within your projects you've also to install Ruby and Compass on your development machine. We're using Compass within out SharePoint related generators, so the final list of dependencies looks like this.
 
 1. [Node.js](http://nodejs.org){:target="_blank"}
 2. [Git](http://git-scm.com){:target="_blank"}
@@ -81,7 +81,7 @@ title="The list of Dependencies" caption="The list of Dependencies" %}
 
 As you can see there are several files and folders created by *Yeoman*. Most important artifacts are
 
-- `package.json` – This file describes your project and lists all Node.JS dependencies such as grunt, various grunt tasks
+- `package.json` – This file describes your project and lists all Node.js dependencies such as grunt, various grunt tasks
 - `bower.json` – This file is used to manage client-side dependencies and tells bower which libraries it has to install (jQuery, Bootstrap, …)
 - `gruntfile.js` – The Gruntfile describes what grunt should do during 'compilation' of the project. Depending on the generator you've chosen the file may be existing as CoffeeScript file with the name Gruntfile.coffee
 - `app` folder – this is the folder where you develop. All sources are located here including HTML, SASS, and JavaScript (or CoffeeScript or TypeScript)

@@ -75,7 +75,7 @@ Allows you to write Node.js in SublimeText and offers features like
 
 ### nodejsLauncher
 
-Launch your Node.JS file directly from the editor [`CTRL` + `ALT` + `n` + `r`]
+Launch your Node.js file directly from the editor [`CTRL` + `ALT` + `n` + `r`]
 
 ## Summary
 

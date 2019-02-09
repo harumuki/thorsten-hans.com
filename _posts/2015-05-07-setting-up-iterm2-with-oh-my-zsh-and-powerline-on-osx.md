@@ -87,5 +87,5 @@ Plugins can either extend the  *auto-completion tab*, create new key bindings or
 
 ## That's it for iTerm, but ...
 
-Now you've installed and configured a good starting point. However, you should not stop here. I've written another article on how to setup NVM on your system to switch and maintain multiple Node.JS installations easily. [Go and read the article now!]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %})
+Now you've installed and configured a good starting point. However, you should not stop here. I've written another article on how to setup NVM on your system to switch and maintain multiple *Node.js* installations easily. [Go and read the article now!]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %})
 
