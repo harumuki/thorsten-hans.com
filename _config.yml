@@ -5,16 +5,16 @@ meta_description: "Thorsten Hans shares his experiences from real-world projects
 logo: "assets/images/logo.png"
 favicon: "assets/images/favicon.ico"
 baseurl:
-production_url: https://horace.netlify.com/
+production_url: https://thorsten-hans.com
 mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
 cover_image: bc_1.jpg
 # Add your GA Tracking Id
-ga_analytics:
+ga_analytics: UA-117431284-1
 
 # RSS Feed settings
 
 feed:
-  path: feed/index.xml
+  path: feed.xml
 # Author
 author:
   name: "Thorsten Hans"
@@ -39,8 +39,10 @@ navigation:
     url: /talks-and-publications/
   - text: About
     url: /about/
-  - text: Supporters
-    url: /supporters/
+  - text: Legal details
+    url: /legal-details/
+  - text: Privacy Policy
+    url: /privacy-policy/
 
 # Required Plugins
 plugins_dir:
@@ -48,6 +50,7 @@ plugins_dir:
   - jekyll-tagsgenerator
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
   - jekyll-feed
 
 # Pagination
@@ -55,7 +58,7 @@ paginate: 10
 paginate_path: /page-:num/
 
 # Permalinks
-permalink: /:title
+permalink: /:year/:title
 
 # Other
 markdown: kramdown
