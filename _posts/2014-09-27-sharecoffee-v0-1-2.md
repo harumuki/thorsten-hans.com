@@ -3,8 +3,9 @@ title: ShareCoffee 0.1.2
 layout: post
 permalink: sharecoffee-v0-1-2
 published: true
-tags:
-  - SharePoint
 excerpt: See what's new in ShareCoffee 0.1.2
-featured_image: /assets/images/posts/feature_images/2014-09-27-sharecoffee-v0-1-2.jpg
+tags: [OpenSource, SharePoint, ShareCoffee]
+featured_image: /assets/images/posts/feature_images/announcement.jpg
+unsplash_user_name: Matt Botsford
+unsplash_user_ref: mattbotsford
 ---

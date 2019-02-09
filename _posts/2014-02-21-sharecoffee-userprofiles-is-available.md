@@ -3,7 +3,9 @@ title: ShareCoffee.UserProfiles is available
 layout: post
 permalink: sharecoffee-userprofiles-is-available
 published: true
-tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2014-02-21-sharecoffee-userprofiles-is-available.jpg
+tags: [OpenSource, SharePoint, ShareCoffee]
+featured_image: /assets/images/posts/feature_images/announcement.jpg
+unsplash_user_name: Matt Botsford
+unsplash_user_ref: mattbotsford
 ---
