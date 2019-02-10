@@ -36,7 +36,7 @@ title="Sublime Text - Emmet Plugin" caption="Sublime Text - Emmet Plugin" %}
 
 ## JavaScript Minifier
 
-Crunch your JavaScript files by using Google Closure Compiler (`CTRL` + `ALT` + `m`)
+Crunch your JavaScript files by using Google Closure Compiler (`CTRL+ALT+m`)
 
 ## Tag
 
@@ -63,7 +63,7 @@ Allows you to write CoffeeScript in Sublime Text and offers features like
 
 ## CoffeeCompile
 
-Compile your CoffeeScript file directly from within SublimeText 2 [`CTRL` + `SHIFT` + `C`]
+Compile your CoffeeScript file directly from within SublimeText 2 [`CTRL+SHIFT+C`]
 
 ## Node.js
 
@@ -75,7 +75,7 @@ Allows you to write Node.js in SublimeText and offers features like
 
 ### nodejsLauncher
 
-Launch your Node.js file directly from the editor [`CTRL` + `ALT` + `n` + `r`]
+Launch your Node.js file directly from the editor [`CTRL+ALT+N+R`]
 
 ## Summary
 
