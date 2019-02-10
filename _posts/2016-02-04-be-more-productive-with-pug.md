@@ -5,8 +5,10 @@ permalink: be-more-productive-with-pug
 redirect_from: /2016-02-04_Be-more-productive-with-Jade-4399fc253ba5
 published: true
 tags: [Pug]
-excerpt: null
-featured_image: /assets/images/posts/feature_images/2016-02-04-be-more-productive-with-pug.jpg
+excerpt: Boost your productivity with Pug. Pug compiles down to HTML and make you faster when it comes to frontend development.
+featured_image: /assets/images/posts/feature_images/colorful.jpg
+unsplash_user_name: Aashish R Gautam
+unsplash_user_ref: kyahaibe
 ---
 
 *Pug* (previously known as *Jade*) is like *HTML* on steroids. Once learned, you'll never miss it. This article isn't my first post on *Pug*. I had already written an article about it back in 2013 when it still was called *Jade*. If you didn't read it yet, take your time, [go and read through the Pug introduction]({% post_url 2013-10-22-an-introduction-to-jade %}).
