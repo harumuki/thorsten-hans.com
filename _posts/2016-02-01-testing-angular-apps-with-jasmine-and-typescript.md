@@ -6,7 +6,9 @@ redirect_from: /2016-02-01_Testing-Angular2-Apps-with-Jasmine-and-TypeScript-452
 published: true
 tags: [Angular]
 excerpt: Every developer should be able to write unit tests. This article explains how to write tests based on the popular testing framework Jasmine in combination with Angular and TypeScript.
-featured_image: /assets/images/posts/feature_images/2016-02-01-testing-angular-apps-with-jasmine-and-typescript.jpg
+featured_image: /assets/images/posts/feature_images/testing.jpg
+unsplash_user_name: David Travis
+unsplash_user_ref: dtravisphd
 ---
 
 Unit-Testing *Angular* applications made me crazy during Beta time. In this post, I'll share how to set up unit testing for *Angular* applications. The samples below were tested on *Angular 2* *Beta 2* and *Beta 3*. There are many resources available on the web that explain how unit-testing should work in *Angular* beta. Unfortunately, none of them worked for me from front to end. The official documentation is also lacking a fully working example with *SystemJS* while I'm writing this article. Things may change over time, so you should check out the latest documentation on [https://angular.io](https://angular.io){:target="_blank"}.
