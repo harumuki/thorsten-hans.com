@@ -2,7 +2,7 @@
 title: Top 14 SPC14 Sessions announced
 layout: post
 permalink: top-14-spc14-sessions-announced
-redirect_from: /2013-10-18_Top-14-SPC14-Sessions-announced-bf4917a6b812
+redirect_from: /top-14-spc14-sessions-announced-bf4917a6b812
 published: true
 tags: [Talks]
 excerpt: Microsoft announced the TOP 14 Sessions for SharePoint Conference in Las Vegas. Here are my thoughts on the picks.

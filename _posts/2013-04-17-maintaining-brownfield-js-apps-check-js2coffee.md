@@ -2,7 +2,7 @@
 title: Maintaining Brownfield JS Apps? Check Js2Coffee
 layout: post
 permalink: maintaining-brownfield-js-apps-check-js2coffee
-redirect_from: /2013-04-17_Maintaining-Brownfield-JS-Apps--Check-Js2Coffee-1e800ca45cfc
+redirect_from: /maintaining-brownfield-js-apps-check-js2coffee-1e800ca45cfc
 published: true
 tags: [Frontend, Tools]
 excerpt: null

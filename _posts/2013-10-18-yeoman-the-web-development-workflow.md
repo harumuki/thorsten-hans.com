@@ -2,7 +2,7 @@
 title: Yeoman the web development workflow
 layout: post
 permalink: yeoman-the-web-development-workflow
-redirect_from: /2013-10-18_Yeoman-the-web-development-workflow-87630ce36201
+redirect_from: /yeoman-the-web-development-workflow-87630ce36201
 published: true
 tags: [Frontend]
 excerpt: Have you heard of Yeoman? This post explains how to get started with yeoman. No matter if you do frontend or backend development, Yeoman will assist you.

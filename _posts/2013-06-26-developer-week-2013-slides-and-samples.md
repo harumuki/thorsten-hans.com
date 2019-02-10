@@ -2,7 +2,7 @@
 title: Developer Week 2013 — Quick recap
 layout: post
 permalink: developer-week-2013-quick-recap
-redirect_from: /2013-06-26_Developer-Week-2013---Slides-and-Samples-878221fc03ee
+redirect_from: /developer-week-2013-slides-and-samples-878221fc03ee
 published: true
 tags: [Talks]
 excerpt: I delivered two talks at Developer Week 2013 - here a quick recap

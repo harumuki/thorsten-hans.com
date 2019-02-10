@@ -2,7 +2,7 @@
 title: Visualise your data with ShareCoffee and ChartJS
 layout: post
 permalink: visualise-your-data-with-sharecoffee-and-chartjs
-redirect_from: /2013-12-20_Visualise-your-data-with-ShareCoffee-and-ChartJS-7f306381f39e
+redirect_from: /visualise-your-data-with-sharecoffee-and-chartjs-7f306381f39e
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: Learn how to query data from SharePoint using ShareCoffee and visualize it with the open-source library Chart.js.

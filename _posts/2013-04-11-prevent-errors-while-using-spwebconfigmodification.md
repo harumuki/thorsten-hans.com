@@ -2,7 +2,7 @@
 title: Prevent errors while using SPWebConfigModification
 layout: post
 permalink: prevent-errors-while-using-spwebconfigmodification
-redirect_from: /2013-04-11_Prevent-errors-while-using-SPWebConfigModification-75eaccc41531
+redirect_from: /prevent-errors-while-using-spwebconfigmodification-75eaccc41531
 published: true
 tags: [SharePoint]
 excerpt: Have you ever heard of SPWebConfigModification? If so, check this post and see how to use it correctly.

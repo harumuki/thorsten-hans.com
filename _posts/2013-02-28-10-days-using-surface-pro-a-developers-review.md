@@ -2,7 +2,7 @@
 title: 10 Days using Surface Pro — A developers review
 layout: post
 permalink: 10-days-using-surface-pro-a-developers-review
-redirect_from: /2013-02-28_10-Days-using-Surface-Pro---A-developers-review-583dae2fe863
+redirect_from: /10-days-using-surface-pro-a-developers-review-583dae2fe863
 published: true
 tags: [Tools]
 excerpt: I bought a Surface Pro and I'm using it as my main device to do software development. Read my recap and get all the pros and cons
