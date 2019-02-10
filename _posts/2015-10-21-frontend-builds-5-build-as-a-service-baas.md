@@ -2,7 +2,7 @@
 title: Frontend Builds 5 - Build as a Service (BaaS)
 layout: post
 permalink: frontend-builds-5-build-as-a-service-baas
-redirect_from: /2015-10-21_Frontend-Builds-5---Build-as-a-Service--BaaS--58716e90d28a
+redirect_from: /frontend-builds-5-build-as-a-service-baas-58716e90d28a
 published: true
 tags: [Build, Gulp.js]
 excerpt: null

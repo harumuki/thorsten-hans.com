@@ -2,7 +2,7 @@
 title: An Introduction to SASS
 layout: post
 permalink: an-introduction-to-sass
-redirect_from: /2014-02-18_An-Introduction-to-SASS-6ee9b3e6cdae
+redirect_from: /an-introduction-to-sass-6ee9b3e6cdae
 published: true
 tags: [Frontend]
 excerpt: You want to speed up your frontend development skills? Learn SASS and write stylesheets faster. This post will teach you the basics of SASS.

@@ -2,7 +2,7 @@
 title: ShareCoffee 0.0.11
 layout: post
 permalink: sharecoffee-0-0-11
-redirect_from: /2014-02-25_ShareCoffee-0-0-11-is-available-546ba2a773e0
+redirect_from: /sharecoffee-0-0-11-is-available-546ba2a773e0
 published: true
 excerpt: Check out what is new in  ShareCoffee 0.0.11
 tags: [SharePoint, O365, ShareCoffee]

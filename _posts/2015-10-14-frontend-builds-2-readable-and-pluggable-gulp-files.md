@@ -2,7 +2,7 @@
 title: Frontend Builds 2 - readable and pluggable Gulp files
 layout: post
 permalink: frontend-builds-2-readable-and-pluggable-gulp-files
-redirect_from: /2015-10-14_Frontend-Builds-2---readable-and-pluggable-Gulp-files-159544770641
+redirect_from: /frontend-builds-2-readable-and-pluggable-gulpfiles-159544770641
 published: true
 tags: [Build, Gulp.js]
 excerpt: null

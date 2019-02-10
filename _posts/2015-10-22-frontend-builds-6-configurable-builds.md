@@ -2,7 +2,7 @@
 title: Frontend Builds 6 - Configurable builds
 layout: post
 permalink: frontend-builds-6-configurable-builds
-redirect_from: /2015-10-22_Frontend-Builds-6---Configurable-builds-aacb15903459
+redirect_from: /frontend-builds-6-configurable-builds-aacb15903459
 published: true
 tags: [Build, Gulp.js]
 excerpt: In part five of the series you learned about Build as a Service, this post will explain how to make your own BaaS more configurable and flexible.

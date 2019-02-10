@@ -2,7 +2,7 @@
 title: Using SharePoint 2013 Search REST API to execute PostQueries
 layout: post
 permalink: using-sharepoint-2013-search-rest-api-to-execute-postqueries
-redirect_from: /2014-01-28_Using-SharePoint-2013-Search-REST-API-to-execute-PostQueries-b2bf96d6bbb1
+redirect_from: /using-sharepoint-2013-search-rest-api-to-execute-postqueries-b2bf96d6bbb1
 published: true
 tags: [SharePoint]
 excerpt: SharePoint is exposing it's Search service via HTTP. In this article I share some essential tips when using SharePoint's Search Service via HTTP.

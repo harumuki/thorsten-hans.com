@@ -2,7 +2,7 @@
 title: Angular goes cross platform with GitHub Electron
 layout: post
 permalink: angular-goes-cross-platform-with-github-electron
-redirect_from: /2015-11-16_Angular-goes-cross-platform-with-GitHub-Electron-e59e2b8bf3a3
+redirect_from: /angular2-goes-crossplatform-using-electron-e59e2b8bf3a3
 published: true
 tags: [Electron, Angular]
 excerpt: This post introduces a small technical demo application which has been built using Angular, ES2015 and Electron. The entire build in this new sample has been created using Gulp.js

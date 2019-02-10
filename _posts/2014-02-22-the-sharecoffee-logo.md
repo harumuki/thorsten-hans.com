@@ -2,7 +2,7 @@
 title: The ShareCoffee logo
 layout: post
 permalink: the-sharecoffee-logo
-redirect_from: /2014-02-22_The-ShareCoffee-logo-6b47160939c9
+redirect_from: /the-sharecoffee-logo-6b47160939c9
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: Finally, ShareCoffee got its own logo. 💄  

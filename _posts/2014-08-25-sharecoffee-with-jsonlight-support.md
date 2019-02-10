@@ -2,7 +2,7 @@
 title: ShareCoffee with JsonLight support
 layout: post
 permalink: sharecoffee-with-jsonlight-support
-redirect_from: /2014-08-25_ShareCoffee-with-JsonLight-support-c32d0a32a750
+redirect_from: /sharecoffee-with-jsonlight-support-c32d0a32a750
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: ShareCoffee receives support for JSONLight. Opt-in and make your Apps faster and more efficient

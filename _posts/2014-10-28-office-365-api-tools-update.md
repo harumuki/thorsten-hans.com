@@ -2,7 +2,7 @@
 title: Office 365 API Tools Update
 layout: post
 permalink: office-365-api-tools-update
-redirect_from: /2014-10-28_Office-365-API-Tools-Update-d92fa15e0ad
+redirect_from: /office-365-api-tools-update-d92fa15e0ad
 published: true
 tags: [O365]
 excerpt: A new version of Office 365 API Tools has been released. Check it out!

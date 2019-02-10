@@ -2,7 +2,7 @@
 title: Frontend Builds 4 - Building Cross Platform Mobile Apps
 layout: post
 permalink: frontend-builds-4-building-cross-platform-mobile-apps
-redirect_from: /2015-10-17_Frontend-Builds-4---Building-Cross-Platform-Mobile-Apps-caa632699200
+redirect_from: /frontend-builds-4-building-cross-platform-mobile-apps-caa632699200
 published: true
 tags: [Build, Cordova, Gulp.js]
 excerpt: null

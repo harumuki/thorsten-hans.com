@@ -2,7 +2,7 @@
 title: Top 25 European SharePoint Influencers
 layout: post
 permalink: top-25-european-sharepoint-influencers
-redirect_from: /2014-03-31_Top-25-European-SharePoint-Influencers-28ac90bdf4bf
+redirect_from: /top-25-european-sharepoint-influencers-28ac90bdf4bf
 published: true
 tags: [Community]
 excerpt: It's time again to vote for the top european SharePoint Influencers
