@@ -30,117 +30,119 @@ For both of these, there is no solution provided by the project templates. So if
 I’ve extended the original `spcontext.js` file by a second selector, instead of only changing hyperlink’s `href` attribute I’ll also manipulate form’s action attribute and append the `SPHostUrl` query string to this attribute.
 
 ```javascript
-(function (window, undefined) {`
+(function (window, undefined) {
 
-  "use strict";
-  var $ = window.jQuery;
-  var document = window.document;
+    "use strict";
 
-  // SPHostUrl parameter name
-  var SPHostUrlKey = "SPHostUrl";
+    var $ = window.jQuery;
+    var document = window.document;
 
-  // Gets SPHostUrl from the current URL and appends it as query string 
-  // to the links which point to current domain in the page.
-  $(document).ready(function () {
-    ensureSPHasRedirectedToSharePointRemoved();
+    // SPHostUrl parameter name
+    var SPHostUrlKey = "SPHostUrl";
 
-    var spHostUrl = getSPHostUrlFromQueryString(window.location.search);
-    var currentAuthority = getAuthorityFromUrl(window.location.href).toUpperCase();
+    // Gets SPHostUrl from the current URL and appends it as query string to the links which point to current domain in the page.
+    $(document).ready(function () {
+        ensureSPHasRedirectedToSharePointRemoved();
 
-    if (spHostUrl && currentAuthority) {
-      appendSPHostUrlToLinks(spHostUrl, currentAuthority);
-    }
-  });`
+        var spHostUrl = getSPHostUrlFromQueryString(window.location.search);
+        var currentAuthority = getAuthorityFromUrl(window.location.href).toUpperCase();
 
-  // Appends SPHostUrl as query string to all the links which point to current domain.
-  
-  function appendSPHostUrlToLinks(spHostUrl, currentAuthority) {
-    $("a")
-    .filter(function () {
-      var authority = getAuthorityFromUrl(this.href);
-      if (!authority && /^#|:/.test(this.href)) {
-        // Filters out anchors and urls with other unsupported protocols.
-        return false;
-      }
-      
-      if (authority == null) {
-        return false;
-      }
-      return authority.toUpperCase() == currentAuthority;
-    }).each(function () {
-      if (!getSPHostUrlFromQueryString(this.search)) {
-        if (this.search.length > 0) {
-          this.search += "&" + SPHostUrlKey + "=" + spHostUrl;
+        if (spHostUrl && currentAuthority) {
+            appendSPHostUrlToLinks(spHostUrl, currentAuthority);
         }
-        else {
-          this.search = "?" + SPHostUrlKey + "=" + spHostUrl;
-        }
-      }
     });
-    
-    $("form")
-    .filter(function () {
-      var authority = getAuthorityFromUrl(this.action);
-      if (!authority && /^#|:/.test(this.action)) {
-        return false;
-      }
-      
-      if (authority == null) {
-        return false;
-      }
-      return authority.toUpperCase() == currentAuthority;
-    }).each(function () {
-      if (this.action.indexOf("?") == -1) {
-        this.action += "?" + SPHostUrlKey + "=" + spHostUrl;
-      } else {
-        if (this.action.indexOf(SPHostUrlKey) == -1) {
-          this.action += "&" + SPHostUrlKey + "=" + spHostUrl;
+
+    // Appends SPHostUrl as query string to all the links which point to current domain.
+    function appendSPHostUrlToLinks(spHostUrl, currentAuthority) {
+        $("a")
+            .filter(function () {
+                var authority = getAuthorityFromUrl(this.href);
+                if (!authority && /^#|:/.test(this.href)) {
+                    // Filters out anchors and urls with other unsupported protocols.
+                    return false;
+                }
+                if (authority == null)
+                    return false;
+                return authority.toUpperCase() == currentAuthority;
+            })
+            .each(function () {
+                if (!getSPHostUrlFromQueryString(this.search)) {
+                    if (this.search.length > 0) {
+                        this.search += "&" + SPHostUrlKey + "=" + spHostUrl;
+                    }
+                    else {
+                        this.search = "?" + SPHostUrlKey + "=" + spHostUrl;
+                    }
+                }
+            });
+        $("form")
+            .filter(function () {
+                var authority = getAuthorityFromUrl(this.action);
+                if (!authority && /^#|:/.test(this.action)) {
+                  
+                    return false;
+                }
+                if (authority == null)
+                    return false;
+                return authority.toUpperCase() == currentAuthority;
+            })
+            .each(function () {
+                if (this.action.indexOf("?") == -1) {
+                    this.action += "?" + SPHostUrlKey + "=" + spHostUrl;
+                } else {
+                    if (this.action.indexOf(SPHostUrlKey) == -1) {
+                        this.action += "&" + SPHostUrlKey + "=" + spHostUrl;
+                    }
+                }
+                 
+            });
+    }
+
+    // Gets SPHostUrl from the given query string.
+    function getSPHostUrlFromQueryString(queryString) {
+        if (queryString) {
+            if (queryString[0] === "?") {
+                queryString = queryString.substring(1);
+            }
+
+            var keyValuePairArray = queryString.split("&");
+
+            for (var i = 0; i < keyValuePairArray.length; i++) {
+                var currentKeyValuePair = keyValuePairArray[i].split("=");
+
+                if (currentKeyValuePair.length > 1 && currentKeyValuePair[0] == SPHostUrlKey) {
+                    return currentKeyValuePair[1];
+                }
+            }
         }
-      }
-    });
-  }
 
-  // Gets SPHostUrl from the given query string.
-  function getSPHostUrlFromQueryString(queryString) {
-    if (queryString) {
-      if (queryString[0] === "?") {
-        queryString = queryString.substring(1);
-      }
-      var keyValuePairArray = queryString.split("&");
-      for (var i = 0; i < keyValuePairArray.length; i++) {
-        var currentKeyValuePair = keyValuePairArray[i].split("=");
+        return null;
+    }
 
-        if (currentKeyValuePair.length > 1 && currentKeyValuePair[0] == SPHostUrlKey) {
-          return currentKeyValuePair[1];
+    // Gets authority from the given url when it is an absolute url with http/https protocol or a protocol relative url.
+    function getAuthorityFromUrl(url) {
+        if (url) {
+            var match = /^(?:https:\/\/|http:\/\/|\/\/)([^\/\?#]+)(?:\/|#|$|\?)/i.exec(url);
+            if (match) {
+                return match[1];
+            }
         }
-      }
+        return null;
     }
-    return null;
-  }
 
-  // Gets authority from the given url when it is an absolute url 
-  // with http/https protocol or a protocol relative url.
-  function getAuthorityFromUrl(url) {
-    if (url) {
-      var match = /^(?:https://|http://|//)([^/?#]+)(?:/|#|$|?)/i.exec(url);
-      if (match) {
-        return match[1];
-      }
+    // If SPHasRedirectedToSharePoint exists in the query string, remove it.
+    // Hence, when user bookmarks the url, SPHasRedirectedToSharePoint will not be included.
+    // Note that modifying window.location.search will cause an additional request to server.
+    function ensureSPHasRedirectedToSharePointRemoved() {
+        var SPHasRedirectedToSharePointParam = "&SPHasRedirectedToSharePoint=1";
+
+        var queryString = window.location.search;
+
+        if (queryString.indexOf(SPHasRedirectedToSharePointParam) >= 0) {
+            window.location.search = queryString.replace(SPHasRedirectedToSharePointParam, "");
+        }
     }
-    return null;
-  }
 
-  // If SPHasRedirectedToSharePoint exists in the query string, remove it.
-  // Hence, when user bookmarks the url, SPHasRedirectedToSharePoint will not be included.
-  // Note that modifying window.location.search will cause an additional request to server.
-  function ensureSPHasRedirectedToSharePointRemoved() {
-    var SPHasRedirectedToSharePointParam = "&SPHasRedirectedToSharePoint=1";
-    var queryString = window.location.search;
-
-    if (queryString.indexOf(SPHasRedirectedToSharePointParam) >= 0) {
-      window.location.search = queryString.replace(SPHasRedirectedToSharePointParam, "");
-    }
-  }
 })(window);
 
 ```
