@@ -6,7 +6,9 @@ redirect_from: /2016-02-09_NW-js-and-Electron-compared-6addc46dc283
 published: true
 tags: [Electron, NWjs]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2016-02-09-nw-js-and-electron-compared.jpg
+featured_image: /assets/images/posts/feature_images/compare.jpg
+unsplash_user_name: Timothy Eberly
+unsplash_user_ref: timothyeberly
 ---
 
 I've spent much time doing cross-platform development over the past year with a significant workload on **cross-platform desktop** development.
