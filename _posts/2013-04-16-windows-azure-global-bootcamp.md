@@ -4,7 +4,7 @@ layout: post
 permalink: windows-azure-global-bootcamp
 redirect_from: /2013-04-16_Windows-Azure-Global-Bootcamp-4be2441f0427
 published: true
-excerpt: null
+excerpt: Local Events on Azure around the entire globe. Join the Windows Azure Global Bootcamp.
 tags: [Talks, Azure]
 featured_image: /assets/images/posts/feature_images/conference.jpg
 unsplash_user_name: Headway
