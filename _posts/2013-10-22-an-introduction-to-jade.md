@@ -5,8 +5,10 @@ permalink: an-introduction-to-jade
 redirect_from: /2013-10-22_An-Introduction-to-Jade-b11fe3dd6a16
 published: true
 tags: [Frontend]
-excerpt: null
-featured_image: /assets/images/posts/feature_images/2013-10-22-an-introduction-to-jade.jpg
+excerpt: Learn how to use Jade (aka Pug) to write your frontend code instead of relying on plain old HTML. This article guides you through the basics of Pug.
+featured_image: /assets/images/posts/feature_images/colorful.jpg
+unsplash_user_name: Aashish R Gautam
+unsplash_user_ref: kyahaibe
 ---
 
 'An Introduction to **Pug**' is part of my article series 'Branding SharePoint sites with **yeoman**' see the list of all related articles here.
