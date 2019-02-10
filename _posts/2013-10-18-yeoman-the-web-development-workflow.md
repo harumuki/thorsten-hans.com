@@ -5,8 +5,11 @@ permalink: yeoman-the-web-development-workflow
 redirect_from: /2013-10-18_Yeoman-the-web-development-workflow-87630ce36201
 published: true
 tags: [Frontend]
-excerpt: null
+excerpt: Have you heard of Yeoman? This post explains how to get started with yeoman. No matter if you do frontend or backend development, Yeoman will assist you.
 featured_image: /assets/images/posts/feature_images/2013-10-18-yeoman-the-web-development-workflow.jpg
+featured_image: /assets/images/posts/feature_images/learning.jpg
+unsplash_user_name: Helloquence
+unsplash_user_ref: helloquence
 ---
 
 See other posts on 'Branding SharePoint sites with yeoman'.
@@ -145,7 +148,7 @@ When you open up `gruntfile.js` you see the work that's done for you. In more th
 
 Search for `copy:` in your Gruntfile, and you should find the following part.
 
-{% include image-caption.html imageurl="/assets/images/posts/2013/yeoman-6.png"
+{% include image-caption.html imageurl="/assets/images/posts/2013/yeoman-6.png" width="430"
 title="The 'copy' Task" caption="The 'copy' Task" %}
 
 As you can see, each task is configured using a simple JSON object. The complexity of the various tasks differ depending on their level of configuration, but hey JSON is super readable. Don't be afraid. 🙂
@@ -160,7 +163,7 @@ As you can see, grunt-tasks are very flexible and provide solutions for almost e
 
 Depending on the chosen generator you may have different command line options when executing grunt. These options are also configured within the Gruntfile. The following screenshot shows the “test” and “build” option for the grunt executable. As you can see the option is defined followed by all dependent grunt-tasks that will be invoked in the given order by using grunt.registerTask you can easily create your own CLI or tweak the current configuration. For example, you can easily enable the CoffeeScript compiler by adding the grunt-contrib-coffee package to the project, configure the task as shown with the `copy`-task and put it right here in the dependency list.
 
-{% include image-caption.html imageurl="/assets/images/posts/2013/yeoman-7.png"
+{% include image-caption.html imageurl="/assets/images/posts/2013/yeoman-7.png" width="330"
 title="'build'-task dependencies" caption="'build'-task dependencies" %}
 
 Installing a package such as `grunt-contrib-coffee` is straight forward. Just open a terminal and navigate to the project directory. By executing
