@@ -2,7 +2,7 @@
 title: Angular Quickie - Async Routes
 layout: post
 permalink: angular-quickie-async-routes
-redirect_from: /2016-02-09_Angular2-Quickie---Async-Routes-c4e590bfd6a1
+redirect_from: /angular2-quickie-async-routes-c4e590bfd6a1
 published: true
 tags: [Angular]
 excerpt: null

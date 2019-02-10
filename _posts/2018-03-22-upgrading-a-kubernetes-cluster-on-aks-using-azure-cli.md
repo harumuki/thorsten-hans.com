@@ -2,7 +2,7 @@
 title: Upgrading a Kubernetes cluster on AKS using Azure CLI
 layout: post
 permalink: upgrading-a-kubernetes-cluster-on-aks-using-azure-cli
-redirect_from: /2018-03-22_Upgrading-a-Kubernetes-cluster-on-AKS-using-Azure-CLI-603c9be7b369
+redirect_from: /upgrading-a-kubernetes-cluster-on-aks-using-azure-cli-603c9be7b369
 published: true
 tags:
   - Kubernetes

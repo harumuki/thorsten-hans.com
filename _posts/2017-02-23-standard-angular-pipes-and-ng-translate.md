@@ -2,7 +2,7 @@
 title: Standard Angular Pipes and ng-translate
 layout: post
 permalink: standard-angular-pipes-and-ng-translate
-redirect_from: /2017-02-23_Standard-Angular-Pipes-and-ng-translate-c0ed022c8a02
+redirect_from: /i18n-in-angular-apps-c0ed022c8a02
 published: true
 tags: [Angular]
 excerpt: internationalization is important if you build Angular applications for a bigger audience. Learn how to use standard Angular pipes with ng-translate

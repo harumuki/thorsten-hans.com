@@ -2,7 +2,7 @@
 title: Using Augury inside of Electron Apps
 layout: post
 permalink: using-augury-inside-of-electron-apps
-redirect_from: /2016-07-02_Using-Augury-inside-of-Electron-Apps-34acd5f1a76d
+redirect_from: /using-augury-inside-of-your-electron-apps-34acd5f1a76d
 published: true
 tags: [Electron, Angular]
 excerpt: Augury by Rangle.IO is currently the best Chrome Extension for debugging Angular apps. Learn how to debug Angular apps inside of Electron using Augury.

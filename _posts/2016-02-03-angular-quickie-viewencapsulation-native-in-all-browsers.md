@@ -2,7 +2,7 @@
 title: Angular Quickie — ViewEncapsulation.Native in all browsers
 layout: post
 permalink: angular-quickie-viewencapsulation-native-in-all-browsers
-redirect_from: /2016-02-03_Angular2-Quickie---ViewEncapsulation-Native-in-all-browsers-974b20217b6c
+redirect_from: /angular2-quickie-viewencapsulation-native-in-all-browsers-974b20217b6c
 published: true
 tags: [Angular]
 excerpt: ViewEncapsulation tells Angular how to render the component in the final website, this post explains how to enable native ViewEncapsulation for all browsers

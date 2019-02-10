@@ -2,7 +2,7 @@
 title: Angular Quickie — Elvis is in tha house
 layout: post
 permalink: angular-quickie-elvis-operator
-redirect_from: /2016-01-07_Angular2-Quicky---Elvis-is-in-tha-house-61c6a714dfe3
+redirect_from: /angular2-quicky-elvis-is-in-tha-house-61c6a714dfe3
 published: true
 tags: [Angular]
 excerpt: Angular introduces the Elvis operator. Learn how to use it in templates and how to build more efficient HTML templates for your Angular components.

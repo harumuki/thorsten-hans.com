@@ -2,7 +2,7 @@
 title: Angular Quickie - Why can't I compile my Angular app anymore
 layout: post
 permalink: angular-quickie-why-cant-i-compile-my-angular-app-anymore
-redirect_from: /2016-02-15_Angular-2-Quickie---Why-can-t-I-compile-my-Angular2-app-anymore-c36483c8d0a4
+redirect_from: /angular-2-quickie-why-cant-i-compile-my-angular2-app-anymore-c36483c8d0a4
 published: true
 tags: [Angular]
 excerpt: null

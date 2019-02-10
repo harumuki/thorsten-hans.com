@@ -2,7 +2,7 @@
 title: Integrating Azure Key Vault with Azure Container Services
 layout: post
 permalink: integrating-azure-keyvault-with-azure-container-services
-redirect_from: /2018-05-11_Integrating-Azure-KeyVault-with-Azure-Container-Services-dafbc26c7ecd
+redirect_from: /integrating-azure-keyvault-with-azure-container-services-dafbc26c7ecd
 published: true
 tags:
   - Kubernetes

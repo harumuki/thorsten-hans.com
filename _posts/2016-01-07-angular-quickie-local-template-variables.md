@@ -2,7 +2,7 @@
 title: Angular Quickie - Local template variables
 layout: post
 permalink: angular-quickie-local-template-variables
-redirect_from: /2016-01-07_Angular2-Quickie---Local-template-variables-a5c516691bc0
+redirect_from: /angular2-quickie-local-template-variables-a5c516691bc0
 published: true
 tags: [Angular]
 excerpt: In Angular, HTML templates aren't static. By using local template variables you can make your HTML even more dynamic and more flexible. Learn how to use local template variables in Angular, now!
