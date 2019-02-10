@@ -52,7 +52,6 @@ plugins_dir:
   - jekyll-paginate
   - jekyll-tagsgenerator
   - jekyll-seo-tag
-  - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-feed
 

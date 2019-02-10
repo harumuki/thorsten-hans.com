@@ -1,0 +1,12 @@
+<url>
+    <loc>{{ post.url | absolute_url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    {% if page.priority %}<priority>{{ page.priority }}</priority
+    >{%endif%} {% if page.featured_image %}
+    <image:image>
+        <image:loc>{{ post.featured_image | absolute_url }}</image:loc>
+        <image:title><![CDATA[{{ post.title }}]]></image:title>
+        <image:caption><![CDATA[{{ post.title }}]]></image:caption>
+    </image:image>
+    {% endif %}
+</url>
