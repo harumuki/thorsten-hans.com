@@ -6,7 +6,10 @@ redirect_from: /2013-02-28_10-Days-using-Surface-Pro---A-developers-review-583da
 published: true
 tags: [Tools]
 excerpt: I bought a Surface Pro and I'm using it as my main device to do software development. Read my recap and get all the pros and cons
-featured_image: /assets/images/posts/feature_images/2013-02-28-10-days-using-surface-pro-a-developers-review.jpg
+featured_image: /assets/images/posts/feature_images/devices.jpg
+unsplash_user_name: Hal Gatewood
+unsplash_user_ref: halgatewood
+
 ---
 
 While visiting the Global MVP Summit 2013 in Redmond, I decided to buy a Surface Pro, because they don't sell it in Germany at this time. There were more reasons why I bought the Surface Pro in opposite to other devices such as Lenovo's Yoga — which is also really awesome — or perhaps a Samsung Slate or HP's Envy.
