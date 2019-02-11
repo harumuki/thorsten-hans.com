@@ -10,7 +10,7 @@ layout: null
 endcapture %} {% assign sortedTags = site_tags | split:',' | sort %}
 {% for tag in sortedTags %}
 <url>
-    <loc>{{ site.production_url }}/tag/{{ tag | downcase | replace: ' ', '- ' }}/</loc>
+    <loc>{{ site.production_url }}/tag/{{ tag | downcase | replace: ' ', '-' }}/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
 	</url>
 	{% endfor %}
