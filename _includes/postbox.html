@@ -7,16 +7,10 @@
             <a href="{{ post.url | absolute_url }}" rel="bookmark">{{ post.title }}</a>
         </h2>
     </header><!-- .post-header -->
-    {% if post.featured_image_thumbnail %}
+    {% if post.image %}
     <a class="post-thumbnail" href="{{ post.url }}">
-        <img src="{{ post.featured_image_thumbnail }}" alt="{{ post.title }}">
+        <img src="{{ post.image | prepend: site.thumbs_folder | absolute_url }}" alt="{{ post.title }}">
     </a>
-    {% elsif post.featured_image %}
-    <a class="post-thumbnail" href="{{ post.url }}">
-        <img src="{% if post.featured_image contains '://' %}{{ post.featured_image }}{% else %}{{ post.featured_image | absolute_url }}{% endif %}"
-            alt="{{ post.title }}">
-    </a>
-    {% else %}
     {% endif %}
     <div class="post-content">
         <p>{{ post.excerpt | strip_html | truncatewords:40 }} </p>
