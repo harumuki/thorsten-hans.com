@@ -35,8 +35,6 @@ linkedin: "thorstenhans"
 
 # Navigation
 navigation:
-  - text: Blog
-    url: /
   - text: Talks & Publications
     url: /talks-and-publications/
   - text: About
