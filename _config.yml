@@ -6,7 +6,6 @@ logo: "assets/images/logo.png"
 favicon: "assets/images/favicon.ico"
 baseurl:
 url: https://thorsten-hans.com
-production_url: https://thorsten-hans.com
 mailchimp_url: # "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
 cover_image: bc_1.jpg
 # Add your GA Tracking Id
