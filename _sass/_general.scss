@@ -358,6 +358,7 @@ video {
 img {
     height: auto;
     max-width: 100%;
+    image-orientation: from-image;
 }
 .post-thumbnail img {
     width: 70% !important;
