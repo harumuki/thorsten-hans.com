@@ -6,7 +6,7 @@ redirect_from: /how-to-use-a-private-azure-container-registry-with-kubernetes-9b
 published: true
 tags: [Kubernetes, Azure, Docker, AKS]
 excerpt: 'Pulling docker images from private registries is an essential, basic task that you need to do almost every day. This article guides you through the process of integrating Azure Container Registry and Azure Kubernetes Services.'
-featured_image: /assets/images/posts/feature_images/2017-08-18-how-to-use-a-private-azure-container-registry-with-kubernetes.jpg
+image: /2017-08-18-how-to-use-a-private-azure-container-registry-with-kubernetes.jpg
 ---
 Besides using the goodness of Azure Container Services (ACS). Different Azure services like Azure Container Registry (ACR) and Azure Container Instances (ACI) can be used and connected from independent container orchestrators like kubernetes (k8s). This post will explain how to set up a custom ACR and connect it to an existing k8s cluster to ensure images will be pulled from the private container registry instead of the public docker hub.
 

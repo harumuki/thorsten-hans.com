@@ -6,7 +6,7 @@ redirect_from: /using-office365-apis-in-mvc-webapps-e544eab2b184
 published: true
 tags: [O365]
 excerpt: Learn how to use Office365 APIs in ASP.NET MVC WebApps to extend your webapps with data from Office365
-featured_image: /assets/images/posts/feature_images/clouds.jpg
+image: /clouds.jpg
 unsplash_user_name: Nacho Rochon
 unsplash_user_ref: nacho_rochon
 ---

@@ -6,7 +6,7 @@ redirect_from: /i18n-in-angular-apps-c0ed022c8a02
 published: true
 tags: [Angular]
 excerpt: internationalization is important if you build Angular applications for a bigger audience. Learn how to use standard Angular pipes with ng-translate
-featured_image: /assets/images/posts/feature_images/2017-02-23-standard-angular-pipes-and-ng-translate.jpg
+image: /2017-02-23-standard-angular-pipes-and-ng-translate.jpg
 ---
 Of course is *Angular* itself shipping with some *i18n* (internationalization) APIs, but [ng-translate](https://github.com/ngx-translate/core){:target="_blank"} has become the new default for many developers to provide translations within *Angular* apps.
 

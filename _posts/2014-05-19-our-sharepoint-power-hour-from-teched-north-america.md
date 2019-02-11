@@ -6,7 +6,7 @@ redirect_from: /our-sharepoint-power-hour-from-teched-north-america-cf0ccbd9ba9b
 published: true
 tags: [Talks]
 excerpt: Recap from my talk at TechEd North America with Jeremy Thake
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

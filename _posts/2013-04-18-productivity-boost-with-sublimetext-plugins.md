@@ -6,7 +6,7 @@ redirect_from: /productivity-boost-with-sublimetext-plugins-6873d0e54219
 published: true
 tags: [Tools, Productivity]
 excerpt: Sublime Text is a mighty editor with a great plugin ecosystem. In this article, I'll share my minimal, fast and yet powerful Sublime text plugin combination.
-featured_image: /assets/images/posts/feature_images/productivity.jpg
+image: /productivity.jpg
 unsplash_user_ref: carlheyerdahl
 unsplash_user_name: Carl Heyerdahl
 ---

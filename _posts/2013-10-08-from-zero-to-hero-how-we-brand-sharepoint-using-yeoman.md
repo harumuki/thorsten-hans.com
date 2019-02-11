@@ -6,7 +6,7 @@ redirect_from: /from-zero-to-hero-how-we-brand-sharepoint-using-yeoman-c1d4b5365
 published: true
 tags: [Frontend, SharePoint]
 excerpt: Learn how we build SharePoint branding projects using latest frontend technologies such as Yeoman, CoffeeScript, Pug and SASS
-featured_image: /assets/images/posts/feature_images/branding.jpg
+image: /branding.jpg
 unsplash_user_name: Dose Media
 unsplash_user_ref: dose
 

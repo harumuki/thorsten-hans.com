@@ -6,7 +6,7 @@ redirect_from: /yeoman-the-web-development-workflow-87630ce36201
 published: true
 tags: [Frontend]
 excerpt: Have you heard of Yeoman? This post explains how to get started with yeoman. No matter if you do frontend or backend development, Yeoman will assist you.
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

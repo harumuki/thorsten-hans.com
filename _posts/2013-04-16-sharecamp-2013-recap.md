@@ -6,7 +6,7 @@ published: true
 redirect_from: /sharecamp-2013-recap-9dbbd8aae0b2
 tags: [Talks, SharePoint]
 excerpt: Read the Recap of ShareCamp 2013
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

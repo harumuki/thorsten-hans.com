@@ -6,7 +6,7 @@ redirect_from: /azure-ad-pod-identity-in-aks-a-journey-to-integrate-azure-key-va
 published: true
 tags: [Kubernetes,Azure,Azure Key Vault,AKS]
 excerpt: 'With Azure AD Pod Identity you can finally run any pod in an Azure Kubernetes Service in the context of an external, loosely coupled Azure Identity. This builds the foundation for a seamless integration of Azure Key Vault and AKS'
-featured_image: /assets/images/posts/feature_images/2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault.jpg
+image: /2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault.jpg
 ---
 Back in May, I wrote an article on how to integrate Azure Key Vault with ACS. Since that, a lot happened in the Azure and Kubernetes space and I thought an updated version would be worth sharing because dealing correctly with sensitive data is **essential**. 
 

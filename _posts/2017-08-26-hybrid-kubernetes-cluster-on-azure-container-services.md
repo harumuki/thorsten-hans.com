@@ -6,7 +6,7 @@ redirect_from: /hybrid-kubernetes-cluster-on-azure-container-services-ed6f11bf3c
 published: true
 tags: [Kubernetes,Azure,Azure Container Service]
 excerpt: 'In this article, I describe how to spin up a hybrid Kubernetes Cluster using acs-engine. You''ll deploy a Linux and a Windows Pod to the same Kubernetes cluster and expose them to the public.'
-featured_image: /assets/images/posts/feature_images/2017-08-26-hybrid-kubernetes-cluster-on-azure-container-services.jpg
+image: /2017-08-26-hybrid-kubernetes-cluster-on-azure-container-services.jpg
 ---
 Using Azure Container Services (ACS) you can easily build hybrid kubernetes clusters. In this context, hybrid means that you'll end up having a kubernetes cluster with both, Linux Nodes and Windows Nodes.
 

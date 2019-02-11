@@ -8,7 +8,7 @@ tags: [SharePoint]
 excerpt: Have you ever heard of SPWebConfigModification? If so, check this post and see how to use it correctly.
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich
-featured_image: /assets/images/posts/feature_images/demo-code.jpg
+image: /demo-code.jpg
 ---
 
 Today I ran into an issue with `SPWebConfigModification`.

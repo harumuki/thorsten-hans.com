@@ -6,7 +6,7 @@ redirect_from: /top-25-european-sharepoint-influencers-28ac90bdf4bf
 published: true
 tags: [Community]
 excerpt: It's time again to vote for the top european SharePoint Influencers
-featured_image: /assets/images/posts/feature_images/celebrate.jpg
+image: /celebrate.jpg
 unsplash_user_name: Ray Hennessy
 unsplash_user_ref: rayhennessy
 ---

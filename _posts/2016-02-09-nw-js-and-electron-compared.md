@@ -6,7 +6,7 @@ redirect_from: /nw-js-and-electron-compared-6addc46dc283
 published: true
 tags: [Electron, NWjs]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/compare.jpg
+image: /compare.jpg
 unsplash_user_name: Timothy Eberly
 unsplash_user_ref: timothyeberly
 ---

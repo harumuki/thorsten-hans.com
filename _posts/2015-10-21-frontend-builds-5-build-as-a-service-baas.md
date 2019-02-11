@@ -6,7 +6,7 @@ redirect_from: /frontend-builds-5-build-as-a-service-baas-58716e90d28a
 published: true
 tags: [Build, Gulp.js]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/frontend-builds.jpg
+image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 ---

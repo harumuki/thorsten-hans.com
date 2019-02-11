@@ -6,7 +6,7 @@ redirect_from: /office-365-api-tools-update-d92fa15e0ad
 published: true
 tags: [O365]
 excerpt: A new version of Office 365 API Tools has been released. Check it out!
-featured_image: /assets/images/posts/feature_images/demo-code.jpg
+image: /demo-code.jpg
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich
 ---

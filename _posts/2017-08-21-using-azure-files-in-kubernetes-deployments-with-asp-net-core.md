@@ -9,7 +9,7 @@ tags:
   - Azure
   - Docker
 excerpt: Learn how to use Azure Files in Kubernetes Deployments from an ASP.NET Core Application
-featured_image: /assets/images/posts/feature_images/2017-08-21-using-azure-files-in-kubernetes-deployments-with-asp-net-core.jpg
+image: /2017-08-21-using-azure-files-in-kubernetes-deployments-with-asp-net-core.jpg
 ---
 *Azure Container Services* (*ACS*) makes it incredibly easy to spin up and manage *Kubernetes* clusters in the cloud. There are plenty of other Azure resources which you can use to build daily scenarios on a native cloud stack.
 Common scenarios are serving files from and writing important information to persisted locations. Azure offers many different storage capabilities. In this post, I'll explain how to use an Azure File Share to serve content by using a .NET Core Web API. 

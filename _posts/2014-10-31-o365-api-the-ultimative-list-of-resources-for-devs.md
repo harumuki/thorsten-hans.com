@@ -6,7 +6,7 @@ redirect_from: /o365-api-the-ultimative-list-of-resources-for-devs-9d50dfb05168
 published: true
 tags: [O365]
 excerpt: Check out that great list of resources for the Office365 APIs. If you do Office365 development, this is a must have.
-featured_image: /assets/images/posts/feature_images/references.jpg
+image: /references.jpg
 unsplash_user_name: Giammarco Boscaro
 unsplash_user_ref: giamboscaro
 ---

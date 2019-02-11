@@ -8,7 +8,7 @@ tags: [SharePoint]
 excerpt: Learn how to launch modal dialogs in a SharePoint App using CustomActions for the EditControlBlock
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich
-featured_image: /assets/images/posts/feature_images/demo-code.jpg
+image: /demo-code.jpg
 ---
 
 When you're building Apps for SharePoint 2013, you can create Pages, Client Parts or CustomActions.

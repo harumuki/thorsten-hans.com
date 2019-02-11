@@ -6,7 +6,7 @@ redirect_from: /treat-your-iterm2-like-guake-15cec9a51c4
 published: true
 tags: [Terminal, Tools, Productivity]
 excerpt: 'Learn how to configure iTerm2 to work like Guake, the popular Linux terminal. Boost your productivity and access iTerm2 quickly from everywhere.'
-featured_image: /assets/images/posts/feature_images/2016-10-15-treat-your-iterm2-like-guake.jpg
+image: /2016-10-15-treat-your-iterm2-like-guake.jpg
 unsplash_user_ref: grohsfabian
 unsplash_user_name: Fabian Grohs
 ---

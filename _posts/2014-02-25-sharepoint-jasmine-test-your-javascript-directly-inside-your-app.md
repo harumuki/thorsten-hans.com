@@ -6,7 +6,7 @@ redirect_from: /sharepoint-jasmine-test-your-javascript-directly-inside-your-app
 published: true
 tags: [Frontend]
 excerpt: I've published a new NuGet package which makes testing SharePoint Apps painless.
-featured_image: /assets/images/posts/feature_images/testing.jpg
+image: /testing.jpg
 unsplash_user_name: David Travis
 unsplash_user_ref: dtravisphd
 ---

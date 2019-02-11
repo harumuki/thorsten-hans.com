@@ -6,7 +6,7 @@ redirect_from: /electron-crashreporter-stay-up-to-date-if-your-app-fucked-up-3e9
 published: true
 tags: [Electron, Angular]
 excerpt: Learn how to deal with the unexpected. How can you deal with errors once you've shipped your Electron application. This post explains how to setup and use CrashPad on all platforms
-featured_image: /assets/images/posts/feature_images/2017-03-03-electron-crashreporter-stay-up-to-date-if-your-app-fucked-up.jpg
+image: /2017-03-03-electron-crashreporter-stay-up-to-date-if-your-app-fucked-up.jpg
 ---
 Every one of us knows about those situations. You ship your app to production and you're instantly losing 10 pounds of weight 💪🏼 if nothing bad happens in the first 24 hours. You're finally able to get some sleep, customers are happy, the manager is happy, *you are happy*!
 

@@ -6,7 +6,7 @@ redirect_from: /angular2-and-electron-the-definitive-guide-b389f36f74d
 published: true
 tags: [Electron, Angular]
 excerpt: This article guides you through the process of creating an cross-platform desktop application using GitHub Electron and Angular as Single Page Application framework.
-featured_image: /assets/images/posts/feature_images/2016-02-14-angular-and-electron-the-definitive-guide.jpg
+image: /2016-02-14-angular-and-electron-the-definitive-guide.jpg
 ---
 Building cross-platform apps for desktop operating systems became simple compared to the past. With *GitHub's Electron* is a framework available that takes away the pain for abstracting all common platform APIs from us as web developers.
 

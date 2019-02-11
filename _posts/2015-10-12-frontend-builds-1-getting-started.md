@@ -6,7 +6,7 @@ redirect_from: /frontend-builds-1-getting-started-94b18e6bc360
 published: true
 tags: [Build, Gulp.js]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/frontend-builds.jpg
+image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 

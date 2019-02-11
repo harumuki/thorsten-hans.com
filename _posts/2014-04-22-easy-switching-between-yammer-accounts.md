@@ -6,7 +6,7 @@ redirect_from: /easy-switching-between-yammer-accounts-73579d4d4001
 published: true
 tags: [Tools]
 excerpt: Are you using multiple Yammer networks, in this post I'll explain how to switch easily between those.
-featured_image: /assets/images/posts/feature_images/general.jpg
+image: /general.jpg
 unsplash_user_name: Sergey Zolkin
 unsplash_user_ref: szolkin
 ---

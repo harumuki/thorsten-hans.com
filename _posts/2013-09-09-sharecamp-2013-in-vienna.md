@@ -6,7 +6,7 @@ redirect_from: /sharecamp-2013-in-vienna-114938bf567e
 published: true
 tags: [Talks]
 excerpt: A quick recap of ShareCamp 2013 in Vienna
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

@@ -6,7 +6,7 @@ redirect_from: /sharecoffee-userprofiles-is-available-ae16b1569f64
 published: true
 excerpt: A bunch of new features for ShareCoffee targeting user profiles. Check them out!
 tags: [SharePoint, O365, ShareCoffee]
-featured_image: /assets/images/posts/feature_images/announcement.jpg
+image: /announcement.jpg
 unsplash_user_name: Matt Botsford
 unsplash_user_ref: mattbotsford
 ---

@@ -6,7 +6,7 @@ redirect_from: /angular2-quickie-local-template-variables-a5c516691bc0
 published: true
 tags: [Angular]
 excerpt: In Angular, HTML templates aren't static. By using local template variables you can make your HTML even more dynamic and more flexible. Learn how to use local template variables in Angular, now!
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 Local template variables in *Angular* can be used to reference *HTML* elements easily and use their properties either on sibling or child nodes.
 

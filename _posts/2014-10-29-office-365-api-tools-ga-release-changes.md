@@ -6,7 +6,7 @@ redirect_from: /office-365-api-tools-ga-release-changes-93f07da0d5b6
 published: true
 tags: [O365]
 excerpt: Read what has changed in the currently shipped release of Office365 API Tools.
-featured_image: /assets/images/posts/feature_images/demo-code.jpg
+image: /demo-code.jpg
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich
 ---

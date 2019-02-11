@@ -6,7 +6,7 @@ redirect_from: /asp-net-vnext-on-osx-yosemite-get-kvm-up-and-running-12ec7f774d7
 published: true
 tags: [NetCore]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/repair.jpg
+image: /repair.jpg
 unsplash_user_ref: rawpixel
 unsplash_user_name: rawpixel
 ---

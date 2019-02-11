@@ -10,7 +10,7 @@ tags:
   - Docker
   - AKS
 excerpt: Learn how to take the official Azure Functions runtime and deploy it as Docker container to a Kubernetes cluster and  by adding horizontal pod autoscaling (HPA) you can handle almost any load automatically.
-featured_image: /assets/images/posts/feature_images/2018-01-26-deploy-azure-functions-to-kubernetes-and-scale-them-automatically.jpg
+image: /2018-01-26-deploy-azure-functions-to-kubernetes-and-scale-them-automatically.jpg
 ---
 
 *Azure Functions* has become my standard framework to build *serverless* backends for *Single Page Applications* (SPAs). It's easy to get started with *Azure Functions*, although the platform itself is really powerful and highly configurable. I really love the cloud hosting capabilities for *Azure Functions*, but from time to time, it's not allowed to use the public cloud as the deployment target.

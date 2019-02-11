@@ -6,7 +6,7 @@ redirect_from: /when-electrons-window-settitle-keeps-driving-you-crazy-d81aaf0d5
 published: true
 tags: [Electron]
 excerpt: When you start your Electron App, the title of the main window may flash. Read this article and learn how to prevent title flashing
-featured_image: /assets/images/posts/feature_images/2015-05-06-when-electrons-window-settitle-keeps-you-driving-crazy.jpg
+image: /2015-05-06-when-electrons-window-settitle-keeps-you-driving-crazy.jpg
 unsplash_user_name: Jeff Sheldon
 unsplash_user_ref: ugmonk
 ---

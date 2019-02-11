@@ -6,7 +6,7 @@ redirect_from: /the-sharecoffee-logo-6b47160939c9
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: Finally, ShareCoffee got its own logo. 💄  
-featured_image: /assets/images/posts/feature_images/design.jpg
+image: /design.jpg
 unsplash_user_name: rawpixel
 unsplash_user_ref: rawpixel
 ---

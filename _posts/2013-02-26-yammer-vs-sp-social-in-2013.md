@@ -6,7 +6,7 @@ redirect_from: /yammer-vs-sp-social-in-2013-1f966506f39a
 published: true
 tags: [SharePoint]
 excerpt: Should you use Yammer or SharePoint's social features? Which challenges will you face? What was our feedback from implementing Yammer at our company.
-featured_image: /assets/images/posts/feature_images/2013-02-26-yammer-vs-sp-social-in-2013.jpg
+image: /2013-02-26-yammer-vs-sp-social-in-2013.jpg
 ---
 
 There are several discussions on SharePoint's social strategy going on at the moment. I had some great discussions with my MVP mate [Adis Jugo](http://blog.sharedove.com/adisjugo/){:target="_blank"} during Summit last week. Since #SPC12 almost every SharePoint addicted developer, it-pro, power user has reviewed Yammer. If you don't know what Yammer is, here a short introduction.

@@ -6,7 +6,7 @@ redirect_from: /setting-electron-app-icons-for-windows-from-macos-3fc63ad19984
 published: true
 tags: [Electron]
 excerpt: Every app has to have a nice looking app icon. A simple task may become complex, especially if you deal with multiple platforms. This article explains how to set app icons for Electron-based Windows apps from macOS.
-featured_image: /assets/images/posts/feature_images/2016-01-16-setting-electron-app-icons-for-windows-from-macos.jpg
+image: /2016-01-16-setting-electron-app-icons-for-windows-from-macos.jpg
 ---
 
 When building cross-platform apps using *GitHub Electron*, you may run into the same issue I did a few days ago. I wanted to build an *Electron* app for *Windows* and *macOS* directly from my host-system (also *macOS*). The build-process failed because setting the *Windows App* Icon didn't work for me when building it from the *Mac*.

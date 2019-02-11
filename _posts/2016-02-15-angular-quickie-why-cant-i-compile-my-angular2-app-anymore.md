@@ -6,7 +6,7 @@ redirect_from: /angular-2-quickie-why-cant-i-compile-my-angular2-app-anymore-c36
 published: true
 tags: [Angular]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 
 Staying on top of the technology stack is sometimes really hard. The *Angular* core team tries to do it's best to keep breaking changes as seldom as possible. Because *Angular* is still in beta, breaking changes may happen. I was facing some issues while catching up latest betas. If you're also facing `TS2304` while transpiling your app, this article may help.

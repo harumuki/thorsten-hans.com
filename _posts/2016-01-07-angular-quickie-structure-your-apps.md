@@ -6,7 +6,7 @@ redirect_from: /angular2-quicky-how-to-structure-your-projects-9b521b831de2
 published: true
 tags: [Angular]
 excerpt: Angular will become the next big thing for enterprise developers. That's why you should structure your source code correctly from the very beginning.
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 When building large *Angular* Apps, you've to care about how to structure your project. I can imagine, [John Papa](https://twitter.com/John_Papa){:target="_blank"} will, of course, provide a new style guide soon 🙂 (no pressure here, we've our own for *Angular.JS* and *Angular*).
 

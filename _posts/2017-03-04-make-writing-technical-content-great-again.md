@@ -6,7 +6,7 @@ redirect_from: /make-writing-technical-content-great-again-d58dedec448b
 published: true
 tags: [Writing, Tools]
 excerpt: How do you write your technical articles? A question I was often asked. This article is a quick overview of my writing workflow and the tools that I use to produce my articles
-featured_image: /assets/images/posts/feature_images/2017-03-04-make-writing-technical-content-great-again.jpg
+image: /2017-03-04-make-writing-technical-content-great-again.jpg
 ---
 Like many other developers, I write articles for various print and online magazines. I do this for almost a decade now and I've used many different approaches to make writing as comfortable as possible for me. That said, I want to share the tools I use and the workflow I prefer.
 

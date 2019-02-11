@@ -6,7 +6,7 @@ redirect_from: /sharecoffee-ebook-98368c7b3e3
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: After a long and intensive time, I''m really proud to announce my first eBook
-featured_image: /assets/images/posts/feature_images/ebook.jpg
+image: /ebook.jpg
 unsplash_user_name: freestocks.org
 unsplash_user_ref: freestocks
 ---

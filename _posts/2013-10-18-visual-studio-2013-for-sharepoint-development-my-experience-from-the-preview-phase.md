@@ -6,7 +6,7 @@ redirect_from: /visual-studio-2013-for-sharepoint-development-my-experience-from
 published: true
 tags: [Tools]
 excerpt: I spent much time using the Visual Studio 2013 preview.Today I want to share my experiences from the preview-phase.
-featured_image: /assets/images/posts/feature_images/celebration.jpg
+image: /celebration.jpg
 unsplash_user_name: Danny Howe
 unsplash_user_ref: dannyhowe
 ---

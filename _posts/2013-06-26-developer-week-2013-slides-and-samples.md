@@ -6,7 +6,7 @@ redirect_from: /developer-week-2013-slides-and-samples-878221fc03ee
 published: true
 tags: [Talks]
 excerpt: I delivered two talks at Developer Week 2013 - here a quick recap
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

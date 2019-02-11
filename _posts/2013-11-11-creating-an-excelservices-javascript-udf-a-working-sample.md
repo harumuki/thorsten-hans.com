@@ -6,7 +6,7 @@ redirect_from: /creating-an-excelservices-javascript-udf-a-working-sample-71440b
 published: true
 tags: [Frontend]
 excerpt: This article explains how you can create User Defined Functions (UDF) with JavaScript for Excel Services
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

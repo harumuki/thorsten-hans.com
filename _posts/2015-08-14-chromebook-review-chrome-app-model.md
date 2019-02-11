@@ -6,7 +6,7 @@ redirect_from: /chromebook-review-chrome-app-model-bb7bc7977a11
 published: true
 tags: [Tools]
 excerpt: I bought a Chromebook because I want to dig a bit deeper into the Chrome App Model from a developers perspective. Check out what happened...
-featured_image: /assets/images/posts/feature_images/2015-08-14-chromebook-review-chrome-app-model.jpg
+image: /2015-08-14-chromebook-review-chrome-app-model.jpg
 unsplash_user_ref: nate_dumlao
 unsplash_user_name: Nathan Dumlao
 ---

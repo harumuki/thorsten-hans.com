@@ -6,7 +6,7 @@ redirect_from: /sharecoffee-is-available-7fcf0eac3dc4
 published: true
 excerpt: I'm proud to release the first version of ShareCoffee. A small but powerful library which unifies consumption of SharePoint's HTTP based APIs. In addition a bunch of helpers are included for the SharePoint App framework.
 tags: [SharePoint, O365, ShareCoffee]
-featured_image: /assets/images/posts/feature_images/announcement.jpg
+image: /announcement.jpg
 unsplash_user_name: Matt Botsford
 unsplash_user_ref: mattbotsford
 ---

@@ -6,7 +6,7 @@ redirect_from: /coffeescript-vs-typescript-vs-javascript-my-thoughts-1678e566ea5
 published: true
 tags: [Frontend]
 excerpt: CoffeeScript, TypeScript or plain old JavaScript? I get that question many times from customers. Here are my thoughts...
-featured_image: /assets/images/posts/feature_images/compare.jpg
+image: /compare.jpg
 unsplash_user_name: Timothy Eberly
 unsplash_user_ref: timothyeberly
 ---

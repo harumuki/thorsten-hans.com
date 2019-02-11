@@ -6,7 +6,7 @@ published: true
 tags: [Kubernetes,Azure,Azure Key Vault,AKS]
 redirect_from: /azure-key-vault-flexvolume-for-kubernetes-a-journey-to-integrate-azure-key-vault-and-aks-e6fa6a6dbf1b
 excerpt: Integrate Azure Key Vault and Azure Kubernetes services without leaking sensitive configuration data such as Service Principal credentials by using Azure AD Pod Identity and Azure Key Vault FlexVolume for Kubernetes
-featured_image: /assets/images/posts/feature_images/2018-12-10-azure-key-vault-flexvolume-for-kubernetes-e2-80-8a--e2-80-8aa-journey-to-integrate-azure-key-vault-and-aks.jpg
+image: /2018-12-10-azure-key-vault-flexvolume-for-kubernetes-e2-80-8a--e2-80-8aa-journey-to-integrate-azure-key-vault-and-aks.jpg
 ---
 This is the second part of the mini-series on Integrating *Azure Key Vault* and *AKS* (Azure Kubernetes Services). If you missed the [first part]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault%}), you should definitely read it before digging into this article. 
 

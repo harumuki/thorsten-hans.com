@@ -6,7 +6,7 @@ redirect_from: /an-introduction-to-coffeescript-fce9d9b3fcd5
 published: true
 tags: [Frontend]
 excerpt: I am a CoffeeScript lover. It's so time-saving, powerful and efficient. If you want to build robust frontend stuff, you should also start with CoffeeScript. This article provides a bunch of basic stuff for new CoffeeScript devs.
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

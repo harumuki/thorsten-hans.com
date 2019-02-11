@@ -6,7 +6,7 @@ redirect_from: /implementing-crud-with-office365-apis-5180baf46dd4
 published: true
 tags: [O365]
 excerpt: Learn how to implement all CRUD operations using Office365 API.
-featured_image: /assets/images/posts/feature_images/references.jpg
+image: /references.jpg
 unsplash_user_name: Giammarco Boscaro
 unsplash_user_ref: giamboscaro
 ---

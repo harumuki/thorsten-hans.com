@@ -6,7 +6,7 @@ redirect_from: /grunt-nuget-packaging-for-mac-and-linux-e8c2634c5637
 published: true
 tags: [Frontend]
 excerpt: Learn how to build NuGet packages on macOS and Linux systems.
-featured_image: /assets/images/posts/feature_images/shipping.jpg
+image: /shipping.jpg
 unsplash_user_name: Ronan
 unsplash_user_ref: ronan18
 ---

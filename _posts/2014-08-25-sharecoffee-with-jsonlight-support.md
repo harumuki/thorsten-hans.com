@@ -6,7 +6,7 @@ redirect_from: /sharecoffee-with-jsonlight-support-c32d0a32a750
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: ShareCoffee receives support for JSONLight. Opt-in and make your Apps faster and more efficient
-featured_image: /assets/images/posts/feature_images/announcement.jpg
+image: /announcement.jpg
 unsplash_user_name: Matt Botsford
 unsplash_user_ref: mattbotsford
 ---

@@ -10,7 +10,7 @@ tags:
   - Azure Container Service
   - AKS
 excerpt: The AKS team offers a great set of commands to make administrative operations for Kubernetes clusters very easy. This article demonstrates how to upgrade a AKS cluster.
-featured_image: /assets/images/posts/feature_images/2018-03-22-upgrading-a-kubernetes-cluster-on-aks-using-azure-cli.jpg
+image: /2018-03-22-upgrading-a-kubernetes-cluster-on-aks-using-azure-cli.jpg
 ---
 Upgrading an on-premises *Kubernetes* cluster can be very cumbersome and time-consuming task. It's not just a single upgrade command that you can execute and everything happens magically behind the scenes. A single command for upgrading an entire Kubernetes cluster would be awesome 💚 and that's exactly what's provided by the AKS team. A single command to upgrade all your masters and nodes. 
 

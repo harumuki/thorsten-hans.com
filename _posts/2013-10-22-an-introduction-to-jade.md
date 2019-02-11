@@ -6,7 +6,7 @@ redirect_from: /an-introduction-to-jade-b11fe3dd6a16
 published: true
 tags: [Frontend]
 excerpt: Learn how to use Jade (aka Pug) to write your frontend code instead of relying on plain old HTML. This article guides you through the basics of Pug.
-featured_image: /assets/images/posts/feature_images/colorful.jpg
+image: /colorful.jpg
 unsplash_user_name: Aashish R Gautam
 unsplash_user_ref: kyahaibe
 ---

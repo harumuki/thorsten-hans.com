@@ -6,7 +6,7 @@ redirect_from: /loading-the-app-chromecontrol-with-sharecoffee-7e5327a376db
 published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: When building SharePoint Apps, you've to load the so-called App chrome. This post explains how to make this integration smoother with ShareCoffee
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

@@ -6,7 +6,7 @@ redirect_from: /be-more-productive-with-jade-4399fc253ba5
 published: true
 tags: [Pug]
 excerpt: Boost your productivity with Pug. Pug compiles down to HTML and make you faster when it comes to frontend development.
-featured_image: /assets/images/posts/feature_images/colorful.jpg
+image: /colorful.jpg
 unsplash_user_name: Aashish R Gautam
 unsplash_user_ref: kyahaibe
 ---

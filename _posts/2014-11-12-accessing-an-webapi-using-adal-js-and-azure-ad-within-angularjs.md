@@ -6,7 +6,7 @@ redirect_from: /accessing-an-webapi-using-adal-js-and-azure-ad-within-angularjs-
 published: true
 tags: [Azure, Frontend]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/secure.jpg
+image: /secure.jpg
 unsplash_user_name: James Sutton
 unsplash_user_ref: jamessutton_photography
 ---

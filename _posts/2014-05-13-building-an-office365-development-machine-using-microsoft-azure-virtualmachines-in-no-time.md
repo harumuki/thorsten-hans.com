@@ -6,7 +6,7 @@ redirect_from: /building-an-office365-development-machine-using-microsoft-azure-
 published: true
 tags: [O365,Azure]
 excerpt: Create your very own Office365 developer machine using Azure Virtual Machines
-featured_image: /assets/images/posts/feature_images/clouds.jpg
+image: /clouds.jpg
 unsplash_user_name: Nacho Rochon
 unsplash_user_ref: nacho_rochon
 ---

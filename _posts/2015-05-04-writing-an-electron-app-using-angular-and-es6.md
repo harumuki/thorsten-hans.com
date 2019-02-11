@@ -6,7 +6,7 @@ redirect_from: /writing-an-electron-atom-shell-app-using-angular-and-es6-2d561f5
 published: true
 tags: [Electron, Angular]
 excerpt: Learn how to create a cross-platform desktop application for Windows, Linux and macOS based on GitHub Electron, Angular.JS and JavaScript. In this tutorial, the JS code will be transpiled using Babel and dynamic module loading is implemented with SystemJS.
-featured_image: /assets/images/posts/feature_images/2015-05-04-writing-an-electron-app-using-angular-and-es6.jpg
+image: /2015-05-04-writing-an-electron-app-using-angular-and-es6.jpg
 unsplash_user_name: Anastasia Yılmaz
 unsplash_user_ref: anastasiayilmaz
 ---

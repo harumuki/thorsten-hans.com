@@ -6,7 +6,7 @@ redirect_from: /developer-presentations-using-reveal-js-2ef5c270b59a
 published: true
 tags: [Tools, Productivity]
 excerpt: Are you speaking at user groups or conferences? As a developer we would love to code our presentations. With reveal.js you can finally do it. Read this article and get started with Presentations as Code (PaC)
-featured_image: /assets/images/posts/feature_images/2015-02-19-developer-presentations-using-reveal-js.jpg
+image: /2015-02-19-developer-presentations-using-reveal-js.jpg
 ---
 
 [reveal.js](https://github.com/hakimel/reveal.js/){:target="_blank"} has been around for a while. I saw many people using it for their presentations (for example [AC](http://www.andrewconnell.com/blog){:target="_blank"}). AC also wrote [a great article](http://www.andrewconnell.com/blog/using-github-for-developer-technical-presentations-post-mortem){:target="_blank"} on how he is organizing his presentations on GitHub using reveal.js.

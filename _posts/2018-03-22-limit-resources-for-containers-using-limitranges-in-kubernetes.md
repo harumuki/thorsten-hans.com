@@ -7,7 +7,7 @@ published: true
 tags:
   - Kubernetes
 excerpt: Managing resources and resource limits is essential to optimize utilization of Kubernetes clusters. This post demonstrates how to limit resources for Pods in K8s
-featured_image: /assets/images/posts/feature_images/2018-03-22-limit-resources-for-containers-using-limitranges-in-kubernetes.jpg
+image: /2018-03-22-limit-resources-for-containers-using-limitranges-in-kubernetes.jpg
 ---
 
 When deploying applications to *Kubernetes* one of the most important things to specify are *resource-requests* and *-limits*. Having proper limits defined per Container makes it easier to optimize the hardware utilization for all worker nodes in a Kubernetes cluster.

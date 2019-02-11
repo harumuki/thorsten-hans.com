@@ -6,7 +6,7 @@ redirect_from: /angular2-quickie-viewencapsulation-native-in-all-browsers-974b20
 published: true
 tags: [Angular]
 excerpt: ViewEncapsulation tells Angular how to render the component in the final website, this post explains how to enable native ViewEncapsulation for all browsers
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 A few days ago [I wrote about *Angular ViewEncapsulation*]({% post_url 2016-01-08-angular-quicky-component-viewencapsulation-and-webcomponents %}). The sample I've created for that post only works if you're using *Google Chrome*. In this article, I'll explain why the sample only works in *Google Chrome* and how you can take the example one step further to work and behave as expected in all modern browsers.
 

@@ -6,7 +6,7 @@ redirect_from: /one-the-move-goodbye-sharepoint-f65431f669d5
 published: true
 tags: [Job, Carrer]
 excerpt: After many years I'll finally leave the SharePoint business. In this article I'm sharing some of the reasons.
-featured_image: /assets/images/posts/feature_images/2015-05-29-one-the-move-goodbye-sharepoint.jpg
+image: /2015-05-29-one-the-move-goodbye-sharepoint.jpg
 unsplash_user_name: Jan Tinneberg
 unsplash_user_ref: craft_ear
 ---

@@ -6,7 +6,7 @@ redirect_from: /inspect-your-kubernetes-inventory-in-no-time-with-asp-net-core-a
 published: true
 tags: [Kubernetes, Azure, AKS, NETCore]
 excerpt: 'Learn how to use the C# Kubernetes Client library to query Kubernetes inventory and expose it via HTTP using a simple ASP.NET Core WebAPI which will be directly deployed to an AKS cluster as Deployment.'
-featured_image: /assets/images/posts/feature_images/2018-12-04-inspect-your-kubernetes-inventory-in-no-time-with-asp-net-core-and-kubernetes-client-library.jpg
+image: /2018-12-04-inspect-your-kubernetes-inventory-in-no-time-with-asp-net-core-and-kubernetes-client-library.jpg
 ---
 Running and maintaining complex applications on Kubernetes often requires good monitoring capabilities. Sure, there are plenty of products available which can be deployed easily to an existing cluster to get insights about the current cluster inventory. But why not build your own? 
 

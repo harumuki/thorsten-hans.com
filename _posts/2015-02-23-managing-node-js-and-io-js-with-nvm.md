@@ -6,7 +6,7 @@ redirect_from: /managing-node-js-and-io-js-with-nvm-b7ab849855d5
 published: true
 tags: [Tools, Productivity]
 excerpt: 'Are you using Node.js or io.js? If so, you should know NVM, the Node Version Manager. This article explains how to get started with NVM and how to use it on a daily basis.'
-featured_image: /assets/images/posts/feature_images/2015-02-23-managing-node-js-and-io-js-with-nvm.jpg
+image: /2015-02-23-managing-node-js-and-io-js-with-nvm.jpg
 ---
 
 Are you building Node.js Apps? **Use NVM**!

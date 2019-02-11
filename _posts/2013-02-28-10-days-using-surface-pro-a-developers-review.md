@@ -6,7 +6,7 @@ redirect_from: /10-days-using-surface-pro-a-developers-review-583dae2fe863
 published: true
 tags: [Tools]
 excerpt: I bought a Surface Pro and I'm using it as my main device to do software development. Read my recap and get all the pros and cons
-featured_image: /assets/images/posts/feature_images/devices.jpg
+image: /devices.jpg
 unsplash_user_name: Hal Gatewood
 unsplash_user_ref: halgatewood
 

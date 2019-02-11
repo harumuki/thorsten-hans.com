@@ -6,7 +6,7 @@ redirect_from: /talking-to-sharepoints-rest-services-with-c-using-restsharp-bd01
 published: true
 tags: [SharePoint]
 excerpt: Do you have to consume data from SharePoint using C#? Then this article is for you! It explains how to query data from SharePoint's API using RESTSharp.
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

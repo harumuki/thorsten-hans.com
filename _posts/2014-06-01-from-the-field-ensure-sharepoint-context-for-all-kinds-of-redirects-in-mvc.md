@@ -6,7 +6,7 @@ redirect_from: /from-the-field-ensure-sharepoint-context-for-all-kinds-of-redire
 published: true
 tags: [SharePoint]
 excerpt: Are you building Provider Hosted Apps? Check out these insights from real-world projects.
-featured_image: /assets/images/posts/feature_images/field.jpg
+image: /field.jpg
 unsplash_user_name: Tanner Boriack
 unsplash_user_ref: tannerboriack
 ---

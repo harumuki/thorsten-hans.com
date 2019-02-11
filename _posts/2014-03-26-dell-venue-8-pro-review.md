@@ -6,7 +6,7 @@ redirect_from: /dell-venue-8-pro-review-7f25ff3160b9
 published: true
 tags: [Tools]
 excerpt: I bought a Dell Venue 8 Pro and here are my first experiences.
-featured_image: /assets/images/posts/feature_images/devices.jpg
+image: /devices.jpg
 unsplash_user_name: Hal Gatewood
 unsplash_user_ref: halgatewood
 ---

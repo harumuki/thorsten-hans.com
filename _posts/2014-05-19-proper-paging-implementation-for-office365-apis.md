@@ -6,7 +6,7 @@ redirect_from: /proper-paging-implementation-for-office365-apis-6f8ea6b295f8
 published: true
 tags: [O365]
 excerpt: Another tip from the field. This post shows a proper paging implementation for lists
-featured_image: /assets/images/posts/feature_images/field.jpg
+image: /field.jpg
 unsplash_user_name: Tanner Boriack
 unsplash_user_ref: tannerboriack
 ---

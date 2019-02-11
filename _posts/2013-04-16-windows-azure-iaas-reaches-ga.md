@@ -6,7 +6,7 @@ redirect_from: /windows-azure-iaas-reaches-ga-5a7eeed910cf
 published: true
 tags: [Azure, SharePoint]
 excerpt: Microsoft Azure IaaS components just hit GA, so it's the right time to spin up a SharePoint farm on Azure. Read what you need and how much you've to pay for it.
-featured_image: /assets/images/posts/feature_images/celebration.jpg
+image: /celebration.jpg
 unsplash_user_name: Danny Howe
 unsplash_user_ref: dannyhowe
 ---

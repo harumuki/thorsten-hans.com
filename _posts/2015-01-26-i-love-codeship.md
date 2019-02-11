@@ -6,7 +6,7 @@ redirect_from: /i-codeship-dcad7662709
 published: true
 tags: [DevOps]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/shipping.jpg
+image: /shipping.jpg
 unsplash_user_name: Ronan
 unsplash_user_ref: ronan18
 ---

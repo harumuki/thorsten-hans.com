@@ -6,7 +6,7 @@ redirect_from: /testing-angular2-apps-with-jasmine-and-typescript-4525195f2412
 published: true
 tags: [Angular]
 excerpt: Every developer should be able to write unit tests. This article explains how to write tests based on the popular testing framework Jasmine in combination with Angular and TypeScript.
-featured_image: /assets/images/posts/feature_images/testing.jpg
+image: /testing.jpg
 unsplash_user_name: David Travis
 unsplash_user_ref: dtravisphd
 ---

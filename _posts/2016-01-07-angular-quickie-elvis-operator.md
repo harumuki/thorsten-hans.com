@@ -6,7 +6,7 @@ redirect_from: /angular2-quicky-elvis-is-in-tha-house-61c6a714dfe3
 published: true
 tags: [Angular]
 excerpt: Angular introduces the Elvis operator. Learn how to use it in templates and how to build more efficient HTML templates for your Angular components.
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 Another *Angular quickie* for today!😉 *Angular* introduces the *Elvis* operator **?.** is used in templates.
 

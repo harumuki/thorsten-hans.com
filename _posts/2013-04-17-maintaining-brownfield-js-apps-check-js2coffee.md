@@ -8,7 +8,7 @@ tags: [Frontend, Tools]
 excerpt: null
 unsplash_user_ref: johnschno
 unsplash_user_name: John Schnobrich
-featured_image: /assets/images/posts/feature_images/demo-code.jpg
+image: /demo-code.jpg
 ---
 
 Do you love *CoffeeScript*? Alternatively, you've to maintain Brownfield *JavaScript* based Applications?

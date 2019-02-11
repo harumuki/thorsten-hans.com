@@ -6,7 +6,7 @@ redirect_from: /kiss-angular-apps-a-bit-more-framework-agnostic-80d84e07663a
 published: true
 tags: [Angular]
 excerpt: 'This post describes how to build Angular apps more framework-agnostic. Following the simple samples in this post will make your code more reusable. '
-featured_image: /assets/images/posts/feature_images/2017-03-07-kiss--f0-9f-98-98-angular-apps-a-bit-more-framework-agnostic.jpg
+image: /2017-03-07-kiss--f0-9f-98-98-angular-apps-a-bit-more-framework-agnostic.jpg
 ---
 More and more developers are jumping on the *Angular* train in these days. *Angular* is awesome 💚🤘🏼 but it's just a framework, a framework that may be replaced at some point in time by the next big thing.
 

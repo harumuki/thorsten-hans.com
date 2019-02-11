@@ -6,7 +6,7 @@ redirect_from: /mvp-mentor-session-building-sharepoint-apps-with-javascript-878d
 published: true
 tags: [MVP]
 excerpt: I contributed a webinar to Microsoft's MVP Mentor program. As mentors, we provide free coaching for students on different tech topics.
-featured_image: /assets/images/posts/feature_images/general.jpg
+image: /general.jpg
 unsplash_user_name: Sergey Zolkin
 unsplash_user_ref: szolkin
 ---

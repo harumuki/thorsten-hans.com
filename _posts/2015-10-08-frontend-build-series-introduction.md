@@ -8,7 +8,7 @@ redirect_from:
 published: true
 tags: [Build, Gulp.js]
 excerpt: Kill all humans! No not really, this post is the introduction for the Frontend Build article series. It'll explain how to automate critical steps when building Frontend applications.
-featured_image: /assets/images/posts/feature_images/frontend-builds.jpg
+image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 ---

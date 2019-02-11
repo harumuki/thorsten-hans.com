@@ -6,7 +6,7 @@ redirect_from: /write-your-own-sharecoffee-addons-using-the-yeoman-generator-9c2
 published: true
 tags: [ShareCoffee, Frontend]
 excerpt: You can write your own, custom Add-Ons for Yeoman using the brand new sharecoffee-addon generator. Get started with ShareCoffee Add-Ons now.
-featured_image: /assets/images/posts/feature_images/announcement.jpg
+image: /announcement.jpg
 unsplash_user_name: Matt Botsford
 unsplash_user_ref: mattbotsford
 ---

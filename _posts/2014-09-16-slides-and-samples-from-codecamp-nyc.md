@@ -6,7 +6,7 @@ redirect_from: /slides-and-samples-from-codecamp-nyc-3e12a7c1c8c1
 published: true
 tags: [Talks]
 excerpt: Reacp of my talk at CodeCamp in New York City
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

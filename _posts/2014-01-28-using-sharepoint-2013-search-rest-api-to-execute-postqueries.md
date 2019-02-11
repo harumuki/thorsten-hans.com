@@ -6,7 +6,7 @@ redirect_from: /using-sharepoint-2013-search-rest-api-to-execute-postqueries-b2b
 published: true
 tags: [SharePoint]
 excerpt: SharePoint is exposing it's Search service via HTTP. In this article I share some essential tips when using SharePoint's Search Service via HTTP.
-featured_image: /assets/images/posts/feature_images/learning.jpg
+image: /learning.jpg
 unsplash_user_name: Helloquence
 unsplash_user_ref: helloquence
 ---

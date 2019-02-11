@@ -6,7 +6,7 @@ redirect_from: /sharecoffee-0-0-11-is-available-546ba2a773e0
 published: true
 excerpt: Check out what is new in  ShareCoffee 0.0.11
 tags: [SharePoint, O365, ShareCoffee]
-featured_image: /assets/images/posts/feature_images/announcement.jpg
+image: /announcement.jpg
 unsplash_user_name: Matt Botsford
 unsplash_user_ref: mattbotsford
 ---

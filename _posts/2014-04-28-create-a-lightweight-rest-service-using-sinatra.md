@@ -6,7 +6,7 @@ redirect_from: /create-a-lightweight-rest-service-using-sinatra-44004ac02caf
 published: true
 tags: []
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2014-04-28-create-a-lightweight-rest-service-using-sinatra.jpg
+image: /2014-04-28-create-a-lightweight-rest-service-using-sinatra.jpg
 unsplash_user_ref: richie_lugo
 unsplash_user_name: Richie Lugo
 ---

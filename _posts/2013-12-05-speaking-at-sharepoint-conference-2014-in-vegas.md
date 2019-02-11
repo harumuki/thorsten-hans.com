@@ -6,7 +6,7 @@ redirect_from: /speaking-at-sharepoint-conference-2014-in-vegas-293b439b10bc
 published: true
 tags: [Talks]
 excerpt: I'm thrilled to announce that I'll be speaking at SharePoint Conference 2014 in Las Vegas
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

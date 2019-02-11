@@ -9,7 +9,7 @@ tags:
   - Azure
   - AKS
 excerpt: 'CronJobs build an essential part of many applications. Often, you''ve to persist some kind of data from application artifacts like CronJobs. This article demonstrates how to build such a CronJob with Azure Files and run it on a Kubernetes cluster. '
-featured_image: /assets/images/posts/feature_images/2018-02-21-cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core.jpg
+image: /2018-02-21-cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core.jpg
 ---
 Tasks need to be executed repeatedly in almost every application. We all know requirements like these. Perhaps you have to clean up some tables in the database or you've to delete temporary files, no matter which requirement you've exactly, but *CronJobs* in *Kubernetes* are exactly designed for scenarios like these.
 *Kubernetes* offers *CronJobs* as first-class citizen objects. In the scope of *Kubernetes*, a *CronJob* should be used if you want to execute a piece of software either at a specified point in time or repeatedly at specified points in time. 

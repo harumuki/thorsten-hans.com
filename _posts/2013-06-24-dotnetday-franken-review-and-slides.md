@@ -6,7 +6,7 @@ redirect_from: /dotnetday-franken-review-and-slides-d37a0b6c112a
 published: true
 tags: [Talks]
 excerpt: Quick recap from .NET Day Franken
-featured_image: /assets/images/posts/feature_images/conference.jpg
+image: /conference.jpg
 unsplash_user_name: Headway
 unsplash_user_ref: headwayio
 ---

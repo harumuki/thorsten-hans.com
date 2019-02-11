@@ -6,7 +6,7 @@ redirect_from: /jade-up-your-angular2-markup-8a7d51514be9
 published: true
 tags: [Angular, Pug]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2016-02-05-pug-up-your-angular-markup.jpg
+image: /2016-02-05-pug-up-your-angular-markup.jpg
 ---
 Can you imagine the combination of *Angular* and Pug (previously known as Jade) is super awesome and timesaving? If not, read the following lines and reconsider!
 

@@ -6,7 +6,7 @@ redirect_from: /angular2-quickie-async-routes-c4e590bfd6a1
 published: true
 tags: [Angular]
 excerpt: null
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 *Angular* ships with its component router. The router makes it easy to compose complex applications from a bunch of components. Multiple routers could easily be nested to achieve almost every requirement for a *SPA*. When using regular routes, all files from your *SPA* are transferred to the client as soon as `RouteConfig` is interpreted by the JavaScript engine of your browser.
 

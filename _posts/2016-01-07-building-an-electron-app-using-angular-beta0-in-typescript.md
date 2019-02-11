@@ -6,7 +6,7 @@ redirect_from: /building-an-electron-app-using-angular2-beta0-in-typescript-5c5a
 published: true
 tags: [Electron, Angular]
 excerpt: Today In contrast to my older ES2015 example, this article demonstrates how to build an Electron application using Angular2 Beta0 and TypeScript.
-featured_image: /assets/images/posts/feature_images/2016-01-07-building-an-electron-app-using-angular-beta0-in-typescript.jpg
+image: /2016-01-07-building-an-electron-app-using-angular-beta0-in-typescript.jpg
 unsplash_user_ref: grohsfabian
 unsplash_user_name: Fabian Grohs
 ---

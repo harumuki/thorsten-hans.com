@@ -6,7 +6,7 @@ redirect_from: /angular2-quicky-component-viewencapsulation-and-webcomponents-69
 published: true
 tags: [Angular]
 excerpt: Angular and WebComponents? Sure! Learn how the different ViewEncapsulation settings work in Angular applications and which impact every setting does have on your resulting HTML output.
-featured_image: /assets/images/posts/feature_images/2016-angular-quickie.jpg
+image: /2016-angular-quickie.jpg
 ---
 *"Component"* is perhaps the most overloaded term when it comes to *JavaScript* frameworks these days. Every single framework has its definition of what precisely a component is, also *Angular*.
 

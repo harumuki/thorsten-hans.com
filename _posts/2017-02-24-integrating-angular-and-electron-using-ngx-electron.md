@@ -6,7 +6,7 @@ redirect_from: /integrating-angular-and-electron-using-ngx-electron-9c36affca25e
 published: true
 tags: [Electron,Angular]
 excerpt: 'ngx-electron is here to help you! If you want to write a desktop application using Angular, GitHub''s Electron is the tool of choice to bring Single Page Applications to the desktop. ngx-electron you''ll be quicker and accessing Electron''s APIs is even easier from within Angular.'
-featured_image: /assets/images/posts/feature_images/2017-02-24-integrating-angular-and-electron-using-ngx-electron.jpg
+image: /2017-02-24-integrating-angular-and-electron-using-ngx-electron.jpg
 ---
 GitHub Electron makes crafting cross-platform desktop applications really simple. You can take any existing website or *Single Page Application* (*SPA*) and just wrap it into a native container. Those containers (powered by *Chromium* and *Node.js*) could easily be distributed to all major desktop operating systems like *Windows*, *macOS* or *Linux*.
 
