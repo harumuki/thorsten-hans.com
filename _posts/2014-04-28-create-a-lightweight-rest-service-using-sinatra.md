@@ -2,7 +2,9 @@
 title: Create a lightweight REST service using Sinatra
 layout: post
 permalink: create-a-lightweight-rest-service-using-sinatra
-redirect_from: /create-a-lightweight-rest-service-using-sinatra-44004ac02caf
+redirect_from: 
+  - /create-a-lightweight-rest-service-using-sinatra-44004ac02caf
+  - /2014/04/28/create-a-lightweight-rest-service-using-sinatra/
 published: true
 tags: []
 excerpt: null

@@ -2,7 +2,9 @@
 title: Frontend Builds 1 - Getting started
 layout: post
 permalink: frontend-builds-1-getting-started
-redirect_from: /frontend-builds-1-getting-started-94b18e6bc360
+redirect_from: 
+  - /frontend-builds-1-getting-started-94b18e6bc360
+  - /2015/10/12/frontend-builds-1-getting-started/
 published: true
 tags: [Build, Gulp.js]
 excerpt: null
