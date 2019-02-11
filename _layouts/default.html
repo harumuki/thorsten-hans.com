@@ -23,7 +23,7 @@
         <!-- CSS Styles -->
         <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" />
 
-        {% include cookie-consent.html %}
+        {% include cookie-consent.html %} {% include analytics.html %}
     </head>
 
     {% capture layout %}{% if page.layout %}layout-{{
@@ -75,7 +75,7 @@
         </div>
         <!-- .site -->
         <div id="site-overlay" class="site-overlay"></div>
-        {% include sidebar.html %} {% include analytics.html %}
+        {% include sidebar.html %}
         <!-- Javascript Assets -->
         <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
         <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
