@@ -11,6 +11,8 @@ cover_image: bc_1.jpg
 # Add your GA Tracking Id
 ga_analytics: UA-117431284-1
 
+image_folder: /assets/images/posts/feature_images
+thumbs_folder: /assets/images/posts/feature_thumbs
 include:
   - _redirects
 # RSS Feed settings
