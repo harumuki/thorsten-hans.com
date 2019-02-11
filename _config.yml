@@ -21,6 +21,7 @@ feed:
   path: feed.xml
 # Author
 author:
+  twitter: ThorstenHans
   name: "Thorsten Hans"
   image: "thorsten-hans.jpg"
   greetings: "Hi there!"
@@ -29,11 +30,21 @@ author:
 
 email: thorsten.hans@gmail.com
 
-twitter: "ThorstenHans"
-github: "ThorstenHans"
-medium: "@ThorstenHans"
-instagram: "ThorstenHans"
-linkedin: "thorstenhans"
+social:
+  name: Thorsten Hans
+  links:
+    - https://twitter.com/ThorstenHans
+    - https://www.linkedin.com/in/ThorstenHans
+    - https://github.com/ThorstenHans
+  twitter: ThorstenHans
+  github: ThorstenHans
+  instagram: ThorstenHans
+  linkedin: thorstenhans
+
+twitter:
+  card: summary
+  site: ThorstenHans
+  username: ThorstenHans
 
 # Navigation
 navigation:
