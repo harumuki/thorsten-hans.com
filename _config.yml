@@ -15,6 +15,7 @@ image_folder: /assets/images/posts/feature_images
 thumbs_folder: /assets/images/posts/feature_thumbs
 include:
   - _redirects
+  - robots.txt
 # RSS Feed settings
 
 feed:
