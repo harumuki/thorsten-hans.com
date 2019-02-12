@@ -36,6 +36,7 @@ unsplash_user_ref: ecasap
 - [Your first Azure Environment with Terraform](#your-first-azure-environment-with-terraform)
 - [Destroying Terraform Environments](#destroying-terraform-environments)
 - [The Terraform Lifecycle](#the-terraform-lifecycle)
+- [Download the code from GitHub](#download-the-code-from-github)
 - [Summary](#summary)
 
 
@@ -647,6 +648,10 @@ Now that you've created, modified and destroyed resources in *Azure* using *Terr
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-7.png"
 title="The single Developer Terraform Lifecycle" caption="The single Developer Terraform Lifecycle" %}
+
+## Download the code from GitHub
+
+The entire *Terraform* project is available on [GitHub](https://github.com/ThorstenHans/terraform-guide-for-azure-enthusiasts){:target="_blank"}. Browse through it and use it to grasp even more knowledge on *Terraform* in an *Azure* world.
 
 ## Summary
 
