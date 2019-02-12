@@ -31,12 +31,10 @@ unsplash_user_ref:
 - [Outputs in HCL](#outputs-in-hcl)
 - [Overrides](#overrides)
 - [The Azure Provider](#the-azure-provider)
-  - [Authenticating against Azure AD](#authenticating-against-azure-ad)
-  - [Creating your first Azure environment with Terraform](#creating-your-first-azure-environment-with-terraform)
+  - [Authenticating mechanisms offered by the Azure Provider](#authenticating-mechanisms-offered-by-the-azure-provider)
+- [Your first Azure Environment with Terraform](#your-first-azure-environment-with-terraform)
+- [Destroying Terraform Environments](#destroying-terraform-environments)
 - [The Terraform Lifecycle](#the-terraform-lifecycle)
-- [Moifying terraformed environments](#moifying-terraformed-environments)
-- [Understanding Terraform State](#understanding-terraform-state)
-- [Teardown terraformed environments](#teardown-terraformed-environments)
 - [Summary](#summary)
 
 
@@ -136,11 +134,11 @@ The introduction already mentioned that *HashiCorp Configuration Language (HCL)*
 
 ### Booleans
 
-A `boolean` in *HCL* must have a value. The value can either be `true` or `false`
+A `boolean` in *HCL* must have a value. The value can either be `true` or `false`. *HCL* has no **native** support for booleans, instead it converts every `string` into a `boolean` if possible.
 
 ```hcl
 variable "storace_account_enable_firewall" {
-  type    = "boolean"
+  type    = "string"
   default = true
 }
 
@@ -164,7 +162,7 @@ EOF
 }
 
 ```
-When receiving `string` values, *HCL* inspects the value and converts it to a `number` or a `boolean` if possible. However, there are some important caveats that every *Terraform* user needs to know. You can read more about those [caveats here](https://www.terraform.io/docs/configuration/variables.html#booleans){:target="_blank"}.
+When receiving `string` values, *HCL* inspects the value and converts it to a `number` or a `boolean` if possible (as mentioned earlier). However, there are some important caveats that every *Terraform* user needs to know. You can read more about those [caveats here](https://www.terraform.io/docs/configuration/variables.html#booleans){:target="_blank"}.
 
 ### Lists
 
@@ -282,40 +280,364 @@ title="Terraform Outputs - printed by terraform apply" caption="Terraform Output
 
 ## Overrides
 
-There
+As said, all `.tf` files within a *Terraform* project are appended together. *Overrides* behave a bit different, they're loaded at the end and their values are merged into existing configurations instead of being simply appended. *Overrides* are a great solution to change simple properties without actually changing the configuration itself. 
 
-## The Azure Provider
+Typical scenarios for *Overrides* are
 
-### Authenticating against Azure AD
+ - build servers
+ - temporary modifications
 
-### Creating your first Azure environment with Terraform
-
-## The Terraform Lifecycle
-
-Having the first environment deployed to Azure, it's time to look at the other stages in the lifecycle of a *Terraform* project. As *Terraform* user, you'll always follow a simple, yet flexible lifecycle. 
-
-If you look at the sample from the sections above, you may recognize that you made it through the entire lifecycle for a couple of times. Sure for demonstration purpose we skipped the testing and review stages. However, services like GitHub and Azure DevOps make setting up those stages really smooth. Being able to execute `terraform plan` at any point in time, you'll always know how the Azure environment will evolve if the current changes would be applied.
-
-## Moifying terraformed environments
-
-Until now, `resources` were only added to the overall architecture. All executions of `terraform plan` were showing logs like `1 to Add` or `3 to Add`. To cause a `modification` the existing *Azure App Service Plan* will be scaled from the `Basic` tier with a size of `B1` to the `Standard` tier with a new size of `S2`. 
-
-Change the corresponding values in `values.tfvars`. The updated file should look similar to this one:
+*Override* files must be named `override.tf` or end wiith `_override.tf`. If multiple *Override* files are present, they're merged in alphabetical order. For example consider the following *Azure App Service*:
 
 ```hcl
+resource "azurerm_app_service" "webapi" {
+  name    = "sample-api"
+}
+
+```
+The `name` can be modified by defining `override.tf` like this:
+
+```hcl
+resource "azurerm_app_service" "webapi" {
+  name    = "override-sample-api"
+}
 
 ```
 
-Apply the changes to your Azure environment by executing `terraform apply -var-file=values.tfvars`
+## The Azure Provider
+
+The real power of *Terraform* is defined by the actual provider that is used. Luckily, the Azure provider is a really powerful one. Besides creating, modifying or deleting resources, existing resources (not created by *Terraform*) could be used as datasource and their values can easily be brought in custom *Terraform* scripts. 
+
+Bevor we're diving deeper into resources and datasources, a new *Terraform* project must be created and the *Azure* provider has to be configured. Create a new folder `azure-sample` and a new file called `main.tf` with the following content:
+
+```hcl
+provider "azurerm" {
+  version = "=1.22.0"
+}
+
+```
+
+To download the desired provider, you've to execute `terraform init` in the project's folder. `terraform providers` will print a list containing all providers used in the current project.
+
+Without further configuration, the *Azure* provider will reuse existing authentication from [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest){:target="_blank"}. The project runs in the security context provided by the local `az` installation. All modifications are applied to the currently selected *Azure Subscription*. 
+
+You can verify this in Azure CLI using `az account list`. *Terraform* uses the `default` subscription. You can change the subscription in `az` by executing 
+
+```bash
+az account set --subscription 00000000-0000-0000-0000-000000000000
+# replace 00000000-0000-0000-0000-000000000000 with your subscription ID
+
+```
+
+### Authenticating mechanisms offered by the Azure Provider
+
+The *Azure* provider supports four different kinds of authentication mechanisms. Depending on your security implementation you've to select the proper mechanism for your needs. 
+
+- Authenticating to Azure using the Azure CLI
+- Authenticating to Azure using a Service Principal and a Client Secret
+- Authenticating to Azure using a Service Principal and a Client Certificate
+- Authenticating to Azure using Managed Service Identity
+
+Authenticating to Azure using Azure CLI is great to get started, however you should switch to an independet authentication early. 
+
+*The other guy on the team may not have a local instance of `az` or think of the build server, it should not execute anything in the context of a human.*
+
+Authenticating to Azure using a *Service Principal (SP)* is more convenient. To configure this kind of authentication, either a combination of `ClientId` and `ClientSecret` or -for Service Principal identification by a certificate- the combination of `client certificate password` and `client certificate path` is required. To authenticate to Azure using a *Managed Service Identity (MSI)* at the `use_msi` variable must be `true` and a `msi_endpoint` can optionally be specified. Last but not least the acutal *Azure Environment* can be specified on the provider. At this point you've to chose between `public` (default), `usgovernment`, `german` or `china`. 
+
+Instead of putting those sensitive data into `.tf` files either `.tfvars` files or `Environment Variables` shoud be used. For the *Azure Provider*, the names of those environment variables are following the schema `ARM_{variablename}` so `ARM_ENVIRONMENT` or `ARM_USE_MSI`. 
+
+No matter which kind of "authentication mechanism" used, `ARM_ENVIRONMENT` and `ARM_TENANT_ID` and `ARM_SUBSCRIPTION_ID` should always be specified.
+
+To keep things simple, this guide will stick with tokens being aquired by *Azure CLI*. But *environment*, *tenant* and *subscription* will be pinned by using `Environment Variables`. 
+
+```bash
+export ARM_ENVIRONMENT=public
+export ARM_TENANT_ID=00000000-0000-0000-0000-000000000000
+# replace 00000000-0000-0000-0000-000000000000 with your Tenant ID
+export ARM_SUBSCRIPTION_ID=11111111-1111-1111-1111-111111111111
+# replace 11111111-1111-1111-1111-111111111111 with your Subscription ID
+
+```
+
+Of course, those `export` commands are not required if the suggested *Azure Subscription* matches the current one choosen one in *Azure CLI*, but it's a good practice and critical to understand. Especially if *Terraform* will be executed without human interaction (eg. on the build server).
+
+For further information on how to configure the different authentication mechanisms, check out the [official provider documentation](https://www.terraform.io/docs/providers/azurerm/index.html){:target="_blank"}.
+
+## Your first Azure Environment with Terraform
+
+Having the provider configuration in place, it's time to dig into Azure specific resources and datasources. Everything in Azure belongs to a *Resource Group* so let's get started it:
+
+```hcl
+provider "azurerm" {
+  version = "=1.22.0"
+}
+
+variable "location" {
+  type        = "string"
+  default     = "westeurope"
+  description = "Specify a location see: az account list-locations -o table"
+}
+
+variable "tags" {
+  type        = "map"
+  description = "A list of tags associated to all resources"
+
+  default = {
+    maintained_by = "terraform"
+  }
+}
+
+resource "azurerm_resource_group" "resg" {
+  name     = "terraform-group"
+  location = "${var.location}"
+  tags     = "${var.tags}"
+}
+
+```
+
+So far so good. Verify what *Terraform* would do in Azure with `terraform plan`. Before applying it to Azure, some refactorings are required. First, all variable should be moved to a dedicated `global_variables.tf` file. 
+
+```hcl
+#global_variables.tf
+variable "location" {
+  type        = "string"
+  default     = "westeurope"
+  description = "Specify a location see: az account list-locations -o table"
+}
+
+variable "tags" {
+  type        = "map"
+  description = "A list of tags associated to all resources"
+
+  default = {
+    maintained_by = "terraform"
+  }
+}
+
+```
+
+The `main.tf` should now look like this:
+
+```hcl
+provider "azurerm" {
+  version = "=1.22.0"
+}
+
+resource "azurerm_resource_group" "resg" {
+  name     = "terraform-group"
+  location = "${var.location}"
+  tags     = "${var.tags}"
+}
+
+```
+
+Although the `tags` variable is specified in `global_variables.tf`, you should always specify critical variables using `.tfvars` files (keep in mind that those will not go to source control!). Add `local.tfvars` and provide specify `tags` as shown below.
+
+```hcl
+tags = {
+  author = "Thorsten Hans"
+}
+
+```
+
+To verify, use `terraform plan -var-file=local.tfvars` now. Terraform should print something matching the following picture:
+
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-3.png"
+title="Terraform Plan: Merged Tags" caption="Terraform Plan: Merged Tags" %}
+
+The `tags` variable isn't overwritten, the values from `default` and those from `local.tfvars` are merged together. However, if both maps contain the same `key`, the `value` from the `.tfvars` file is used.
+
+Next, add a `all_outputs.tf` file. This file will query essential, resource-independant data from Azure while applying a *Terraform* script. For now, the name of the *Azure Subscription* will be queried and written to the console once the script will be applied.
+
+```hcl
+#all_outputs.tf
+data "azurerm_subscription" "current" {}
+
+output "target_azure_subscription" {
+  value = "${data.azurerm_subscription.current.display_name}"
+}
+
+```
+
+Let's apply this state to the cloud! Execute `terraform apply -var-file=local.tfvars` and confirm the creation execution plan by answering *Terraforms* question with `yes`. (You can also prevent terraform asking for confirmation by adding the `--auto-approve` flag). Once finished, *Terraform* will print the name of the modified *Azure Subscription* to the console. 
+
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-4.png"
+title="Terraform apply - for the very first time" caption="Terraform apply - for the very first time" %}
+
+Great! But having only a *Resource Group* being deployed to Azure solves no need. For demonstration purpose, extend the script and deploy an instance of *ApplicationInsights*. Add the following to `main.tf`;
+
+```hcl
+resource "azurerm_application_insights" "ai" {
+  name = "terraform-ai"
+
+  resource_group_name = "${azurerm_resource_group.resg.name}"
+  location            = "${azurerm_resource_group.resg.location}"
+
+  application_type = "Web"
+}
+
+```
+
+When working with *Application Insights*, the `instrumentation_key` is critical. It has to be provided to any resource which should write application-specific logs using *Application Insights*. Add an `output` and query the `instrumentation_key` in `all_outputs.tf`:
+
+```hcl
+output "instrumentation_key" {
+  value = "${azurerm_application_insights.ai.instrumentation_key}"
+}
+
+```
+
+Execute `terraform plan -var-file=local.tfvars` again and verify that only one resource will be added. *Terraform* looks at the currently deployed resources in Azure and verifies that all properties are still matching those described in your script. If so, no action is required for that resource(s). If the changes look good, go ahead and apply them by invoking `terraform apply -var-file=local.tfvars --auto-approve`. Finally *Terraform* should display the following result:
+
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-5.png"
+title="Terraform apply - Application Insights has been created" caption="Terraform apply - Application Insights has been created" %}
+
+Last but not least the actual *Azure App Service* and the underlying *Azure App Service Plan* have to be created to complete the sample. Both resources expose a vast of properties which have to be set depending on the kind of *App Service / App Service Plan* you want to create. Again, the official documentation helps spotting and understanding all those properties. This sample will create a *Linux App Service Plan* and a *App Service for Containers*. For demonstration purpose, a plain *NGINX Docker Image* will be deployed to the *App Service*. 
+
+To ensure flexibility, several configuration properties should be set by variables. Add a `frontend.variables.tf` and provide the following content:
+
+```hcl
+variable "appservice_plan_tier" {
+  type        = "string"
+  default     = "Standard"
+  description = "Specify the SKU tier for the app service plan"
+}
+
+variable "appservice_plan_size" {
+  type        = "string"
+  default     = "S1"
+  description = "Specify the SKU size for the app service plan"
+}
+
+variable "appservice_plan_kind" {
+  type        = "string"
+  default     = "Linux"
+  description = "Specify the kind for the app service plan (Linux, FunctionApp or Windows)"
+}
+
+variable "appservice_always_on" {
+  type        = "boolean"
+  default     = true
+  description = "Specify if the app service should be always online"
+}
+
+variable "appservice_docker_image" {
+  type        = "string"
+  default     = "nginx:alpine"
+  description = "Specify the Docker image that should be deployed to the app service"
+}
+
+```
+
+Having the variables in place, the actual resource (*App Service Plan*) goes to `main.tf`
+
+```hcl
+resource "azurerm_app_service_plan" "appsvcplan" {
+  name                = "terraform-app-svc-plan"
+  resource_group_name = "${azurerm_resource_group.resg.name}"
+  location            = "${azurerm_resource_group.resg.location}"
+  kind                = "${var.appservice_plan_kind}"
+  reserved            = true
+  tags                = "${var.tags}"
+
+  sku {
+    tier = "${var.appservice_plan_tier}"
+    size = "${var.appservice_plan_size}"
+  }
+}
+
+```
+
+An *Azure App Service Plan* without an actual *App Serivce* is useless. Add the following resource to `main.tf`. 
+
+```hcl
+resource "azurerm_app_service" "appsvc" {
+  name                = "terraform-app-linux-app-svc"
+  resource_group_name = "${azurerm_resource_group.resg.name}"
+  app_service_plan_id = "${azurerm_app_service_plan.appsvcplan.id}"
+  location            = "${azurerm_resource_group.resg.location}"
+  tags                = "${var.tags}"
+
+  app_settings {
+    WEBSITES_ENABLE_APP_SERVICE_STORAGE = false
+  }
+
+  site_config {
+    always_on        = "${var.appservice_docker_image}"
+    linux_fx_version = "DOCKER|${var.appservice_docker_image}"
+  }
+}
+
+```
+
+Did you recognize that all required variables were already specified in the previous snippet? If not, verify their existance. To verify our deployment once it has been applied, add another the public DNS name of the *Azure App Service* as `output` to `global.outputs.tf`:
+
+```hcl
+output "appservice_dns_name" {
+  value = "${azurerm_app_service.appsvc.default_site_hostname}"
+}
+
+```
+
+Finally, the runtime configuration has to be specified in `local.tfvars` as shown below. 
+
+```hcl
+appservice_plan_tier = "Basic"
+appservice_plan_size = "B1"
+
+```
+
+Execute `terraform plan -var-file=local.tfvars` to preview the upcoming changes. If everything looks good, apply the changes using `terraform apply -var-file=local.tfvars --auto-approve`. *Terraform* will now print the public DNS name as part of all `output` variables to the console. Open that URL using your favorite browser. You should see the beautiful *NGINX Welcome Page* as shown below.
+
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-6.png"
+title="NGINX on an Azure App Service deployed by Terraform" caption="NGINX on an Azure App Service deployed by Terraform" %}
+
+Cool, but did you recognize the values specified in the `.tfvars` file? Those differ from the default values from `frontend_variables.tf`. We've also forgetten to set the `instrumentation_key` on the *Azure App Service*. Imagine, that you recognize a bigger load as expected on the *App Service*, so let's scale up to the *App Service Plan* to `Standard` and `S1` as initially defined as default values. Change `local.tfvars` to:
+
+```hcl
+tags = {
+  author = "Thorsten Hans"
+}
+appservice_plan_tier = "Standard"
+appservice_plan_size = "S1"
+
+```
+
+Because `terraform apply` also prints the execution plan before actually modifying the target, you can use `terraform apply -var-file=local.tfvars` and preview the upcoming changes before they'll be applied. Now you should see that *Terraform* will **modify** exactly one resource - the *Azure App Service Plan*. It's even more precisely. It tells you exactly which properties it'll change. If it looks good, go ahead and confirm the changes.
+
+To demonstrate *Terraform* state managemnt, let's set the `instrumentation_key` on the *Azure App Service* manually using *Azure CLI*. You'll use `terraform output` to query actual information from Azure and finally set the `appsetting` manually using the following script:
+
+```bash
+terraform output instrumentation_key
+# will print the Instrumentation ID (guid) to the terminal
+# 22222222-2222-2222-2222-222222222222
+
+terraform output appservice_dns_name
+# will print the entire DNS name of the webapp to the terminal
+# terraform-app-linux-app-svc.azurewebsites.net
+
+#!! HERE WE NEED ONLY the SUBDOMAIN
+
+az webapp config appsettings set --resource-group terraform-group 
+     --name terraform-app-linux-app-svc
+     --settings INSTRUMENTATION_KEY=22222222-2222-2222-2222
+
+```
+Having the `appsettings` updated, move on and execute `terraform plan -var-file=local.tfvars`. *Terraform* recognized that an untracked change has happend to the *Azure App Service* and suggests to change the `appsettings` back to match the definition in your *Terraform* script. We want to keep the *App Service* as it is for now, so cancel the script at this point. 
+
+No worries you can reuse the `output` of one resource as `variable` in another, but that requires to have *Modules* in your *Terraform* script, so definitive content for another article on *Terraform*.
+
+## Destroying Terraform Environments
+
+*Terraform* is also able to destroy entire environments it has created. Just execute `terraform destroy` inside of the project's folder and after reviewing the execution plan -and confirming- *Terraform* will destroy all resources. Once finished, the *Azure Subscription* should be clean again.
 
 
-## Understanding Terraform State
+## The Terraform Lifecycle
 
-## Teardown terraformed environments
+Now that you've created, modified and destroyed changes using *Terraform*, you used all aspects of the single developer *Terraform* workflow on your local machine once. Several actions -like creating resources- has been executed quite often and I hope you memorized the basics already. To be on the safe side, here once again the single developer *Terraform Lifecycle*
 
-At some point in time you want to *destroy* an environment that was created and maintained by *Terraform*. Perhaps a developer environment has to be deleted or a business decision requires a move from one cloud vendor to anthoer. In cases like those, `terraform destroy` will become you handy, tiny friend. 
-
-Move into the project folder and execute `terraform destroy`. *Terraform* verify that the actual state of the environment still matches the local state. If so, the enviroment can be deleted. As always, you'll be presented with the *plan*, so you can review the potential changes and finally confirm the delition.
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-7.png"
+title="The single Developer Terraform Lifecycle" caption="The single Developer Terraform Lifecycle" %}
 
 ## Summary
 
