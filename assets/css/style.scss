@@ -861,9 +861,9 @@
 
     .social-links + .site-info + .back-to-top {
         margin: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
+        position: fixed;
+        right: 20px;
+        top: 20px;
     }
 
     .author-box {
