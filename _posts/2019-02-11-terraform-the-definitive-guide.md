@@ -11,7 +11,7 @@ unsplash_user_ref: ecasap
 ---
 
 
-*Terraform* is a product in the *Infrastructure as Code (IaC)* space, it has been created by [HashiCorp](https://www.hashicorp.com/){:target="_blank"}. With *Terraform* you can use a single language to describe your infrastructure in code. This guide explains the core concepts of *Terraform* and essential basics that you need to spin up your first environments with *Terraform*.
+*Terraform* is a product in the *Infrastructure as Code (IaC)* space, it has been created by [HashiCorp](https://www.hashicorp.com/){:target="_blank"}. With *Terraform* you can use a single language to describe your infrastructure in code. This guide explains the core concepts of *Terraform* and essential basics that you need to spin up your first Azure environments.
 
 
 - [What is Infrastructure as Code (IaC)](#what-is-infrastructure-as-code-iac)
@@ -41,7 +41,7 @@ unsplash_user_ref: ecasap
 
 ## What is Infrastructure as Code (IaC)
 
-*Infrastructure as Code (IaC)* is the process of describing infrastructural components such as servers, services, and databases using a programming language. Once all infrastructural requirements are described in code, that code can be stored in *source control*. 
+*Infrastructure as Code (IaC)* is the process of describing infrastructural components such as servers, services, or databases using a programming language. Once all infrastructural requirements are described in code, that code can be stored in *source control*. 
 
 *Source control* means that the infrastructure is *versioned*, *transparent*, *documented*, *testable*, *mutable* and *discoverable*. Once the first *version* is stored in *source control*, all team members see which infrastructure is required to bring a project alive. Everyone sees which configuration settings are required to make -for example- the database perform as good as expected. 
 
@@ -49,24 +49,24 @@ Changes are done to the infrastructure exist as dedicated *commits* -or more sig
 
 Also, having code in a repository is 100% more documentation as if all necessary information is stored in just one human brain. This is also a critical risk reduction for every project. *Let's elaborate on risk reduction a bit:* 
 
-*Before Infrastructure as Code, John -the smart guy everyone has on his/her software projects- was responsible for maintaining the infrastructure. John gave his best to describe all essential infrastructure parts and their configuration values. However, modern software projects evolve. Services have to be added or removed from the overall architecture; things must be scaled dynamically and/or manually based on external events. So there is a good chance that John has some critical information only in his head... Maybe has Tim -the guy who sits next to Tim- some tribal knowledge about the Redis configuration, but would you bet on it?*
+*Before Infrastructure as Code, John -the smart guy everyone has on his/her software projects- was responsible for maintaining the infrastructure. John gave his best to describe all essential infrastructure parts and their configuration values. However, modern software projects evolve. Services have to be added or removed from the overall architecture; things must be scaled dynamically and/or manually based on external events. So there is a good chance that John has some critical information only in his head... Maybe has Tim -the guy who sits next to John- some tribal knowledge about the Redis configuration, but would you bet on it?*
 
 *That said, everyone on the team knows John. Everyone trusts him. However, every teammate is afraid when John wants to take a couple of weeks off and go on vacation.*
 
-Look at your current project and try to spot *John*. Everybody knows situations or constellations like these. To be clear: **It's not Johns fault**. It's the fact that the entire organization isn't using *IaC*. 
+Look at your current project team and try to spot *John*. Everybody knows situations or constellations like these. To be clear: **It's not Johns fault**. It's the fact that the entire organization isn't using *IaC*. 
 
 Having *Infrastructure as Code* would remove that critical path.
 
 
 ## What is Terraform
 
-Now, knowing what *Infrastructure as Code* is, it's time to look at *Terraform* itself. *Terraform* is currently the best tool to implement *IaC*. And it doesn't matter if you're using *Azure*, *Azure Stack* or other vendors as a target for your infrastructure. With *Terraform* you can create, modified and destroy environments safely and efficiently. 
+Now, knowing what *Infrastructure as Code* is, it's time to look at *Terraform* itself. *Terraform* is currently the best tool to implement *IaC*. And it doesn't matter if you're using *Azure*, *Azure Stack* or other vendors as a target for your infrastructure. With *Terraform* you can create, modify and destroy environments safely and efficiently. 
 
 For me, these are the three significant benefits offered by *Terraform*: 
 
 1. It works with almost every environment (On-Demand and On-Premises)
 2. You've to learn only a single and simple language
-3. Terraform can preview changes before applying them
+3. *Terraform* can preview changes before applying them
 
 Let's take a closer look at those three benefits now.
 
@@ -74,15 +74,15 @@ Let's take a closer look at those three benefits now.
 
 *HashiCorp* created a small, yet powerful tool which can talk to numerous platforms using a flexible provider model. Vendors like *Microsoft* expose functionalities as APIs, and the corresponding *Terraform* provider is responsible for making those APIs accessible to you. If you ask yourself which platforms *Terraform* is supporting, go and check the [list of providers](https://www.terraform.io/docs/providers/index.html){:target="_blank"}. 
 
-Dealing with different APIs means each platform will support different features? 
+So, means dealing with different APIs, that each platform supports different features? 
 
-**Yes**. Take *Azure Functions* as an example. You can quickly query information about an existing *Azure Functions* instance or create/modify/destroy another *Azure Function* instance using the  *AzureRM provider for Terraform*. However, if you talk to a local *VMWare Cluster*, you can't interact with *Azure Functions* because *VMWare* doesn't have a first class citizen of type *Azure Function*.   
+**Yes**. Take *Azure Functions* as an example. You can quickly query information about an existing *Azure Functions* instance or create/modify/destroy another *Azure Function* instance using the  *Azure provider for Terraform*. However, if you talk to a local *VMWare Cluster*, you can't interact with *Azure Functions* because *VMWare* doesn't have a first class citizen of type *Azure Function*.   
 
 ### The HashiCorp Configuration Language (HCL)
 
-The *HashiCorp Configuration Language (HCL)* is a small domain specific language which is based on *JSON*, but the *HashiCorp* team removed some language-specific plumbings to make us a bit more productive by saving some keystrokes. 
+The *HashiCorp Configuration Language (HCL)* is a small domain specific language which is based on *JSON*. The *HashiCorp* team removed some language-specific plumbings to make us a bit more productive by saving some keystrokes. 
 
-On the other side, *Terraform* adds some powerful interpolation features to *HCL*, which you'll use and love every day. You'll dive into *HCL* later in this guide. However, take the following short snippet as sneak-peek to see how *Terraform* scripts look like.
+On the other side, *Terraform* adds some powerful interpolation features to *HCL*, which you'll use and love every day. You'll dive into *HCL* later in this guide. However, take the following short snippet as sneak-peek to see how *Terraform* scripts look like:
 
 ```hcl
 resource "azurerm_redis_cache" "sample" {
@@ -100,7 +100,7 @@ resource "azurerm_redis_cache" "sample" {
 
 ### Previewing changes
 
-Being able to preview changes before they are applied to a platform is the most significant benefit offered by *Terraform* in day-to-day business. You can think of it as the `git status` of *IaC*. You describe your infrastructure in *HCL* and use the handy `terraform plan` command to see what would happen if that *Terraform* script gets **applied** to the chosen platform.
+Being able to preview changes before they are applied to a platform is the most significant benefit offered by *Terraform* in day-to-day business. You can think of it as the `git status` of *IaC*. You describe your infrastructure in *HCL* and use the handy `terraform plan` command to see what would happen, if that *Terraform* script gets **applied** to the chosen platform.
 
 Besides those three major benefits, *Terraform* offers things like:
 
@@ -128,6 +128,9 @@ title="A working Terraform installation" caption="A working Terraform installati
 ### Terraform Extension for Code
 
 There is an extension for *Visual Studio Code* called [Terraform (by Mikael Olenfalk)](https://github.com/mauve/vscode-terraform.git){:target="_blank"}. Once installed Code can do *syntax highlighting*, *code completion*, *IntelliSense* and on top of that you can drill through your resource graph using a nice visual tree.
+
+{% include image-caption.html imageurl="/assets/images/posts/2019/terraform-vscode.png" width="360"
+title="Terraform in VSCode" caption="Terraform in VSCode" %}
 
 ## DataTypes in HCL
 
@@ -196,15 +199,13 @@ variable "custom_tags" {
 
 *Terraform* projects are easy to understand. Every folder is a valid *Terraform* project if it contains at least a single `.tf` or `.tf.json` file. *(Yes you can write your scripts in plain old JSON, but my advice is to stick with `.tf` files)* 
 
-However, if you have multiple `.tf` Files in a folder, files are processed in alphabetical order. While processing, `.tf` files are merely appended together. 
+However, if you have multiple `.tf` files in a folder, files are processed in alphabetical order. While processing, `.tf` files are merely appended together. 
 
 ## Variables in HCL
 
-In *Terraform* `variables` can be specified to make scripts more flexible and dynamic. Either variables are created in regular `.tf` scripts or in dedicated `.tf` Files. There is no real best practice here because each *Terraform* projects differs in both: size and complexity. 
+In *Terraform* `variables` can be specified to make scripts more flexible and dynamic. Variables are either created directly inside of regular `.tf` scripts or they could be organized in dedicated `variables.tf` files. There is no real best practice here because each *Terraform* projects differs in both: size and complexity. 
 
-Because of *Terraform's* implicit dependency resolutions, `variables` are always available, no matter where they end up in the final script.
-
-To keep things organized, we'll start with a dedicated `variable` file. In such a situation, I choose names like `variables.tf`. `frontend-variables.tf` or `backend-variables.tf`.
+Because of *Terraform's* implicit dependency resolutions, `variables` are always available, no matter where they end up in the final script. To keep things organized, we'll start with a dedicated `variable` file. In such a situation, I choose names like `variables.tf`. `frontend-variables.tf` or `backend-variables.tf`.
 
 A `variable` has a reasonably simple schema in *HCL*.
 
@@ -228,7 +229,7 @@ Every variable requires a value at runtime. There are **five ways** how the valu
 2. The variable `storage_account_location` has no `default` value. When `terraform apply` or `terraform plan` is executed, a simple wizard will ask for a value.
 3. Actual variable values could also be specified using `Environment Variables`. This is an excellent approach to build servers or scenarios where *Terraform* scripts are applied without human interaction. `Environment Variables` are pulled if their name follows the schema `TF_VAR_{variable_name}` (`TF_VAR_storage_account_location` in this example)
 4. Values can be specified by passing arguments to the `terraform apply` command. This approach is great for development time or -if required due to limitations- for unattended execution contexts such as build servers
-5. The last and most convenient method to specify variable values are so-called `.tfvars` files. `.tfvars` Files should never go to source control. In real-world scenarios, it's often required to pass some sensitive data into *Terraform* scripts (Think of Service Principal credentials for example). My projects normally contain a `values.tfvars.template` file which is explicitly added to *git* and tells other teammates which values should be defined. Providing concrete values for the sample `variables` above could look like this.
+5. The last and most convenient method to specify variable values are so-called `.tfvars` files. `.tfvars` files should never go to source control. In real-world scenarios, it's often required to pass some sensitive data into *Terraform* scripts (Think of Service Principal credentials for example). My projects normally contain a `values.tfvars.template` file which is explicitly added to *git* and tells other teammates which values should be defined. Providing concrete values for the sample `variables` above could look like this.
 
 ```hcl
 storage_account_name = "storagethorsten"
@@ -237,7 +238,7 @@ storage_account_location = "West Europe"
 ```
 ### Referencing Variables
 
-Referencing variables in *Terraform* scripts is done by using the *Terraform* interpolation syntax. Both variables defined above are used in the following sample to provide essential metadata for an *Azure Storage Account*. The following script contains *HCL* keywords which weren't explained yet. Don't worry about those for now. The concept of using *variables* is essential for now.
+Referencing variables in *Terraform* scripts is done by using the *Terraform* interpolation syntax. Both variables that were defined above are used in the following sample to provide essential metadata for an *Azure Storage Account*. The following script contains *HCL* keywords which weren't explained yet. Don't worry about those for now. The concept of using *variables* is essential for now.
 
 ```hcl
 resource "azurerm_storage_account" "storageacc" {
@@ -257,7 +258,7 @@ title="Terraform plan - Interpolated configuration values" caption="Terraform pl
 
 ## Outputs in HCL
 
-Every *Terraform* script has to read data from `resources` like *Connection Strings*, *IP addresses* or *DNS names* from items that are created as part of the script itself. This can be achieved using so-called `outputs` in *HCL*. The definition syntax is quite similar to `variable` definitions. For smaller projects, my advice is to put all outputs into a single file called `outputs.tf`. However, this pattern could become a bit A simple `output` which will grab the `primary access key` from the *Azure Storage Account* specified above.
+Every *Terraform* script has to read data from `resources`. Data like *Connection Strings*, *IP addresses* or *DNS names* from items that are created as part of the script itself. This can be achieved using so-called `outputs` in *HCL*. The definition syntax is quite similar to `variable` definitions. For smaller projects, my advice is to put all outputs into a single file called `all_outputs.tf`. A simple `output` that grabs the `primary access key` from the *Azure Storage Account* specified above may look like this:
 
 ```hcl
 output "storage_account_access_key" {
@@ -268,9 +269,9 @@ output "storage_account_access_key" {
 
 ```
 
-The output's `value` is queried from the *Azure Storage Account*, once again the `resource` is referenced by interpolation. To identify the custom `resource`, the combination of the type `azurerm_storage_account` and the custom, unique name `storageacc` is used for identification. Once the `resource` is addressed, the *exported* property is referenced by name (here `primary_access_key`). 
+The `value` of the `output` is queried from the *Azure Storage Account*, once again the `resource` is referenced by interpolation. To identify the custom `resource`, the combination of the type `azurerm_storage_account` and the custom, unique name `storageacc` is used for identification. When the `resource` is identified, the *exported* property is referenced by tje name (here `primary_access_key`). 
 
-Official provider documentation is providing a list of all exported attributes. Check the documentation of `azurerm_storage_account` [here](https://www.terraform.io/docs/providers/azurerm/r/storage_account.html#attributes-reference){:target="_blank"}.
+The official *Azure* provider documentation is providing a list of all exported attributes. Check the documentation of `azurerm_storage_account` [here](https://www.terraform.io/docs/providers/azurerm/r/storage_account.html#attributes-reference){:target="_blank"}.
 
 Besides `description`, the `output` scheme defines another important property called `sensitive`. If the output is marked as sensitive, *Terraform* won't write the actual value to logs. `sensitive` is set to `false` in the definition above for demonstration purpose.
 
@@ -281,7 +282,7 @@ title="Terraform Outputs - printed by terraform apply" caption="Terraform Output
 
 ## Overrides
 
-As said, all `.tf` files within a *Terraform* project are appended together. *Overrides* behave a bit different, they're loaded at the end, and their values are merged into existing configurations instead of being simply appended. *Overrides* are a great solution to change simple properties without actually changing the configuration itself. 
+As said, all `.tf` files within a *Terraform* project are appended together. *Overrides* behave a bit differently, they're loaded at the end, and their values are merged into existing configurations instead of being simply appended. *Overrides* are a great solution to change simple properties without actually changing the configuration itself. 
 
 Typical scenarios for *Overrides* are
 
@@ -307,7 +308,7 @@ resource "azurerm_app_service" "webapi" {
 
 ## The Azure Provider
 
-The real power of *Terraform* is defined by the actual provider that is used. Luckily, the Azure provider is a compelling one. Besides creating, modifying or deleting resources, existing resources (not created by *Terraform*) could be used as a , and their values can quickly be brought in custom *Terraform* scripts. 
+The real power of *Terraform* is defined by the actual provider that is used. Luckily, the Azure provider is a compelling one. Besides creating, modifying or deleting resources, existing resources (including those, that were not created by *Terraform*) could be used as a data source, and their values can quickly be brought into every *Terraform* scripts. 
 
 Bevor we're diving deeper into resources and data sources, a new *Terraform* project must be created, and the *Azure* provider has to be configured. Create a new folder `azure-sample` and a new file called `main.tf` with the following content:
 
@@ -318,7 +319,7 @@ provider "azurerm" {
 
 ```
 
-To download the desired provider, you've to execute `terraform init` in the project's folder. `terraform providers` will print a list containing all providers used in the current project.
+To download the desired provider, you've to execute `terraform init` in the project's folder. The `terraform providers` command can be executed in any project to list all providers used in the current project.
 
 Without further configuration, the *Azure* provider will reuse existing authentication from [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest){:target="_blank"}. The project runs in the security context provided by the local `az` installation. All modifications are applied to the currently selected *Azure Subscription*. 
 
@@ -332,20 +333,22 @@ az account set --subscription 00000000-0000-0000-0000-000000000000
 
 ### Authenticating mechanisms offered by the Azure Provider
 
-The *Azure* provider supports four different kinds of authentication mechanisms. Depending on your security implementation you've to select the proper mechanism for your needs. 
+The *Azure* provider supports four different kinds of authentication mechanisms. Depending on your security implementation, you've to select the proper mechanism for your needs. 
 
 - Authenticating to Azure using the Azure CLI
 - Authenticating to Azure using a Service Principal and a Client Secret
 - Authenticating to Azure using a Service Principal and a Client Certificate
 - Authenticating to Azure using Managed Service Identity
 
-Authenticating to Azure using Azure CLI is excellent to get started, however, you should switch to an independent authentication early. 
+*Authenticating to Azure using Azure CLI* is excellent to get started, however, you should switch to an authentication which is independent from `az` early. 
 
-*The other guy on the team may not have a local instance of `az` or think of the build server, it should not execute anything in the context of a human.*
+*The other guy on the team may not have a local instance of `az` or think of the build server. You should not add `az` as a dependency, except for local development.*
 
-Authenticating to Azure using a *Service Principal (SP)* is more convenient. To configure this kind of authentication, either a combination of `ClientId` and `ClientSecret` or -for Service Principal identification by a certificate- the combination of `client certificate password` and `client certificate path` is required. To authenticate to Azure using a *Managed Service Identity (MSI)* at the `use_msi` variable must be `true` and a `msi_endpoint` can optionally be specified. Last but not least the actual *Azure Environment* can be specified on the provider. At this point you've to chose between `public` (default), `usgovernment`, `german` or `china`. 
+Authenticating to Azure using a *Service Principal (SP)* is more convenient. To configure this kind of authentication, either a combination of `ClientId` and `ClientSecret` or -for Service Principal identification by a certificate- the combination of `client certificate password` and `client certificate path` is required. 
 
-Instead of putting those sensitive data into `.tf` files either `.tfvars` Files or `Environment Variables` should be used. For the *Azure Provider*, the names of those environment variables are following the schema `ARM_{variablename}` so `ARM_ENVIRONMENT` or `ARM_USE_MSI`. 
+To authenticate to Azure using a *Managed Service Identity (MSI)*, the `use_msi` variable must be set to `true` and a `msi_endpoint` could optionally be specified. Last but not least the actual *Azure Environment* can be specified on the provider. You can chose between `public` (default), `usgovernment`, `german` or `china`. 
+
+Instead of putting those sensitive data into `.tf` files either `.tfvars` files or `Environment Variables` should be used. The *Azure Provider* excepts the names of those environment variables to follow a strict schema `ARM_{variablename}`. (eg.:  `ARM_ENVIRONMENT` or `ARM_USE_MSI`). 
 
 No matter which kind of "authentication mechanism" used, `ARM_ENVIRONMENT` and `ARM_TENANT_ID` and `ARM_SUBSCRIPTION_ID` should always be specified.
 
@@ -366,7 +369,7 @@ For further information on how to configure the different authentication mechani
 
 ## Your first Azure Environment with Terraform
 
-Having the provider configuration in place, it's time to dig into Azure specific resources and data sources. Everything in Azure belongs to a *Resource Group* so let's get started it:
+Having the provider configuration in place, it's time to dig into Azure specific resources and data sources. Everything in Azure belongs to a *Resource Group* so let's get started with such a *Resource Group*:
 
 ```hcl
 provider "azurerm" {
@@ -396,7 +399,7 @@ resource "azurerm_resource_group" "resg" {
 
 ```
 
-So far so good. Verify what *Terraform* would do in Azure with `terraform plan`. Before applying it to Azure, some refactorings are required. First, all variable should be moved to a dedicated `global_variables.tf` file. 
+So far so good. Verify what *Terraform* would do in Azure with `terraform plan`. Before applying it to Azure, some refactorings are required, to ensure our project remains clean and readable. First, all variable should be moved to a dedicated `global_variables.tf` file. 
 
 ```hcl
 #global_variables.tf
@@ -417,7 +420,7 @@ variable "tags" {
 
 ```
 
-The `main.tf` should now look like this:
+Your local `main.tf` should now look like this:
 
 ```hcl
 provider "azurerm" {
@@ -432,7 +435,7 @@ resource "azurerm_resource_group" "resg" {
 
 ```
 
-Although the `tags` variable is specified in `global_variables.tf`, you should always specify critical variables using `.tfvars` Files (keep in mind that those will not go to source control!). Add `local.tfvars` and provide specify `tags` as shown below.
+Although the `tags` variable is specified in `global_variables.tf`, you should always specify critical variables using `.tfvars` files (keep in mind that those will not go to source control!). Add `local.tfvars` and provide specify `tags` as shown below.
 
 ```hcl
 tags = {
@@ -446,9 +449,9 @@ To verify, use `terraform plan -var-file=local.tfvars` now. Terraform should pri
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-3.png"
 title="Terraform Plan: Merged Tags" caption="Terraform Plan: Merged Tags" %}
 
-The `tags` variable isn't overwritten, the values from `default` and those from `local.tfvars` are merged. However, if both maps contain the same `key`, the `value` from the `.tfvars` file is used.
+The `tags` variable isn't overwritten, the values from `default` and those from `local.tfvars` are merged (in case of looking at a `map` variable). However, if both maps contain the same `key`, the `value` from the `.tfvars` file is used.
 
-Next, add a `all_outputs.tf` File. This file will query essential, resource-independent data from Azure while applying a *Terraform* script. For now, the name of the *Azure Subscription* will be queried and written to the console once the script will be applied.
+Next, add a `all_outputs.tf` file. This file will query essential, resource-independent data from Azure once resources are applied or modified. For now, the name of the *Azure Subscription* will be queried and written to the console once the script will be applied.
 
 ```hcl
 #all_outputs.tf
@@ -460,21 +463,22 @@ output "target_azure_subscription" {
 
 ```
 
-Let's apply this state to the cloud! Execute `terraform apply -var-file=local.tfvars` and confirm the creation execution plan by answering *Terraforms* question with `yes`. (You can also prevent terraform asking for confirmation by adding the `--auto-approve` flag). Once finished, *Terraform* will print the name of the modified *Azure Subscription* to the console. 
+Let's apply this state to the cloud! 
+
+Execute `terraform apply -var-file=local.tfvars` and confirm the execution plan by answering *Terraforms* confirmation-question with `yes`. (You can also prevent *Terraform* from asking for confirmation by adding the `--auto-approve` flag). Once finished, *Terraform* will print the name of the modified *Azure Subscription* to the console. 
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-4.png"
 title="Terraform apply - for the very first time" caption="Terraform apply - for the very first time" %}
 
-Great! But having only a *Resource Group* being deployed to Azure solves no need. For demonstration purpose, extend the script and deploy an instance of *ApplicationInsights*. Add the following to `main.tf`;
+Great! But having only a *Resource Group* being deployed to Azure solves no need. For demonstration purpose, extend the script and deploy an instance of *Application Insights*. Add the following to `main.tf`;
 
 ```hcl
 resource "azurerm_application_insights" "ai" {
-  name = "terraform-ai"
-
+  name                = "terraform-ai"
   resource_group_name = "${azurerm_resource_group.resg.name}"
   location            = "${azurerm_resource_group.resg.location}"
-
-  application_type = "Web"
+  application_type    = "Web"
+  tags                = "${var.tags}"
 }
 
 ```
@@ -488,12 +492,14 @@ output "instrumentation_key" {
 
 ```
 
-Execute `terraform plan -var-file=local.tfvars` again and verify that only one resource will be added. *Terraform* looks at the currently deployed resources in Azure and verifies that all properties are still matching those described in your script. If so, no action is required for that resource(s). If the changes look good, go ahead and apply them by invoking `terraform apply -var-file=local.tfvars --auto-approve`. Finally *Terraform* should display the following result:
+Execute `terraform plan -var-file=local.tfvars` again and verify, that only **one** resource will be added. *Terraform* looks at the currently deployed resources in *Azure* and verifies that all properties are still matching those described in your script. If so, no action is required for that resource(s). 
+
+If the changes look good, go ahead and apply them by invoking `terraform apply -var-file=local.tfvars --auto-approve`. Finally *Terraform* should display the following result:
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-5.png"
 title="Terraform apply - Application Insights has been created" caption="Terraform apply - Application Insights has been created" %}
 
-Last but not least the actual *Azure App Service* and the underlying *Azure App Service Plan* have to be created to complete the sample. Both resources expose a vast of properties which have to be set depending on the kind of *App Service / App Service Plan* you want to create. Again, the official documentation helps to spot and to understand all those properties. This sample will create a *Linux App Service Plan* and a *App Service for Containers*. For demonstration purpose, a plain *NGINX Docker Image* will be deployed to the *App Service*. 
+Last, but not least, the actual *Azure App Service* and the underlying *Azure App Service Plan* have to be created to complete the sample. Both resources expose a vast of properties, which have to be set depending on the kind of *App Service / App Service Plan* you want to create. Again, the official documentation helps to spot and to understand all those properties. This sample will create a *Linux App Service Plan* and a *App Service for Containers*. For demonstration purpose, a plain *NGINX Docker Image* will be deployed to the *App Service*. 
 
 To ensure flexibility, several configuration properties should be set by variables. Add a `frontend.variables.tf` and provide the following content:
 
@@ -593,7 +599,9 @@ Execute `terraform plan -var-file=local.tfvars` to preview the upcoming changes.
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-6.png"
 title="NGINX on an Azure App Service deployed by Terraform" caption="NGINX on an Azure App Service deployed by Terraform" %}
 
-Cool, but did you recognize the values specified in the `.tfvars` File? Those differ from the default values from `frontend_variables.tf`. We've also forgotten to set the `instrumentation_key` on the *Azure App Service*. Imagine, that you recognize a bigger load as expected on the *App Service*, so let's scale up to the *App Service Plan* to `Standard` and `S1` as initially defined as default values. Change `local.tfvars` to:
+Cool! 
+
+But did you recognize the values specified in the `.tfvars` file? Those differ from the default values defined in `frontend_variables.tf`. Imagine, that you recognize a bigger load as expected on the *App Service*, so let's scale up to the *App Service Plan* to `Standard` and `S1` as initially defined as default values. Change `local.tfvars` to:
 
 ```hcl
 tags = {
@@ -606,7 +614,7 @@ appservice_plan_size = "S1"
 
 Because `terraform apply` also prints the execution plan before actually modifying the target, you can use `terraform apply -var-file=local.tfvars` and preview the upcoming changes before they are applied. Now you should see that *Terraform* will **modify** exactly one resource - the *Azure App Service Plan*. It's even more precisely. It tells you exactly which properties it'll change. If it looks good, go ahead and confirm the changes.
 
-To demonstrate *Terraform* state management, let's set the `instrumentation_key` on the *Azure App Service* manually using *Azure CLI*. You'll use `terraform output` to query actual information from Azure and finally set the `appsetting` manually using the following script:
+That wasn't the only issue in our script. We've also forgotten to set the `instrumentation_key` on the *Azure App Service*. To demonstrate *Terraform* state management, let's set the `instrumentation_key` on the *Azure App Service* manually using *Azure CLI*. You'll use `terraform output` to query actual information from Azure and finally set the `appsetting` manually using the following script:
 
 ```bash
 terraform output instrumentation_key
@@ -624,27 +632,27 @@ az webapp config appsettings set --resource-group terraform-group
      --settings INSTRUMENTATION_KEY=22222222-2222-2222-2222
 
 ```
-Having the `appsettings` updated, move on and execute `terraform plan -var-file=local.tfvars`. *Terraform* recognized that an untracked change has happened to the *Azure App Service* and suggests to change the `appsettings` back to match the definition in your *Terraform* script. We want to keep the *App Service* as it is, for now, so cancel the script at this point. 
+Having the `appsettings` updated, move on and execute `terraform plan -var-file=local.tfvars`. *Terraform* recognized that an untracked change has happened to the *Azure App Service*. It suggests to change the `appsettings` back to the value specified in the *Terraform* script - which is not existing indeed. We want to keep the *App Service* as it is, for now, so cancel the script at this point. 
 
 No worries you can reuse the `output` of one resource as `variable` in another, but that requires to have *Modules* in your *Terraform* script, so definitive content for another article on *Terraform*.
 
 ## Destroying Terraform Environments
 
-*Terraform* is also able to destroy entire environments it has created. Just execute `terraform destroy` inside of the project's folder and after reviewing the execution plan -and confirming- *Terraform* will destroy all resources. Once finished, the *Azure Subscription* should be clean again.
+*Terraform* is also able to destroy entire environments it has created previously. Just execute `terraform destroy` inside of the project's folder and after reviewing the execution plan -and confirming- *Terraform* will destroy all resources. Once finished, the *Azure Subscription* should be clean again.
 
 
 ## The Terraform Lifecycle
 
-Now that you've created, modified and destroyed changes using *Terraform*, you used all aspects of the single developer *Terraform* workflow on your local machine once. Several actions -like creating resources- has been executed quite often and I hope you memorized the basics already. To be on the safe side, here once again the single developer *Terraform Lifecycle*
+Now that you've created, modified and destroyed resources in *Azure* using *Terraform*, you covered all aspects of the single developer *Terraform* workflow. Several actions -like creating resources- has been executed quite often and I hope you memorized those basics already. To visualize it again, here the single developer *Terraform Lifecycle*:
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/terraform-guide-7.png"
 title="The single Developer Terraform Lifecycle" caption="The single Developer Terraform Lifecycle" %}
 
 ## Summary
 
-I hope you enjoyed reading *Terraform - The definitive guide for Azure enthusiasts*. If you made it through the post, you gained a ton of knowledge about *Terraform*, and you made some necessary steps with the *Azure* Provider for Terraform. Having this introduction in place, I'll publish more advanced posts on *Terraform* and *Infrastructure as Code* in general over the next weeks and months. 
+I hope you enjoyed reading *Terraform - The definitive guide for Azure enthusiasts*. If you made it through the post, you gained a ton of knowledge about *Terraform*, and you made some necessary steps with the *Azure* Provider for Terraform. Having this introduction in place, I'll publish more advanced posts on *Terraform* and *Infrastructure as Code* in the upcoming weeks and months. 
 
-*Infrastructure as Code* is something every developer and IT-Pro should care about. Modern applications are way more complicated than five years ago. Developers, teams, and organizations are combining cloud services from different vendors to build the best user experience for their customers. With *IaC* and *Terraform* you can manage the jungle of services and keep the knowledge open and transparent. Moving on the *IaC* and/or *Terraform* way is not an easy task that a single person could achieve on a Friday afternoon. 
+*Infrastructure as Code* is something every developer and IT-Pro should care about. Modern applications are way more complex than those five years ago. Developers, teams, and organizations are combining cloud services from different vendors to build the best user experience for their customers. With *IaC* and *Terraform* you can manage the jungle of services and make that essential knowledge discoverable and collaborate on it. However, keep in mind that moving a real-world project or perhaps an entire organization on the *IaC* and *Terraform* track isn't an easy task!
 
 If you need further assistance on that journey, reach out. I would be thrilled to help.
 
