@@ -1,7 +1,9 @@
 ---
 layout: page
-title: About
+title: About Thorsten Hans
 image: /assets/images/pages/about-me.jpg
+tags: [Thorsten Hans,Speaker,Developer,Terraform,Kubernetes,Azure,Community]
+excerpt: Thorsten Hans is an experienced, international speaker on popular technology topics like Azure, Kubernetes and Terraform
 ---
 
 Thorsten Hans lives in the most beautiful state of the world, called Saarland in the southwest of Germany. He's working as a consultant at Thinktecture, a German software consultancy.

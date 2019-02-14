@@ -22,21 +22,14 @@ feed:
   path: feed.xml
 # Author
 author:
-  twitter: ThorstenHans
-  name: "Thorsten Hans"
-  image: "thorsten-hans.jpg"
-  greetings: "Hi there!"
-  description: "My name is Thorsten. I'm a passionate Consultant from the beautiful south-west area in Germany. I love my zsh-shell, Apple, Electron, containers, and Microsoft Azure."
-  bio: "Thorsten is a developer, consultant, photographer and speaker from the beautiful south-west area in Germany. He loves his zsh-shell, Electron, containers, and Microsoft Azure."
-
-email: thorsten.hans@gmail.com
+  name: Thorsten Hans
+  email: thorsten.hans@gmail.com
+  image: thorsten-hans.jpg
+  greetings: Hi there!
+  description: My name is Thorsten. I'm a passionate Consultant from the beautiful south-west area in Germany. I love my zsh-shell, Apple, Electron, containers, and Microsoft Azure.
+  bio: Thorsten is a developer, consultant, photographer and speaker from the beautiful south-west area in Germany. He loves his zsh-shell, Electron, containers, and Microsoft Azure.
 
 social:
-  name: Thorsten Hans
-  links:
-    - https://twitter.com/ThorstenHans
-    - https://www.linkedin.com/in/ThorstenHans
-    - https://github.com/ThorstenHans
   twitter: ThorstenHans
   github: ThorstenHans
   instagram: ThorstenHans
