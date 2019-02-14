@@ -1,16 +1,12 @@
 ---
 layout: default
-title: Home
+title: Thorsten's thoughts - Home
 ---
 
 {% if page.url == "/" %}
 <!-- Featured-->
 <div class="featured-posts outer">
-    {% for post in site.posts %}
-        {% if post.featured == true %}
-            {% include featuredbox.html %}
-        {% endif %}
-    {% endfor %}
+    {% for post in site.posts %} {% if post.featured == true %} {% include featuredbox.html %} {% endif %} {% endfor %}
 </div>
 {% endif %}
 <!-- Posts Index -->
@@ -19,16 +15,8 @@ title: Home
     <div class="post-feed-title inner">Latest Articles</div>
     {% endif %}
     <div class="post-feed inner-wide">
-        {% for post in paginator.posts %}
-            {% include postbox.html %}
-        {% endfor %}
+        {% for post in paginator.posts %} {% include postbox.html %} {% endfor %}
     </div>
 </div>
 <!-- Pagination-->
-{% include pagination.html %}
-{% if site.mailchimp_url %}
-    {% include newsletter-box.html %}
-{% endif %}
-
-
-
+{% include pagination.html %} {% if site.mailchimp_url %} {% include newsletter-box.html %} {% endif %}
