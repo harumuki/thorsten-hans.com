@@ -8,7 +8,7 @@ redirect_from: /azure-key-vault-flexvolume-for-kubernetes-a-journey-to-integrate
 excerpt: Integrate Azure Key Vault and Azure Kubernetes services without leaking sensitive configuration data such as Service Principal credentials by using Azure AD Pod Identity and Azure Key Vault FlexVolume for Kubernetes
 image: /2018-12-10-azure-key-vault-flexvolume-for-kubernetes-e2-80-8a--e2-80-8aa-journey-to-integrate-azure-key-vault-and-aks.jpg
 ---
-This is the second part of the mini-series on Integrating *Azure Key Vault* and *AKS* (Azure Kubernetes Services). If you missed the [first part]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault%}), you should definitely read it before digging into this article. 
+This is the second part of the mini-series on Integrating *Azure Key Vault* and *AKS* (Azure Kubernetes Services). If you missed the [first part]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault%}), you should definitely read it before digging into this article.
 
 ## Introducing Azure Key Vault FlexVolume for Kubernetes
 
@@ -38,14 +38,14 @@ The deployment will add a new *Namespace* to your *Kubernetes* cluster called `k
 In part one of the series, you've created an *Azure Identity*. That identity needs to have access to an Azure Key Vault instance and -  of course  - that Azure Key Vault should hold some sensitive data. If your Key Vault is already holding sensitive data, you can skip the first snippet and immediately move on and grant your Azure Identity access to the Key Vault and its data.
 
 ```bash
-az keyvault secret set 
-  --vault-name demokv 
-  --name sample1 
+az keyvault secret set
+  --vault-name demokv
+  --name sample1
   --value "1st sensitive value"
 
-az keyvault secret set 
-  --vault-name demokv 
-  --name sample2 
+az keyvault secret set
+  --vault-name demokv
+  --name sample2
   --value "2nd sensitive value"
 
 ```
@@ -127,10 +127,11 @@ metadata:
 spec:
   containers:
     - name: aks-kv-container
-      image: thorstenhans/aks-keyvault-sample:latest 
+      image: thorstenhans/aks-keyvault-sample:latest
       imagePullPolicy: Always
 
 ```
+
 Did you recognize the `aadpodidbinding` label? It has to exactly the same as you provided for the Azure Identity Binding in the [first article of this series]({% post_url 2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault %}). In order to connect the Azure Key Vault FlexVolume, we will use the well-known concept of `volumes` and `volumeMounts` from Kubernetes.
 
 ```yaml
@@ -143,24 +144,24 @@ metadata:
     aadpodidbinding: "backend"
 spec:
   containers:
-    - name: aks-kv-container 
-      image: thorstenhans/aks-keyvault-sample:latest 
-      imagePullPolicy: Always 
+    - name: aks-kv-container
+      image: thorstenhans/aks-keyvault-sample:latest
+      imagePullPolicy: Always
       volumeMounts:
-        - name: kvVolume 
-          mountPath: /kv 
-          readOnly: true 
+        - name: kvVolume
+          mountPath: /kv
+          readOnly: true
   volumes:
-    - name: kvVolume 
-      flexVolume: 
-        driver: "azure/kv" 
-        options: 
-          usepodidentity: "true" 
-          keyvaultname: "demokv" 
-          keyvaultobjectnames: "sample1;sample2" 
-          keyvaultobjecttypes: "secret;secret" 
-          resourcegroup: "demo-resource-group" 
-          subscriptionid: "00000000-0000-0000-0000-000000000000" 
+    - name: kvVolume
+      flexVolume:
+        driver: "azure/kv"
+        options:
+          usepodidentity: "true"
+          keyvaultname: "demokv"
+          keyvaultobjectnames: "sample1;sample2"
+          keyvaultobjecttypes: "secret;secret"
+          resourcegroup: "demo-resource-group"
+          subscriptionid: "00000000-0000-0000-0000-000000000000"
           tenantid: "00000000-0000-0000-0000-000000000000"
 
 ```
@@ -170,10 +171,10 @@ Examine the `flexVolume` object in the `volumes` array. A lot of interesting inf
 
 The Azure Key Vault itself is specified from the combination of four properties:
 
- * `keyvaultname`: Key Vault's custom domain name prefix
- * `resourcegroup`: Key Vault's Azure-Resource-Group name
- * `subscriptionid`: Key Vault's Azure-Subscription Identifier
- * `tenantid`: Key Vault's Azure-Tenant Identifier
+- `keyvaultname`: Key Vault's custom domain name prefix
+- `resourcegroup`: Key Vault's Azure-Resource-Group name
+- `subscriptionid`: Key Vault's Azure-Subscription Identifier
+- `tenantid`: Key Vault's Azure-Tenant Identifier
 
 You may ask yourself why you've to specify all of those because some of them can easily be inferred from the current context. But driver wants to ensure that you can also pull data from Azure Key Vault instances belonging to different Resource Groups or even Subscriptions.
 
@@ -181,6 +182,7 @@ Since the version `0.0.6` of the Azure Key Vault FlexVolume driver has been rele
 However, if you're using an older version of the driver, you can pull only one value per volume. To specify the value, you've to use the singular property names: `keyvaultobjectname` and `keyvaultobjecttype`.
 
 ## Verify the Azure Key Vault integration
+
 Finally! 🙌 Everything is in place and you're ready for a test run. Deploy the Kubernetes resources to your cluster with `kubectl create -f Deployment.yaml` and wait for the Pod to report Status: Running.
 As soon as the Pod is in the state "running" you can go into the container and examine the local `/kv` folder, which will show a file per Secret holding the corresponding value. 🚀
 

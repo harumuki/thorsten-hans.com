@@ -12,7 +12,8 @@ tags:
 excerpt: The AKS team offers a great set of commands to make administrative operations for Kubernetes clusters very easy. This article demonstrates how to upgrade a AKS cluster.
 image: /2018-03-22-upgrading-a-kubernetes-cluster-on-aks-using-azure-cli.jpg
 ---
-Upgrading an on-premises *Kubernetes* cluster can be very cumbersome and time-consuming task. It's not just a single upgrade command that you can execute and everything happens magically behind the scenes. A single command for upgrading an entire Kubernetes cluster would be awesome 💚 and that's exactly what's provided by the AKS team. A single command to upgrade all your masters and nodes. 
+
+Upgrading an on-premises *Kubernetes* cluster can be very cumbersome and time-consuming task. It's not just a single upgrade command that you can execute and everything happens magically behind the scenes. A single command for upgrading an entire Kubernetes cluster would be awesome 💚 and that's exactly what's provided by the AKS team. A single command to upgrade all your masters and nodes.
 
 My fellow MVP [Tobias Zimmergren](https://zimmergren.net){:target="_blank"} wrote a [great post on how to upgrade AKS clusters](https://zimmergren.net/azure-container-services-aks-upgrade-kubernetes/){:target="_blank"} a couple of weeks ago. But technology and tools are **changing quickly** these days.
 
@@ -25,7 +26,7 @@ That said, I just want to dump the commands I use to upgrade my Kubernetes clust
 You can get the current Kubernetes version and all available upgrade in a single command.
 
 ```bash
-az aks get-upgrades 
+az aks get-upgrades
   --resource-group your-resgroup-name
   --name your-aks-name
   --query "{ current: controlPlaneProfile.kubernetesVersion,upgrades: controlPlaneProfile.upgrades }"
@@ -47,11 +48,12 @@ The command is using the [JMESPath query language](http://jmespath.org/){:target
 }
 ```
 
-## Upgrade your cluster 
+## Upgrade your cluster
+
 Starting the upgrade is as simple querying for new upgrades, it's just the following command
 
 ```bash
-az aks upgrade 
+az aks upgrade
   --resource-group your-resgroup-name
   --name your-aks-name
   --kubernetes-version 1.8.7

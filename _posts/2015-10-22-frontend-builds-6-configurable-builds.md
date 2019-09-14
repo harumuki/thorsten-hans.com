@@ -10,18 +10,19 @@ image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 ---
+
 ## The Frontend Builds article series
+
  Welcome to the sixth part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
- * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
- * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
- * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
- * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
-
+- [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+- [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+- [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+- [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+- [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+- [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+- [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+- [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## Idea
 
@@ -37,7 +38,7 @@ The script below is stripped to increase readability. See the entire file [here 
 (function(module){
   function exportDefaultConfig(){
     var path = require('path');
-        
+
     var cacheDir = path.join(process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE, '.cache'),
         buildDir = path.join(process.cwd(), "desktop-build");
     return {
@@ -87,7 +88,7 @@ Next, I refactored, of course, all `gulp-task-files`, again go and check out all
 (function(module) {
     'use strict';
     function RegisterTasks(gulp, tasks, config) {
-    
+
       gulp.task('private:build', function(done) {
         tasks.inSequence(
             'private:clean',
@@ -101,13 +102,12 @@ Next, I refactored, of course, all `gulp-task-files`, again go and check out all
             done
         );
       });
-      
+
       gulp.task('private:clean', function(done) {
           // replace all strings with config properties
           tasks.del.sync(config.sources.del, config.options.del);
           done();
       });
-      
       /*
       * stripped to ensure readability
       */
@@ -136,10 +136,10 @@ See the entire `gulpfile.js` here.
 
 ```javascript
 (function(module){
-    
+
   function XplatformBuild(userConfig){
       var gulp = require('gulp');
-      
+
       var tasks = {
           del: require('del'),
           concat: require('gulp-concat'),
@@ -163,18 +163,18 @@ See the entire `gulpfile.js` here.
                   override(original[p], uConfig[p]);
               }
           }
-          
+
       };
-        
+
       var config = require('./defaults.js');
       override(config, userConfig);
-      
+
       var customGulpTasks = require('require-dir')('./gulptasks');
-      
+
       for (var gulpTask in customGulpTasks) {
           customGulpTasks[gulpTask].init(gulp, tasks, config);
       }
-      
+
       gulp.task('help', function() {
           console.log('Execute one of the following commands\n');
           for (var gulpTask in customGulpTasks) {
@@ -207,7 +207,7 @@ require('xplatform-build')();
 If you'd like to provide a custom `user-config` just pass it as `json` object to the call like shown below.
 
 ```javascript
-// USE THIS SNIPPET ONLY IF YOU'D LIKE TO OVERRIDE 
+// USE THIS SNIPPET ONLY IF YOU'D LIKE TO OVERRIDE
 // DEFAULT SETTINGS
 require('xplatform-build')({
     options: {
@@ -224,9 +224,6 @@ require('xplatform-build')({
 
 Again, see [xplatform-build here](https://github.com/ThorstenHans/xplatform-build){:target="_blank"} and the [BaaS branch of x-note over here](https://github.com/ThorstenHans/x-note/tree/baas){:target="_blank"}
 
-
-## Go ahead ...
+## Go ahead
 
 .. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %}).
-
-

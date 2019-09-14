@@ -8,6 +8,7 @@ tags: [Angular]
 excerpt: internationalization is important if you build Angular applications for a bigger audience. Learn how to use standard Angular pipes with ng-translate
 image: /2017-02-23-standard-angular-pipes-and-ng-translate.jpg
 ---
+
 Of course is *Angular* itself shipping with some *i18n* (internationalization) APIs, but [ng-translate](https://github.com/ngx-translate/core){:target="_blank"} has become the new default for many developers to provide translations within *Angular* apps.
 
 Personally, I prefer `ng-translate` over built-in i18n APIs because it is fast, easy to explain and it allows to run multilingual apps without having the requirement to have dedicated hosting for each language.
@@ -35,8 +36,8 @@ export class AppModule {
 
 This works great when you want to set the language for your app once. **But it doesn't work, if you want to change the language during runtime**.
 
-
 ## Using ng-translate
+
 By using `ng-translate` you can register multiple languages easily from within the app by using `TranslateService.addLangs`.
 
 ```typescript
@@ -44,7 +45,7 @@ By using `ng-translate` you can register multiple languages easily from within t
 export class RootComponent implements OnInit {
 
     constructor(private _translateService: TranslateService) { }
-    
+
     public ngOnInit(): void {
         this._translateService.addLangs(['en-US', 'de-DE']);
     }
@@ -65,15 +66,15 @@ import { TranslateService } from 'ng2-translate';
       <li *ngFor="let language of languages" (click)="use(language)>{{language}}</li>
      </ul>`})
  export class LanguageSwitcherComponent implements OnInit {
- 
+
      constructor(private _translateService: TranslateService) { } 
-     
+
      public languages: Array<string> = [];
-     
+
      public ngOnInit(): void {
          this.languages = this._translateService.getLangs();
      }
-     
+
      public use(languageKey: string): void {
          this._translateService.use(languageKey);
      }
@@ -117,7 +118,7 @@ As you can see, the `TranslateService` will be injected into the constructor and
 ```typescript
 @NgModule({
     declarations: [
-            DatePipeProxy, 
+            DatePipeProxy,
             //...
         ]})
 export class AppModule {

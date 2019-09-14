@@ -125,5 +125,3 @@ The final result should be available on Heroku within a few seconds, and it shou
 title="The sample application" caption="The sample application" %}
 
 The value of CodeShip is impressive, besides automated builds and tests (which are also offered by other platforms) you can quickly deploy your projects continuously. Especially for fast growing web projects, it’s critical to see how changes behave in your *development-* or *staging-environment*.
-
-

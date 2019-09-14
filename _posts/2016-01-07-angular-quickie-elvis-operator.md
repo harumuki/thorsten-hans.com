@@ -30,10 +30,11 @@ The good thing about the *Elvis* operator is that you can use it in chains like 
 
 However, that's only half of the truth. Only in a few situations, you want to display **nothing**. Most of the time you want to provide a kind of fallback value. Think about an App for buying and selling stuff. It displays messages dynamically. For example either
 
- * Thank you for selling 100 items
- * Thank you for buying 10 items
+- Thank you for selling 100 items
+- Thank you for buying 10 items
 
 However, what should be displayed if the `action` (`buying` or `selling` above) isn't defined? You don't want to display **Thank you for 20 items**.  You want to provide the default value instead of nothing. So let's start with the following `HTML` which still lacks the default value:
+
 {%raw %}
 ```html
 <span>Thank you for {{transaction?.operation?.caption}}
@@ -92,8 +93,8 @@ export class MyComponent {
 
 ```
 
-To add support for a default value, you don't want to use *ngIf*. There is a more elegant way. 
-Use the logical or `||` operator in conjunction with the Elvis operator to add support for default values. 
+To add support for a default value, you don't want to use *ngIf*. There is a more elegant way.
+Use the logical or `||` operator in conjunction with the Elvis operator to add support for default values.
 
 Update the sample HTML to match the following:
 
@@ -104,8 +105,7 @@ Update the sample HTML to match the following:
 </span>
 
 ```
+
 {%endraw %}
 
 I've created a [small plnkr sample](https://embed.plnkr.co/D1AWgU/){:target="_blank"} that uses the combination of `*ngFor`, `*ngIf` and `?` the Elvis operator.
-
-

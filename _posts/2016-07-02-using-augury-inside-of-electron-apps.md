@@ -65,7 +65,7 @@ Here a small example of a simple *Electron* “instruction file” using `addDev
 app.on('ready', () => {
     mainWindow = new BrowserWindow({ width: 1000, height: 700 });
     let auguryPath = '/Users/thorsten/Library/Application Support/Google/Chrome/Default/Extensions/abcdefghijklmnopqrs/1.0.3_0';
-    
+
     BrowserWindow.addDevToolsExtension(auguryPath);
 
     // open devTools on demand
@@ -75,7 +75,7 @@ app.on('ready', () => {
 
     mainWindow.setTitle('Augury Electron Integration');
     mainWindow.loadURL(`file://${__dirname}/index.html`);
-    
+
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
@@ -91,6 +91,3 @@ Having the integration finished, it's time to give it a try. Start your applicat
 title="Augury Goodness in Electron" caption="Augury Goodness in Electron" %}
 
 As you've seen, the trickiest part is finding your local installation of *Augury*. Integration with GitHub's *Electron* is effortless. Nevertheless, if you encounter any problems or errors while integration *Augury*, ping me.
-
-
-

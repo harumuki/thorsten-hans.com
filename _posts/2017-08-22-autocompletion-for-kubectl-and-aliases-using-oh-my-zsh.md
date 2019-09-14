@@ -47,7 +47,7 @@ plugins=(git git-flow brew history node npm kubectl)
 
 That's it. Nothing more is required. *oh-my-zsh* does all the magic for you. Autocompletion will work for both: `kubectl` and the recently created alias `k`.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/ohmyzsh-kubectl.gif" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/ohmyzsh-kubectl.gif"
 title="kubectl and k autocompletion in oh-my-zsh" caption="kubectl and k autocompletion in oh-my-zsh" %}
 
 Having this configuration in place, you'll gain more speed when working with *Kubernetes* and you'll produce less typos!

@@ -8,6 +8,7 @@ tags: [Angular]
 excerpt: null
 image: /2016-angular-quickie.jpg
 ---
+
 *Angular* ships with its component router. The router makes it easy to compose complex applications from a bunch of components. Multiple routers could easily be nested to achieve almost every requirement for a *SPA*. When using regular routes, all files from your *SPA* are transferred to the client as soon as `RouteConfig` is interpreted by the JavaScript engine of your browser.
 
 With growing apps, you may change this behavior. Clients should only download those files that are required for the current use case. Alternatively, you would initially transfer only those files required to make the core functionality of your app work. Optional components and templates should only be transferred if users request those components explicitly.
@@ -95,5 +96,3 @@ declare var System: any;
 ```
 
 There is more. Check out [Minko's post, he describes in detail how to create virtual proxies to push async loading to another level](http://blog.mgechev.com/2015/09/30/lazy-loading-components-routes-services-router-angular-2){:target="_blank"}.
-
-

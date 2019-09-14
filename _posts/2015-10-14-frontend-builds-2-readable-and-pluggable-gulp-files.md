@@ -10,20 +10,20 @@ image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 ---
+
 ## The Frontend Builds article series
+
  Welcome to the second part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
- * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
- * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
- * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
- * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
+- [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+- [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+- [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+- [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+- [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+- [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+- [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+- [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
-
- 
 ## The idea
 
 Within this post, I'll explain the steps I've used to move from the [initial gulpfile](https://github.com/ThorstenHans/x-note/blob/3969b13344ff5992786fc890893949265727c869/gulpfile.js){:target="_blank"} to a readable and maintainable version of it. However, before explaining the technical steps, let's talk about the target. Over the past year I've seen so many different styles and approaches for writing and organizing Gulpfiles, but most of them share the same problem. Once you revisit the project and its gulpfile after a few weeks or months, you need much time for reading and understanding what gulp is doing in this particular project when executing `gulp default` or just `gulp`. To reduce this effort, I've outlined my idea of how to align tasks and how things should interact using a small mockup
@@ -116,7 +116,7 @@ Each `gulp-task-file` have to provide its documentation, and of course, it has t
 (function(module) {
     'use strict';
     function RegisterTasks(gulp, tasks) {
-      
+
       gulp.task('build:matrix', function(done) {
           console.log("just a demo");
       });
@@ -171,8 +171,7 @@ gulp.task('help', function() {
 });
 
 ```
-## Go ahead ...
+
+## Go ahead
 
 .. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %}).
-
-

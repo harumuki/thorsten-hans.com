@@ -10,17 +10,19 @@ image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
 ---
+
 ## The Frontend Builds article series
+
  Welcome to the fourth part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
- * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
- * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
- * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
- * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
+- [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+- [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+- [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+- [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+- [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+- [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+- [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+- [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## The Idea
 
@@ -156,10 +158,10 @@ We've used `run-sequence` which is available as `tasks.inSequence` a few times b
 
 ```javascript
 gulp.task('build:mobile', function(done){
-	return tasks.inSequence(
-		'private:build', 
-		'private:build:mobile', 
-		done);
+  return tasks.inSequence(
+    'private:build',
+    'private:build:mobile',
+    done);
 });
 
 ```
@@ -188,22 +190,19 @@ moreover, finally the public gulp task `run:mobile` here we will again use the `
 
 ```javascript
 gulp.task('run:mobile', function(done){
-	return tasks.inSequence(
-		'private:build:mobile', 
-		'private:run:mobile', 
-		done);
+  return tasks.inSequence(
+    'private:build:mobile',
+    'private:run:mobile',
+    done);
 });
 
 ```
-
 
 Before testing the `run:mobile` tasks, you've to start your android emulator. Cordova will automatically start ios emulator. Test the mobile build using `gulp run:mobile`. After a few seconds, x-note should be started in both emulators as shown in figure three.
 
 {% include image-caption.html imageurl="/assets/images/posts/2015/frontend-builds-4-app-on-ios-and-android.png"
 title="Mobile Apps running on Android and iOS" caption="Mobile Apps running on Android and iOS" %}
 
-## Go ahead ...
+## Go ahead
 
 .. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %}).
-
-

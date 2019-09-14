@@ -15,17 +15,17 @@ image: /2018-01-26-deploy-azure-functions-to-kubernetes-and-scale-them-automatic
 
 *Azure Functions* has become my standard framework to build *serverless* backends for *Single Page Applications* (SPAs). It's easy to get started with *Azure Functions*, although the platform itself is really powerful and highly configurable. I really love the cloud hosting capabilities for *Azure Functions*, but from time to time, it's not allowed to use the public cloud as the deployment target.
 
-*Azure Functions* can easily be hosted in different environments. You can download the entire runtime and execute it on-premises (if you have to) or you can use the existing *Docker* image and deploy your serverless backend to *Kubernetes*. And that's exactly what this post will describe, you'll create a sample Azure Function including a docker container, deploy it to a Kubernetes cluster and let it automatically scale based on CPU utilization. 
+*Azure Functions* can easily be hosted in different environments. You can download the entire runtime and execute it on-premises (if you have to) or you can use the existing *Docker* image and deploy your serverless backend to *Kubernetes*. And that's exactly what this post will describe, you'll create a sample Azure Function including a docker container, deploy it to a Kubernetes cluster and let it automatically scale based on CPU utilization.
 
 ## What do you need
 
 In order to follow the instructions in this article, you need several things installed and configured on your system.
 
- * [.NET Core 2.0](https://www.microsoft.com/net/){:target="_blank"}
- * [Docker](https://www.docker.com/){:target="_blank"}
- * An account for a Docker Registry (eg. [Docker Hub](https://hub.docker.com/){:target="_blank"} or [ACR](https://azure.microsoft.com/en-us/services/container-registry/){:target="_blank"})
- * Access to a Kubernetes cluster (eg. [AKS](https://azure.microsoft.com/en-us/services/container-service/){:target="_blank"}, [Minikube](https://github.com/kubernetes/minikube){:target="_blank"}, [GCP](https://cloud.google.com/kubernetes-engine/docs/?hl=de){:target="_blank"} , …)
- * [Functions Core Tools 2.0](https://github.com/Azure/azure-functions-cli){:target="_blank"} (previously known as Azure Functions CLI)
+- [.NET Core 2.0](https://www.microsoft.com/net/){:target="_blank"}
+- [Docker](https://www.docker.com/){:target="_blank"}
+- An account for a Docker Registry (eg. [Docker Hub](https://hub.docker.com/){:target="_blank"} or [ACR](https://azure.microsoft.com/en-us/services/container-registry/){:target="_blank"})
+- Access to a Kubernetes cluster (eg. [AKS](https://azure.microsoft.com/en-us/services/container-service/){:target="_blank"}, [Minikube](https://github.com/kubernetes/minikube){:target="_blank"}, [GCP](https://cloud.google.com/kubernetes-engine/docs/?hl=de){:target="_blank"} , …)
+- [Functions Core Tools 2.0](https://github.com/Azure/azure-functions-cli){:target="_blank"} (previously known as Azure Functions CLI)
   
 Once you've installed and configured those tools, you're set and it's time to get started.
 
@@ -50,6 +50,7 @@ I'll use public [Docker Hub](https://hub.docker.com/){:target="_blank"} for now,
 docker build -t <%YOUR_REPOSITORY%>/azfunction-on-k8s .
 
 ```
+
 Docker will now instruct the service to pull all required filesystem layers and follow the instructions from the `Dockerfile` to build the image. Once the command has finished, you will find the new image when executing `docker images`, docker automatically assigns the `latest` tag to the image if you don't specify a tag manually.
 
 ## Push the Docker image to the registry
@@ -75,11 +76,10 @@ kubectl config get-contexts
 
 You'll receive a list of registered contexts, where one of those is marked as current context (in the first column).
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-1.png"
 title="Contexts for kubectl" caption="Contexts for kubectl" %}
 
-We will be using minikube for this post, so let's ensure minikube is up and running and change the `kubectl` context to `minikube`. 
-
+We will be using minikube for this post, so let's ensure minikube is up and running and change the `kubectl` context to `minikube`.
 
 ## Preparing minikube to support autoscaling
 
@@ -90,10 +90,10 @@ minikube addons list
 
 ```
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-2.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-2.png"
 title="Minikube add-ons with disabled heapster" caption="Minikube add-ons with disabled heapster" %}
 
-As you can see, **heapster** is disabled, let's enable it now. 
+As you can see, **heapster** is disabled, let's enable it now.
 
 ```bash
 minikube addons enable heapster
@@ -102,17 +102,17 @@ minikube addons enable heapster
 
 > It's important to enable heapster before deploying our docker image yo the cluster
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-3.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-3.png"
 title="Minikube add-ons: heapster enabled" caption="Minikube add-ons: heapster enabled" %}
 
-## Deploying to the Kubernetes cluster 
+## Deploying to the Kubernetes cluster
 
 Let's deploy our docker image to the k8s cluster. Normally you would create a deployment using a simple `yaml` file, but for demonstration purpose, we'll just use the `kubectl` command for now. For real deployments, you always want to use a proper `yaml` deployment definition.
 
 ```bash
-kubectl run azure-function-on-kubernetes 
-  --image=<%YOUR_REPOSITORY%>/azfunction-on-k8s 
-  --port=80 
+kubectl run azure-function-on-kubernetes
+  --image=<%YOUR_REPOSITORY%>/azfunction-on-k8s
+  --port=80
   --requests=cpu=100m
 
 ```
@@ -135,19 +135,19 @@ minikube service azure-function-on-kubernetes --url
 
 *Minikube* will immediately print the URL where you can access the *Azure Function* at. Give it a try, open a browser and navigate to the url, first you should see the Azure Function welcome page. In order to access the actual function, you've to append the path to the function which is `/api/httpfunction/?name=<%YOUR_NAME%>`. So in my case, the absolute url is `http://192.168.99.100:30518%5D/api/httpfunction/?name=Thorsten`.
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-4.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-4.png"
 title="The Sample Azure Function has been invoked successfully" caption="The Sample Azure Function has been invoked successfully" %}
 
-## Enable Autoscaling 
+## Enable Autoscaling
 
 The funny part of this article is of course autoscaling. We all want to see Kubernetes taking care of our containers and pods and *dynamically scale the application based on actual load*. 🤘🏼🚀
 
 `HorizontalPodAutoscaler` is also a first citizen object in Kubernetes which can also be described in `yaml` for real deployments, you definitely want to create a `yaml` file instead of using the corresponding `kubectl` command.
 
 ```bash
-kubectl autoscale deploy azure-function-on-kubernetes 
-  --cpu-percent=30 
-  --max=30 
+kubectl autoscale deploy azure-function-on-kubernetes
+  --cpu-percent=30
+  --max=30
   --min=1
 
 ```
@@ -176,8 +176,8 @@ You can cancel the requests by simply hitting `CTRL+C`
 Open a new instance of your favorite terminal. As described in Kubernetes docs, you can use the `busybox` image with interactive `tty` to generate a *Pod* which will put some load on the Azure Function. Spinning up this pod using `kubectl` is straightforward.
 
 ```bash
-kubectl run -i 
-  --tty azure-fn-loadgenerator 
+kubectl run -i
+  --tty azure-fn-loadgenerator
   --image=busybox /bin/sh
 
 # Hit RETURN for command prompt
@@ -196,16 +196,16 @@ But there is another way how to see the autoscaling action. You can have a look 
 
 Inside the *Kubernetes dashboard* you find all information about your k8s cluster. As you can see in the picture below, Kubernetes already scaled my deployment, I've right now 10 instances of my *Pod* running and dealing with the incoming load. If you pay attention to the Age column, you see that those pods have different ages.
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-5.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-5.png"
 title="Kubernetes cluster with autoscaled deployment" caption="Kubernetes cluster with autoscaled deployment" %}
 
-## Stop the Load and verify downscaling 
+## Stop the Load and verify downscaling
 
 Stop the load generation as described above. Depending on your custom downscale delay it'll take some time until Kubernetes will kill some of your pods. Navigate to the k8s Dashboard and see the pods disappearing 😀
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-6.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-functions-kubernetes-6.png"
 title="Kubernetes cluster with downscaled deployment" caption="Kubernetes cluster with downscaled deployment" %}
 
 ## Recap
 
-Kubernetes autoscaling is really powerful and from a developers perspective it makes fun using it. It's just amazing to see *Kubernetes* spinning up a new instance of your pods **to enforce the desired state**. I hope you enjoyed the read and got some new ideas. 
+Kubernetes autoscaling is really powerful and from a developers perspective it makes fun using it. It's just amazing to see *Kubernetes* spinning up a new instance of your pods **to enforce the desired state**. I hope you enjoyed the read and got some new ideas.

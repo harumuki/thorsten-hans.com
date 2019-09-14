@@ -20,5 +20,3 @@ Instead of writing down all the bits, I've started Camtasia and recorded a short
 I'll explain all the required steps from 0 to the final `app.asar` package in these 11 minutes. Enjoy
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZhLG0O4W190" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-

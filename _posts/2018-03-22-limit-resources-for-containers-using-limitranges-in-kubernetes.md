@@ -17,6 +17,7 @@ When creating deployments, you can set resource-requests and -limits by using th
 Unfortunately, those properties are not mandatory, so every developer has to remember providing requests and limits for both **memory** and **cpu**.
 
 ## Introducing Limit Ranges
+
 You can address the potential issue by defining so-called *LimitRanges* on *Namespaces*. The main purpose of a *LimitRange* is to ensure, requests and/or limits are automatically associated with containers based on its specification.
 For demonstrating purpose, let's create two independent *namespaces* on a Kubernetes cluster.
 
@@ -119,11 +120,11 @@ kubectl describe pod demo-nginx --namespace=restricted
 
 The requests should only be applied to the Pod running in namespace restricted
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/kubernetes-limitranges.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/kubernetes-limitranges.png"
 title="Resource-Limits and -Requests automatically applied to all Containers in a dedicated namespace" caption="Resource-Limits and -Requests automatically applied to all Containers in a dedicated namespace" %}
 
-
 ## Recap
+
 As you can see, defining default `resource-requests` and `-limits` is quite easy using *LimitRanges*. If you don't specify resource-requests or -limits for the containers you deploy, Kubernetes will automatically assign the pre-defined values from the LimitRange. That said, it's only **a default value**.
 
 Your custom requests and limits will always overrule the LimitRanges.

@@ -16,7 +16,7 @@ If you haven't heard of _Electron_ (formerly known as _Atom Shell_) you should c
 In this post, I will not provide an introduction for all the different tools and frameworks. It's more a walkthrough that should give you some hints on how to get things up and to run with the following stack.
 
 - [Electron](https://github.com/atom/electron){:target="_blank"}
-- [AngularJS](http://angularjs.org){:target="_blank"}
+- [Angular.JS](http://angularjs.org){:target="_blank"}
 - ES6 using [Babel](https://babeljs.io){:target="_blank"} as transpiler
 - [SystemJS](https://github.com/systemjs/systemjs){:target="_blank"} as module-loader
 

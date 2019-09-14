@@ -13,12 +13,13 @@ Using Azure Container Services (ACS) you can easily build hybrid kubernetes clus
 In this article I'll guide you through the process of creating a new hybrid kubernetes cluster on Azure Container Services. 
 
 ## Prerequisites
+
 When starting from scratch, you need only a few things:
 
- * a Microsoft Azure Account
- * a Text Editor
- * a local installation of `kubectl`
- * [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"} installed on your machine
+- a Microsoft Azure Account
+- a Text Editor
+- a local installation of `kubectl`
+- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/overview){:target="_blank"} installed on your machine
 
 ## Configuring Azure CLI
 
@@ -33,7 +34,7 @@ az account list -o table
 
 # set the subscription of your choice
 az account set --subscription <SUBSCRIPTION_ID>
-    
+
 # create a new resource group for the hybrid k8s cluster
 az group create --location westeurope --name hybrid-k8s
 
@@ -51,18 +52,19 @@ az account list-locations -o table
 Azure offers [a website showing all types of resources and the regions](https://azure.microsoft.com/en-us/regions/services/){:target="_blank"} they're available at.
 
 ## Configure your Kubernetes cluster using acs-engine
+
 ACS provides default configurations for various container orchestrators like *Kubernetes*. Those default configurations are deploying regular Linux Nodes if considering a *Kubernetes* cluster. It's definitely a good starting point, but currently, there are no default configurations for hybrid clusters.
 
-Fortunately, you can [use acs-engine to create your own cluster configurations](https://github.com/Azure/acs-engine){:target="_blank"}.*acs-engine* is a small binary used to translate cluster configurations to Azure Resource Manager Templates. acs-engine is available for all platforms. 
+Fortunately, you can [use acs-engine to create your own cluster configurations](https://github.com/Azure/acs-engine){:target="_blank"}.*acs-engine* is a small binary used to translate cluster configurations to Azure Resource Manager Templates. acs-engine is available for all platforms.
 
- > You can either install [the pre-compiled binaries](https://github.com/Azure/acs-engine/releases){:target="_blank"} Or build it directly from source following [these instructions](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source){:target="_blank"}. 
- 
+ > You can either install [the pre-compiled binaries](https://github.com/Azure/acs-engine/releases){:target="_blank"} Or build it directly from source following [these instructions](https://github.com/Azure/acs-engine/blob/master/docs/acsengine.md#build-acs-engine-from-source){:target="_blank"}.
+
 Verify the installation by executing `acs-engine version`. Depending on the chosen version you should get a similar result like
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-1.png"
 title="Verify acs-engine Installation" caption="Verify acs-engine Installation" %}
 
-## Building a cluster configuration file 
+## Building a cluster configuration file
 
 As mentioned above, `acs-engine` takes a configuration file an produces an *Azure Resource Manager Template* which will be used later on to deploy the *Kubernetes* cluster.
 
@@ -90,8 +92,8 @@ The `env.` file specifies the expected number of nodes. So you can leave it as i
 A *Service Principal* can either be created using the Azure Portal at https://portal.azure.com or by using the Azure CLI.
 
 ```bash
-az ad sp create-for-rbac 
-  --role Contributor 
+az ad sp create-for-rbac
+  --role Contributor
   --scopes="/subscriptions/<SUBSCRIPTION_ID>"
 
 ```
@@ -111,7 +113,6 @@ code kubernetes-hybrid.json
 
 ```
 
-
 While writing this article, the example configuration has two issues which needs to be fixed in order to generate the *Azure Resource Manager Template* successfully. Both fixes are related to the `servicePrincipalProfile` object located at the end of the configuration file. Verify that you've two properties on that object. One called `servicePrincipalClientID` and the second called `servicePrincipalClientSecret`. Also, verify the proper casing of those property names.
 
 Take the `appId` from your *Service Principal* and use it as value for `servicePrincipalClientID` and take the `password` from your *Service Principal* and use it as value for `servicePrincipalClientSecret`.
@@ -119,10 +120,10 @@ Take the `appId` from your *Service Principal* and use it as value for `serviceP
 Finally, you've to specify the `dnsPrefix`, the `usernames` and `passwords` for the different machines and for accessing the Linux node using ssh you've to provide your `publicKey`.
 The configuration file should look similar to this.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-3.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-3.png"
 title="The hybrid Kubernetes cluster configuration" caption="The hybrid Kubernetes cluster configuration" %}
 
-## Build and deploy the ARM Template 
+## Build and deploy the ARM Template
 
 Build *Azure Resource Manager Template* using the following command:
 
@@ -136,10 +137,10 @@ acs-engine generate ./kubernetes-hybrid.json
 Azure CLI is used to deploy the template to the Resource Group created at the beginning of the article.
 
 ```bash
-az group deployment create 
-  --name "k8s-hybrid-deployment" 
-  --resource-group "hybrid-k8s" 
-  --template-file ./azuredeploy.json 
+az group deployment create
+  --name "k8s-hybrid-deployment"
+  --resource-group "hybrid-k8s"
+  --template-file ./azuredeploy.json
   --parameters ./azuredeploy.parameters.json
 
 ```
@@ -154,7 +155,7 @@ Once your cluster is up and running, it's time to play a bit with it. Deploy som
 # Copy kubernetes remote config from the master using scp
 # again assuming that your in ~/hybrid-k8s/
 scp azureuser@<MASTER_FQDN>:.kube/config .
-    
+
 # Configure kubectl
 export KUBECONFIG=`pwd`/config
 
@@ -176,10 +177,11 @@ kubectl proxy
 
 Using the *Kubernetes dashboard* you can visually navigate through your hybrid *Kubernetes* cluster
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-4.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-4.png"
 title="The Kubernetes Dashboard" caption="The Kubernetes Dashboard" %}
 
-## Spinning up a Windows Pod 
+## Spinning up a Windows Pod
+
 For demonstration purpose let's create a simple *IIS Pod* on our new cluster. Save the following `yaml` to your project folder as `iis-pod.yaml`:
 
 ```yaml
@@ -200,7 +202,6 @@ spec:
 
 ```
 
-
 Important is the `nodeSelector` at the end of the Pod definition. By specifying the `beta.kubernetes.io/os` selector and pointing it to `windows`, you tell *Kubernetes* to deploy the *Pod* only to nodes having the matching tag. Now deploy the *Pod* using:
 
 ```bash
@@ -218,7 +219,6 @@ kubectl expose pods iis --name iis-service --port 80 --type=LoadBalancer
 
 ```
 
-
 > Don't use `kubectl expose` for creating services in production environments. Always use `yaml` or `json` configuration files.
 
 To determine the public IP address created by the service (which is internally creating an *Azure Load Balancer*), use
@@ -233,7 +233,7 @@ Which will return basic information about all existing services on the cluster. 
 {% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-5.png" 
 title="IIS running on our hybrid Kubernetes cluster" caption="IIS running on our hybrid Kubernetes cluster" %}
 
-## Spinning up a Linux pod 
+## Spinning up a Linux Pod
 
 Let's also verify a Linux Node, by deploying a basic *NGINX Pod* to our *Kubernetes* cluster. Again save the following `yaml` to your project folder and name the file `nginx-pod.yaml`:
 
@@ -266,10 +266,10 @@ kubectl expose pods nginx --name nginx-service --port 80 --type=LoadBalancer
 
 As soon as Azure has allocated the public IP address and created the Load Balancer, you can use `kubectl get service` to get the external IP address. Finally, open it using your browser and enjoy the pretty *NGINX *welcome page. 🚀
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-6.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acs-engine-hybrid-6.png"
 title="NGINX running on a Linux node in our Kubernetes cluster" caption="NGINX running on a Linux node in our Kubernetes cluster" %}
 
-## Recap 
+## Recap
 
 Hybrid *Kubernetes* clusters are the best runtime for complex applications. Different developer teams can use their favorite frameworks, languages, and tools to build and ship their applications. *Kubernetes* will allow them to scale and manage deployments easily. Because of the seamless integration, *Kubernetes* and Azure are taking containers to another level.
 

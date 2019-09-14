@@ -11,7 +11,6 @@ unsplash_user_ref: grohsfabian
 unsplash_user_name: Fabian Grohs
 ---
 
-
 You can build Angular apps using plain old *JavaScript* and *TypeScript*. I've been using plain JavaScript for the past *Angular* demonstrations, because I felt in love again with *JavaScript* after spending years with *CoffeeScript* (But that's a different story). However, teams at Google and Microsoft were working together in these days to marriage *Angular* and *TypeScript*. If you don't know *TypeScript* yet, go and learn it. It will change the way how you write Frontend stuff in the upcoming years. You can think of it as todays **JavaScript* on steroids. It makes you more productive, it makes your code more robust, you've to write less plumbing because the *TypeScript Compiler (TSC)* generates all the good parts of *JavaScript* and knows about the edge-cases.
 
 > THINK: When I use TypeScript I'll end in doing less keystrokes; That means I'll be faster 🤘
@@ -86,5 +85,3 @@ Within the current publicly available version of this sample,I've to load the sp
 #### Action required
 
 If you've any idea how to fix that feel free to send me a pull request on *GitHub* or chat with me about it.
-
-

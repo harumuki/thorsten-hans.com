@@ -10,6 +10,7 @@ tags: [Angular, Pug]
 excerpt: null
 image: /2016-02-05-pug-up-your-angular-markup.jpg
 ---
+
 Can you imagine the combination of *Angular* and Pug (previously known as Jade) is super awesome and timesaving? If not, read the following lines and reconsider!
 
 When building *SPAs* using *Angular* or *AngularJS*, you use custom *HTML* markup extensions (aka *directives*) to instrument *Angular* how to render your *SPA* or how the different building blocks of your app should correspond to user interaction. Using those directives is smooth and well known in the *Angular* Community.
@@ -47,6 +48,7 @@ include mixins/base.pug
 +icn('github')
 
 ```
+
 This will generate
 
 ```html
@@ -115,7 +117,7 @@ Now you can refactor your root `pug` file to just `include mixins/index.jade`, s
 
 ## More complex input directives
 
-The amount of *HTML* compared to the few lines of *Pug* is immersive. And the difference will grow even more if you create more powerful mixins. Let's add some nice icons to our input form.   
+The amount of *HTML* compared to the few lines of *Pug* is immersive. And the difference will grow even more if you create more powerful mixins. Let's add some nice icons to our input form.
 The sample shows the input we created a few seconds ago, it should still render without any image. So change the froms `mixin` to accept an additional icon argument:
 
 ```pug
@@ -187,7 +189,7 @@ export class CustomerDetailComponent implements OnInit {
         ) {
             this.customer = new Customer();
     }
-    
+
     public ngOnInit() {
         let id = null;
         this._route.params.forEach((params: Params) => {
@@ -196,7 +198,7 @@ export class CustomerDetailComponent implements OnInit {
         this._customerService.getById(id)
           .subscribe(c => this.customer = c);
     }
-    
+
     public save(){
         this._customerService.update(this.customer)
             .subscribe(data=> this._router.navigate(['/customers/list']));
@@ -236,5 +238,3 @@ Hook up this task to the sequence of tasks being executed during a regular build
 I know many people bashing about *Pug*. However, I don't get why. (Most of the time those people were also bashing my beloved *CoffeeScript* in the past :D) However, in these days we're using *TypeScript* to make *JavaScript* work, *Less* or *Sass* to make *CSS* easier and less painful. So why not using *Pug* to be more productive in markup?
 
 What's your opinion? Have you tried it with *Angular*? Do you have the same impressions I've shared here? Alternatively, may it adding too much complexity to your projects? **Leave a comment.**
-
-

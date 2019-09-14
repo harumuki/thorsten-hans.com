@@ -11,7 +11,6 @@ unsplash_user_name: Jan Tinneberg
 unsplash_user_ref: craft_ear
 ---
 
-
 **After more than seven years of doing SharePoint Development I will leave the SharePoint Business by today and start a new journey.**
 
 Over the past years, I was involved in numerous SharePoint projects from a developer's and a consultant's perspective. It has been a blast.
@@ -37,7 +36,7 @@ I'm proud to know that our sixth BarCamp in Munich will happen this weekend (see
 
 **Have fun and happy coding** 😀
 
-## So. What's next?
+## That said, what is next
 
 Well, I was telling my customers for a decade now that they should focus on mobile Apps consuming services such as O365 instead of backing everything into the host process itself. Unfortunately, I didn't get the chance to run serious projects in that area here in Germany. Therefore I'm proud to have the chance to dig into the Cross-Platform development business by joining the excellent team of [Thinktecture](http://www.thinktecture.com/){:target="_blank"}. Thinktecture is an incredible team focusing on Cross-Platform Apps with .NET backends!
 
@@ -48,5 +47,3 @@ Visit our website at [http://www.thinktecture.com/](http://www.thinktecture.com/
 I think there are plenty of opportunities to bring those areas (O365 and Cross-Platform Development) together. I've helped to shape the O365 API by providing tons of feedback and ideas to the PG back in 2014 and by digging that deep into the API itself, I think I have a good understanding of the things going on there. I'm looking forward to helping you and your team of developers to step into that new area and build Apps for ALL platforms that integrate into Office365 or SharePoint OnPrem (if there is no other way :D).
 
 Happy SharePoint'ing (One last time :D)
-
-

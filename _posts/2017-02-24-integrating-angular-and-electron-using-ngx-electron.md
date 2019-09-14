@@ -8,6 +8,7 @@ tags: [Electron,Angular]
 excerpt: 'ngx-electron is here to help you! If you want to write a desktop application using Angular, GitHub''s Electron is the tool of choice to bring Single Page Applications to the desktop. ngx-electron you''ll be quicker and accessing Electron''s APIs is even easier from within Angular.'
 image: /2017-02-24-integrating-angular-and-electron-using-ngx-electron.jpg
 ---
+
 GitHub Electron makes crafting cross-platform desktop applications really simple. You can take any existing website or *Single Page Application* (*SPA*) and just wrap it into a native container. Those containers (powered by *Chromium* and *Node.js*) could easily be distributed to all major desktop operating systems like *Windows*, *macOS* or *Linux*.
 
 On the other side is *Angular* as a full-blown application framework for building robust *SPAs*. *Angular* makes building *SPAs* fun and provides a rich set of APIs to get everything done, inside of the client. However, sometimes you need a deeper integration. For example, you want to call into *Electron's* main-process to execute some *Node.js* script like reading files from a directory or do some other processing using *Node.js*. In those cases, you could utilize *Electron's* APIs.
@@ -36,7 +37,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxElectronModule } from 'ngx-electron';
 import { AppComponent } from './app.component';
- 
+
 @NgModule({
     declarations: [],
     imports: [
@@ -46,33 +47,33 @@ import { AppComponent } from './app.component';
     bootstrap: [AppComponent]
 })
 export class AppModule {
- 
+
 }
 
 ```
 
-
 ## The ElectronService
+
 `NgxElectronModule` provides the `ElectronService`, a simple but powerful service that could be requested from Angular Dependency Injection container.
 
 ```typescript
 import { Component } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
- 
+
 @Component({
   selector: 'my-app',
   templateUrl: 'app.html'
 })
 export class AppComponent {
- 
+
     constructor(private _electronService: ElectronService) { }
-    
+
     public playPingPong() {
         let pong: string = this._electronService
             .ipcRenderer.sendSync('ping');
         console.log(pong);
     }
-    
+
     public beep() {
         this._electronService.shell.beep();
     }
@@ -108,16 +109,14 @@ public get shell(): Electron.Shell;
 In addition to those instance getters, a static getter called `runningInElectron` is also available. You can use the getter to identify if your app is currently running inside of an Electron renderer process.
 
 ```typescript
-const isAnElectronApp: boolean = 
-    this._electronService.runningInElectron;
+const isAnElectronApp: boolean = this._electronService.runningInElectron;
 ```
-
 
 As you can see, IntelliSense is working perfectly in IDEs like *WebStorm* or editors like *Atom*.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/ngx-electron-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/ngx-electron-1.png"
 title="IntelliSense for Electron's APIs in Angular" caption="IntelliSense for Electron's APIs in Angular" %}
 
-You can find the package on [npmjs](https://www.npmjs.com/){:target="_blank"} and of course, all [code is hosted on GitHub](https://github.com/ThorstenHans/ngx-electron/){:target="_blank"}. If you've any other Electron API that's missing in the current version, either submit a pull request or file an issue. 
+You can find the package on [npmjs](https://www.npmjs.com/){:target="_blank"} and of course, all [code is hosted on GitHub](https://github.com/ThorstenHans/ngx-electron/){:target="_blank"}. If you've any other Electron API that's missing in the current version, either submit a pull request or file an issue.
 
 I hope `ngx-electron` will make integration of *Angular* and *Electron* APIs a bit easier for *Angular* developers out there. If you like the post please share it on Twitter 😜

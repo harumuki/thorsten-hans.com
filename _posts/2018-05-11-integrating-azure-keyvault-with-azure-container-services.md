@@ -8,6 +8,7 @@ tags: [Kubernetes,Azure Key Vault,Azure Container Service,Docker,AKS]
 excerpt: 'Learn how to integrate Azure Key Vault and Azure Container Services. This article guides you through everything you need, in order to query Key Vault from an ASP.NET Core App running in a Pod on Kubernetes'
 image: /2018-05-11-integrating-azure-keyvault-with-azure-container-services.jpg
 ---
+
 With *Azure Key Vault*, Microsoft is offering a dedicated and secure service to manage and maintain sensitive data like Connection-Strings, Certificates, or key-value pairs. 
 We're hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq){:target="_blank"} mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you've to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
 
@@ -18,9 +19,9 @@ I wrote "**most**" because `ClientId`, `ClientSecret` and the Key Vault identifi
 Let's get started with creating a new Azure Key Vault instance, it's really straightforward using Azure CLI:
 
 ```bash
-az keyvault create 
-  --resource-group demo-rg 
-  --name demo-kv 
+az keyvault create
+  --resource-group demo-rg
+  --name demo-kv
   --location westeurope
 
 ```
@@ -30,10 +31,10 @@ az keyvault create
 When the instance has been created, store a secret value for demonstration purpose:
 
 ```bash
-az keyvault secret set 
-  --name SampleSecret 
-  --value SecretValue 
-  --description "Sample Secret Value" 
+az keyvault secret set
+  --name SampleSecret
+  --value SecretValue
+  --description "Sample Secret Value"
   --vault-name demo-kv
 
 ```
@@ -43,9 +44,9 @@ az keyvault secret set
 In order to access values from Azure Key Vault, an *Azure AD App Registration* and corresponding *Service Principal* are required. First, create a new *Azure AD App Registration* using:
 
 ```bash
-az ad app create 
-  --display-name aks-demo-kv-reader 
-  --identifier-uris https://aks-demo-kv-reader.somedomain.com 
+az ad app create
+  --display-name aks-demo-kv-reader
+  --identifier-uris https://aks-demo-kv-reader.somedomain.com
   --query objectId
 
 > "68981428-2a09-411b-931a-dd1ae76d8775"
@@ -55,8 +56,8 @@ az ad app create
 Because the command specifies `--query objectId`, only the Object Identifier will be returned. Use the `ObjectId` to create a *Service Principal* for your new App Registration:
 
 ```bash
-az ad sp create 
-  --id 68981428-2a09-411b-931a-dd1ae76d8775 
+az ad sp create
+  --id 68981428-2a09-411b-931a-dd1ae76d8775
   --query appId
 
 > "bc52fe12-ead8-46d3-81d6-05dc258af3a9"
@@ -70,23 +71,22 @@ Also in this snippet, `--query` is used to pull the only relevant information 
 Open the [Azure Portal](https://portal.azure.com/){:target="_blank"} in your Browser and Navigate to the AD App Registration you created a minute ago. From the Azure *DASHBOARD* go to *AZURE ACTIVE DIRECTORY* and open the *APP REGISTRATIONS* blade. Here, select the Registration named: `aks-demo-kv-reader` from the list of all registrations.
 Click on *SETTINGS* (purple square), *KEYS* (green square), provide a new description and set an expiration date for the *Key* (yellow square).
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/azure-key-vault-acs.png" 
-title="Create a new Key for the App Registration" caption="Create a new Key for the App Registration" %} 
+{% include image-caption.html imageurl="/assets/images/posts/2018/azure-key-vault-acs.png"
+title="Create a new Key for the App Registration" caption="Create a new Key for the App Registration" %}
 
-Once finished press *SAVE*, now the portal will show the value *copy the value, it won't be displayed anymore*. It represents our `ClientSecret`, the `ClientId` can be found directly on the App Registration and it's labeled as `Application ID` (starting with `ffd…` in the image above). 
+Once finished press *SAVE*, now the portal will show the value *copy the value, it won't be displayed anymore*. It represents our `ClientSecret`, the `ClientId` can be found directly on the App Registration and it's labeled as `Application ID` (starting with `ffd…` in the image above).
 
 ## Connecting the Service Principal with Azure Key Vault
 
 In order to integrate the new *Azure Service Principal* with Azure Key Vault, an *Access Policy* has to be defined. For demonstrating purpose, we'll assign `GET` and `LIST` permissions to the *Service Principal* and limit it to `Secrets`. (Using both, CLI and Portal you can specify permissions for `Secrets`, `Certificates` and `Keys`).
 
 ```bash
-az keyvault set-policy 
-  --name demo-kv 
-  --spn bc52fe12-ead8-46d3-81d6-05dc258af3a9 
+az keyvault set-policy
+  --name demo-kv
+  --spn bc52fe12-ead8-46d3-81d6-05dc258af3a9
   --secret-permissions get list
 
 ```
-
 
 ## Access Key Vault from a .NET Core API
 
@@ -104,16 +104,16 @@ public class Program
     {
         var configBuilder = new ConfigurationBuilder()
             .AddEnvironmentVariables();
-            
+
         var stageOneConfig = configBuilder.Build();
         var clientId = stageOneConfig.GetValue<string>("clientid");
         var clientSecret = stageOneConfig.GetValue<string>("clientsecret");
         var keyVaultIdentifier = stageOneConfig.GetValue<string>("keyvaultidentifier");
         var keyVaultUri = $"https://{keyVaultIdentifier}.vault.azure.net/";
-        
+
         configBuilder
             .AddAzureKeyVault(keyVaultUri, clientId, clientSecret);
-        
+
         return WebHost.CreateDefaultBuilder(args)
             .UseConfiguration(configBuilder.Build())
             .UseStartup<Startup>()
@@ -136,7 +136,7 @@ public class ValuesController : Controller
     {
         Configuration = config;
     }
-    
+
     [HttpGet]
     public IActionResult Get()
     {
@@ -187,7 +187,6 @@ Finally, the image needs to be pushed using:
 docker push demoacr.azurecr.io/azkv-demo:0.0.1
 
 ```
-
 
 ## Deploying Secrets to Kubernetes
 
@@ -276,4 +275,5 @@ curl http://localhost:8080/api/values
 According to the snippet, you should see the `SecretValue` from Azure Key Vault.
 
 ## Recap
+
 Using *Azure Key Vault* is definitely the best solution to manage secure data for cloud-native applications. Integrating *Azure Key Vault* with *Azure Container Services* is fairly easy. Hopefully, the integration will become even easier once the *AKS* team ships native Key Vault support.

@@ -8,16 +8,18 @@ tags: [Kubernetes, Azure, AKS, NETCore]
 excerpt: 'Learn how to use the C# Kubernetes Client library to query Kubernetes inventory and expose it via HTTP using a simple ASP.NET Core WebAPI which will be directly deployed to an AKS cluster as Deployment.'
 image: /2018-12-04-inspect-your-kubernetes-inventory-in-no-time-with-asp-net-core-and-kubernetes-client-library.jpg
 ---
+
 Running and maintaining complex applications on Kubernetes often requires good monitoring capabilities. Sure, there are plenty of products available which can be deployed easily to an existing cluster to get insights about the current cluster inventory. But why not build your own? 
 
-In this post, I'll guide you through the process of creating a simple ASP.NET Core Web API to expose your cluster's inventory  -  such as Pods for example -  to other applications in order to get exactly those insights that are important for you. I used the following example frequently during public talks to explain the core concepts of *Kubernetes* to .NET developers. 
+In this post, I'll guide you through the process of creating a simple ASP.NET Core Web API to expose your cluster's inventory  -  such as Pods for example -  to other applications in order to get exactly those insights that are important for you. I used the following example frequently during public talks to explain the core concepts of *Kubernetes* to .NET developers.
 
 ## Requirements
+
 In order to follow this guide, you need to have access to a /Kubernetes/ cluster and the following tools should be installed and configured on your developer machine
 
- * `docker`
- * `kubectl`
- * `dotnet`
+- `docker`
+- `kubectl`
+- `dotnet`
   
 If you're not yet familiar with `docker`, `kubectl` or `dotnet`,  check out one of the great online tutorials on those.
 
@@ -34,8 +36,8 @@ dotnet add package KubernetesClient
 
 mkdir Repositories Controllers Models
 
-touch Repositories/KubernetesRepository.cs 
-touch Controllers/Kubernetes 
+touch Repositories/KubernetesRepository.cs
+touch Controllers/Kubernetes
 touch Controller.csModels/PodListModel.cs
 
 ```
@@ -47,7 +49,7 @@ namespace KubeInspector.Models
 {
   public class PodListModel
   {
- 
+
     public string Id { get; set; }
     public string Name { get; set; }
     public string NodeName { get; set; }
@@ -65,35 +67,35 @@ using System.Threading.Tasks;
 using k8s;
 using KubeInspector.Models;
 
-namespace KubeInspector.Repositories 
+namespace KubeInspector.Repositories
 {
-  public interface IKubernetesRepository 
+  public interface IKubernetesRepository
   {
     Task<IEnumerable> GetPodsAsync(string ns = "default");
   }
-    
-  public class KubernetesRepository : IKubernetesRepository 
+
+  public class KubernetesRepository : IKubernetesRepository
   {
     private readonly Kubernetes _client;
-    
-    public KubernetesRepository() 
+
+    public KubernetesRepository()
     {
       _client = new Kubernetes(
         KubernetesClientConfiguration.InClusterConfig()
       );
     }
-    
+
     public async Task<IEnumerable> GetPodsAsync(string ns = "default")
     {
       var pods = await _client.ListNamespacedPodAsync(ns);
       return pods
         .Items
-        .Select(p => new PodListModel 
+        .Select(p => new PodListModel
           {
             Name = p.Metadata.Name,
             Id = p.Metadata.Uid,
             NodeName = p.Spec.NodeName
-    	  });
+        });
     }
   }
 }
@@ -110,12 +112,12 @@ using System.Threading.Tasks;
 using KubeInspector.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KubeInspector.Controllers 
+namespace KubeInspector.Controllers
 {
 
   [ApiController]
   [Route("api/kubernetes")]
-  public class KubernetesController : ControllerBase 
+  public class KubernetesController : ControllerBase
   {
 
     private readonly IKubernetesRepository _repository;
@@ -123,27 +125,27 @@ namespace KubeInspector.Controllers
     public KubernetesController(IKubernetesRepository repository)
     {
       _repository = repository;
-	}
+    }
 
-	[HttpGet]
-	[Route("pods/{ns:alpha:required}")]
-	public async Task GetPodsAsync(string ns = "default") 
-	{
-	  if (!ModelState.IsValid) 
-	  {
-		return BadRequest ();
-	  }
+    [HttpGet]
+    [Route("pods/{ns:alpha:required}")]
+    public async Task GetPodsAsync(string ns = "default")
+    {
+      if (!ModelState.IsValid)
+      {
+        return BadRequest ();
+      }
 
-	  try
-	  {
-		var pods = await _repository.GetPodsAsync (ns);
-		return Ok (pods);
-	  }
-	  catch(Exception) 
-	  {
-		return StatusCode (500);
-	  }
-	}
+      try
+      {
+        var pods = await _repository.GetPodsAsync (ns);
+        return Ok (pods);
+      }
+      catch(Exception)
+      {
+        return StatusCode (500);
+      }
+    }
   }
 }
 
@@ -165,10 +167,10 @@ namespace KubeInspector
 
     public void ConfigureServices(IServiceCollection services)
     {
-	  services.AddMvc();
-	  services.AddTransient<IKubernetesRepository, KubernetesRepository>();
+    services.AddMvc();
+    services.AddTransient<IKubernetesRepository, KubernetesRepository>();
     }
-     
+
     public void Configure(IApplicationBuilder app,IHostingEnvironment env)
     {
       if(env.IsDevelopment())
@@ -177,7 +179,7 @@ namespace KubeInspector
       }
       app.UseMvc();
     }
- 
+
   }
 }
 
@@ -277,7 +279,7 @@ kubectl port-forward kubeinspector-deployment-some-id 8080:80
 
 Now you can use a tool like Postman or just your browser to examine the endpoint. Issue a `GET` request to `http://127.0.0.1:8080/api/kubernetes/pods/default` which will show all the pods in the namespace you've selected. For example, see the attached response from my demonstration cluster:
 
-{% include image-caption.html imageurl="/assets/images/posts/2018/inspect-kubernetes-cluster-netcore.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2018/inspect-kubernetes-cluster-netcore.png"
 title="Exposed Pods from the default namespace" caption="Exposed Pods from the default namespace" %}
 
 So as you can see, it's really easy to query an existing Kubernetes cluster using the official client libraries. In addition, I think it's a great example for .NET developers that explains how to get started with Kubernetes at all. If you want to query more data, you should definitely check out [the official repository](https://github.com/kubernetes-client/csharp){:target="_blank"}.
