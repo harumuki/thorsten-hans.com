@@ -12,14 +12,13 @@ excerpt: Learn how to use Azure Files in Kubernetes Deployments from an ASP.NET 
 image: /2017-08-21-using-azure-files-in-kubernetes-deployments-with-asp-net-core.jpg
 ---
 *Azure Container Services* (*ACS*) makes it incredibly easy to spin up and manage *Kubernetes* clusters in the cloud. There are plenty of other Azure resources which you can use to build daily scenarios on a native cloud stack.
-Common scenarios are serving files from and writing important information to persisted locations. Azure offers many different storage capabilities. In this post, I'll explain how to use an Azure File Share to serve content by using a .NET Core Web API. 
+Common scenarios are serving files from and writing important information to persisted locations. Azure offers many different storage capabilities. In this post, I'll explain how to use an Azure File Share to serve content by using a .NET Core Web API.
 
 ## Azure Files
 
 Using Azure Files you can create SMB 3.0 file shares and access them from all over the world. No matter if you're running a cloud-native application or working in a hybrid scenario, Azure Files can be accessed from everywhere. It's easy to set up and reliable solution to deal with files from multiple places. Also if you build highly scalable applications in *Kubernetes*, Azure File Shares can easily be mounted using k8s volumes.
 
 See the following [link to get more detailed information about Azure Files and Azure File Shares](https://azure.microsoft.com/en-us/services/storage/files/){:target="_blank"}.
-
 
 ## Creating a Managed Azure File Share
 
@@ -32,11 +31,11 @@ Creating the Storage Account is pretty easy. For demonstration purpose, I'll go 
 ```bash
 # check if the storage account name of your choice is available
 az storage check-name --name <STORAGE_ACCOUNT_NAME>
-    
+
 # if you found an available name, go create the storage account
-az storage account create 
-    --name <STORAGE_ACCOUNT_NAME> 
-    --resource-group <RESOURCE_GROUP_NAME> 
+az storage account create
+    --name <STORAGE_ACCOUNT_NAME>
+    --resource-group <RESOURCE_GROUP_NAME>
     --sku Standard_LRS
 
 ```
@@ -46,9 +45,9 @@ az storage account create
 In order to create our Azure File Share, the connection string from our Storage Account is required. Using Azure CLI, we can simply ask for the connection string using:
 
 ```bash
-az storage account show-connection-string 
-  --resource-group <RESOURCE_GROUP_NAME> 
-  --name <STORAGE_ACCOUNT_NAME> 
+az storage account show-connection-string
+  --resource-group <RESOURCE_GROUP_NAME>
+  --name <STORAGE_ACCOUNT_NAME>
   --output tsv
 
 ```
@@ -56,14 +55,14 @@ az storage account show-connection-string
 Azure CLI will print just the connection string itself, without any metadata. Copy that connection string. Now it's time to create the share itself.
 
 ```bash
-az storage share create 
-  --name <SHARE_NAME> 
-  --connection-string <STORAGE_ACCOUNT_CONNECTION_STRING> 
+az storage share create
+  --name <SHARE_NAME>
+  --connection-string <STORAGE_ACCOUNT_CONNECTION_STRING>
   --account-name <STORAGE_ACCOUNT_NAME>
 
 ```
 
-The command `az storage share create` will simply respond with a `{ created: true }` JSON if the operation is finished. You can either mount the share on your operating system, use the Azure Portal or you can download and use [the *Azure Storage Explorer*](https://azure.microsoft.com/en-us/features/storage-explorer/){:target="_blank"} to upload files to your new *Azure File Share*. 
+The command `az storage share create` will simply respond with a `{ created: true }` JSON if the operation is finished. You can either mount the share on your operating system, use the Azure Portal or you can download and use [the *Azure Storage Explorer*](https://azure.microsoft.com/en-us/features/storage-explorer/){:target="_blank"} to upload files to your new *Azure File Share*.
 
 Take the following image, save it as `docker.jpg` and upload it to the root of your Azure File Share.
 
@@ -75,7 +74,7 @@ title="Sample Docker Image" caption="Sample image - place it in your Azure File 
 We'll create a simple .NET Core Web API to serve a jpeg from the Azure File Share. Again there are plenty of choices about how to create the new .NET Core Web API project.
 I'll use JetBrains Rider here. Use Rider's *New Project wizard* to create the ASP.NET Core WebAPI project as shown in the following image.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/azure-files-in-kubernetes-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/azure-files-in-kubernetes-1.png"
 title="Create a new ASP.NET Core WebAPI using Rider" caption="Create a new ASP.NET Core WebAPI using Rider" %}
 
 Once Rider has created the Project and pulled all the required NuGet packages, go and add a new Controller named `ImageController` and add the following source code.
@@ -98,6 +97,7 @@ namespace Probe.Api.Controllers
         }
     }
 }
+
 ```
 
 As you can see, it's a simple `GET` endpoint which will return the entire contents of a file located at `./mnt/azure/docker.jpg`. Let's create a `Dockerfile` to build an image for our API.
@@ -106,18 +106,18 @@ As you can see, it's a simple `GET` endpoint which will return the entire conten
 FROM microsoft/dotnet:2.0.0-sdk AS build-environment
 
 LABEL maintainer="Thorsten Hans<thorsten.hans@gmail.com>"
-    
+
 WORKDIR /app
 COPY ./src/*.csproj ./
 RUN dotnet restore
 COPY ./src ./
 RUN dotnet publish -c Release -o out
-    
+
 FROM microsoft/aspnetcore:2.0.0
-    
+
 WORKDIR /app
 COPY --from=build-environment /app/out .
-    
+
 ENTRYPOINT ["dotnet", "AzureFileShareDemo.API.dll"]
 
 ```
@@ -209,6 +209,7 @@ So that's a lot. But let's look at the essential things. Most important is the *
 The second thing is inside of the container definition. we *mount* the `volume` to a local directory at `/app/mnt/azure` and again the `volume` that should be mounted if referenced by its name `azure-fs` in our example.
 
 ## Deploying to Kubernetes
+
 Deploying to *Kubernetes* is fairly simple. Just navigate to the folder where your `azure-file-share-deployment.yaml` is located and execute:
 
 ```bash

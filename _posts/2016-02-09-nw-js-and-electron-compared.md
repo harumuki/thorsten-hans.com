@@ -23,8 +23,7 @@ I've used both frameworks for real projects in the past, and both of them worked
 
 There is already a post on the web comparing both from various perspectives, but the post [(available here)](http://tangiblejs.com/posts/nw-js-electron-compared){:target="_blank"} is a bit outdated. Especially *Electron* has evolved a lot since the linked post has been published. So it's time to compare both frameworks again with all the information publicly available by **February 2016**.
 
-I've created a [simple, public sheet on Google](https://docs.google.com/spreadsheets/d/1U56oAazygJiFepW7U2HSTSLox7OvG4Jc9ENUznGEICk/edit?usp=sharing){:target="_blank"} which allows anyone to **leave comments** in it. 
-
+I've created a [simple, public sheet on Google](https://docs.google.com/spreadsheets/d/1U56oAazygJiFepW7U2HSTSLox7OvG4Jc9ENUznGEICk/edit?usp=sharing){:target="_blank"} which allows anyone to **leave comments** in it.
 
 ## Some soft-facts
 
@@ -39,5 +38,3 @@ Besides the hard facts listed in the Google Sheet, you and your team should inve
 ## Summary
 
 In the end, it's once again a personal decision which depends on your requirements. I've used *NW.js* for about 6 months before I moved to *Electron*. Since that point in time, I'm only using *GitHub's Electron* for customer workloads. However, that's personal preference. Both bring your HTML5 app to Windows, Linux, and macOS.
-
-

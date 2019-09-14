@@ -21,7 +21,6 @@ unsplash_user_ref: rvruggiero
   - [State Locking](#state-locking)
 - [Conclusion](#conclusion)
 
-
 Having *Terraform* displaying detailed previews before applying modifications to cloud platforms is amazing. To deliver such a great experience, *Terraform* uses the so-called *State*. This article will explain what *State* is, how it works and why it is mission-critical.
 
 However, if you’re entirely new to *Terraform*, or if you want to refresh your existing *Terraform* knowledge, you should read [Terraform - The definitive guide for Azure enthusiasts](https://thorsten-hans.com/terraform-the-definitive-guide-for-azure-enthusiasts){:target=“blank”} first.

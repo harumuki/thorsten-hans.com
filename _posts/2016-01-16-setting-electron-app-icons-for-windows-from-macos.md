@@ -71,10 +71,9 @@ gulp.task('default', ['clean'], function(){
 });
 
 ```
+
 Align the paths to match those of your project and start the *Gulp.js* script using `gulp`. Once the build has finished, go and copy your *Windows App* to a *Windows machine*. *macOS* **isn't able to display** the App Icon for Windows Executables.
 
 ## Recap
 
-Cross-platform developers want to build and ship for all platforms. However, they want to use their favorite operating system. No one want's to jump from OS to OS to ensure an app is working and looking as expected. With `gulp-awesome-electron`, you can embed app icons for all platforms. No matter which platform your development environment is running on. 
-
-
+Cross-platform developers want to build and ship for all platforms. However, they want to use their favorite operating system. No one want's to jump from OS to OS to ensure an app is working and looking as expected. With `gulp-awesome-electron`, you can embed app icons for all platforms. No matter which platform your development environment is running on.

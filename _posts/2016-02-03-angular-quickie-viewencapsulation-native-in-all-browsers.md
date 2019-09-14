@@ -24,8 +24,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Native
 })
 export class TodoItemComponent {
-    
+
 }
+
 ```
 
 *Angular* relies on official `ShadowDOM` specs and let browsers decide how to deal with your components. Everything works fine in Google Chrome and Opera, but unfortunately, there are more browsers in the wild.
@@ -35,5 +36,3 @@ Both *Chrome* and *Opera* are supporting `ShadowDOM` without using any `polyfill
 To get `ViewEncapsulation.Native` working across all browsers, you've to put another JavaScript dependency in your website by adding a [script reference to *WebComponentsJs*](https://github.com/webcomponents/webcomponentsjs){:target="_blank"}.
 
 `WebComponentsJs` adds the required polyfills at runtime (only if the browser doesn't provide some), so Angular can call into ShadowDOM APIs. *Some of you may also know `Polymer` project* which was also targeting the same issue.* Polymer is now part of `WebComponentsJs`, so you don't have to make a decision here.
-
-

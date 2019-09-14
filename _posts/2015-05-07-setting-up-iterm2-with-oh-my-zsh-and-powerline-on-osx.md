@@ -51,7 +51,7 @@ wget https://raw.github.com/altercation/solarized/master/iterm2-colors-solarized
 
 After downloading the theme open iTerm2 and import the downloaded solarized theme through
 
-*iTerm -> Preferences -> Profiles -> Colors -> load presets -> Import*
+*iTerm* -> *Preferences* -> *Profiles* -> *Colors* -> *load presets* -> *Import*
 
 ## OH-MY-ZSH
 
@@ -75,7 +75,7 @@ title="My prompt with Powerline font in iTerm2 with OH-MY-ZSH" caption="My promp
 
 You can download the font from [here](https://github.com/Lokaltog/powerline-fonts/blob/master/Meslo/Meslo%20LG%20M%20DZ%20Regular%20for%20Powerline.otf){:target="_blank"}, install this font on your system and then apply it in *iTerm2* through
 
-*iTerm -> preferences -> profiles -> text*
+*iTerm* -> *preferences* -> *profiles* -> *text*
 
 I've chosen 11pt as font-size for my setup, so apply PowerLine for **Regular Font** and **Non-ASCII Font** by clicking each *Change Font* button and select the PowerLine font.
 
@@ -87,7 +87,6 @@ Open your `.zshrc` file and look for `plugins=()`, once you find that line, lis
 
 Plugins can either extend the  *auto-completion tab*, create new key bindings or create new aliases within your terminal. So take a minute and read through the descriptions of those plugins before enabling them. It's worth reading the description for each plugin, because you may end up with being even more productive.
 
-## That's it for iTerm, but ...
+## That's it for iTerm, but
 
 Now you've installed and configured a good starting point. However, you should not stop here. I've written another article on how to setup NVM on your system to switch and maintain multiple *Node.js* installations easily. [Go and read the article now!]({% post_url 2015-02-23-managing-node-js-and-io-js-with-nvm %})
-

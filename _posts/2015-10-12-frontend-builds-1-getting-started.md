@@ -11,20 +11,20 @@ excerpt: null
 image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
-
 ---
+
 ## The Frontend Builds article series
+
  Welcome to the very first part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
- * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
- * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
- * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
- * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
-
+- [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+- [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+- [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+- [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+- [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+- [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+- [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+- [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## Idea
 
@@ -77,7 +77,7 @@ As you can see the `templates.js` file will contain all `.html` files from the 
 
 The second important thing for Angular code is to be minification-safe. To make your Angular Apps minification-safe, you can either invest more time when developing every Angular building block or you can use `gulp-ng-annotate` to automate this step. Compared to the template-cache related task, `gulp-ng-annotate` is much easier to use, it's just a middleware that can be plugged into the gulp chain. See the following snippet which takes care of all angular-related build tasks.
 
-```javscript
+```javascript
 gulp.task('private:app:js', function(){
     return gulp.src([
         'src/app/app.js',
@@ -100,12 +100,10 @@ Many of you may ask why I'm not using things like `bower-mainfiles` or other mod
 
 That's why I mostly decide to keep those tasks manually. The downside of modules like `bower-mainfiles` is that there are too many exceptions in the huge npm eco-system. Many modules are exposing minified scripts whereas others are exposing regular scripts, once you realize that, it's again your task to take care of all those exceptions. That's why I keep those steps more **manually** and specify all minified 3rd party files in the order I like (or in the order my app needs them).
 
-## What's next?
+## What's next
 
 Within the upcoming article, we'll split the `gulpfile` and automate both things, loading and documenting all tasks, which will make the entire build more readable and maintainable.
 
-## Go ahead ...
+## Go ahead
 
 .. so read the [next article in the "Frontend Build" article series]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %}).
-
-

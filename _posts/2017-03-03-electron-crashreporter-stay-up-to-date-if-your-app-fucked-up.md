@@ -8,6 +8,7 @@ tags: [Electron, Angular]
 excerpt: Learn how to deal with the unexpected. How can you deal with errors once you've shipped your Electron application. This post explains how to setup and use CrashPad on all platforms
 image: /2017-03-03-electron-crashreporter-stay-up-to-date-if-your-app-fucked-up.jpg
 ---
+
 Every one of us knows about those situations. You ship your app to production and you're instantly losing 10 pounds of weight 💪🏼 if nothing bad happens in the first 24 hours. You're finally able to get some sleep, customers are happy, the manager is happy, *you are happy*!
 
 But at some point in time your app will crash! It will definitely crash. No matter how professional you are, there are bugs! Customers will find them! And that's **okay**.
@@ -41,6 +42,7 @@ crashReporter.start({
 That's all for Windows and Linux!
 
 ## macOS additions
+
 As already mentioned is Electron using *Crashpad* instead of *Breakpad* as the foundation when executing an app on macOS. That said, you've to start the *CrashReporter* explicitly in both process (*main* and *renderer*).
 
 So you should add the following snippet to the *renderer process*.
@@ -64,10 +66,11 @@ crashReporter.start({
 If you're writing your web app based on *Angular*, you should [check out ngx-electron](https://www.npmjs.com/package/ngx-electron){:target="_blank"}, a small library which makes consuming *Electron APIs* in *TypeScript* and *Angular* frictionless.
 
 ## The server-side
+
 There are already two open source projects that you can use to get the server-side API up and running:
 
- * [mini-breakpad-server](https://github.com/electron/mini-breakpad-server){:target="_blank"}
- * [socorro](https://github.com/mozilla/socorro){:target="_blank"}
+- [mini-breakpad-server](https://github.com/electron/mini-breakpad-server){:target="_blank"}
+- [socorro](https://github.com/mozilla/socorro){:target="_blank"}
 
 If you want to get it up and running in no time, go and take one of these. Personally, I prefer integrating the server-side logic into the project's API over having a second, dedicated API.
 
@@ -90,10 +93,11 @@ touch index.js
 ```
 
 ### The express API implementation
+
 The implementation is pretty much, straight forward. *CrashReporter* will send any crash as `POST` request to the defined API endpoint (here `http://localhost:3000/api/app-crashes`). It's a `multipart/form-data` message, containing a dump file and the following metadata:
 
 ```json
-{ 
+{
   _companyName: 'Thorsten Hans',
   _productName: 'TaskApp',
   _version: '0.1.1',
@@ -142,7 +146,7 @@ server.listen(3000, () => {
 
 ```
 
-The `multer` package does a great job in dealing with `multipart/form-data` requests. Everything else is pretty self-explaining. 
+The `multer` package does a great job in dealing with `multipart/form-data` requests. Everything else is pretty self-explaining.
 
 This API is just taking all the metadata and writes it to a dedicated file. The created file will have the same name as the `minidump`, but it'll have the `.json` extension. Both files were written to the subfolder `app-crashes`.
 
@@ -152,7 +156,7 @@ Start the API from the terminal using `node index.js`.
 
 You can easily test your CrashReporter setup using `process.crash()` from both processes like shown in the following figure.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/electron-crashreporter-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/electron-crashreporter-1.png"
 title="Electron CrashReporter in Action!" caption="Electron CrashReporter in Action!" %}
 
-From this point in time you'll receive important information about unexpected app crashes 💣 from all your electron app instances. In combination with the dump file, it's easier to reproduce what happened and less time consuming to find and eliminate bugs 🚀. 
+From this point in time you'll receive important information about unexpected app crashes 💣 from all your electron app instances. In combination with the dump file, it's easier to reproduce what happened and less time consuming to find and eliminate bugs 🚀.

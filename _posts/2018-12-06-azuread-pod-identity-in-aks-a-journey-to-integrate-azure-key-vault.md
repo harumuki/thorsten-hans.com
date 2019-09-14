@@ -8,7 +8,7 @@ tags: [Kubernetes,Azure,Azure Key Vault,AKS]
 excerpt: 'With Azure AD Pod Identity you can finally run any pod in an Azure Kubernetes Service in the context of an external, loosely coupled Azure Identity. This builds the foundation for a seamless integration of Azure Key Vault and AKS'
 image: /2018-12-06-azuread-pod-identity-in-aks-a-journey-to-integrate-azure-key-vault.jpg
 ---
-Back in May, I wrote an article on how to integrate Azure Key Vault with ACS. Since that, a lot happened in the Azure and Kubernetes space and I thought an updated version would be worth sharing because dealing correctly with sensitive data is **essential**. 
+Back in May, I wrote an article on how to integrate Azure Key Vault with ACS. Since that, a lot happened in the Azure and Kubernetes space and I thought an updated version would be worth sharing because dealing correctly with sensitive data is **essential**.
 
 This is the first of two separate articles, that will guide you through the complete setup and configuration process to integrate *Azure Kubernetes Services* and *Azure Key Vault* securely without leaking essential data about your *Service Principal*.
 
@@ -25,6 +25,7 @@ Integrations with Azure services  - such as *Azure Key Vault * - will become
 Cluster Administrators can easily switch underlying *Azure Identities* to swap Pods from one Identity to another. This can happen at runtime without having a developer doing any changes to application code.
 
 ## Enabling AAD Pod Identity on AKS
+
 Okay, time to get some work done. Let's enable Azure AD Pod Identity on an AKS cluster. First, you've to install the AAD Pod Identity infrastructure on your cluster. There are two different deployments available, the default one:
 
 ```bash
@@ -40,8 +41,9 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 ```
 
 Once deployment is finished, you'll end up in having two new resources deployed on your cluster
- * Managed Identity Controller (MIC)
- * Node Managed Identity (NMI)
+
+- Managed Identity Controller (MIC)
+- Node Managed Identity (NMI)
   
 *MIC* is responsible for binding Azure Identities to pods. The *NMI* will act like an interceptor which observes incoming requests for your pods and will call back into Azure (by using ADAL) to acquire an access token from Azure AD to communicate with Azure APIs  - such as Azure Key Vault  - in behalf of that Azure Identity.
 
@@ -84,7 +86,7 @@ az role assignment create
 Next, the underlying *Service Principal* of your *AKS* instance needs permissions to act as *Managed Identity Operator*. That's required because *MIC* will try to acquire the access token for that *Azure Identity*. This “authentication” call will be issued in the security context of the AKS cluster, so you've to create another role assignment to get that working. In this case, the scope is the unique identifier from the Azure Identity you've created a minute ago.
 
 ```bash
-az role assignment create 
+az role assignment create
   --role "Managed Identity Operator"
   --assignee <aks_service_principal_id_here>
   --scope <azure_identitys_id>
@@ -92,6 +94,7 @@ az role assignment create
 ```
 
 ## Deploying an Azure Identity to AKS
+
 Everything is in place now, so it's time to deploy some Kubernetes resources and bring the *AAD Pod Identity* to *AKS*.
 
 ```yaml
@@ -105,7 +108,6 @@ spec:
   ClientID: 00000000-0000-0000-0000-000000000000
 
 ```
-
 
 There are a couple of interesting things in this small yaml file, that I want to explain quickly
 
@@ -180,12 +182,13 @@ In the case of misspelling something, you'll find errors in the *MIC's log*. How
 
 *Azure AD Pod Identity* is an open source project that is really active and moving forward quickly, there are a lot of active discussions on the GitHub issue tracker and there are several things you've to keep in mind when implementing Azure AD Pod Identity today. I want to share my top three glitches here.
 
- * Azure AD Pod Identity is currently bound to the default namespace. Deploying an Azure Identity and it's binding to other namespaces, will not work!
- * Pods from all namespaces can be executed in the context of an Azure Identity deployed to the default namespace (related to point 1)
- * Every Pod Developer can add the `aadpodidbinding` label to his/her pod and use your Azure Identity
- * Azure Identity Binding is not using default Kubernetes label selection mechanism
+- Azure AD Pod Identity is currently bound to the default namespace. Deploying an Azure Identity and it's binding to other namespaces, will not work!
+- Pods from all namespaces can be executed in the context of an Azure Identity deployed to the default namespace (related to point 1)
+- Every Pod Developer can add the `aadpodidbinding` label to his/her pod and use your Azure Identity
+- Azure Identity Binding is not using default Kubernetes label selection mechanism
   
 You should definitely keep those glitches in mind when implementing it on your cluster!
 
 ## Recap
+
 Azure AD Pod Identity allows you to bind Pods to an Azure Identity that is managed outside of your cluster. The concept looks really promising, but there is still some work that needs to be done to make it rock solid. Although it's not yet production ready — from my point of view — you should definitely watch the project and read the second part of the mini-series to see how a potential Azure Key Vault integration in AKS can look like.

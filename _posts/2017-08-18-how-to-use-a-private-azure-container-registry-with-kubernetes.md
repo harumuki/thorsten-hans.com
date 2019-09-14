@@ -47,12 +47,13 @@ az group create --location northeurope --name <RESOURCE_GROUP_NAME>
 You can list all available locations by using `az account list-locations`.
 
 ## Provisioning an Azure Container Registry
+
 An *Azure Container Registry* (*ACR*) can also be created using the new Azure CLI.
 
 ```bash
-az acr create 
-  --name <REGISTRY_NAME> 
-  --resource-group <RESOURCE_GROUP_NAME> 
+az acr create
+  --name <REGISTRY_NAME>
+  --resource-group <RESOURCE_GROUP_NAME>
   --sku Basic
 
 ```
@@ -60,22 +61,22 @@ az acr create
 Once the ACR has been provisioned, you can either enable administrative access (which is okay for testing and described later) or you create a *Service Principal* (sp) which will provide a `client_id`  and a `client_secret`.
 
 ```bash
-az ad sp create-for-rbac 
-  --scopes /subscriptions/<SUBSCRIPTION_ID>/resourcegroups/<RG_NAME>/providers/Microsoft.ContainerRegistry/registries/<REGISTRY_NAME> 
-  --role Contributor 
+az ad sp create-for-rbac
+  --scopes /subscriptions/<SUBSCRIPTION_ID>/resourcegroups/<RG_NAME>/providers/Microsoft.ContainerRegistry/registries/<REGISTRY_NAME>
+  --role Contributor
   --name <SERVICE_PRINCIPAL_NAME>
 
 ```
 
 Before executing this script ensure that you replace all tokens being used in the script above. You need to provide the subscription id, the resource group name, the ACR name and a meaningful name for your service principal. You may have noticed the *role* parameter which is set to `Contributor`. *ACR* supports three different roles:
 
- * `Owner`: (pull, push, and assign roles to other users)
- * `Contributor`: (pull and push)
- * `Reader`: (pull only access)
+- `Owner`: (pull, push, and assign roles to other users)
+- `Contributor`: (pull and push)
+- `Reader`: (pull only access)
   
 Once the service principal has been created, copy the `client_id` (named `appId` in the response) and the `client_secret` (named `password` in the response). You'll need those in a few seconds.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-1.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-1.png"
 title="Create Service Principal Response" caption="Create Service Principal Response" %}
 
 To keep things simple, we'll create a single service principal for now. For real-world scenarios, you may create multiple service principals with different roles. As a developer, you want to push new images to the registry. (So you become a `Contributor`). Your container cluster, on the other hand, may only pull images from the registry. So you should create a second service principal with the `Reader` assigned. 
@@ -103,7 +104,7 @@ docker pull hello-world
 
 # tag the image in order to be able to push it to a private registry
 docker tag hello-word <REGISTRY_NAME>/hello-world
-    
+
 # push the image
 docker push <REGISTRY_NAME>/hello-world
 
@@ -116,17 +117,15 @@ When creating *deployments*, *Replica Sets* or *Pods*, *Kubernetes* will try to 
 Instead of specifying this directly in your configuration, we'll use the concept of *Kubernetes Secrets*. You decouple the k8s object from the registry configuration by just referencing the secret by its name. But first, let's create a new *Kubernetes Secret*.
 
 ```bash
-kubectl create secret docker-registry <SECRET_NAME> 
-  --docker-server <REGISTRY_NAME>.azurecr.io 
-  --docker-email <YOUR_MAIL> 
-  --docker-username=<SERVICE_PRINCIPAL_ID> 
+kubectl create secret docker-registry <SECRET_NAME>
+  --docker-server <REGISTRY_NAME>.azurecr.io
+  --docker-email <YOUR_MAIL>
+  --docker-username=<SERVICE_PRINCIPAL_ID>
   --docker-password <YOUR_PASSWORD>
 
 ```
 
-
 If you want to prevent your `client_secret` from being stored in bash history, you can for example use `read -s DOCKER_PASSWORD` and provide `$DOCKER_PASSWORD` as value for the `--docker-password` parameter.
-
 
 ## Create Pods, Replica Sets, and Deployments using the Secret
 
@@ -146,7 +145,6 @@ spec:
 
 ```
 
-
 You can save the pod configuration to as a local file like `pod-sample.yaml` and deploy it using `kubectl` by invoking:
 
 ```bash
@@ -156,7 +154,7 @@ kubectl create -f pod-sample.yaml
 
 Once your pod has been provisioned, you can see detailed information about the pod and the docker image, which has been pulled from ACR using `kubectl describe pod <POD_NAME>`.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-2.png" 
+{% include image-caption.html imageurl="/assets/images/posts/2017/acr-kubernetes-2.png"
 title="Pod Events listed by using kubectl describe pod" caption="Pod Events listed by using kubectl describe pod" %}
 
-That's it. You've successfully deployed an *ACR*, configured it with a *docker* installation and hooked it up in *Kubernetes*. 🤘 🚀 
+That's it. You've successfully deployed an *ACR*, configured it with a *docker* installation and hooked it up in *Kubernetes*. 🤘 🚀

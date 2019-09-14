@@ -10,15 +10,16 @@ image: /2017-03-04-make-writing-technical-content-great-again.jpg
 ---
 Like many other developers, I write articles for various print and online magazines. I do this for almost a decade now and I've used many different approaches to make writing as comfortable as possible for me. That said, I want to share the tools I use and the workflow I prefer.
 
-When writing about frameworks, programming languages or scripts, you've some slightly different requirements than authors of regular books or articles. You want to: 
- * create tables
- * highlight source code directly in the text
- * provide complex code snippets
+When writing about frameworks, programming languages or scripts, you've some slightly different requirements than authors of regular books or articles. You want to:
 
+- create tables
+- highlight source code directly in the text
+- provide complex code snippets
 
 of course, do you need all the regular support for *images*, *footnotes*, and so on.
 
 ## Using proper version control system
+
 I use *git* to manage all my articles. *git* makes editing, restoring and merging various parts of an article very easy.
 
 Everything I create is under version control, so why should my articles be the only exception?
@@ -29,10 +30,9 @@ Only books, for every book I wrote, a dedicated repository has been created. Boo
 
 In the beginning, I was also using [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow){:target="_blank"} and created dedicated feature branches for every article. To be honest, that was too much 😜. I ended up in just working on my `develop` branch. I merge to `master` once I've finished an article and associate a proper `w` to the merge commit.
 
-{% include image-caption.html imageurl="/assets/images/posts/2017/technical-writing-1.png" 
-title="Releases on GitHub" caption="Releases on GitHub" %}
+{% include image-caption.html imageurl="/assets/images/posts/2017/technical-writing-1.png" title="Releases on GitHub" caption="Releases on GitHub" %}
 
-If you assign a tag to a commit in git, it becomes a **release** on GitHub. So I could easily access any **final article** later using GitHub's website and I don't have to browse thru the repositories history. 
+If you assign a tag to a commit in git, it becomes a **release** on GitHub. So I could easily access any **final article** later using GitHub's website and I don't have to browse thru the repositories history.
 
 ## Markdown
 
@@ -66,6 +66,7 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 ```
 
 ## Convention over Configuration (CoC)
+
 I love the concept of *Convention over Configuration*, it's easier to define a clean structure once and follow that “convention” instead of providing a “configuration” for each and every article.
 
 All my articles are structured using a simple schema.
@@ -107,7 +108,6 @@ I'm always trying to find better tooling. You should never stop looking for new 
 
 For generating previews or deliverables, I use either the export function offered by *iA Writer* or [*Pandoc*](http://pandoc.org/){:target="_blank"}. *Pandoc* is also able to read the include statements for partial markdown files I mentioned earlier.
 
-
 ## Recap
 
-Writing technical articles becomes fun, if you can use the tools and languages you love. Having GitHub and Markdown as basement for writing technical articles, I can finally use my favorite Editor to get that done, instead of relying on apps like *Pages* or *Word*. The markdown extensions provided by *iA Writer* make writing huge articles even easier and maintainable. 
+Writing technical articles becomes fun, if you can use the tools and languages you love. Having GitHub and Markdown as basement for writing technical articles, I can finally use my favorite Editor to get that done, instead of relying on apps like *Pages* or *Word*. The markdown extensions provided by *iA Writer* make writing huge articles even easier and maintainable.

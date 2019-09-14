@@ -10,6 +10,7 @@ image: /2015-11-16-angular-goes-cross-platform-with-github-electron.jpg
 unsplash_user_name: Tim Bennett
 unsplash_user_ref: timbennettcreative
 ---
+
 A while ago I've posted a [sample on how to write an electron app using Angular 1.x with ES2015 and JSPM](https://github.com/ThorstenHans/electron-angular-es6){:target="_blank"}.
 
 Now having more than 100 stars on *GitHub*, it seems to be quiet important for the community. That's why I've decided to take this sample to another level.
@@ -27,4 +28,3 @@ npm install
 npx gulp
 
 ```
-

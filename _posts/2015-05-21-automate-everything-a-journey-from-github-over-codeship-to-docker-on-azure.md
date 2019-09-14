@@ -119,7 +119,7 @@ ssh $$UID$$@$$DOCKER-NAME$$.cloudapp.net -p $$SSH-PORT$$ "cd $scriptfolder && ./
 
 ```shell
 #!/bin/bash
-echo Using Commit $1 
+echo Using Commit $1
 cd /sample-product/builds/
 docker kill stage && docker rm stage
 rm -rf current && ln -s $1/ current
@@ -144,10 +144,9 @@ http-server .
 
 ```
 
-## That's it!
+## That's it
 
 Now you've your app up and running in the latest version, directly from GitHub over Codeship to docker. As you can see in the pic, the entire test and deployment (to an accessible public address) took roughly 60 seconds. That's cute :)
 
 {% include image-caption.html imageurl="/assets/images/posts/2015/codeship-docker.png"
 title="Deployment via Codeship and Docker to Microsoft Azure" caption="Deployment via Codeship and Docker to Microsoft Azure" %}
-

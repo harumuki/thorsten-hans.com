@@ -87,7 +87,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Customer } from '../models/customer';
 import { TransformService } from '../services/transformService';
 
-@Pipe({ 
+@Pipe({
     name: 'customerName'
 })
 export class CustomerNamePipe implements PipeTransform {
@@ -95,7 +95,7 @@ export class CustomerNamePipe implements PipeTransform {
     public transform(value: any, args: any[]): any {
         return TransformService.toCustomerName(<Customer>value);
     }
-            
+
 }
 
 ```
@@ -108,7 +108,7 @@ import { Customer } from '../models/customer';
 export class TransformService {
 
     public static toCustomerName(value: Customer): string {
-         return value && value instanceof Customer ? 
+         return value && value instanceof Customer ?
                `${value.lastName}, {$value.firstName}` : null;
     }
 
@@ -123,7 +123,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Customer } from '../models/customer';
 import { TransformService } from '../services/transformService';
 
-@Pipe({ 
+@Pipe({
     name: 'customerName'
 })
 export class CustomerNamePipe implements PipeTransform {
@@ -134,7 +134,7 @@ export class CustomerNamePipe implements PipeTransform {
         return this._transformService
             .toCustomerName(<Customer>value);
     }
-                
+
 }
 
 ```
@@ -151,7 +151,7 @@ export class TransformService {
 
     public toCustomerName(value: Customer): string {
         this._dep.doSomething();
-        return value && value instanceof Customer ? 
+        return value && value instanceof Customer ?
                `${value.lastName}, {$value.firstName}` : null;
     }
 
@@ -177,6 +177,7 @@ export class TransformServiceRef extends TransformService {
 ```
 
 ## HTTP
+
 Get rid of `Http` 😜. Instead of using *Angular's* Http Service, you could either use the `fetch` API or at least create an abstraction layer on top of *Angular's* `http`. In this post, I'll demonstrate how to implement `fetch` instead of abstracting `http`. Unfortunately `fetch` isn't supported by all browsers, but there is a [tiny polyfill for `fetch`](https://github.com/github/fetch){:target="_blank"}.
 
 See the following sample, it's demonstrating how to use `fetch` inside of a simple TypeScript class.

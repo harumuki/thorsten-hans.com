@@ -46,5 +46,3 @@ Add the following reference to your `boot.ts`.
 ```
 
 Save the changes and start either your *Gulp.js* build or plain `tsc` again. Now your app should compile again as expected. I hope that works for you and you saved some time for developing instead of fighting this issue.
-
-

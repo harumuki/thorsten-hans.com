@@ -34,6 +34,7 @@ scripts: {
   "build" : "./node_modules/.bin/pug --hierarchy --pretty --out dist .",
   "start": "./node_modules/.bin/live-server dist"
 }
+
 ```
 
 You've just created two scripts that can be invoked from the terminal using `npm`. `build` starts the *Pug* compiler with some flags to keep HTML files readable, respect the folder structure and put all compiled files into the `dist` folder. The `start` script spins up a small HTTP server which you can use for testing.
@@ -64,6 +65,7 @@ html
   body
     .container
       block content
+
 ```
 
 The template is providing two blocks that can be used within other *Pug* files to inject some markup. Notice the `styles` block which is providing some default HTML.
@@ -141,6 +143,7 @@ prepend styles
     link(rel='stylesheet', href='/init.css')
 block content
     h1 Welcome to our portal
+
 ```
 
 As you can imagine, the resulting HTML renders `init.css` before `vendor.css` you can also combine both `append` and `prepend` to get all three stylesheets in the correct order. See `blocks/append-prepend-block.pug` for this combination
@@ -275,13 +278,13 @@ Finally, the corresponding HTML from `dist/filters/typescript.html`
     };
     return Greeter;
     })();
-    
+
     document.getElementById('greet').addEventListener('click', function () {
       var g = new Greeter();
       g.greet('Jade Developer');
     });
   </script>
-</body> 
+</body>
 
 ```
 
@@ -330,5 +333,3 @@ As you can see, *Pug* is a fresh and powerful language that makes you more produ
 All code written [here is also available on *GitHub*](https://github.com/ThorstenHans/jade-introduction){:target="_blank"}.
 
 I hope you enjoyed this tutorial! Leave a comment and share your opinion about *Pug* or perhaps your experience gathered while using *Pug* in the wild.
-
-

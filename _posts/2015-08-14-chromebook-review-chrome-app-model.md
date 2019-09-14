@@ -71,5 +71,3 @@ Source: [https://github.com/MobileChromeApps/mobile-chrome-apps](https://github.
 ## What's next
 
 As already mentioned, I've spent only two ours with the Chromebook until now, but within that time I wrote an entire Chrome App that is already on it's the way to the Chrome web store. As soon as the App becomes available I'll recap the entire process of writing such an app and how to bring it to the store.
-
-

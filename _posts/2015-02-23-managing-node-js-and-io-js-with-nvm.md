@@ -22,7 +22,7 @@ I’ve been using [RVM](http://rvm.io){:target="_blank"} in the past to deal wit
 Besides managing the local NodeJS installations, it also offers me the ability to quickly test any app for platform upgrades. A few weeks ago I started a new NodeJS based project which I’m currently developing besides my regular work. NVM allows me to switch the current node version easily by executing
 
 ```bash
-nvm use stable 
+nvm use stable
 # or
 nvm use v0.12.0
 
@@ -42,5 +42,3 @@ nvm current
 To uninstall a version from your system, type `nvm uninstall iojs-v1.3.0`
 
 As you can see, it’s pretty simple to get started with NVM. The most significant advantage in my eyes is that you don’t lose the flexibility of changing the node engine once your environment has been set up. As mentioned during the introduction you can switch versions based on your projects in no time.
-
-

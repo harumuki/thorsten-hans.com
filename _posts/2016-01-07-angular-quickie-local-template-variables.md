@@ -27,12 +27,14 @@ You can make the `HTMLInputField` available to sibling or child nodes using the 
 ```
 
 Next, let's say we want to extend our small example to provide a char counter beside the element. Users will see how many characters are available until they hit the maximal length constraint. First, let's add the corresponding `span` which is responsible for displaying this information.
+
 {% raw %}
 ```html
 <input type="text" #firstName placeholder="your name please" maxlength="25" required />
 <span>
   <small>{{firstName.value.length}} / {{firstName.maxlength}} </small>
 </span>
+
 ```
 {% endraw %}
 
@@ -54,6 +56,7 @@ See the `0 / 25` right after the `textbox`. It is displaying the `maxlength` but
 <span>
   <small>{{firstName.value.length}} / {{firstName.maxlength}} </small>
 </span>
+
 ```
 {% endraw %}
 
@@ -103,6 +106,7 @@ Let's reuse the things we've learned during this article and update the template
 <input type="number" #repeater (keyup)="repeatName(firstName.value, repeater.value)" min="1" max="999" />
 <label> Times </label>
 <p>{{ repeatedName }}</p>
+
 ```
 {% endraw %}
 
@@ -112,7 +116,7 @@ So why is that? As you may guess, `HTMLInputField` is treating the value as a `s
 
 To fix this, update the `repeatName` method to look like shown below
 
-```typescript 
+```typescript
 public repeatName(name:string, times:string){
   if(times){
     const repeat = parseInt(times) + 1;

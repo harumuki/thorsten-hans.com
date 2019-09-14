@@ -12,17 +12,17 @@ unsplash_user_ref: iurte
 ---
 
 ## The Frontend Builds article series
+
  Welcome to the seventh and last part of this article series. If you didn't read the other parts, check them out now.
 
- * [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
- * [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
- * [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
- * [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
- * [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
- * [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
- * [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
- * [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
-
+- [Introducing the Frontend Builds Article Series]({% post_url 2015-10-08-frontend-build-series-introduction %})
+- [Frontend Builds 1: Getting Started ]({% post_url 2015-10-12-frontend-builds-1-getting-started %})
+- [Frontend Builds 2: Readable and Pluggable Gulpfiles  ]({% post_url 2015-10-14-frontend-builds-2-readable-and-pluggable-gulp-files %})
+- [Frontend Builds 3: Cross-Platform Desktop Builds]({% post_url 2015-10-15-frontend-builds-3-cross-platform-desktop-builds %})
+- [Frontend Builds 4: Building Cross-Platform Mobile Apps]({% post_url 2015-10-17-frontend-builds-4-building-cross-platform-mobile-apps %})
+- [Frontend Builds 5: Build as a Service (BaaS)]({% post_url 2015-10-21-frontend-builds-5-build-as-a-service-baas %})
+- [Frontend Builds 6: Configurable builds]({% post_url 2015-10-22-frontend-builds-6-configurable-builds %})
+- [Frontend Builds 7: Conditional Build Tasks]({% post_url 2015-10-24-frontend-builds-7-conditional-build-tasks %})
 
 ## Idea
 
@@ -127,7 +127,7 @@ See the refactored `private:app:js` task below. The task itself and the correspo
 
 ```javascript
 gulp.task('private:app:js', function() {
- 
+
     var preprocessorTask = tasks['gulp-typescript' || 'gulp-coffee' || 'gulp-babel'] || tasks.empty,
       preprocessorOptions = config.addOns['gulp-typescript' || 'gulp-coffee' || 'gulp-babel'] || null;
 
@@ -152,7 +152,7 @@ gulp.task('private:app:css', function() {
 
     var preprocessorTask = tasks['gulp-less' || 'gulp-sass'] || tasks.empty,
         preprocessorOptions = config.addOns['gulp-less' || 'gulp-sass'] || null;
- 
+
   return gulp.src(config.sources.appStyles)
     .pipe(preprocessorTask(preprocessorOptions))
     .pipe(tasks.concat(config.filenames.appStyles))
@@ -161,6 +161,7 @@ gulp.task('private:app:css', function() {
 });
 
 ```
+
 That's all for `xplatform-build` let's see how our actual project has to be updated.
 
 ## Refactoring our x-note project
