@@ -1,0 +1,7 @@
+<section class="note">
+    <h2><i class="far fa-hand-point-right"></i> {{ include.title }}</h2>
+    <p>{{ include.content }}</p>
+    {% if include.link && include.linkTitle %}
+    <a href="{{include.link}}">{{include.linkTitle}}</a>
+    {% endif %}
+</section>
