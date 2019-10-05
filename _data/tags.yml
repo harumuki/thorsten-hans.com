@@ -1,2 +1,8 @@
 Kubernetes:
-  description: Read all stories on Kubernetes from Thorsten Hans. Articles are based on real-world experiences from day-to-day business. Learn how to tame k8s and run your containerized docker workloads using the most popular orchestrator.
+  description: Read all articles about Kubernetes from Thorsten Hans. Those articles are based on real-world experiences from day-to-day business. Learn how to tame Kubernetes and run your containerized workloads using the most popular container-orchestrator.
+AKS:
+  description: Azure Kubernetes Service (aka AKS) is Microsoft's managed Kubernetes offering. Microsoft manages and pays the master nodes, so you as a consumer pay just for your worker nodes. Offering powerful integrations with other Azure services, it is Kubernetes on steroids.
+ACR:
+  description: The Azure Container Registry (aks ACR) is an excellent implementation of Docker Registry v2. The managed service offering integrates seamlessly with other Azure services and acts as a driver for containerized enterprise applications. 
+Azure:
+  description: Microsoft's public cloud offering is empowering millions of people around the world. As a developer, I use Azure daily to craft, run, and scale applications for different markets. 
