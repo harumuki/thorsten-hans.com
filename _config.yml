@@ -6,7 +6,7 @@ logo: "assets/images/logo.png"
 favicon: "assets/images/favicon.ico"
 baseurl:
 url: https://thorsten-hans.com
-mailchimp_url: # "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
+mailchimp_url:  "https://gmail.us20.list-manage.com/subscribe/post?u=5581ba765692a75a48258504e&amp;id=78ce80aba5"
 cover_image: bc_1.jpg
 # Add your GA Tracking Id
 ga_analytics: UA-117431284-1
@@ -46,6 +46,8 @@ navigation:
     url: /talks-and-publications/
   - text: About
     url: /about/
+  - text: Subscribe via email
+    url: /subscribe-via-email/
   - text: Legal Details
     url: /legal-details/
   - text: Privacy Policy

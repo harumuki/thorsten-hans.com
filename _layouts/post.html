@@ -43,7 +43,7 @@ post_class: post-template
             {% include unsplash-ref.html name=page.unsplash_user_name ref=page.unsplash_user_ref %}
             {% endif %}
 
-
+            <!--
             <div class="author-box">
                 <div class="author-avatar"><img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}" alt="{{ site.author.name }}'s Picture"
                         class="avatar"></div>
@@ -52,7 +52,7 @@ post_class: post-template
                     <p class="author-description">{{ site.author.bio }} <a href="https://twitter.com/{{site.social.twitter}}"
                             target="_blank">Follow him on Twitter</a> via @ThorstenHans.</p>
                 </div>
-            </div>
+            </div>-->
             {% include disqus.html %}
         </article>
         {% if site.mailchimp_url %}
