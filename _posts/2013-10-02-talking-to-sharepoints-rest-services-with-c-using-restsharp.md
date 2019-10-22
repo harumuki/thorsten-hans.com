@@ -7,8 +7,8 @@ published: true
 tags: [SharePoint]
 excerpt: Do you have to consume data from SharePoint using C#? Then this article is for you! It explains how to query data from SharePoint's API using RESTSharp.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 When it comes to SharePoint App Development (especially Cloud- and Provider Hosted Apps), most samples out there are demonstrating how to use CSOM from ASP.NET or ASP.NET MVC. Most REST Samples are dedicated to client-side logic either in JavaScript, CoffeeScript or TypeScript.

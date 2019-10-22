@@ -7,8 +7,8 @@ published: true
 tags: [Frontend]
 excerpt: I am a CoffeeScript lover. It's so time-saving, powerful and efficient. If you want to build robust frontend stuff, you should also start with CoffeeScript. This article provides a bunch of basic stuff for new CoffeeScript devs.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 A while ago I started a series about how to brand SharePoint sites using the Yeoman web development workflow. With this small introduction to CoffeeScript, I’d like to continue the series.

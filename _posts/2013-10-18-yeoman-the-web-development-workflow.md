@@ -7,8 +7,8 @@ published: true
 tags: [Frontend]
 excerpt: Have you heard of Yeoman? This post explains how to get started with yeoman. No matter if you do frontend or backend development, Yeoman will assist you.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 See other posts on 'Branding SharePoint sites with yeoman'.

@@ -7,8 +7,8 @@ published: true
 tags: [SharePoint]
 excerpt: Today I found another bug in MSDN documentation which is worth sharing for SharePoint developers
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 Today I stumbled upon a documentation bug in MSDN (once again). When trying to access the list of all available `WebTemplates` on a `SPWeb`, [this article](http://msdn.microsoft.com/en-us/library/sharepoint/jj246878.aspx){:target="_blank"} describes that you can use SharePoint’s REST interface by sending an `HTTP POST` request to `http://yourtenant.sharepoint.com/sites/yoursite/_api/web/getAvailableWebTemplates(1033)`.

@@ -7,8 +7,8 @@ published: true
 tags: [SharePoint]
 excerpt: SharePoint is exposing it's Search service via HTTP. In this article I share some essential tips when using SharePoint's Search Service via HTTP.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 Because I’m currently writing my first Add-On for *ShareCoffee* which is going to provide a fluent and easy way to consume SharePoint’s Search Services, I had to dig a little bit deeper into SharePoint Search REST API. 
