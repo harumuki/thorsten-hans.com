@@ -7,8 +7,8 @@ published: true
 tags: [ShareCoffee, SharePoint, O365]
 excerpt: Do you know ShareCoffee? It's an API abstraction for SharePoint APIs and it makes daily tasks - such as querying the FormDigestValue - really easy.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 When running in a SharePoint-Hosted App, you can easily receive the `FormDigestValue` by executing `ShareCoffee.Commons.getFormDigest()` which is very easy.

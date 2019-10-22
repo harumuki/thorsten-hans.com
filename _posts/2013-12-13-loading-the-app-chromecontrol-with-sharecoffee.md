@@ -7,8 +7,8 @@ published: true
 tags: [SharePoint, O365, ShareCoffee]
 excerpt: When building SharePoint Apps, you've to load the so-called App chrome. This post explains how to make this integration smoother with ShareCoffee
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 [ShareCoffee](https://github.com/ThorstenHans/ShareCoffee){:target="_blank"} assists you as a SharePoint App Developer in various situations. Of course is the most significant benefit the unified REST layer across all different kinds of SharePoint Apps and query targets (AppWeb / HostWeb).

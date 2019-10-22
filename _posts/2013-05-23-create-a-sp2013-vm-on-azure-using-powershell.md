@@ -7,8 +7,8 @@ published: true
 tags: [Azure, SharePoint]
 excerpt: Do you need a SharePoint Development environment? Read this article and learn how to spin it up in Azure using PoSh.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 A few weeks ago Windows Azure IaaS features reached GA. Since then I’m continuously replacing my OnPremise SharePoint development machines by new Azure VMs. To save money, I’m going to remove the virtual machines as soon as I don’t need them. Automating the process of creation and deletion is essential for me because I don’t want to spend a few minutes each day in PowerShell to get my machine up and running.

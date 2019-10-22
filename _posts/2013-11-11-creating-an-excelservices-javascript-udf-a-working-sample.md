@@ -7,8 +7,8 @@ published: true
 tags: [Frontend]
 excerpt: This article explains how you can create User Defined Functions (UDF) with JavaScript for Excel Services
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 *Excel Services* in SharePoint 2013 is offering some new functionalities. One of these is a JavaScript User Defined Actions (**UDFs**). There is currently one a little documentation on MSDN covering this topic. The given MSDN sample contains a small example which didn’t work at all. Because a customer would like to see the new features Excel Services are offering in 2013 (including Office 365). I had the choice to discover this feature by myself 🙂.

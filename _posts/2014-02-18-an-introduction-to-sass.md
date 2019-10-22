@@ -7,8 +7,8 @@ published: true
 tags: [Frontend]
 excerpt: You want to speed up your frontend development skills? Learn SASS and write stylesheets faster. This post will teach you the basics of SASS.
 image: /learning.jpg
-unsplash_user_name: Helloquence
-unsplash_user_ref: helloquence
+unsplash_user_name: Tim Mossholder
+unsplash_user_ref: timmossholder
 ---
 
 Throughout this post, I’ll give you a rough introduction into [SASS](www.sass-lang.com){:target="_blank"} as part of my *branding SharePoint sites with yeoman* series. See all other posts from this series here.
