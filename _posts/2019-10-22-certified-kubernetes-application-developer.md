@@ -12,12 +12,10 @@ unsplash_user_ref: timmossholder
 
 During this week, I took the Certified Kubernetes Application Developer (CKAD) exam and passed. However, I did not take the exam because of the certificate; I took the exam because of the challenge.  The challenge to verify my Kubernetes knowledge and experience. The knowledge and experience I got from real-world projects and from falling in love with cloud-native application development in general.
 
-Compared to other exams (and I did a bunch of exams back in the .NET Framework v3 and v4 days), CKAD is challenging. There are no multiple-choice questions, CKAD challenges your experience with Kubernetes by presenting you with roughly a set day-to-day tasks.
+Compared to other exams (and I did a bunch of exams back in the .NET Framework v3 and v4 days), CKAD is challenging. There are no multiple-choice questions, CKAD challenges your experience with Kubernetes by presenting you with a set of day-to-day tasks. Tasks that you must solve in 120 minutes or less by using a terminal and an editor. I enjoy challenges like these. They make me identify areas where I can improve because they measure both: Experience and speed.  
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/ckad-cert.png" width="400"
 title="Certified Kubernetes Application Developer (CKAD)" caption="Certified Kubernetes Application Developer (CKAD)`" %}
-
-Tasks that you must solve in 120 minutes or less by using a terminal and an editor.  I enjoy challenges like these. They make me identify areas where I can improve because they measure both: Experience and speed.  
 
 If you want to take the CKAD or CKA exam in the future, you should read both the [official curriculum](https://github.com/cncf/curriculum){:target="_blank"} and [the candidate handbook](https://training.linuxfoundation.org/go/cka-ckad-candidate-handbook){:target="_blank"} carefully. From here, you can build an individual preparation schedule to make your way through all the objectives in time. To me, it was also fascinating to see how different the actual exam process is, compared to the Microsoft exams I took a couple of years ago.
 
