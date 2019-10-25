@@ -4,7 +4,7 @@ layout: post
 permalink: frontend-builds-4-building-cross-platform-mobile-apps
 redirect_from: /frontend-builds-4-building-cross-platform-mobile-apps-caa632699200
 published: true
-tags: [Build, Cordova, Gulp.js]
+tags: [Build, Gulp.js]
 excerpt: null
 image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
