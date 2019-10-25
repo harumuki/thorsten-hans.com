@@ -20,6 +20,10 @@ a {
     transition: color 0.3s ease;
 }
 
+a.silent{
+    color:$gray-darkest;
+}
+
 a:hover {
     color: $gray-darkest;
 }

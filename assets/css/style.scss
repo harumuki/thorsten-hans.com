@@ -183,6 +183,13 @@
     color: $color-accent;
 }
 
+.featured-image-ref{
+    display: block;
+    width: 70%;
+    margin: auto;
+    text-align: right;
+    font-size: 60%;
+}
 .post-thumbnail {
     display: block;
     margin-bottom: 1.66667em;
@@ -194,21 +201,36 @@
 
 .post-footer {
     margin-bottom: 1.66667em;
+    margin-top: 1.66667em;
 }
-
 .post-tags,
+.post-author{
+    letter-spacing: normal;
+    text-transform: none;
+}
+.post-tags,
+.post-contribute,
 .post-share {
     font-size: 0.77778rem;
     line-height: 1.5;
 }
+.post-tags>span{
+    margin-right:10px;
+}
 
 .post-tags a {
+    
     display: inline-block;
     margin: 0 10px 0 0;
 }
 
 .post-tags a:before {
-    content: '\0023';
+    font-family: "Font Awesome 5 Free";
+    content: '\f02b';
+    display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight: 900;
 }
 
 .post-share-title {
@@ -450,13 +472,13 @@
     border-radius: 100%;
     box-shadow: 0 0 1px 11px rgba($color-accent, 0.15), 0 0 1px 22px rgba($color-accent, 0.1);
     display: inline-block;
-    height: 130px;
-    width: 130px;
+    height: 180px;
+    width: 180px;
 }
 
 .hero-title {
     font-size: 2.22222rem;
-    margin: 0 0 0.75em;
+    margin: 0 0 0.5em;
 }
 
 .hero .social-links a {
