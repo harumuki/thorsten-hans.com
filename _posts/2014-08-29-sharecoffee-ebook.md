@@ -4,7 +4,7 @@ layout: post
 permalink: sharecoffee-ebook
 redirect_from: /sharecoffee-ebook-98368c7b3e3
 published: true
-tags: [SharePoint, O365, ShareCoffee]
+tags: [SharePoint, O365, ShareCoffee, Book]
 excerpt: After a long and intensive time, I''m really proud to announce my first eBook
 image: /ebook.jpg
 unsplash_user_name: freestocks.org
