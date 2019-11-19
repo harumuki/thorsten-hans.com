@@ -15,14 +15,14 @@ Azure Container Registry – or short ACR - is a managed service offered by Micr
 The idea of “Azure Container Registry Unleashed” is to go further, way further than `docker push` and `docker pull` at the end of this short series you will be able to use all ACR features currently available and use the full potential offered by the service.
 In this introduction part, we will setup a new instance of Azure Container Registry and follow [ACR Best Practices](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-best-practices){:target="_blank"} provided by the Microsoft Azure Team itself. That said, here is what we will cover today:
 
-- [A dedicated Azure Resource Group for ACR – Why](#a-dedicated-azure-resource-group-for-acr-%e2%80%93-why)
+- [A dedicated Azure Resource Group for ACR](#a-dedicated-azure-resource-group-for-acr)
 - [Finding the correct ACR edition for your needs](#finding-the-correct-acr-edition-for-your-needs)
 - [Creating ACR and all necessary Azure building blocks](#creating-acr-and-all-necessary-azure-building-blocks)
   - [ACR Administrative Account](#acr-administrative-account)
 - [Setting up ACR Geo replication](#setting-up-acr-geo-replication)
 - [What is next?](#what-is-next)
 
-## A dedicated Azure Resource Group for ACR – Why
+## A dedicated Azure Resource Group for ACR
 
 If you have looked at the ACR best practices, chances are good that you stumbled upon the recommendation to host ACR in a dedicated Azure Resource Group. The reason why the team suggests this is to prevent you from accidentally deleting your mission critical ACR instance. Within the upcoming articles we will add a couple of surrounding services to our ACR instance, so it is generally a good idea to group those artefacts using an Azure Resource Group.
 On top of that, you can use the dedicated Resource Group to lock down administrative access to all ACR related services at once.
