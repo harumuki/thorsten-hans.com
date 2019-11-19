@@ -12,7 +12,8 @@ unsplash_user_ref: tata_morais
 
 Azure Container Registry – or short ACR - is a managed service offered by Microsoft Azure. It is a private Docker Registry based on Docker Registry 2.0 and acts as central service in many containerized application architectures. Compared to other private Docker registries, ACR offers several advantages like ease of administration due to powerful Azure CLI commands, seamless integration with other Azure Services such as Azure Kubernetes Service and frictionless authentication using Azure Active Directory (AAD).
 
-The idea of “Azure Container Registry Unleashed” is to go further, way further than `docker push` and `docker pull` at the end of this short series you will be able to use all ACR features currently available and use the full potential offered by the service.
+The idea of “Azure Container Registry Unleashed” is to go further, way further than `docker push` and `docker pull`. At the end of this short series, you will be able to use all ACR features currently available and use the full potential offered by the service.
+
 In this introduction part, we will setup a new instance of Azure Container Registry and follow [ACR Best Practices](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-best-practices){:target="_blank"} provided by the Microsoft Azure Team itself. That said, here is what we will cover today:
 
 - [A dedicated Azure Resource Group for ACR](#a-dedicated-azure-resource-group-for-acr)
@@ -24,12 +25,13 @@ In this introduction part, we will setup a new instance of Azure Container Regis
 
 ## A dedicated Azure Resource Group for ACR
 
-If you have looked at the ACR best practices, chances are good that you stumbled upon the recommendation to host ACR in a dedicated Azure Resource Group. The reason why the team suggests this is to prevent you from accidentally deleting your mission critical ACR instance. Within the upcoming articles we will add a couple of surrounding services to our ACR instance, so it is generally a good idea to group those artefacts using an Azure Resource Group.
+If you have looked at the ACR best practices, chances are good that you stumbled upon the recommendation to host ACR in a dedicated Azure Resource Group. The reason why the team suggests this, is to prevent you from accidentally deleting your mission critical ACR instance. Within the upcoming articles we will add a couple of surrounding services to our ACR instance, so it is generally a good idea to group those artefacts using an Azure Resource Group.
+
 On top of that, you can use the dedicated Resource Group to lock down administrative access to all ACR related services at once.
 
 ## Finding the correct ACR edition for your needs
 
-Azure Container Registry is currently available in three different editions: Basic, Standard and Premium. So how should you decide which edition you should go for. Good news first, no matter which edition you choose, you get an SLA of 99.9% and you can switch to another edition at any point in time.
+Azure Container Registry is currently available in three different editions: Basic, Standard and Premium. So how should you decide which edition you should go for. Good news first, no matter which edition you choose, you get an SLA of 99.9% and you can switch to another edition at any point in time (scale up and scale down).
 
 The three available editions have the same programmatic capabilities (such as AAD integration, webhooks and so on). However, the differ when it comes to storage and bandwidth. Although Basic edition is great to get started from both storage and bandwidth point of view, you may recognize a difference when images were pulled from other Azure services in the same region.
 
