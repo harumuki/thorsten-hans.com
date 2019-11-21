@@ -206,7 +206,7 @@ When you want to push your first signed Image to ACR, two signing keys will be g
 #### Pushing a signed image with system wide Content-Trust
 
 ```bash
-echo '' > SigningDemo.Dockerfile
+echo 'FROM nginx:alpine' > SigningDemo.Dockerfile
 docker build . -f SigningDemo.Dockerfile -t unleashed.azurecr.io/signed:1
 docker push unleashed.azurecr.io/signed:1
 
@@ -227,7 +227,7 @@ Successfully signed unleashed.azurecr.io/signed:1
 #### Pushing a signed image with contextual Content-Trust
 
 ```bash
-echo '' > SingingDemo.Dockerfile
+echo 'FROM nginx:alpine' > SingingDemo.Dockerfile
 docker build . -f SigningDemo.Dockerfile --disable-content-trust=false -t unleashed.azurecr.io/signed:1
 
 docker push --disable-content-trust=false unleashed.azurecr.io/signed:1
