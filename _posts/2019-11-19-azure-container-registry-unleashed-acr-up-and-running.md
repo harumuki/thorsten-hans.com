@@ -3,7 +3,7 @@ title: Azure Container Registry Unleashed – ACR up and running
 layout: post
 permalink: azure-container-registry-unleashed-acr-up-and-running
 published: true
-tags: [Azure,Docker]
+tags: [Azure,Docker,ACR]
 excerpt: 'Learn insights of Azure Container Registry (ACR) that go beyond docker push and docker pull. Today you will learn how to setup ACR according to best practices and how to configure ACR geo replication'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
