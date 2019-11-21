@@ -104,6 +104,6 @@ When working with geo replications, it is important to know that you will pay th
 
 ## What is next?
 
-We have covered a bunch of stuff in this introduction post, we went beyond setting up an ACR and configured Geo replication in this post. In the next post of “Azure Container Registry Unleashed”, we will configure Content-Trust for our ACR instance(s) to ensure origin and integrity of our Docker Images.
+We have covered a bunch of stuff in this introduction post, we went beyond setting up an ACR and configured Geo replication in this post. [In the next post of “Azure Container Registry"]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}, we will configure Content-Trust for our ACR instance(s) to ensure origin and integrity of our Docker Images.
 
 You can subscribe to my blog newsletter and get automatically notified once the next article has been published. That’s the best way to stay current and never miss an article.
