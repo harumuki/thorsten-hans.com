@@ -10,10 +10,15 @@ unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
 ---
 
-This is the second part of Azure Container Registry Unleashed. In the case you missed the [first part]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}, we talked about identifying the correct ACR edition, why you should deploy ACR to a dedicated Azure Resource Group and learned how to configure Geo replication for ACR.
+## Azure Container Registry Unleashed
 
-Today, we will go one step further and talk about Authentication (AuthN), Identity Access Management (IAM) and Content-Trust in the scope of ACR. To be a bit more precisely, this post contains the following sections:
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
 
+This is the second part of Azure Container Registry Unleashed. Today, we will go one step further and talk about Authentication (AuthN), Identity Access Management (IAM) and Content-Trust in the scope of ACR. To be a bit more precisely, this post contains the following sections:
+
+- [Azure Container Registry Unleashed](#azure-container-registry-unleashed)
 - [ACR Authentication](#acr-authentication)
 - [ACR Identity Access Management](#acr-identity-access-management)
   - [IAM for AAD Users and Groups](#iam-for-aad-users-and-groups)
