@@ -4,7 +4,7 @@ layout: post
 permalink: docker-on-windows-fix-time-synchronization-issue
 published: true
 tags: [Windows,Docker]
-excerpt: 'Have your Docker containers on Windows a wrong time or even a different (past) date? Read why this happens and how to fix it.'
+excerpt: 'Are your Docker containers on Windows behind a couple of hours or even days? Are they displaying or working with a wrong time/date? Read why this happens and how to fix it.'
 image: /orca.jpg
 unsplash_user_name: NOAA
 unsplash_user_ref: noaa
