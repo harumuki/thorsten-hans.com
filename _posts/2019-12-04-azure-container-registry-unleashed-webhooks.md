@@ -82,7 +82,34 @@ The story for the demo project is told quickly. We will stick with good old NGIN
 
 ### The Azure Function Project
 
-The Azure Function project [is open sourced on GitHub](https://github.com/ThorstenHans/acr-unleashed-webhooks){:target="_blank"}, you can quickly spin up a new CosmosDB instance, the required storage account and a new Azure FunctionApp using the following Azure CLI snippet. It will also connect the Function App to the master branch of the mentioned GitHub repository:
+The Azure Function project [is open sourced on GitHub](https://github.com/ThorstenHans/acr-unleashed-webhooks){:target="_blank"}. At the heart of the Azure Function, they payload from the webhook is extracted and stored in CosmosDB using an `IAsyncCollector`.
+
+```csharp
+string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+log.LogInformation(requestBody);
+dynamic data = JsonConvert.DeserializeObject(requestBody);
+if (data != null && "ping".Equals(data.action.ToString(), StringComparison.InvariantCultureIgnoreCase))
+{
+    return new StatusCodeResult(204);
+}
+if (data != null && data.request != null && data.target != null)
+{
+    await items.AddAsync(new ImagePush
+    {
+        Id = data.request.id,
+        LoginServer = data.request.host,
+        Action = data.action,
+        TimeStamp = DateTime.UtcNow,
+        Image = data.target.repository,
+        Tag = data.target.tag
+    });
+    return new OkResult();
+}
+return new BadRequestObjectResult("Invalid payload received");
+
+```
+
+You can quickly spin up a new CosmosDB instance, the required storage account and a new Azure FunctionApp using the following Azure CLI snippet. It will also connect the Function App to the master branch of the mentioned GitHub repository:
 
 ```bash
 # store a single random number used for all resources
