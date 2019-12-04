@@ -82,7 +82,7 @@ The story for the demo project is told quickly. We will stick with good old NGIN
 
 ### The Azure Function Project
 
-The Azure Function project is open sourced on GitHub, you can quickly spin up a new CosmosDB instance, the required storage account and a new Azure Function App using the following Azure CLI snippet. It will also connect the Function App to the master branch of the mentioned GitHub repository:
+The Azure Function project [is open sourced on GitHub](https://github.com/ThorstenHans/acr-unleashed-webhooks){:target="_blank"}, you can quickly spin up a new CosmosDB instance, the required storage account and a new Azure FunctionApp using the following Azure CLI snippet. It will also connect the Function App to the master branch of the mentioned GitHub repository:
 
 ```bash
 # store a single random number used for all resources
