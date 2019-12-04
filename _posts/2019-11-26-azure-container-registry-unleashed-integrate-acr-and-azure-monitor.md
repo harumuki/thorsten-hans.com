@@ -4,7 +4,7 @@ layout: post
 permalink: azure-container-registry-unleashed-integrate-acr-and-azure-monitor
 published: true
 tags: [Azure,Docker,ACR]
-excerpt: 'In part trhee of Azure Container Registry Unleashed you will learn how to integrate ACR and Azure Monitor to get important insights'
+excerpt: 'In part three of Azure Container Registry Unleashed you will learn how to integrate ACR and Azure Monitor to get important insights'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -15,6 +15,7 @@ unsplash_user_ref: tata_morais
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
 - [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
 
 The third part of Azure Container Registry Unleashed will guide you through the process of integrating ACR and Azure Monitor to collect essential information and metrics about your ACR instances at runtime. The integration of ACR and Azure Monitor is currently in public preview. However, retrieving insights about your ACR instance is mission-critical, so we will dive into this topic now.
 
