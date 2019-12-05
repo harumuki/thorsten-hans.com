@@ -6,9 +6,9 @@ redirect_from: /escp2019-interview
 published: true
 tags: [Conferences]
 excerpt: 'Fabian Williams interviewed me during #ESPC19 to get my thoughts about ESPC, Infrastructure as Code and the growing diversity and community at European SharePoint, Office365 and Azure Conference'
-image: /terraform.jpg
-unsplash_user_name: Elaine Casap
-unsplash_user_ref: ecasap
+image: /interview.jpg
+unsplash_user_name: Sam McGhee
+unsplash_user_ref: sammcghee
 ---
 
 [Fabian Williams](https://twitter.com/fabianwilliams){:target="_blank"} (fellow MVP and good friend of mine) interviewed me during [European SharePoint, Office365 and Azure Conference (ESPC19)](http://sharepointeurope.com/){:target="_blank"}. We had a conversation about Microsoft Azure, Infrastructure as Code and the community itself. Additionally, we talked about how ESPC has evolved over time and how it addresses latest and greatest technology trends.
