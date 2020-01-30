@@ -2,7 +2,6 @@
 title: ESPC 2019 - Interview
 layout: post_without_image
 permalink: espc2019-interview
-redirect_from: /escp2019-interview
 published: true
 tags: [Conferences]
 excerpt: 'Fabian Williams interviewed me during #ESPC19 to get my thoughts about ESPC, Infrastructure as Code and the growing diversity and community at European SharePoint, Office365 and Azure Conference'

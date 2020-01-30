@@ -2,7 +2,6 @@
 title: Surface 1 Pro — A development machine
 layout: post
 permalink: surface-1-pro-a-development-machine
-redirect_from: /surface-1-pro-a-development-machine-4f215f281da4
 published: true
 tags: [Tools]
 excerpt: Can you use a Surface 1 Pro as a development machine? I'm using the Surface 1 Pro for quite some time now. Read my recap.

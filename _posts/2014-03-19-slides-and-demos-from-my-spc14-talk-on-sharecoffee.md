@@ -2,7 +2,6 @@
 title: Slides and Demos from my SPC14 talk on ShareCoffee
 layout: post
 permalink: slides-and-demos-from-my-spc14-talk-on-sharecoffee
-redirect_from: /slides-and-demos-from-my-spc14-talk-on-sharecoffee-815bbd4a3270
 published: true
 tags: [Talks, ShareCoffee]
 excerpt: Grab the demos and slides from my talk on ShareCoffee at SharePoint Conference 2014 in Las Vegas

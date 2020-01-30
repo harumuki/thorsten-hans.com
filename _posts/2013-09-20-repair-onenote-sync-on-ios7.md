@@ -2,7 +2,6 @@
 title: Repair OneNote sync on iOS7
 layout: post
 permalink: repair-onenote-sync-on-ios7
-redirect_from: /repair-onenote-sync-on-ios7-bd923d74ecc9
 published: true
 tags: [Tools]
 excerpt: I'm a OneNote Junkie. However, my instance of OneNote was recently broken after updating to iOS7. Learn how to repair it.

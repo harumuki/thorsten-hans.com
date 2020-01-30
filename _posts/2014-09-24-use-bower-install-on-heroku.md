@@ -2,7 +2,6 @@
 title: Use 'bower install' on Heroku
 layout: post
 permalink: use-bower-install-on-heroku
-redirect_from: /use-bower-install-on-heroku-45990de81b5a
 published: true
 tags: [Frontend]
 excerpt: Learn how to use bower on Heroku to manage your client-side dependencies.

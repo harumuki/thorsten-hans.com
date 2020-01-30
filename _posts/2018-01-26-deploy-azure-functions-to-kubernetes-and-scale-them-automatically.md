@@ -2,7 +2,6 @@
 title: Deploy Azure Functions to Kubernetes and scale them automatically
 layout: post
 permalink: deploy-azure-functions-to-kubernetes-and-scale-them-automatically
-redirect_from: /deploy-azure-functions-to-kubernetes-and-scale-them-automatically-8c9f44209bb
 published: true
 tags:
   - Kubernetes

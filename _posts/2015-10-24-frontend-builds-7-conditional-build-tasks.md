@@ -2,7 +2,6 @@
 title: Frontend Builds 7 - Conditional Build Tasks
 layout: post
 permalink: frontend-builds-7-conditional-build-tasks
-redirect_from: /frontend-builds-7-conditional-build-tasks-ca34ec59c426
 published: true
 tags: [Build, Gulp.js]
 excerpt: In the seventh and last part of the "Frontend Build" article series, you'll learn how to create conditional tasks for the Build as a Service (BaaS) system.

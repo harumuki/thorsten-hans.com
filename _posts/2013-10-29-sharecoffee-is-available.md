@@ -2,9 +2,6 @@
 title: ShareCoffee is available
 layout: post
 permalink: sharecoffee-is-available
-redirect_from: 
-  - /sharecoffee-is-available-7fcf0eac3dc4
-  - /2013/10/29/sharecoffee-is-available/
 published: true
 excerpt: I'm proud to release the first version of ShareCoffee. A small but powerful library which unifies consumption of SharePoint's HTTP based APIs. In addition a bunch of helpers are included for the SharePoint App framework.
 tags: [SharePoint, O365, ShareCoffee]

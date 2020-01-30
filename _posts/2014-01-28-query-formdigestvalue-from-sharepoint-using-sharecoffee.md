@@ -2,7 +2,6 @@
 title: Query FormDigestValue from SharePoint using ShareCoffee
 layout: post
 permalink: query-formdigestvalue-from-sharepoint-using-sharecoffee
-redirect_from: /query-formdigestvalue-from-sharepoint-using-sharecoffee-83c044f2323d
 published: true
 tags: [ShareCoffee, SharePoint, O365]
 excerpt: Do you know ShareCoffee? It's an API abstraction for SharePoint APIs and it makes daily tasks - such as querying the FormDigestValue - really easy.

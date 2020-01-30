@@ -2,7 +2,6 @@
 title: I ❤ CodeShip
 layout: post
 permalink: i-love-codeship
-redirect_from: /i-codeship-dcad7662709
 published: true
 tags: [DevOps]
 excerpt: null

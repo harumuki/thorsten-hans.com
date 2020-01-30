@@ -2,7 +2,6 @@
 title: ShareCamp 2014 in Munich
 layout: post
 permalink: sharecamp-2014-in-munich
-redirect_from: /sharecamp-2014-in-munich-abc1f3693c4f
 published: true
 tags: [Talks]
 excerpt: I'm thrilled to announce that we're organizing our 5th ShareCamp in Munich. Again we'll take over Microsoft's Germany HQ and share knowledge about SharePoint, Office 365 and Azure.

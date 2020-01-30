@@ -2,7 +2,6 @@
 title: Office 365 API Tools — GA Release changes
 layout: post
 permalink: office-365-api-tools-ga-release-changes
-redirect_from: /office-365-api-tools-ga-release-changes-93f07da0d5b6
 published: true
 tags: [O365]
 excerpt: Read what has changed in the currently shipped release of Office365 API Tools.

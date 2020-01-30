@@ -2,7 +2,6 @@
 title: 'MVP Mentor Session: Building SharePoint Apps with JavaScript'
 layout: post
 permalink: mvp-mentor-session-building-sharepoint-apps-with-javascript
-redirect_from: /mvp-mentor-session-building-sharepoint-apps-with-javascript-878dae4a8a8c
 published: true
 tags: [MVP]
 excerpt: I contributed a webinar to Microsoft's MVP Mentor program. As mentors, we provide free coaching for students on different tech topics.

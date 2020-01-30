@@ -2,7 +2,6 @@
 title: Launch modal dialogs from ECB CustomActions from within the HostWeb
 layout: post
 permalink: modal-dialogs-from-ecb-customactions-from-within-the-hostweb
-redirect_from: /spscriptlet-4-launch-modal-dialogs-from-ecb-customactions-from-within-the-hostweb-d972db91f2dc
 published: true
 tags: [SharePoint]
 excerpt: Learn how to launch modal dialogs in a SharePoint App using CustomActions for the EditControlBlock

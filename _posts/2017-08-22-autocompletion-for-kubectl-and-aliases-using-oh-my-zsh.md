@@ -2,7 +2,6 @@
 title: Autocompletion for kubectl and aliases using oh-my-zsh
 layout: post
 permalink: autocompletion-for-kubectl-and-aliases-using-oh-my-zsh
-redirect_from: /autocompletion-for-kubectl-and-aliases-using-oh-my-zsh-6b5295dc6dfb
 published: true
 tags: [Kubernetes, Tools, Shell]
 excerpt: Learn how to boost your productivity by defining aliases and enable auto completion for kubectl

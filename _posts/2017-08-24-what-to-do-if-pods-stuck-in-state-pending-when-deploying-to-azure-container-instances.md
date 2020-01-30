@@ -2,7 +2,6 @@
 title: What to do if Pods stuck in state Pending while deploying to Azure Container Instances
 layout: post
 permalink: fix-pods-stuck-in-pending-on-azure-container-instances
-redirect_from: /what-to-do-when-pods-stuck-in-state-pending-when-deploying-to-azure-container-instances-50660e3c4b42
 published: true
 tags:
   - Kubernetes

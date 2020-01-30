@@ -2,9 +2,6 @@
 title: Frontend build series introduction
 layout: post
 permalink: frontend-build-series-introduction
-redirect_from: 
-  - /2015-10-08_Frontend-build-series-introduction-3a8abc53d327
-  - /frontend-build-series-introduction-8743add5d978
 published: true
 tags: [Build, Gulp.js]
 excerpt: Kill all humans! No not really, this post is the introduction for the Frontend Build article series. It'll explain how to automate critical steps when building Frontend applications.

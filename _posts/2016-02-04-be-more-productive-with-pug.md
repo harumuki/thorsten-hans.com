@@ -2,7 +2,6 @@
 title: Be more productive with Pug
 layout: post
 permalink: be-more-productive-with-pug
-redirect_from: /be-more-productive-with-jade-4399fc253ba5
 published: true
 tags: [Pug]
 excerpt: Boost your productivity with Pug. Pug compiles down to HTML and make you faster when it comes to frontend development.

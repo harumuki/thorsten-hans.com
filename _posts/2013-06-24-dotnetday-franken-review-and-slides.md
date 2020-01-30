@@ -2,7 +2,6 @@
 title: DotNetDay Franken — Review and Slides
 layout: post
 permalink: dotnetday-franken-review-and-slides
-redirect_from: /dotnetday-franken-review-and-slides-d37a0b6c112a
 published: true
 tags: [Talks]
 excerpt: Quick recap from .NET Day Franken

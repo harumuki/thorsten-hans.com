@@ -2,7 +2,6 @@
 title: CronJobs on AKS using Azure Files and .NET Core
 layout: post
 permalink: cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core
-redirect_from: /cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core-72c01599d011
 published: true
 tags:
   - Kubernetes

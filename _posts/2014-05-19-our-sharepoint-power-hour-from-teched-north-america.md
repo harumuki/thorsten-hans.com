@@ -2,7 +2,6 @@
 title: Our SharePoint Power Hour from TechEd North America
 layout: post
 permalink: our-sharepoint-power-hour-from-teched-north-america
-redirect_from: /our-sharepoint-power-hour-from-teched-north-america-cf0ccbd9ba9b
 published: true
 tags: [Talks]
 excerpt: Recap from my talk at TechEd North America with Jeremy Thake

@@ -2,7 +2,6 @@
 title: ShareCoffee.UserProfiles is available
 layout: post
 permalink: sharecoffee-userprofiles-is-available
-redirect_from: /sharecoffee-userprofiles-is-available-ae16b1569f64
 published: true
 excerpt: A bunch of new features for ShareCoffee targeting user profiles. Check them out!
 tags: [SharePoint, O365, ShareCoffee]

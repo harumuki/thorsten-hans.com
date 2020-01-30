@@ -2,7 +2,6 @@
 title: SPC417 Session Trailer
 layout: post
 permalink: spc417-session-trailer
-redirect_from: /spc417-session-trailer-c462f0ea44b7
 published: true
 tags: [Talks]
 excerpt: SharePoint Conference Speakers were asked to create a small session trailer. I took that chance to create a trailer for my Session on ShareCoffee. Watch it NOW!

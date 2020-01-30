@@ -2,7 +2,6 @@
 title: ShareCoffee.Search is available
 layout: post
 permalink: sharecoffee-search-is-available
-redirect_from: /sharecoffee-search-is-available-47d2e2479b4a
 published: true
 excerpt: ShareCoffee receives an Add-On. Now you can consume SharePoint's Search API directly from ShareCoffee and easily find things located in SharePoint or Office365.
 tags: [SharePoint, O365, ShareCoffee]

@@ -2,7 +2,6 @@
 title: Angular and Electron - The definitive guide
 layout: post
 permalink: angular-and-electron-the-definitive-guide
-redirect_from: /angular2-and-electron-the-definitive-guide-b389f36f74d
 published: true
 tags: [Electron, Angular]
 excerpt: This article guides you through the process of creating an cross-platform desktop application using GitHub Electron and Angular as Single Page Application framework.

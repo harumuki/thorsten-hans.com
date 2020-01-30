@@ -2,7 +2,6 @@
 title: Speaking at SharePoint Conference 2014 in Vegas
 layout: post
 permalink: speaking-at-sharepoint-conference-2014-in-vegas
-redirect_from: /speaking-at-sharepoint-conference-2014-in-vegas-293b439b10bc
 published: true
 tags: [Talks]
 excerpt: I'm thrilled to announce that I'll be speaking at SharePoint Conference 2014 in Las Vegas

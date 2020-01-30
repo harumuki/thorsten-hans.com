@@ -2,7 +2,6 @@
 title: ShareCamp 2013 Vienna — We're doing it again
 layout: post
 permalink: sharecamp-2013-vienna-were-doing-it-again
-redirect_from: /sharecamp-2013-vienna-were-doing-it-again-7fbab6b9b8a6
 published: true
 tags: [Talks]
 excerpt: I'm thrilled to announce another ShareCamp. This time we'll visit Microsoft HQ in Austria. See all information about the event in this post.

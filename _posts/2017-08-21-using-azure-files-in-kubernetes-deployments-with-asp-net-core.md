@@ -2,7 +2,6 @@
 title: Using Azure Files in Kubernetes Deployments with ASP.NET Core
 layout: post
 permalink: using-azure-files-in-kubernetes-deployments-with-asp-net-core
-redirect_from: /using-azure-files-in-kubernetes-deployments-with-asp-net-core-47e5cb99e1c0
 published: true
 tags:
   - Kubernetes

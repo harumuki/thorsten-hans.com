@@ -2,7 +2,6 @@
 title: Treat your iTerm2 like Guake
 layout: post
 permalink: treat-your-iterm2-like-guake
-redirect_from: /treat-your-iterm2-like-guake-15cec9a51c4
 published: true
 tags: [Terminal, Tools, Productivity]
 excerpt: 'Learn how to configure iTerm2 to work like Guake, the popular Linux terminal. Boost your productivity and access iTerm2 quickly from everywhere.'

@@ -2,7 +2,6 @@
 title: Proper Paging Implementation for Office365 APIs
 layout: post
 permalink: proper-paging-implementation-for-office365-apis
-redirect_from: /proper-paging-implementation-for-office365-apis-6f8ea6b295f8
 published: true
 tags: [O365]
 excerpt: Another tip from the field. This post shows a proper paging implementation for lists

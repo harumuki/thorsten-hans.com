@@ -2,7 +2,6 @@
 title: "KISS \U0001F618 Angular apps a bit more framework agnostic"
 layout: post
 permalink: kiss-angular-apps-more-framework-agnostic
-redirect_from: /kiss-angular-apps-a-bit-more-framework-agnostic-80d84e07663a
 published: true
 tags: [Angular]
 excerpt: 'This post describes how to build Angular apps more framework-agnostic. Following the simple samples in this post will make your code more reusable. '

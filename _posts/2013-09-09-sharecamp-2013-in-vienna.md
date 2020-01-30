@@ -2,7 +2,6 @@
 title: ShareCamp 2013 in Vienna
 layout: post
 permalink: sharecamp-2013-in-vienna
-redirect_from: /sharecamp-2013-in-vienna-114938bf567e
 published: true
 tags: [Talks]
 excerpt: A quick recap of ShareCamp 2013 in Vienna

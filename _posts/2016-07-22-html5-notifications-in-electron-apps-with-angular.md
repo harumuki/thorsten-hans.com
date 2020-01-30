@@ -2,7 +2,6 @@
 title: HTML5 notifications in electron apps with Angular
 layout: post
 permalink: html5-notifications-in-electron-apps-with-angular
-redirect_from: /html5-notifications-in-electron-apps-with-angular-2-8fd35d1fa3d5
 published: true
 tags: [Electron, Angular]
 excerpt: Electron takes HTML5 notifications and bridges them to operating system notifications. So you'll learn how to create native HTML5 notifications within Angular.

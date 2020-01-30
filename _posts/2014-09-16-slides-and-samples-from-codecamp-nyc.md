@@ -2,7 +2,6 @@
 title: Slides and Samples from CodeCamp NYC
 layout: post
 permalink: slides-and-samples-from-codecamp-nyc
-redirect_from: /slides-and-samples-from-codecamp-nyc-3e12a7c1c8c1
 published: true
 tags: [Talks]
 excerpt: Reacp of my talk at CodeCamp in New York City

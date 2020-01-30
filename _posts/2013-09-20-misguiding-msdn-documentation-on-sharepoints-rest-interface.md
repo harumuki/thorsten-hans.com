@@ -2,7 +2,6 @@
 title: Wrong MSDN documentation on SharePoint's REST interface
 layout: post
 permalink: wrong-msdn-documentation-on-sharepoints-rest-interface
-redirect_from: /misguiding-msdn-documentation-on-sharepoints-rest-interface-8d72d99cbd97
 published: true
 tags: [SharePoint]
 excerpt: Today I found another bug in MSDN documentation which is worth sharing for SharePoint developers

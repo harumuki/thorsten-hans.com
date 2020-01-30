@@ -2,7 +2,6 @@
 title: ESPC 2019 - Code your Azure with Terraform
 layout: post
 permalink: espc2019-code-your-azure-with-terraform
-redirect_from: /escp2019-code-your-azure-with-terraform
 published: true
 tags: [Conferences,Terraform,Azure]
 excerpt: 'Slidedeck and Demos from my "Code your Azure Deployments using HashiCorp Terraform" talk at European SharePoint and Azure Conference 2019 in Prague.'

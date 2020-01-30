@@ -3,7 +3,6 @@ title: ShareCamp 2013 recap
 layout: post
 permalink: sharecamp-2013-recap
 published: true
-redirect_from: /sharecamp-2013-recap-9dbbd8aae0b2
 tags: [Talks, SharePoint]
 excerpt: Read the Recap of ShareCamp 2013
 image: /conference.jpg

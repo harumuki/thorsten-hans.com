@@ -2,7 +2,6 @@
 title: What's new in ShareCoffee 0.0.8
 layout: post
 permalink: whats-new-in-sharecoffee-v0-0-8
-redirect_from: /whats-new-in-sharecoffee-v0-0-8-3bc1165457
 published: true
 excerpt: See what is new in ShareCoffee 0.0.8
 tags: [SharePoint, O365, ShareCoffee]

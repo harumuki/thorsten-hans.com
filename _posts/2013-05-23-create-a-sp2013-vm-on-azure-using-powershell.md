@@ -2,7 +2,6 @@
 title: Create a SP2013 VM on Azure using PowerShell
 layout: post
 permalink: create-a-sp2013-vm-on-azure-using-powershell
-redirect_from: /create-an-sp2013-vm-on-azure-using-powershell-697b3071bce2
 published: true
 tags: [Azure, SharePoint]
 excerpt: Do you need a SharePoint Development environment? Read this article and learn how to spin it up in Azure using PoSh.

@@ -2,7 +2,6 @@
 title: Visual Studio 2013 for SharePoint Development — My experience from the Preview Phase
 layout: post
 permalink: visual-studio-2013-for-sharepoint-development-my-experience-from-the-preview-phase
-redirect_from: /visual-studio-2013-for-sharepoint-development-my-experience-from-the-preview-phase-ec48047a9d05
 published: true
 tags: [Tools]
 excerpt: I spent much time using the Visual Studio 2013 preview.Today I want to share my experiences from the preview-phase.

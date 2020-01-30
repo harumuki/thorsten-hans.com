@@ -2,7 +2,6 @@
 title: On the move — Goodbye SharePoint
 layout: post
 permalink: on-the-move-goodbye-sharepoint
-redirect_from: /one-the-move-goodbye-sharepoint-f65431f669d5
 published: true
 tags: [SharePoint]
 excerpt: After many years I'll finally leave the SharePoint business. In this article I'm sharing some of the reasons.

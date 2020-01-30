@@ -2,7 +2,6 @@
 title: grunt-nuget - Create NuGet packages on macOS and Linux
 layout: post
 permalink: grunt-nuget-packaging-for-mac-and-linux
-redirect_from: /grunt-nuget-packaging-for-mac-and-linux-e8c2634c5637
 published: true
 tags: [Frontend]
 excerpt: Learn how to build NuGet packages on macOS and Linux systems.

@@ -2,7 +2,6 @@
 title: SharePoint.Jasmine — Test your JavaScript directly inside your App
 layout: post
 permalink: sharepoint-jasmine-test-your-javascript-directly-inside-your-app
-redirect_from: /sharepoint-jasmine-test-your-javascript-directly-inside-your-app-7ce60c25ff12
 published: true
 tags: [Frontend]
 excerpt: I've published a new NuGet package which makes testing SharePoint Apps painless.
