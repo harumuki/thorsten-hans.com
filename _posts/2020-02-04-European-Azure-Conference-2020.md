@@ -22,6 +22,6 @@ No matter if you are an Azure Newcomer, an experienced Developer, an IT-Pro (alr
 
 I am excited to join forces with [Magnus Mårtensson](https://twitter.com/noopman){:target="_blank"}, [Tracy O’Connell](https://twitter.com/EuropeanAzure){:target="_blank"}, and the entire conference team to build an outstanding speaker/topic lineup and make EAC20 a rememberable, extraordinary, first episode of numerous European Azure Conferences.
 
-Starting today, we opened the Call for Speakers. If you use and love Azure and want to inspire people and help them taking advantage of cloud computing with Azure, [apply now for speaking at EAC20](https://www.europeanazureconference.com/submit-to-speak/){:target="_blank"}.
+Starting today, we opened the Call for Speakers. If you use and love Azure and want to inspire people and help them taking advantage of cloud computing with Azure, [apply now to speak at EAC20](https://www.europeanazureconference.com/submit-to-speak/){:target="_blank"}.
 
 See the official website at [https://www.europeanazureconference.com/](https://www.europeanazureconference.com/){:target="_blank"} for further details, announcements and registration.
