@@ -15,9 +15,11 @@ post_class: post-template
                     <span class="post-tags">
                         <span>in</span>
                         {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
-                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
+                        <a
+                            href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
                         {% else %}
-                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
+                        <a
+                            href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
                         {% endif %}
                         {% endfor %}
                     </span>
@@ -28,21 +30,25 @@ post_class: post-template
             <div class="post-thumbnail">
                 <img class="featured-image img-fluid" src="{{ page.image | prepend: site.image_folder | absolute_url }}"
                     alt="{{ page.title }}">
-                    <div class="featured-image-ref">Photo by <a href="https://unsplash.com/@{{page.unsplash_user_ref}}" class="silent" target="_blank">{{page.unsplash_user_name}}</a></div>
-                </div>
+                <div class="featured-image-ref">Photo by <a href="https://unsplash.com/@{{page.unsplash_user_ref}}"
+                        class="silent" target="_blank">{{page.unsplash_user_name}}</a></div>
+            </div>
             {% endif %}
             <div class="post-content">
                 {{content}}
             </div>
             <footer class="post-footer">
                 <div class="post-contribute">
-                    Found a bug? You can <a target="_blank" href="{{ site.github.repo }}/tree/master/{{ page.relative_path }}">edit</a> this post or file an <a target="_blank" href="{{ site.github.repo }}/issues/new">issue</a> on GitHub
+                    Found a typo or mistake in the post? <a target="_blank"
+                        href="{{ site.github.repo }}/edit/master/{{ page.relative_path }}">Suggest edit.</a>
                 </div>
                 <div class="post-share">
-                    <span class="post-share-title">Share:</span>
-                    <a target="_blank" href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.url }}{{ page.url | remove_first: '/' }}">Twitter</a>
-                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | remove_first: '/' }}">Facebook</a>
-                    
+                    <span class="post-share-title">Share</span>
+                    <a target="_blank"
+                        href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.url }}{{ page.url | remove_first: '/' }}">Twitter</a>
+                    <a target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | remove_first: '/' }}">Facebook</a>
+
                 </div>
                 <!-- .share-post -->
             </footer>
@@ -56,9 +62,9 @@ post_class: post-template
                             target="_blank">Follow him on Twitter</a> via @ThorstenHans.</p>
                 </div>
             </div>-->
-            {% include disqus.html %}
+            <!--comments-->
         </article>
-       
+
         <section class="read-next inner">
             <h2 class="read-next-title">Related Posts</h2>
             {% include related-posts.html%}

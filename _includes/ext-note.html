@@ -1,0 +1,7 @@
+<section class="note">
+    <h2><i class="far fa-bookmark"></i> {{ include.title }}</h2>
+    <p>{{ include.content }}</p>
+    {% if include.link && include.linkTitle %}
+    <a href="{{include.link}}" target="_blank">{{include.linkTitle}}</a>
+    {% endif %}
+</section>

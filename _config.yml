@@ -2,12 +2,16 @@
 name: "Thorsten's thoughts"
 description: "Experiences from real-world projects. Focussing Microsoft Azure, Kubernetes and Infrastructure as Code."
 logo: "assets/images/logo.png"
-favicon: "assets/images/favicon.ico"
-baseurl:
-url: https://thorsten-hans.com
-mailchimp_url:  "https://gmail.us20.list-manage.com/subscribe/post?u=5581ba765692a75a48258504e&amp;id=78ce80aba5"
 cover_image: bc_1.jpg
-# Add your GA Tracking Id
+favicon: "assets/images/favicon.ico"
+
+baseurl: ""
+url: https://thorsten-hans.com
+
+# Subscribe Feature
+mailchimp_url: "https://gmail.us20.list-manage.com/subscribe/post?u=5581ba765692a75a48258504e&amp;id=78ce80aba5"
+
+# Google Analytics
 ga_analytics: UA-117431284-1
 
 image_folder: /assets/images/posts/feature_images
@@ -15,20 +19,20 @@ thumbs_folder: /assets/images/posts/feature_thumbs
 include:
   - _redirects
   - robots.txt
-# RSS Feed settings
 
+# RSS Feed settings
 feed:
   path: feed.xml
+
 # Author
 author:
   name: Thorsten Hans
   email: thorsten.hans@gmail.com
   image: thorsten-hans.jpg
-  greetings: Hi there,
-  description: I am Thorsten from Germany. I build software for the cloud.
+  greetings: Thorsten's thoughts
+  description: Hi there, I build stuff for the cloud.
   description2: I do some Kubernetes, Terraform, and Azure. Coding is my passion.
   bio: Thorsten is a developer, consultant, photographer and speaker from the beautiful south-west area in Germany. He loves his zsh-shell, Electron, containers, and Microsoft Azure.
-
 social:
   twitter: ThorstenHans
   github: ThorstenHans
@@ -55,7 +59,7 @@ navigation:
     url: /privacy-policy/
 
 # Required Plugins
-plugins_dir:
+plugins:
   - jekyll-target-blank
   - jekyll-paginate
   - jekyll-tagsgenerator
@@ -70,7 +74,7 @@ paginate_path: /page-:num/
 # Permalinks
 permalink: /:title
 
-# Other
+# Markdown processor
 markdown: kramdown
 
 # Sass
