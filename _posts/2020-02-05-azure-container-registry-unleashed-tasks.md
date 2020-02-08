@@ -12,11 +12,11 @@ unsplash_user_ref: tata_morais
 
 ## Azure Container Registry Unleashed
 
-- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="\_blank"}
-- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="\_blank"}
-- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="\_blank"}
-- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="\_blank"}
-- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="\_blank"}
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
+- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 
 The fifth part of _Azure Container Registry Unleashed_ is all about automating things in the context of Docker Images and ACR. Starting from scratch with simple, yet useful ACR Quick Tasks, over regular ACR Tasks to full-fledged ACR Multi-Step Tasks, this article covers everything you need to know about Tasks in ACR.
 
@@ -56,7 +56,7 @@ ACR Tasks are charged per second. At the point of writing this article (Feb 2020
 - duration of the task
 - number of different images
 
-ACR Tasks are priced independently from the chose ACR SKU. Customers pay the same per second, no matter if they are using ACR Basic, Standard, or Premium. See the [official pricing page](https://azure.microsoft.com/en-us/pricing/details/container-registry/){:target="\_blank"} for further details.
+ACR Tasks are priced independently from the chose ACR SKU. Customers pay the same per second, no matter if they are using ACR Basic, Standard, or Premium. See the [official pricing page](https://azure.microsoft.com/en-us/pricing/details/container-registry/){:target="_blank"} for further details.
 
 ### Source Code Context
 
@@ -142,7 +142,7 @@ On top of the properties we have learned previously, regular ACR Tasks have a bu
 
 You can assoicate multiple triggers to the same ACR Task at the same time. Additionally, a task can always be triggered manually using `az acr task run`.
 
-Let's take the example from the previous section and create a regular ACR Task which triggers automatically, everytime someone pushes new commits to the `master` branch. To communicate with GitHub, ACR requires an access token. You can create a new personal access token (PAT). You can create a new PAT on GitHub at [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new){:target="\_blank"}. Provide a name for the PAT and select `repo:status` and `public_repo` scopes.
+Let's take the example from the previous section and create a regular ACR Task which triggers automatically, everytime someone pushes new commits to the `master` branch. To communicate with GitHub, ACR requires an access token. You can create a new personal access token (PAT). You can create a new PAT on GitHub at [https://github.com/settings/tokens/new](https://github.com/settings/tokens/new){:target="_blank"}. Provide a name for the PAT and select `repo:status` and `public_repo` scopes.
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/acr-tasks-github-pat.png"
 title="Create a GitHub PAT" caption="Create a GitHub PAT" width="500px" %}
@@ -209,7 +209,7 @@ Instead of explaining the concepts theoretically, I want to share a real-world e
 
 ### Building a blog search with Azure Cognitive Search
 
-Let's consider adding search capabilities to a blog like mine. I use [Jekyll](https://jekyllrb.com/){:target="\_blank"}, a static site generator, to run my blog. Instead of implementing search capabilities on my own, I want to utilize [Azure Cognitive Search](https://azure.microsoft.com/en-us/services/search/){:target="\_blank"} and forward user's search queries to the managed search service.
+Let's consider adding search capabilities to a blog like mine. I use [Jekyll](https://jekyllrb.com/){:target="_blank"}, a static site generator, to run my blog. Instead of implementing search capabilities on my own, I want to utilize [Azure Cognitive Search](https://azure.microsoft.com/en-us/services/search/){:target="_blank"} and forward user's search queries to the managed search service.
 
 When working with Azure Cognitive Search, you may want to re-create the index to make changes to the underlying schema. Azure Cognitive Search exposes an API for that. A dedicated ACR Multi-Step Task should be created, which can be manually triggered to re-create the entire index.
 
