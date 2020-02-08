@@ -1,0 +1,29 @@
+.related-posts{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+
+    .related-post{
+        margin:4px;
+        opacity: .8;
+        text-align: center;
+        flex-grow: 1;
+        flex:1;
+        h5{
+            font-size: .9rem;
+            font-weight: 500;
+            margin-top: 6px;
+        }
+        &:hover{
+            opacity: 1;
+        }
+
+        img{
+            width:90%;
+            max-width: 90%;
+            margin: 10px auto;
+        }
+    }
+
+
+}

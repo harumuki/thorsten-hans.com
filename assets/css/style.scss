@@ -24,7 +24,7 @@
  * 9. Media Queries
 */
 
-@import "variables", "reset", "general";
+@import "variables", "reset", "general", "relatedposts";
 
 /**
  * 3. Structure
@@ -153,7 +153,7 @@
  * ----------------------------------------------------------------------------
  */
 .post {
-    margin-bottom: 1.66667em;
+    margin-bottom: 2.6rem;
 }
 
 .post-header {

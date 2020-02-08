@@ -8,7 +8,8 @@ post_class: post-template
     <main id="main" class="site-main outer">
         <article class="post-full inner">
             <header class="post-header">
-                <div class="post-meta"><time class="post-date" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,%Y" }}</time></div>
+                <div class="post-meta"><time class="post-date"
+                        datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,%Y" }}</time></div>
                 <h1 class="posttitle">{{ page.title }}</h1>
                 <div class="post-meta">
                     {% if page.tags.size > 0 %}
@@ -66,7 +67,6 @@ post_class: post-template
         </article>
 
         <section class="read-next inner">
-            <h2 class="read-next-title">Related Posts</h2>
             {% include related-posts.html%}
         </section><!-- .read-next -->
         {% if site.mailchimp_url %}
