@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Talks & Publications by Thorsten Hans
-tags: [Talks,Persentations,Speaker,Terraform,Kubernetes,Azure,Community]
+title: Talks & Publications
 excerpt: Thorsten Hans is an experienced, international speaker on popular technology topics like Azure, Kubernetes and Terraform
 ---
 
