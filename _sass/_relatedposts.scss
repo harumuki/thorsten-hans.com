@@ -2,13 +2,14 @@
     width:100%;
     display:flex;
     flex-direction: row;
-
+    flex-wrap: wrap;
     .related-post{
-        margin:4px;
+        
         opacity: .7;
         text-align: center;
         flex-grow: 1;
         flex:1;
+        flex-basis: 25%;
         h5{
             font-size: .9rem;
             font-weight: 500;
@@ -25,5 +26,9 @@
         }
     }
 
-
+    @media only screen and (max-width: 800px) {
+        .related-post{
+            flex-basis: 50%;
+        }
+    }
 }
