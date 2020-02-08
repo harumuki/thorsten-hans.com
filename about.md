@@ -2,7 +2,6 @@
 layout: page
 title: About
 image: /assets/images/pages/about-me.jpg
-tags: [Thorsten Hans,Speaker,Developer,Terraform,Kubernetes,Azure,Community]
 excerpt: Thorsten Hans is an experienced, international speaker on popular technology topics like Azure, Kubernetes and Terraform
 ---
 
