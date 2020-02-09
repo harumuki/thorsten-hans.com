@@ -47,12 +47,12 @@ twitter:
 
 # Navigation
 navigation:
+  - text: Uses
+    url: /uses/
   - text: Talks & Publications
     url: /talks-and-publications/
   - text: About
     url: /about/
-  - text: Subscribe via email
-    url: /subscribe-via-email/
   - text: Legal Details
     url: /legal-details/
   - text: Privacy Policy
