@@ -312,7 +312,7 @@ resource "azurerm_app_service" "webapi" {
 
 The real power of *Terraform* is defined by the actual provider that is used. Luckily, the Azure provider is a compelling one. Besides creating, modifying or deleting resources, existing resources (including those, that were not created by *Terraform*) could be used as a data source, and their values can quickly be brought into every *Terraform* scripts. 
 
-Bevor we're diving deeper into resources and data sources, a new *Terraform* project must be created, and the *Azure* provider has to be configured. Create a new folder `azure-sample` and a new file called `main.tf` with the following content:
+Before we're diving deeper into resources and data sources, a new *Terraform* project must be created, and the *Azure* provider has to be configured. Create a new folder `azure-sample` and a new file called `main.tf` with the following content:
 
 ```hcl
 provider "azurerm" {
