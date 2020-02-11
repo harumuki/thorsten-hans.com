@@ -19,6 +19,9 @@ thumbs_folder: /assets/images/posts/feature_thumbs
 include:
   - _redirects
   - robots.txt
+exclude:
+  - README.md
+  - Makefile
 
 # RSS Feed settings
 feed:
