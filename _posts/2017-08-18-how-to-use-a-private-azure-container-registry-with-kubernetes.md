@@ -12,10 +12,12 @@ unsplash_user_ref: tobiasamueller
 
 Besides using the goodness of Azure Container Services (ACS). Different Azure services like Azure Container Registry (ACR) and Azure Container Instances (ACI) can be used and connected from independent container orchestrators like kubernetes (k8s). This post will explain how to set up a custom ACR and connect it to an existing k8s cluster to ensure images will be pulled from the private container registry instead of the public docker hub.
 
+---
+
 {% capture note_url %}
-  {% post_url 2019-10-04-aks-acr-integration-revisited %}
+  {% post_url 2020-02-12-3-ways-to-integrate-acr-witht-aks %}
 {% endcapture %}
-{% include note.html title="Updated Article available" content="This article was initially published in August 2017. Both AKS and ACR are growing fast since that time. With recent releases of Azure CLI, integrating AKS and ACR became easier. That said, I've published a new article on AKS and ACR integration." link=note_url linkTitle="Read \"AKS and ACR Integration - Revisited\" now" %}
+{% include note.html title="Updated Article available" content="This article was initially published in August 2017. Both AKS and ACR are growing fast since that time. With recent releases of Azure CLI, integrating ACR with AKS became easier. That said, I've published a new article on AKS and ACR integration." link=note_url linkTitle="Read \"3 Ways to integrate ACR with AKS\" now" %}
 
 ## Setting up the Azure Container Registry
 
@@ -165,5 +167,3 @@ Once your pod has been provisioned, you can see detailed information about the p
 title="Pod Events listed by using kubectl describe pod" caption="Pod Events listed by using kubectl describe pod" %}
 
 That's it. You've successfully deployed an *ACR*, configured it with a *docker* installation and hooked it up in *Kubernetes*. 🤘 🚀
-
-{% include note.html title="Updated Article available" content="This article was initially published in August 2017. Both AKS and ACR are growing fast since that time. With recent releases of Azure CLI, integrating AKS and ACR became easier. That said, I've published a new article on AKS and ACR integration." link=note_url linkTitle="Read \"AKS and ACR Integration - Revisited\" now" %}

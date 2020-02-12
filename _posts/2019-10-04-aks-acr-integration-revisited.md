@@ -51,3 +51,7 @@ az aks update --name <<your-aks-name>> \
     --resource-group <<your-aks-resource-group-name>> \
     --attach-acr $ACR_ID
 ```
+
+## Alternatives
+
+Besides Azure tied integration as shown before, you can also use vendor agnostic integration strategies. See my [3 Ways to integrate ACR with AKS]({% post_url 2020-02-12-3-ways-to-integrate-acr-witht-aks %}){:target="_blank} article for further details.
