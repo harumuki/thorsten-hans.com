@@ -10,7 +10,8 @@ url: https://thorsten-hans.com
 
 # Subscribe Feature
 mailchimp_url: "https://gmail.us20.list-manage.com/subscribe/post?u=5581ba765692a75a48258504e&amp;id=78ce80aba5"
-
+#disqus
+disqus: https-thorsten-hans-com
 # Google Analytics
 ga_analytics: UA-117431284-1
 
