@@ -1,8 +1,25 @@
 Kubernetes:
-  description: Read all articles about Kubernetes from Thorsten Hans. Those articles are based on real-world experiences from day-to-day business. Learn how to tame Kubernetes and run your containerized workloads using the most popular container-orchestrator.
-AKS:
-  description: Azure Kubernetes Service (aka AKS) is Microsoft's managed Kubernetes offering. Microsoft manages and pays the master nodes, so you as a consumer pay just for your worker nodes. Offering powerful integrations with other Azure services, it is Kubernetes on steroids.
-ACR:
-  description: The Azure Container Registry (aka ACR) is an excellent implementation of Docker Registry v2. The managed service offering integrates seamlessly with other Azure services and acts as a driver for containerized enterprise applications.
+  description: Learn from my real-world Kubernetes project experience and tame the popular container orchestrator to scale your projects. See this curated list of Kubernetes articles.
+  links:
+    - title: The official Kubernetes website
+      ref: https://kubernetes.io
+Azure Kubernetes Service:
+  description: 90% of the Kubernetes projects I am involved in, run on Azure Kubernetes Service (AKS). Read my articles on Azure Kubernetes Service and get essential insights.
+Azure Container Registry:
+  description: Azure Container Registry is a robust implementation of the Docker Registry. Powerful integrations and features make it outstanding. Read my articles to dive deeper in ACR.
 Azure:
-  description: Microsoft's public cloud offering is empowering millions of people around the world. As a developer, I use Azure daily to craft, run, and scale applications for different markets.
+  description: Microsoft Azure is empowering millions of people around the world. As a developer, I use Azure daily to craft, run, and scale applications. Here are my posts on Azure.
+Azure Functions:
+  description: Azure Functions is Microsoft's serverless runtime to execute code at scale. I use Azure Functions regularly and write about my experiences.
+Electron:
+  description: "Build outstanding cross-platform desktop apps with GitHub Electron. Take your web-app to macOS, Linux, and Windows. Learn from Electron using these blog posts:"
+Infrastructure as Code:
+  description: "Infrastructure as Code is critical in DevOps. Immutable, reproducible infrastructure is a crucial fundament to build unique services. See how to do IaC and read these articles:"
+Terraform:
+  description: "Terraform is the best toolset to do IaC the right way. Study my articles and learn how to craft rock-solid infrastructure with HashiCorp Terraform."
+Azure CLI:
+  description: Control Azure like a champ. Stop wasting time in Azure Portal. Learn Azure CLI and become super productive. See my articles on Azure CLI to get superfast.
+Shell:
+  description: "My shell is my everything. I tweak it almost every day to boost my productivity. Throw the mouse away and get up to speed. Read my articles on zsh and others:"
+Angular:
+  description: "I use Angular to build Single Page Applications, and I like it. Numerous projects led to valuable articles. Boost your Angular and read my articles on Google's framework:"
