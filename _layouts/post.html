@@ -11,10 +11,19 @@ post_class: post-template
                 <div class="post-meta"><time class="post-date"
                         datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,%Y" }}</time></div>
                 <h1 class="posttitle">{{ page.title }}</h1>
+
+                {% if page.image %}
+                <div class="post-thumbnail">
+                    <img class="featured-image img-fluid"
+                        src="{{ page.image | prepend: site.image_folder | absolute_url }}" alt="{{ page.title }}">
+                    <div class="featured-image-ref">Photo by <a href="https://unsplash.com/@{{page.unsplash_user_ref}}"
+                            class="silent" target="_blank">{{page.unsplash_user_name}}</a></div>
+                </div>
+                {% endif %}
                 <div class="post-meta">
                     {% if page.tags.size > 0 %}
                     <span class="post-tags">
-                        <span>in</span>
+                        <span>tags</span>
                         {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
                         <a
                             href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
@@ -27,14 +36,7 @@ post_class: post-template
                     {% endif %}
                 </div><!-- .post-meta -->
             </header><!-- .post-header -->
-            {% if page.image %}
-            <div class="post-thumbnail">
-                <img class="featured-image img-fluid" src="{{ page.image | prepend: site.image_folder | absolute_url }}"
-                    alt="{{ page.title }}">
-                <div class="featured-image-ref">Photo by <a href="https://unsplash.com/@{{page.unsplash_user_ref}}"
-                        class="silent" target="_blank">{{page.unsplash_user_name}}</a></div>
-            </div>
-            {% endif %}
+
             <div class="post-content">
                 {{content}}
             </div>

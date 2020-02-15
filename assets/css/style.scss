@@ -24,7 +24,7 @@
  * 9. Media Queries
 */
 
-@import "variables", "reset", "general", "relatedposts";
+@import "variables", "reset", "general", "relatedposts", "tags";
 
 /**
  * 3. Structure
@@ -158,6 +158,9 @@
 
 .post-header {
     margin-bottom: 1.66667em;
+    .post-thumbnail{
+        margin-bottom: 0;
+    }
 }
 
 .post-title {
@@ -203,34 +206,18 @@
     margin-bottom: 1.66667em;
     margin-top: 1.66667em;
 }
-.post-tags,
+
 .post-author {
     letter-spacing: normal;
     text-transform: none;
 }
-.post-tags,
+
 .post-contribute,
 .post-share {
     font-size: 0.77778rem;
     line-height: 1.5;
 }
-.post-tags > span {
-    margin-right: 10px;
-}
 
-.post-tags a {
-    display: inline-block;
-    margin: 0 7px 0 0;
-}
-
-.post-tags a:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f02b";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-}
 
 .post-share-title {
     color: $gray-darkest;
@@ -389,10 +376,6 @@
 .read-next .post-title {
     font-size: 1.33333rem;
     margin: 0;
-}
-
-.read-next .post-tags {
-    margin: 1.07142em 0 0;
 }
 
 .read-next .post-thumbnail {
@@ -935,12 +918,6 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-    }
-
-    .post-footer .post-tags {
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
     }
 
     .post-footer .post-share {
