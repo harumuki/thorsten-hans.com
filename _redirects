@@ -1,2 +1,7 @@
 https://thorstenhans.netlify.com/* https://thorsten-hans.com/:splat 301!
 https://thorsten-hans.com/feed https://thorsten-hans.com/feed.xml 301
+https://thorsten-hans.com/tag/aks https://thorsten-hans.com/tag/azure-kubernetes-service 301
+https://thorsten-hans.com/tag/acr https://thorsten-hans.com/tag/azure-container-registry 301
+https://thorsten-hans.com/tag/iac https://thorsten-hans.com/tag/infrastructure-as-code 301
+https://thorsten-hans.com/tag/aci https://thorsten-hans.com/tag/azure-container-instances 301
+https://thorsten-hans.com/tag/nwjs https://thorsten-hans.com/tag/electron 301
