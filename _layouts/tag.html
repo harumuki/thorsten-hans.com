@@ -9,14 +9,16 @@ class: 'tag-template'
     <main id="main" class="site-main outer">
         <header class="page-header inner">
             <h1 class="page-title">{{ page.tag }}</h1>
-            <p class="page-description">{{ site.data.tags[page.tag].description }}</p>
             <p class="page-description">
-                A collection of {{ paginator.total_posts }}
-                {% if paginator.total_posts == 1 %}post{% else %}posts{% endif %}
+                {{ site.data.tags[page.tag].description }} <br />
+                In total, I have published a collection of {{ paginator.total_posts }}
+                {% if paginator.total_posts == 1 %}article{% else %}articles{% endif %} about {{page.tag}} here on my
+                blog.
             </p>
         </header>
         <div class="post-feed inner-wide">
-            <h2>Articles about {{page.tag}}</h2>
+            <h2>{{ paginator.total_posts }} {% if paginator.total_posts == 1 %} article {% else %} articles {% endif %}
+                about <small>{{page.tag}}</small></h2>
             {% for post in paginator.posts %}{% include postbox.html tag_page=true %}{% endfor %}
         </div>
         {% if site.data.tags[page.tag].links %}
