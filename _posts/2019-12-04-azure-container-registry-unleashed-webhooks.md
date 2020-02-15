@@ -10,17 +10,8 @@ unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
 ---
 
-## Azure Container Registry Unleashed
-
-- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
-- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
-- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
-- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
-- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
 In the fourth part of Azure Container Registry Unleashed, we will dive into webhooks offered by ACR and learn how to use them to build simple, yet powerful automations based on ACR interactions such as pushing new tags of an image.
 
-- [Azure Container Registry Unleashed](#azure-container-registry-unleashed)
 - [What is a webhook](#what-is-a-webhook)
 - [ACR webhooks](#acr-webhooks)
 - [ACR SKU based webhook limits](#acr-sku-based-webhook-limits)
@@ -31,6 +22,7 @@ In the fourth part of Azure Container Registry Unleashed, we will dive into webh
   - [Testing the webhook](#testing-the-webhook)
   - [Pushing new tags to ACR](#pushing-new-tags-to-acr)
   - [Check results in CosmosDB](#check-results-in-cosmosdb)
+- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
 - [What is next](#what-is-next)
 
 ## What is a webhook
@@ -255,6 +247,14 @@ done
 Finally, it is the right time to go back to CosmosDB Data-Explorer and check all tags being persisted in Azure CosmosDB. Depending on other activities being executed on your ACR instance, the represented list of documents may contain a lot more items than mine.
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/acr-unleashed-cosmosdb.png" width="800px" title="ACR metadata in CosmosDB" caption="ACR metadata in CosmosDB" %}
+
+## The Azure Container Registry Unleashed series
+
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
+- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 
 ## What is next
 

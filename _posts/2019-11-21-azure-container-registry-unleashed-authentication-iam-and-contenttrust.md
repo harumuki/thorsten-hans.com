@@ -10,17 +10,8 @@ unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
 ---
 
-## Azure Container Registry Unleashed
-
-- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
-- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
-- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
-- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
-- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
 This is the second part of Azure Container Registry Unleashed. Today, we will go one step further and talk about Authentication (AuthN), Identity Access Management (IAM) and Content-Trust in the scope of ACR. To be a bit more precisely, this post contains the following sections:
 
-- [Azure Container Registry Unleashed](#azure-container-registry-unleashed)
 - [ACR Authentication](#acr-authentication)
 - [ACR Identity Access Management](#acr-identity-access-management)
   - [IAM for AAD Users and Groups](#iam-for-aad-users-and-groups)
@@ -37,6 +28,7 @@ This is the second part of Azure Container Registry Unleashed. Today, we will go
   - [ACR Content-Trust pitfalls](#acr-content-trust-pitfalls)
   - [Docker Content-Trust pitfalls](#docker-content-trust-pitfalls)
   - [Further information on Content-Trust](#further-information-on-content-trust)
+- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
 - [What is next](#what-is-next)
 
 ## ACR Authentication
@@ -323,6 +315,14 @@ docker.io/thorstenhans/helm3:latest
 ### Further information on Content-Trust
 
 The official Docker documentation [hosts a great guide and conceptual introduction on Content-Trust](https://docs.docker.com/engine/security/trust/content_trust/){:target="_blank"}. It is worth reading to understand all the insights and nitty-gritty details of Content-Trust.
+
+## The Azure Container Registry Unleashed series
+
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
+- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 
 ## What is next
 

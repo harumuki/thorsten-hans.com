@@ -12,24 +12,16 @@ unsplash_user_ref: tata_morais
 
 Azure Container Registry – or short ACR - is a managed service offered by Microsoft Azure. It is a private Docker Registry based on Docker Registry 2.0 and acts as central service in many containerized application architectures. Compared to other private Docker registries, ACR offers several advantages like ease of administration due to powerful Azure CLI commands, seamless integration with other Azure Services such as Azure Kubernetes Service and frictionless authentication using Azure Active Directory (AAD).
 
-## Azure Container Registry Unleashed
-
-- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
-- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
-- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
-- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
-- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
 The idea of “Azure Container Registry Unleashed” is to go further, way further than `docker push` and `docker pull`. At the end of this short series, you will be able to use all ACR features currently available and use the full potential offered by the service.
 
 In this introduction part, we will setup a new instance of Azure Container Registry and follow [ACR Best Practices](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-best-practices){:target="_blank"} provided by the Microsoft Azure Team itself. That said, here is what we will cover today:
 
-- [Azure Container Registry Unleashed](#azure-container-registry-unleashed)
 - [A dedicated Azure Resource Group for ACR](#a-dedicated-azure-resource-group-for-acr)
 - [Finding the correct ACR edition for your needs](#finding-the-correct-acr-edition-for-your-needs)
 - [Creating ACR and all necessary Azure building blocks](#creating-acr-and-all-necessary-azure-building-blocks)
   - [ACR Administrative Account](#acr-administrative-account)
 - [Setting up ACR Geo replication](#setting-up-acr-geo-replication)
+- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
 - [What is next](#what-is-next)
 
 ## A dedicated Azure Resource Group for ACR
@@ -110,6 +102,14 @@ We can check the replication status anytime using the `az acr replication list -
 title="ACR Unleashed - Geo Replications" caption="ACR Unleashed - Geo Replications" %}
 
 When working with geo replications, it is important to know that you will pay the ACR Premium fee per replication. That said, with our current setup, we will pay the monthly ACR Premium fee three times.
+
+## The Azure Container Registry Unleashed series
+
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
+- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 
 ## What is next
 

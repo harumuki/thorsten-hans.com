@@ -10,17 +10,8 @@ unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
 ---
 
-## Azure Container Registry Unleashed
-
-- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
-- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
-- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
-- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
-- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
 The fifth part of _Azure Container Registry Unleashed_ is all about automating things in the context of Docker Images and ACR. Starting from scratch with simple, yet useful ACR Quick Tasks, over regular ACR Tasks to full-fledged ACR Multi-Step Tasks, this article covers everything you need to know about Tasks in ACR.
 
-- [Azure Container Registry Unleashed](#azure-container-registry-unleashed)
 - [ARC Tasks introduction](#arc-tasks-introduction)
   - [ACR Task pricing](#acr-task-pricing)
   - [Source Code Context](#source-code-context)
@@ -34,6 +25,7 @@ The fifth part of _Azure Container Registry Unleashed_ is all about automating t
     - [The build-index ACR Task](#the-build-index-acr-task)
     - [The feed-index ACR Task](#the-feed-index-acr-task)
 - [Recap](#recap)
+- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
 - [What is next](#what-is-next)
 
 ## ARC Tasks introduction
@@ -388,6 +380,14 @@ ACR Tasks offer a great utility to verify Docker Image creation in the inner-loo
 However, I found multi-step ACR Tasks being a bit tricky. Especially in real-world scenarios that go beyond “Hello World”. The underlying service (ACR) is rock-solid, however I struggled a lot with argument naming conventions and quality of documentation. Docs are showing minimal examples and - at least from my understanding - they miss the big picture.
 
 Once you made it through the combination of nitty, gritty arguments, ACR Tasks could be the vehicle to build, push and run Docker Images for one time tasks. Personally, I would offload execution of the Docker Image to other services such as Azure Functions, Azure AppServices, Azure Container Instances or Azure Kubernetes Service.
+
+## The Azure Container Registry Unleashed series
+
+- [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
+- [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
+- [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
+- [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
+- [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 
 ## What is next
 
