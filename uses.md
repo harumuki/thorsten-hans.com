@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uses
-excerpt: A curated list of stuff I use daily in my role as developer and consultant.
+excerpt: You want to boot your overall performance and wonder which hardware, software or tools I use? See the curated gear list I use daily, to increase my performance as professional software developer and consultant.
 ---
 
 See the following list of tech and tools I use on a daily basis, inspired by [Wes Bos](https://wesbos.com/uses/){:target="_blank"} and his [https://uses.tech](https://uses.tech){:target="_blank"}.
