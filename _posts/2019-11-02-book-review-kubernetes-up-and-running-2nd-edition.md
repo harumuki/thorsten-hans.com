@@ -3,7 +3,7 @@ title: Book review - Kubernetes Up & Running 2nd Edition
 layout: post
 permalink: book-review-kubernetes-up-and-running-2nd-edition
 published: true
-tags: [Kubernetes,Books]
+tags: [Kubernetes]
 excerpt: 'The 2nd Edition of "Kubernetes: Up & Running" has been released recently. I really liked the first edition, so I sat down and read the new version.'
 image: /ebook.jpg
 unsplash_user_name: freestocks.org

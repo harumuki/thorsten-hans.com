@@ -6,7 +6,7 @@ published: true
 tags:
   - Kubernetes
   - Azure
-  - AKS
+  - Azure Kubernetes Service
 excerpt: 'CronJobs build an essential part of many applications. Often, you''ve to persist some kind of data from application artifacts like CronJobs. This article demonstrates how to build such a CronJob with Azure Files and run it on a Kubernetes cluster. '
 image: /2018-02-21-cronjobs-in-managed-azure-container-services-aks-using-azure-files-and-net-core.jpg
 ---

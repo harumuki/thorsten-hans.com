@@ -3,12 +3,13 @@ title: Integrating Azure Key Vault with Azure Container Services
 layout: post
 permalink: integrating-azure-keyvault-with-azure-container-services
 published: true
-tags: [Kubernetes,Azure Key Vault,Azure Container Service,Docker,AKS]
+tags: [Kubernetes,Azure Key Vault,Azure Container Service,Docker,Azure Kubernetes Service]
 excerpt: 'Learn how to integrate Azure Key Vault and Azure Container Services. This article guides you through everything you need, in order to query Key Vault from an ASP.NET Core App running in a Pod on Kubernetes'
 image: /2018-05-11-integrating-azure-keyvault-with-azure-container-services.jpg
 ---
 
-With *Azure Key Vault*, Microsoft is offering a dedicated and secure service to manage and maintain sensitive data like Connection-Strings, Certificates, or key-value pairs. 
+With *Azure Key Vault*, Microsoft is offering a dedicated and secure service to manage and maintain sensitive data like Connection-Strings, Certificates, or key-value pairs.
+
 We're hoping to see a native *Azure Key Vault* integration for *Azure Container Services* (ACS) in the near future. At least the [official FAQ](https://docs.microsoft.com/en-us/azure/aks/faq){:target="_blank"} mentions the feature on the product's roadmap. Until this features will be shipped and if you're using another *Kubernetes* environment - such as *GCP* or *AWS* offerings -, you've to integrate *Azure Key Vault* manually into your application building blocks to get rid of storing most sensitive data in plain old *Kubernetes Secrets*. 
 
 I wrote "**most**" because `ClientId`, `ClientSecret` and the Key Vault identifiers - which will be used to access the Azure Key Vault instance - still need to be persisted somewhere. **This drawback may be obsolete once we've native support for Azure Key Vault in AKS.**

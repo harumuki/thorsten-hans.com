@@ -3,7 +3,7 @@ title: NW.js and Electron compared
 layout: post
 permalink: nw-js-and-electron-compared
 published: true
-tags: [Electron, NWjs]
+tags: [Electron]
 excerpt: null
 image: /compare.jpg
 unsplash_user_name: Timothy Eberly

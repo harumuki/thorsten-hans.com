@@ -3,8 +3,8 @@ title: Terraform - The definitive guide for Azure enthusiasts
 layout: post
 permalink: terraform-the-definitive-guide-for-azure-enthusiasts
 published: true
-tags: [Terraform,IaC]
-excerpt: Do you want to know what Terraform is and how it can assist you with your day-to-day job? Then you have to read this guide on HashiCorp Terraform.
+tags: [Terraform,Infrastructure as Code]
+excerpt: In this Terraform guide or Azure entusiasts, I eplain contcepts and walk you through the process of creating immutable cloud infrastructures with HashiCorp's IaC toolset. You will learn everything you need to get started.
 image: /terraform.jpg
 unsplash_user_name: Elaine Casap
 unsplash_user_ref: ecasap

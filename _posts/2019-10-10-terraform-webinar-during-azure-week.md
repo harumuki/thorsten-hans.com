@@ -3,7 +3,7 @@ title: Join my webinar about Terraform and Azure during Azure Week
 layout: post
 permalink: terraform-webinar-during-azure-week
 published: true
-tags: [Terraform, IaC]
+tags: [Terraform,Infrastructure as Code]
 excerpt: Ramp up your Terraform skills. Join my webinar about Terraform and Azure on the 18th of October as part of Azure Week.
 image: /conference.jpg
 unsplash_user_name: Headway

@@ -7,7 +7,7 @@ tags:
   - Kubernetes
   - Azure Functions
   - Docker
-  - AKS
+  - Azure Kubernetes Service
 excerpt: Learn how to take the official Azure Functions runtime and deploy it as Docker container to a Kubernetes cluster and  by adding horizontal pod autoscaling (HPA) you can handle almost any load automatically.
 image: /2018-01-26-deploy-azure-functions-to-kubernetes-and-scale-them-automatically.jpg
 ---

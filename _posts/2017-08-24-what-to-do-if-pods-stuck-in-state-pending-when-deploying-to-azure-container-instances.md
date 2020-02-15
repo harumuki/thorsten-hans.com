@@ -7,7 +7,7 @@ tags:
   - Kubernetes
   - Azure
   - Kubernetes
-  - ACI
+  - Azure Container Instances
 excerpt: Learn how to examine and fix issues when Pods stuck in state Pending while deploying them to Azure Container Instances
 image: /2017-08-24-what-to-do-if-pods-stuck-in-state-pending-when-deploying-to-azure-container-instances.jpg
 ---

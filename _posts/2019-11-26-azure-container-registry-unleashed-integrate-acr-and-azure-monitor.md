@@ -3,7 +3,7 @@ title: Azure Container Registry Unleashed – Integrate ACR and Azure Monitor
 layout: post
 permalink: azure-container-registry-unleashed-integrate-acr-and-azure-monitor
 published: true
-tags: [Azure,Docker,ACR]
+tags: [Azure,Docker,Azure Container Registry]
 excerpt: 'In part three of Azure Container Registry Unleashed you will learn how to integrate ACR and Azure Monitor to get important insights'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais

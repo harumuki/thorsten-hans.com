@@ -3,7 +3,7 @@ title: Azure Container Registry Unleashed – Authentication, Identity Access Ma
 layout: post
 permalink: azure-container-registry-unleashed-authentication-iam-contenttrust
 published: true
-tags: [Azure,Docker,ACR]
+tags: [Azure,Docker,Azure Container Registry]
 excerpt: 'In part two of Azure Container Registry Unleashed you will dive into Authentication, Identity Access Management and Content-Trust'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais

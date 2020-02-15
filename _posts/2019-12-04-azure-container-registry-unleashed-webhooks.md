@@ -3,7 +3,7 @@ title: Azure Container Registry Unleashed – Webhooks
 layout: post
 permalink: azure-container-registry-unleashed-webhooks
 published: true
-tags: [Azure,Docker,ACR]
+tags: [Azure,Docker,Azure Container Registry]
 excerpt: 'In part four of Azure Container Registry Unleashed you will learn how to integrate ACR with custom apps and services using webhooks.'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
