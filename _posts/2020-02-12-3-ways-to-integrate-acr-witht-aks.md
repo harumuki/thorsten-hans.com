@@ -4,7 +4,7 @@ layout: post
 permalink: 3-ways-to-integrate-acr-with-aks
 published: true
 tags: [Azure Kubernetes Service,Azure Container Registry,Kubernetes,Azure]
-excerpt: See three ways how to integrate ACR with AKS to pull Docker Images from your private registry.
+excerpt: Learn 3 different ways how to integrate Aure Container Registry (ACK) with Azure Kubernetes Service (AKS) to pull Docker images from your protected Docker Registry.
 image: /three.jpg
 unsplash_user_name: Tara Evans
 unsplash_user_ref: taradee

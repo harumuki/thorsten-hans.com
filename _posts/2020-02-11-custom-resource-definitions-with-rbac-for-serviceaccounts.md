@@ -4,7 +4,7 @@ layout: post
 permalink: custom-resource-definitions-with-rbac-for-serviceaccounts
 published: true
 tags: [Kubernetes]
-excerpt: Extend Kubernetes with cluster-wide Custom Resource Definitions (CRDs), use them add define RBAC for ServiceAccounts to ensure proper authorization.
+excerpt: Define Custom Resource Definitions (CRDs) to get more out of Kubernetes. Learn to work with custom objects. Protect CRDs with RBAC and access them with ServiceAccounts
 image: /chain.jpg
 unsplash_user_name: Kaley Dykstra
 unsplash_user_ref: kaleyloved
