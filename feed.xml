@@ -2,7 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ site.name | xml_escape }}</title>
     <description>{{ site.description | xml_escape }}</description>
@@ -17,6 +17,9 @@ layout: null
       <item>
         <author>{{ site.author.email }} ({{ site.author.name }})</author>
         <title>{{ post.title | xml_escape }}</title>
+        {% if post.image %}
+        <media:thumbnail url='{{ post.image | prepend: site.thumbs_folder | absolute_url }}' width='270px' />
+        {% endif %}
         <description>{{ post.excerpt | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
