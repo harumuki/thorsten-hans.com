@@ -1,11 +1,18 @@
 <article class="post">
     <header class="post-header">
         <div class="post-meta">
-            <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+            <time class="published"
+                datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time>
         </div><!-- .post-meta -->
+        {% if include.tag_page %}
+        <h3 class="post-title">
+            <a href="{{ post.url | absolute_url }}" rel="bookmark">{{ post.title }}</a>
+        </h3>
+        {% else %}
         <h2 class="post-title">
             <a href="{{ post.url | absolute_url }}" rel="bookmark">{{ post.title }}</a>
         </h2>
+        {% endif %}
     </header><!-- .post-header -->
     {% if post.image %}
     <a class="post-thumbnail" href="{{ post.url }}">

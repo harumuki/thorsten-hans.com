@@ -11,12 +11,25 @@ class: 'tag-template'
             <h1 class="page-title">{{ page.tag }}</h1>
             <p class="page-description">{{ site.data.tags[page.tag].description }}</p>
             <p class="page-description">
-                A collection of {{ paginator.total_posts }} {% if paginator.total_posts == 1 %}post{% else %}posts{% endif %}
+                A collection of {{ paginator.total_posts }}
+                {% if paginator.total_posts == 1 %}post{% else %}posts{% endif %}
             </p>
         </header>
         <div class="post-feed inner-wide">
-            {% for post in paginator.posts %}{% include postbox.html %}{% endfor %}
+            <h2>Articles about {{page.tag}}</h2>
+            {% for post in paginator.posts %}{% include postbox.html tag_page=true %}{% endfor %}
         </div>
+        {% if site.data.tags[page.tag].links %}
+        <div class="inner-wide">
+            <h2>Great resources about {{page.tag}}</h2>
+            You should also consult the following resource to dive deeper into <b>{{page.tag}}</b>:
+            <ul>
+                {% for link in site.data.tags[page.tag].links %}
+                <li><a href="{{link.ref}}" target="_blank">{{link.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </main>
     <!-- .site-main -->
 </div>
