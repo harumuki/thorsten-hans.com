@@ -3,7 +3,10 @@ title: The state of Helm 3 - Hands-On!
 layout: post
 permalink: the-state-of-helm3-hands-on
 published: true
-tags: [Kubernetes,Azure Kubernetes Service,Helm,CNCF]
+tags: 
+  - Kubernetes
+  - Azure Kubernetes Service
+  - Helm
 excerpt: Helm 3 is approaching fast and comes with some fundamental changes. See what's happening and how those changes feel in Beta 3.
 image: /packages-and-contianers.jpg
 unsplash_user_name: Elevate

@@ -3,7 +3,10 @@ title: Azure Container Registry Unleashed – Tasks
 layout: post
 permalink: azure-container-registry-unleashed-tasks
 published: true
-tags: [Azure, Docker, Azure Container Registry]
+tags: 
+  - Azure
+  - Docker
+  - Azure Container Registry
 excerpt: "The fifth part of ACR Unleashed will cover Tasks and Container Build - an easy way to offload Docker Image related tasks"
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais

@@ -14,7 +14,7 @@ image: /2018-01-26-deploy-azure-functions-to-kubernetes-and-scale-them-automatic
 
 *Azure Functions* has become my standard framework to build *serverless* backends for *Single Page Applications* (SPAs). It's easy to get started with *Azure Functions*, although the platform itself is really powerful and highly configurable. I really love the cloud hosting capabilities for *Azure Functions*, but from time to time, it's not allowed to use the public cloud as the deployment target.
 
-*Azure Functions* can easily be hosted in different environments. You can download the entire runtime and execute it on-premises (if you have to) or you can use the existing *Docker* image and deploy your serverless backend to *Kubernetes*. And that's exactly what this post will describe, you'll create a sample Azure Function including a docker container, deploy it to a Kubernetes cluster and let it automatically scale based on CPU utilization.
+*Azure Functions* can easily be hosted in different environments. You can download the entire runtime and execute it on-premises (if you have to) or you can use the existing *Docker* image and deploy your serverless backend to *Kubernetes*. And that's exactly what this post will describe, you'll create a sample Azure Functions project including a docker container, deploy it to a Kubernetes cluster and let it automatically scale based on CPU utilization.
 
 ## What do you need
 
@@ -28,9 +28,9 @@ In order to follow the instructions in this article, you need several things ins
   
 Once you've installed and configured those tools, you're set and it's time to get started.
 
-## Creating the Azure Function Sample
+## Creating the Azure Functions Sample
 
-*Functions Core Tools* allow you to spin up new Azure Function projects quickly. The Command Line Interface (CLI) accepts various arguments. For demonstration purpose, we'll just use the `--sample` argument which will create a small Azure Function which receives a name (`string`) from the `QueryString` using an `HTTP` trigger and produces a new `HTTP Response`. As second argument we'll use `--docker` which instructs CLI to generate a `Dockerfile` for our new *Azure Function*.
+*Azure Functions Core Tools* allow you to spin up new Azure Functions projects quickly. The Command Line Interface (CLI) accepts various arguments. For demonstration purpose, we'll just use the `--sample` argument which will create a small Azure Function which receives a name (`string`) from the `QueryString` using an `HTTP` trigger and produces a new `HTTP Response`. As second argument we'll use `--docker` which instructs CLI to generate a `Dockerfile` for our new *Azure Functions* project.
 
 ```bash
 mkdir azfunction-on-k8s && cd azfunction-on-k8s
@@ -39,7 +39,7 @@ func init --sample --docker
 
 ```
 
-That's it. Our new Azure Function has been created, including the required `Dockerfile`.
+That's it. Our new Azure Functions project has been created, including the required `Dockerfile`.
 
 ## Create the Docker image
 

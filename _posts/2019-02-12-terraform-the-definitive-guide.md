@@ -3,7 +3,10 @@ title: Terraform - The definitive guide for Azure enthusiasts
 layout: post
 permalink: terraform-the-definitive-guide-for-azure-enthusiasts
 published: true
-tags: [Terraform,Infrastructure as Code]
+tags: 
+  - Terraform
+  - Infrastructure as Code
+  - Azure
 excerpt: In this Terraform guide or Azure entusiasts, I eplain contcepts and walk you through the process of creating immutable cloud infrastructures with HashiCorp's IaC toolset. You will learn everything you need to get started.
 image: /terraform.jpg
 unsplash_user_name: Elaine Casap
@@ -74,7 +77,7 @@ Let's take a closer look at those three benefits now.
 
 So, means dealing with different APIs, that each platform supports different features?
 
-**Yes**. Take *Azure Functions* as an example. You can quickly query information about an existing *Azure Functions* instance or create/modify/destroy another *Azure Function* instance using the  *Azure provider for Terraform*. However, if you talk to a local *VMWare Cluster*, you can't interact with *Azure Functions* because *VMWare* doesn't have a first class citizen of type *Azure Function*.
+**Yes**. Take *Azure Functions* as an example. You can quickly query information about an existing *Azure Functions* instance or create/modify/destroy another *Azure Functions* instance using the  *Azure provider for Terraform*. However, if you talk to a local *VMWare Cluster*, you can't interact with *Azure Functions* because *VMWare* doesn't have a first class citizen of type *Azure Functions*.
 
 ### The HashiCorp Configuration Language (HCL)
 

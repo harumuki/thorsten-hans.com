@@ -3,7 +3,10 @@ title: Custom domains in Azure Kubernetes Service (AKS) with NGINX Ingress and A
 layout: post
 permalink: custom-domains-in-azure-kubernetes-with-nginx-ingress-azure-cli
 published: true
-tags: [Kubernetes,Azure Kubernetes Service,Azure]
+tags: 
+  - Kubernetes
+  - Azure Kubernetes Service
+  - Azure
 excerpt: See how to link a custom domain to Azure Kubernetes Service (AKS) with Azure CLI and NGINX Ingress 
 image: /traffic.jpg
 unsplash_user_name: Brendan Church

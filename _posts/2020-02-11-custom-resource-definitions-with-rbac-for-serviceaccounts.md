@@ -3,7 +3,8 @@ title: Extend Kubernetes with Custom Resource Definitions and RBAC for ServiceAc
 layout: post
 permalink: custom-resource-definitions-with-rbac-for-serviceaccounts
 published: true
-tags: [Kubernetes]
+tags: 
+  - Kubernetes
 excerpt: Define Custom Resource Definitions (CRDs) to get more out of Kubernetes. Learn to work with custom objects. Protect CRDs with RBAC and access them with ServiceAccounts
 image: /chain.jpg
 unsplash_user_name: Kaley Dykstra

@@ -3,7 +3,11 @@ title: API Summit - IaC for everyone with Terraform
 layout: post
 permalink: api-summit-iac-for-everyone-with-terraform
 published: true
-tags: [Conferences,Terraform,Azure,AWS]
+tags: 
+  - Conferences
+  - Terraform
+  - Azure
+  - AWS
 excerpt: 'Slidedeck and Demos from my "IaC for everyone with Terraform" talk at API Summit 2019 in Berlin.'
 image: /terraform.jpg
 unsplash_user_name: Elaine Casap

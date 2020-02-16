@@ -3,7 +3,10 @@ title: Azure Container Registry Unleashed – Webhooks
 layout: post
 permalink: azure-container-registry-unleashed-webhooks
 published: true
-tags: [Azure,Docker,Azure Container Registry]
+tags: 
+  - Azure
+  - Docker
+  - Azure Container Registry
 excerpt: 'In part four of Azure Container Registry Unleashed you will learn how to integrate ACR with custom apps and services using webhooks.'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
@@ -17,7 +20,7 @@ In the fourth part of Azure Container Registry Unleashed, we will dive into webh
 - [ACR SKU based webhook limits](#acr-sku-based-webhook-limits)
 - [Azure Integrations using ACR webhooks](#azure-integrations-using-acr-webhooks)
 - [The Demo Project](#the-demo-project)
-  - [The Azure Function Project](#the-azure-function-project)
+  - [The Azure Functions Project](#the-azure-functions-project)
   - [Create ACR webhook](#create-acr-webhook)
   - [Testing the webhook](#testing-the-webhook)
   - [Pushing new tags to ACR](#pushing-new-tags-to-acr)
@@ -73,9 +76,9 @@ So, what will we cover here? You read a bunch of stuff about webhooks in general
 
 The story for the demo project is told quickly. We will stick with good old NGINX Docker Image. We will utilize an ACR webhook, to call into a custom Azure Function (AzFN). The Azure Function will extract some metadata about the Docker Image from the actual `push` request and persist it - as a new document - in Azure CosmosDB using the CosmosDB bindings for Azure Functions.
 
-### The Azure Function Project
+### The Azure Functions Project
 
-The Azure Function project [is open sourced on GitHub](https://github.com/ThorstenHans/acr-unleashed-webhooks){:target="_blank"}. At the heart of the Azure Function, they payload from the webhook is extracted and stored in CosmosDB using an `IAsyncCollector`.
+The Azure Functions project [is open sourced on GitHub](https://github.com/ThorstenHans/acr-unleashed-webhooks){:target="_blank"}. At the heart of the Azure Function, they payload from the webhook is extracted and stored in CosmosDB using an `IAsyncCollector`.
 
 ```csharp
 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
@@ -108,7 +111,7 @@ You can quickly spin up a new CosmosDB instance, the required storage account an
 # store a single random number used for all resources
 rnd=$RANDOM
 
-# construct Azure Function and Storage Account Name
+# construct Azure Functions and Storage Account Name
 azFnName=fnacrunleashed$rnd
 storageAccountName=safnacrunleashed$rnd
 
@@ -151,17 +154,17 @@ connectionString=$(az cosmosdb keys list --name $azFnName -g $rg \
    -o tsv \
    --query "connectionStrings[0].connectionString")
 
-# Link CosmosDB to Azure Function
+# Link CosmosDB to Azure Functions
 az functionapp config appsettings set --name $azFnApp -g $rg \
   --settings "CosmosDbConStr=$connectionString"
 ```
 
 ### Create ACR webhook
 
-To create our webhook in ACR, we need a couple of information from our invocation target (the previously deployed Azure Function). Obviously, we need the URI of our endpoint. We can acquire this with the following command
+To create our webhook in ACR, we need a couple of information from our invocation target (the previously deployed Azure Functions). Obviously, we need the URI of our endpoint. We can acquire this with the following command
 
 ```bash
-# Get Azure Function HostName
+# Get Azure Functions HostName
 azFnHost=$(az functionapp show --name $azFnName -g $rg \
   -o tsv --query hostNames[0])
 
@@ -170,14 +173,14 @@ azFnUrl="https://$azFnHost/images/push"
 
 ```
 
-Having the URI, we need to grab the Function Key which ACR must either append as `code` query string parameter or as `x-functions-key` HTTP header to every request. If you review the sample Azure Function on GitHub, you will find the `AuthorizationLevel` attribute being specified on the *Function* itself. You can grab the function key with the following command:
+Having the URI, we need to grab the Function Key which ACR must either append as `code` query string parameter or as `x-functions-key` HTTP header to every request. If you review the sample Azure Functions project on GitHub, you will find the `AuthorizationLevel` attribute being specified on the *Function* itself. You can grab the function key with the following command:
 
 ```bash
 # Grab AzFn resource id
 zFnId=$(az functionapp show -n $azFnName -g $rg \
   -o tsv --query id)
 
-# Grab function key from Azure Function and store it
+# Grab function key from Azure Functions and store it
 functionKey=$(az rest --method post \
   --uri "$azFnId/host/default/listKeys?api-version=2018-11-01" \
   -o tsv --query "functionKeys.default")

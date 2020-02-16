@@ -3,7 +3,9 @@ title: Terraform - State demystified
 layout: post
 permalink: terraform-state-demystified
 published: true
-tags: [Terraform,Infrastructure as Code]
+tags: 
+  - Terraform
+  - Infrastructure as Code
 excerpt: State Management is critical in Terraform. This post provides an overview of what state is and how you should deal with it.
 image: /mystical.jpg
 unsplash_user_name: Robert V. Ruggiero

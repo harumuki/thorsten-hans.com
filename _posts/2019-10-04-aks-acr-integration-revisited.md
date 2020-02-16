@@ -3,7 +3,10 @@ title: AKS and ACR Integration - Revisited
 layout: post
 permalink: aks-and-acr-integration-revisited
 published: true
-tags: [Kubernetes,Azure Kubernetes Service,Azure Container Registry]
+tags: 
+  - Kubernetes
+  - Azure Kubernetes Service
+  - Azure Container Registry
 excerpt: Integrating AKS and ACR to pull images from private Container Registries became easier with recent Azure CLI 2.0 releases. Check out how easy you can connect both excellent services.
 image: /containers-on-dock.jpg
 unsplash_user_name: Tobias A. Müller

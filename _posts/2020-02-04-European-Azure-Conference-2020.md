@@ -3,7 +3,9 @@ title: European Azure Conference 2020
 layout: post
 permalink: european-azure-conference-2020
 published: true
-tags: [Conferences,Azure]
+tags: 
+  - Conferences
+  - Azure
 excerpt: 'Announcing European Azure Conference 2020 (#EAC20) in Nice from June 2nd till June 4th'
 image: /nice.jpg
 unsplash_user_name: Joachim Lesne

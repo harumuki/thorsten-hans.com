@@ -3,7 +3,9 @@ title: Certified Kubernetes Application Developer - Review and Tips
 layout: post
 permalink: certified-kubernetes-application-developer-ckad-review-and-tips
 published: true
-tags: [Kubernetes,Certifications]
+tags: 
+  - Kubernetes
+  - Certifications
 excerpt: During this week, I took the CKAD exam and passed. Read why I registered for that exam and get some tips to prepare properly for your take on CKAD or CKA.
 image: /learning.jpg
 unsplash_user_name: Tim Mossholder

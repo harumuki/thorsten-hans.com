@@ -3,7 +3,8 @@ title: Six golden rules of Infrastructure as Code (IaC)
 layout: post
 permalink: six-golden-rules-of-infrastructure-as-code-iac
 published: true
-tags: [Infrastructure as Code]
+tags: 
+  - Infrastructure as Code
 excerpt: In this post I share my six golden rules for Infrastructure as Code (IaC) projects.
 image: /six.jpg
 unsplash_user_name: Clem Onojeghuo
