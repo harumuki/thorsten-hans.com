@@ -1,9 +1,9 @@
-{% if site.ga_analytics %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_analytics }}"></script>
-  <script>
+{% if site.ga_analytics and jekyll.environment == "production" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_analytics }}"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() {dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.ga_analytics }}', { 'anonymize_ip': true });
-  </script>
+    gtag('config', '{{ site.ga_analytics }}', {'anonymize_ip': true});
+</script>
 {% endif %}
