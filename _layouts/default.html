@@ -49,11 +49,11 @@
 
         {{ content }}
 
-        {% if paginator.total_posts > site.paginate %} {% if page.class == 'tag-template' %}
-        {% include tag-pagination.html %} {% endif
-            %} {% endif %} {% if site.mailchimp_url and page.class == 'tag-template' %}
-        {% include newsletter-box.html %} {% endif %}
-
+        {% if paginator.total_posts > site.paginate %}
+        {% if page.class == 'tag-template' %}
+        {% include tag-pagination.html %}
+        {% endif %}
+        {% endif %}
         <footer id="colophon" class="site-footer outer">
             <div class="site-footer-inside">
                 {% include social-links.html %}
@@ -80,6 +80,13 @@
     <script src="{{ site.baseurl }}/assets/js/jquery-3.3.1.min.js"></script>
     <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
     <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js"
+        data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">
+        window.dojoRequire(["mojo/signup-forms/Loader"], function (L) {
+            L.start({"baseUrl": "mc.us20.list-manage.com", "uuid": "5581ba765692a75a48258504e", "lid": "78ce80aba5", "uniqueMethods": true})
+        })
+    </script>
 </body>
 
 </html>
