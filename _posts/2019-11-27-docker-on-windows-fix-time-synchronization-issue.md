@@ -12,8 +12,6 @@ unsplash_user_name: NOAA
 unsplash_user_ref: noaa
 ---
 
-If you follow [me on Twitter (@ThorstenHans)](https://twitter.com/ThorstenHans){:target="_blank"}, you may have recognized that I am in the process of switching from macOS back to Windows after almost seven years. (Different story, and I schedule a dedicated post on that at some point before 2020).
-
 During validation of Windows as main operating system (which is still ongoing), I experienced strange issues when trying to build my blog using the `jekyll/jekyll` Docker Image running on Windows 10.
 
 At some point, `jekyll build` printed strange warnings that my shiny new article wont be compiled because it has a date in future.
@@ -55,7 +53,7 @@ The differnce between time on host OS and within container is exaclty the durati
 
 ## How to fix it
 
-You can fix it either clicking through the HyperV Admin Interface and disable/enable **Time Synchronization** (*SETTINGS* - *INTEGRATION SERVICES*), or by using the following PoSh script
+You can fix it either clicking through the HyperV Admin Interface and disable/enable **Time Synchronization** (*SETTINGS* - *INTEGRATION SERVICES*), or by using the following PoSh script:
 
 ```powershell
 # fix-docker-machine-time-sync.ps1

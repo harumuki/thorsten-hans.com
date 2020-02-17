@@ -11,16 +11,13 @@ layout: default
             <!-- .post-header -->
             {% if page.image %}
             <div class="post-thumbnail">
-                <img
-                    src="{{ page.image | prepend: site.url }}"
-                    alt="{% if page.image_alt %}{{ page.image_alt }}{% else %}{{ page.title }}{% endif %}"
-                />
+                <img src="{{ page.image | prepend: site.url }}"
+                    alt="{% if page.image_alt %}{{ page.image_alt }}{% else %}{{ page.title }}{% endif %}" />
             </div>
             {% endif %}
             <div class="post-content">
                 {{ content }}
             </div>
         </article>
-        {% if site.mailchimp_url %} {% include newsletter-box.html %} {% endif %}
     </main>
 </div>

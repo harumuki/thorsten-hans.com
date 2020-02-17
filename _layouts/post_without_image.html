@@ -33,30 +33,10 @@ post_class: post-template
             </div>
             <footer class="post-footer">
                 <div class="post-contribute">
-                    Found a bug? You can <a target="_blank"
-                        href="{{ site.github.repo }}/tree/master/{{ page.relative_path }}">edit</a> this post or file an
-                    <a target="_blank" href="{{ site.github.repo }}/issues/new">issue</a> on GitHub
+                    Found a typo or mistake in the post? <a target="_blank"
+                        href="{{ site.github.repo }}/edit/master/{{ page.relative_path }}">Suggest edit.</a>
                 </div>
-                <div class="post-share">
-                    <span class="post-share-title">Share:</span>
-                    <a target="_blank"
-                        href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.url }}{{ page.url | remove_first: '/' }}">Twitter</a>
-                    <a target="_blank"
-                        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url | remove_first: '/' }}">Facebook</a>
-
-                </div>
-                <!-- .share-post -->
             </footer>
-            <!--
-            <div class="author-box">
-                <div class="author-avatar"><img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}" alt="{{ site.author.name }}'s Picture"
-                        class="avatar"></div>
-                <div class="author-details">
-                    <h2 class="author-title">About {{ site.author.name }}</h2>
-                    <p class="author-description">{{ site.author.bio }} <a href="https://twitter.com/{{site.social.twitter}}"
-                            target="_blank">Follow him on Twitter</a> via @ThorstenHans.</p>
-                </div>
-            </div>-->
             {% include disqus.html %}
         </article>
 
