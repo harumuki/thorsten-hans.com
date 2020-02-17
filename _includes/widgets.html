@@ -39,3 +39,21 @@ endcapture %} {% assign sortedTags = site_tags | split:',' | sort %}
         {% endfor %}
     </div>
 </section>
+{% if site.mailchimp_url %}
+<section class="widget widget-newsletter">
+    <div class="inner">
+        <h2 class="widget-title">Follow my blog via mail</h2>
+        <p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+        <!-- Begin MailChimp Signup Form -->
+        <div>
+            <form action="{{ site.mailchimp_url }}" method="post" name="mc-embedded-subscribe-form"
+                class="validate gh-subscribe-form" target="_blank" novalidate>
+                <label for="mce-EMAIL" class="screen-reader-text">Email Address</label>
+                <input type="email" value="" name="EMAIL" class="required email subscribe-email"
+                    placeholder="Your email address">
+                <input type="submit" value="Subscribe" name="subscribe" class="button">
+            </form>
+        </div>
+    </div>
+</section>
+{% endif %}

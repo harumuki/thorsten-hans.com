@@ -52,5 +52,8 @@ post_class: post-template
         <section class="read-next inner">
             {% include related-posts.html%}
         </section><!-- .read-next -->
+        {% if site.mailchimp_url %}
+        {% include newsletter-box.html %}
+        {% endif %}
     </main><!-- .site-main -->
 </div><!-- .site-content -->
