@@ -19,6 +19,7 @@ You can register for the webinar for free, using [this registration link](https:
 ---
 
 During the webinar, I will explain what Terraform is and why you should care about it. You will learn how to build infrastructures for Microsoft Azure using Terraform and the HashiCorp Configuration Language (HCL). Additionally, I will explain how we structure large scale Terrform projects and demonstrate how to slice modules to increase re-use of infrastructure components.
+During the webinar, I will explain what Terraform is and why you should care about it. You will learn how to build infrastructures for Microsoft Azure using Terraform and the HashiCorp Configuration Language (HCL). Additionally, I will explain how we structure large scale Terrform projects and demonstrate how to slice modules to increase re-use of infrastructure components.
 
 ---
 
