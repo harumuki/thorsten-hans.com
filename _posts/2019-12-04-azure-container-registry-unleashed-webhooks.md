@@ -258,7 +258,8 @@ Finally, it is the right time to go back to CosmosDB Data-Explorer and check all
 - [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
 - [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
 - [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
+- [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-19-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
+  
 ## What is next
 
 We have seen, it is easy and straight forward to integration ACR with your products / services using webhooks to react on critical events such as Images being pushed or deleted.

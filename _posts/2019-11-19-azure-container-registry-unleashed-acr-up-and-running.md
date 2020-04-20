@@ -113,7 +113,8 @@ When working with geo replications, it is important to know that you will pay th
 - [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
 - [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
 - [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-
+- [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-19-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
+  
 ## What is next
 
 We have covered a bunch of stuff in this introduction post, we went beyond setting up an ACR and configured Geo replication in this post. [In the next post of “Azure Container Registry"]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}, we will configure Content-Trust for our ACR instance(s) to ensure origin and integrity of our Docker Images.
