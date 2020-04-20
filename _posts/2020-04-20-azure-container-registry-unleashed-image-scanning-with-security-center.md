@@ -114,7 +114,7 @@ Additionally, I would love to be able to select the actual image scanning servic
 - [Part 3 - Integrate ACR and Azure Monitor]({%post_url 2019-11-26-azure-container-registry-unleashed-integrate-acr-and-azure-monitor %}){:target="_blank"}
 - [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
 - [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
-- [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-19-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
+- [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
 
 ## What is next
 
