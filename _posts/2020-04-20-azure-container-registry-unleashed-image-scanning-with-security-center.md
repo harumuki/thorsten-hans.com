@@ -7,13 +7,13 @@ tags:
   - Azure
   - Docker
   - Azure Container Registry
-excerpt: "The sixth part of ACR Unleashed will cover integration with Azure Security Center to get your Docker images scanned for vulnerabilities"
+excerpt: "The sixth part of ACR Unleashed will cover integration with Azure Security Center to get your Docker Images scanned for vulnerabilities"
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
 ---
 
-The sixth part of _Azure Container Registry Unleashed_ is about scannig Docker images in ACR using [Azure Security Center](https://azure.microsoft.com/en-us/services/security-center/){:target="_blank"}. This post explains, what you get from Azure Security Center in the context of ACR and how to configure the integration of both Azure services. Before we dive into the article, I want to reach out and say thank you to my fellow MVP and well-known Azure security expert [Tom Janetscheck](https://blog.azureandbeyond.com/){:target="_blank"} for contributing to this article.
+The sixth part of _Azure Container Registry Unleashed_ is about scannig Docker Images in ACR using [Azure Security Center](https://azure.microsoft.com/en-us/services/security-center/){:target="_blank"}. This post explains, what you get from Azure Security Center in the context of ACR and how to configure the integration of both Azure services. Before we dive into the article, I want to reach out and say thank you to my fellow MVP and well-known Azure security expert [Tom Janetscheck](https://blog.azureandbeyond.com/){:target="_blank"} for contributing to this article.
 
 ---
 
@@ -21,8 +21,8 @@ The sixth part of _Azure Container Registry Unleashed_ is about scannig Docker i
 - [Why should you use Azure Security Center](#why-should-you-use-azure-security-center)
   - [Azure Security Center in the context of ACR](#azure-security-center-in-the-context-of-acr)
 - [Monitor ACR with Azure Security Center](#monitor-acr-with-azure-security-center)
-  - [Get insights about vulnerabilities in Docker images](#get-insights-about-vulnerabilities-in-docker-images)
-- [How Qualys scans your Docker images](#how-qualys-scans-your-docker-images)
+  - [Get insights about vulnerabilities in Docker Images](#get-insights-about-vulnerabilities-in-docker-images)
+- [How Qualys scans your Docker Images](#how-qualys-scans-your-docker-images)
 - [Windows Image scanning](#windows-image-scanning)
 - [Preview Features worth checking out](#preview-features-worth-checking-out)
 - [Recap](#recap)
@@ -59,11 +59,11 @@ To enable the integration of ASC and ACR, you have to upgrade Security Center to
 {% include image-caption.html imageurl="/assets/images/posts/2020/acr_asc_enable_standard_tier.png"
 title="Azure Security Center - Tier Selection" caption="Azure Security Center - Tier Selection" %}
 
-Once you have selected the *Standard* tier, you can enable the plan for the different resource types. Find *Container Registries* and enable it. Now, all your ACR instances will scan Docker images and report vulnerabilities and security recommendations to ASC. (Don't forget to hit *Save*, if you made some changes here).
+Once you have selected the *Standard* tier, you can enable the plan for the different resource types. Find *Container Registries* and enable it. Now, all your ACR instances will scan Docker Images and report vulnerabilities and security recommendations to ASC. (Don't forget to hit *Save*, if you made some changes here).
 
-### Get insights about vulnerabilities in Docker images
+### Get insights about vulnerabilities in Docker Images
 
-Once you have enabled the integration of ACR and ASC, you can push images to ACR. Qualys will scan your Docker images now and report back into ASC. Use the Security Center UI to drill down through all findings of your Azure Subscription or Workspace to find ACR related recommendations. Security Center UI provides several dashboards that help you find the desired information in a manner of seconds. For example, go to *Security Center* - *Resource Security Hygiene* - *Compute & apps*, here you can filter all findings by resource category, set the filter to *Containers* and see all outcomes for services like ACR and AKS.
+Once you have enabled the integration of ACR and ASC, you can push images to ACR. Qualys will scan your Docker Images now and report back into ASC. Use the Security Center UI to drill down through all findings of your Azure Subscription or Workspace to find ACR related recommendations. Security Center UI provides several dashboards that help you find the desired information in a manner of seconds. For example, go to *Security Center* - *Resource Security Hygiene* - *Compute & apps*, here you can filter all findings by resource category, set the filter to *Containers* and see all outcomes for services like ACR and AKS.
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/acr-asc-findings-1.png" title="Azure Security Center - Container findings" caption="Azure Security Center - Container findings" %}
 
@@ -83,17 +83,17 @@ ASC provides a bunch of insights for containerized applications, and the possibi
 
 ---
 
-## How Qualys scans your Docker images
+## How Qualys scans your Docker Images
 
 Every time you push a Docker image, it will be pulled and seamlessly executed with Qualys image scanner in a sandbox environment. The image scanner checks the current image for known vulnerabilities and security recommendations. If there are findings or recommendations, ASC will classify those and generate alerts for problems in the context of the image. If your image is safe and clean, ASC will not create alerts to minimize disruptions.
 
 ## Windows Image scanning
 
-ASC is relying on an external Docker image scanner offered by Qualys. At this point, Qualys’ scanner does not provide any Windows Container image scanning capabilities. That means you currently have no chance to get your Windows Docker images scanned with ASC. Personally, this is just an additional reason why developers should migrate their Windows-based workloads to Linux containers using technologies like .NET Core instead of trying to stick with Windows for containerized application architectures.
+ASC is relying on an external Docker image scanner offered by Qualys. At this point, Qualys’ scanner does not provide any Windows Container image scanning capabilities. That means you currently have no chance to get your Windows Docker Images scanned with ASC. Personally, this is just an additional reason why developers should migrate their Windows-based workloads to Linux containers using technologies like .NET Core instead of trying to stick with Windows for containerized application architectures.
 
 ## Preview Features worth checking out
 
-Currently, ASC scans images once they are pushed to ACR. This is a great starting point. However, images with vulnerabilities or pending security recommendations can still be pulled and executed, which is still a risk. The ACR team is actively working on the **Quarantine** feature for ACR, which puts all new Docker images into Quarantine. Although it is still in preview, you can already **enable Quarantine for ACR** manually. See [quarantine docs in the ACR repository](https://github.com/Azure/acr/tree/master/docs/preview/quarantine){:target="_blank"} for further details. Once the Quarantine is generally available, the chances are good that we see seamless integration with ASC also on this level. 
+Currently, ASC scans images once they are pushed to ACR. This is a great starting point. However, images with vulnerabilities or pending security recommendations can still be pulled and executed, which is still a risk. The ACR team is actively working on the **Quarantine** feature for ACR, which puts all new Docker Images into Quarantine. Although it is still in preview, you can already **enable Quarantine for ACR** manually. See [quarantine docs in the ACR repository](https://github.com/Azure/acr/tree/master/docs/preview/quarantine){:target="_blank"} for further details. Once the Quarantine is generally available, the chances are good that we see seamless integration with ASC also on this level. 
 
 So you should watch the progress of ACR Quarantine.
 
@@ -101,7 +101,7 @@ So you should watch the progress of ACR Quarantine.
 
 You should use Azure Security Center to continuously monitor your entire Azure Subscription and all its resources to get detailed information about potential security vectors and threats. 
 
-Especially in the context of containerized application architectures, you should use ASC and get your Docker images scanned once uploaded to ACR. Although you currently have to revisit the Security Center to get scanning results, it is still worth having this information at a know, central place. 
+Especially in the context of containerized application architectures, you should use ASC and get your Docker Images scanned once uploaded to ACR. Although you currently have to revisit the Security Center to get scanning results, it is still worth having this information at a know, central place. 
 
 The integration will shine once ACR Quarantine features are fully integrated into the workflow, which will prevent malicious images from being distributed. 
 
