@@ -1,7 +1,7 @@
 # Site setings
 name: "Thorsten's thoughts"
 description: "Experiences from real-world projects. Focussing Microsoft Azure, Kubernetes and Infrastructure as Code."
-logo: "assets/images/logo.png"
+logo: "assets/images/logo_new.png"
 cover_image: bc_1.jpg
 favicon: "assets/images/favicon.ico"
 
