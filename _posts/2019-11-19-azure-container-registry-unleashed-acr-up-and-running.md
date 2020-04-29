@@ -114,6 +114,7 @@ When working with geo replications, it is important to know that you will pay th
 - [Part 4 - Webhooks]({%post_url 2019-12-04-azure-container-registry-unleashed-webhooks %}){:target="_blank"}
 - [Part 5 - Tasks]({%post_url 2020-02-05-azure-container-registry-unleashed-tasks %}){:target="_blank"}
 - [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
+- [Part 7 - Use ACR as Registry for Helm charts]({%post_url 2020-04-29-azure-container-registry-unleashed-use-acr-as-regisrty-for-helm-charts %}){:target="_blank"}
   
 ## What is next
 
