@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger Netlify Hook
-      run: curl -X POST ${{ secrets.netlify_build_url }}
+      run: curl -X POST ${{ secrets.netlify_build_url }}?trigger_title=GitHub+Hourly+Action
