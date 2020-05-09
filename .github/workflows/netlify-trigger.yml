@@ -1,4 +1,4 @@
-name: hourly Netlify Trigger
+name: Hourly Netlify Trigger
 on:
   schedule:
   - cron: "0 * * * *"
