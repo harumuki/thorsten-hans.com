@@ -51,12 +51,12 @@ twitter:
 
 # Navigation
 navigation:
+  - text: About
+    url: /about/
   - text: Uses
     url: /uses/
   - text: Talks & Publications
     url: /talks-and-publications/
-  - text: About
-    url: /about/
   - text: Legal Details
     url: /legal-details/
   - text: Privacy Policy
