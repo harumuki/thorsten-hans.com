@@ -930,7 +930,7 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
-    color: inherit;
+    color: $color-accent;
     text-decoration: none;
 }
 
