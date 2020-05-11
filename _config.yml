@@ -4,7 +4,7 @@ description: "Experiences from real-world projects. Focussing Microsoft Azure, K
 logo: "assets/images/logo_new.png"
 cover_image: bc_1.jpg
 favicon: "assets/images/favicon.ico"
-
+timezone: "Europe/Berlin"
 baseurl: ""
 url: https://thorsten-hans.com
 
