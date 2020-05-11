@@ -7,6 +7,14 @@ html {
     font-size: 112.5%;
 }
 
+:target::before {
+    content: "";
+    display: block;
+    margin-top: -40px;
+    height: 40px;
+    width: 1px;
+  }
+
 body {
     background: #fff;
     color: $gray-dark;
