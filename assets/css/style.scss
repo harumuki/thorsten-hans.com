@@ -1118,4 +1118,17 @@
     }
 }
 
+.tag-cloud .tags{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.tag-cloud a.tag{
+    border: solid 1px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin: 5px;
+}
 /*# sourceMappingURL=style.css.map */
