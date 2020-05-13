@@ -4,6 +4,8 @@
 {% if page.current == 'tag' %}
 {% assign meta_description = site.data.tags[page.tag].description %}
 {% endif %}
+<meta name="title"
+    content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}" />
 <meta name="description"
     content="{{ page.excerpt | default: meta_description | default: site.description | strip_html | normalize_whitespace | escape }}" />
 {% if page.tags %}

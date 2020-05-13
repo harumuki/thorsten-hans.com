@@ -1,14 +1,13 @@
 ---
 layout: default
-title: Blog
 ---
 
 {% if page.url == "/" %}
-<!-- Featured
+<!-- Featured -->
 <div class="featured-posts outer">
     {% for post in site.posts %} {% if post.featured == true %} {% include featuredbox.html %} {% endif %} {% endfor %}
 </div>
-{% endif %} 
+{% endif %}
 <!-- Posts Index -->
 <div class="outer">
     {% if page.url == "/" %}

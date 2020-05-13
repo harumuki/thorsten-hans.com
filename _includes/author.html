@@ -1,7 +1,7 @@
 {% if site.author %}
 <p class="hero-avatar"><img src="{{ site.baseurl }}/assets/images/{{ site.author.image }}"
-        alt="{{ site.author.name }}'s Picture" class="avatar" /></p>
-<h1 class="hero-title">{{ site.author.greetings }}</h1>
-<p class="hero-description">{{ site.author.description }}<br /> {{ site.author.description2 }}</p>
+        alt="{{ site.data.author.name }}" class="avatar" /></p>
+<h1 class="hero-title">{{ site.data.meta.title }}</h1>
+<p class="hero-description">{{ site.data.meta.subtitle }}</p>
 {% endif %}
 {% include social-links.html %}

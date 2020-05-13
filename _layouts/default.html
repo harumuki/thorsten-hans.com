@@ -10,7 +10,7 @@
     {% if page.title %}
     <title>{{ page.title | escape }}</title>
     {% else %}
-    <title>{{ site.name | escape }}</title>
+    <title>{{ site.data.meta.seo_title | escape }}</title>
     {% endif %}
 
     <!-- Site Favicon -->
