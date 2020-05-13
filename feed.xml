@@ -2,35 +2,46 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
-  <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <language>en-us</language>
-    <copyright>Copyright {{ 'now' | date: "%Y" }} - {{ site.author.name }}</copyright>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <id>{{ page.url | absolute_url | xml_escape }}</id>
+  <title>{{ site.data.meta.title | xml_escape }}</title>
+  <subtitle>{{ site.data.meta.subtitle | xml_escape }}</subtitle>
+  <link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html" hreflang="en-US"/>
+  <author>
+    <name>{{site.author.name}}</name>
+    <email>{{site.author.email}}</email>
+    <uri>{{site.url}}</uri>
+  </author>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <icon>{{ site.url }}/{{ site.baseurl }}{{ site.favicon }}</icon>
+  <logo>{{ site.url }}/{{ site.baseurl }}{{ site.favicon }}</logo>
     {% for post in site.posts limit:10 %}
-      <item>
-        <author>{{ site.author.email }} ({{ site.author.name }})</author>
+      <entry>
+        <id>{{ post.id | absolute_url | xml_escape }}</id>
         <title>{{ post.title | xml_escape }}</title>
+        {% capture post_summary %}
+        <p>{{ post.excerpt }}...</p><p>Read the entire article on <a href="{{ post.url | absolute_url }}">thorsten-hans.com</a></p>
+        {% endcapture %}
+        <summary type="html">{{ post_summary | xml_escape }}</summary>
+        <published>{{ post.date | date_to_xmlschema }}</published>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
+        <author>
+          <name>{{site.author.name}}</name>
+          <email>{{site.author.email}}</email>
+          <uri>{{site.url}}</uri>  
+        </author>
         {% if post.image %}
-        <media:thumbnail url='{{ post.image | prepend: site.thumbs_folder | absolute_url }}' width='270px' />
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="{{ post.image | prepend: site.thumbs_folder | absolute_url }}" />
+        <media:content medium="image" url="{{ post.image | absolute_url | xml_escape }}" xmlns:media="http://search.yahoo.com/mrss/" />
         {% endif %}
-        <description>{{ post.excerpt | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
         {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
+        <category term="{{tag|xml_escape}}" />
         {% endfor %}
         {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
+        <category term="{{tag|xml_escape}}"/>
         {% endfor %}
-      </item>
+      </entry>
     {% endfor %}
-  </channel>
-</rss>
+</feed>
