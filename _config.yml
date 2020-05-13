@@ -1,6 +1,6 @@
 # Site setings
-name: "Thorsten's thoughts"
-description: "Experiences from real-world projects. Focussing Microsoft Azure, Kubernetes and Infrastructure as Code."
+name: Thorsten Hans
+description: "Stories about Microsoft Azure, Containers and Kubernetes."
 logo: "assets/images/logo_new.png"
 cover_image: bc_1.jpg
 favicon: "assets/images/favicon.ico"
@@ -36,7 +36,6 @@ author:
   greetings: Thorsten's thoughts
   description: Hi there, I build stuff for the cloud.
   description2: I do some Kubernetes, Terraform, and Azure. Coding is my passion.
-  bio: Thorsten is a developer, consultant, photographer and speaker from the beautiful south-west area in Germany. He loves his zsh-shell, Electron, containers, and Microsoft Azure.
 social:
   twitter: ThorstenHans
   github: ThorstenHans
@@ -48,19 +47,6 @@ twitter:
   card: summary
   site: ThorstenHans
   username: ThorstenHans
-
-# Navigation
-navigation:
-  - text: About
-    url: /about/
-  - text: Uses
-    url: /uses/
-  - text: Talks & Publications
-    url: /talks-and-publications/
-  - text: Legal Details
-    url: /legal-details/
-  - text: Privacy Policy
-    url: /privacy-policy/
 
 # Required Plugins
 plugins:

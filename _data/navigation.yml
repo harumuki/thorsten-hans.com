@@ -1,0 +1,13 @@
+main:
+  - text: Home
+    url: /  
+  - text: About
+    url: /about/
+  - text: Uses
+    url: /uses/
+  - text: Talks & Publications
+    url: /talks-and-publications/
+  - text: Legal Details
+    url: /legal-details/
+  - text: Privacy Policy
+    url: /privacy-policy/
