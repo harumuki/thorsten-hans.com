@@ -5,7 +5,7 @@ permalink: how-to-run-commands-in-stopped-docker-containers
 published: true
 tags: 
   - Docker
-excerpt: "This article explains how to execute a command in a Docker container, which stopped already. See how to promote a Docker container as a Docker image and how to overwrite the original Entrypoint to inspect container internals like filesystem."
+excerpt: "Executing a command in a running Docker container is a common task. But what about executing commands in a stopped container? Learn how to promote your stopped container as a temporary image to run the desired command."
 image: /orca.jpg
 unsplash_user_name: NOAA
 unsplash_user_ref: noaa

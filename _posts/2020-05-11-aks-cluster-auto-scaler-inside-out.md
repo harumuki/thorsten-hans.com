@@ -8,7 +8,7 @@ tags:
   - Azure
   - AKS
   - Kubernetes
-excerpt: "Learn what cluster auto-scaler in Azure Kubernetes Service (AKS) is and how you can benefit from using it. See how to enable, configure, and optimize the auto-scaler to get a tailored scaling experience."
+excerpt: "Learn how to build elastic AKS clusters using the cluster auto-scaler. Enable, configure, and optimize the auto-scaler in Azure Kubernetes Service to get an excellent scaling experience."
 image: /aks-autoscaler.jpg
 unsplash_user_name: Axel Ahoi
 unsplash_user_ref: axelahoi
