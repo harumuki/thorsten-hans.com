@@ -29,13 +29,14 @@ local HISTSIZE=0
 Alternatively, you can create a custom function in your `.zshrc` configuration file like this:
 
 ```bash
-# Add function to .zshrc
-echo "function clear_history { local HISTSIZE=0; }" >> ~/.zshrc
+# Append function to .zshrc
+echo "\nfunction clear_history { local HISTSIZE=0; }" >> ~/.zshrc
 
 # reload .zshrc
 source ~/.zshrc
 
 # call the clear_history function
+clear_history
 
 ```
 
