@@ -1,5 +1,5 @@
 ---
-title: Azure Container Registry Unleashed – Use ACR as Registry for Helm charts
+title: ACR Unleashed – Use ACR As Registry For Helm Charts
 layout: post
 permalink: azure-container-registry-unleashed-use-acr-as-registry-for-helm-charts
 published: true
@@ -8,7 +8,7 @@ tags:
   - Docker
   - Azure Container Registry
   - Helm
-excerpt: "The seventh part of ACR Unleashed teaches how to manage and distribute Helm charts using Azure Container Registry"
+excerpt: "Use ACR as Helm chart registry. Push, pull and install Helm charts from Azure Container Registry. Learn what OCI means and why you should start using Helm 3 now"
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -18,22 +18,22 @@ The seventh and last part of _Azure Container Registry Unleashed_ is about housi
 
 ---
 
-- [What are OCI and OCI artifacts](#what-are-oci-and-oci-artifacts)
+- [What Is OCI And What Are OCI artifacts](#what-is-oci-and-what-are-oci-artifacts)
 - [Prerequisites](#prerequisites)
-- [Authenticate Helm CLI against ACR](#authenticate-helm-cli-against-acr)
-- [Enable OCI support in Helm CLI](#enable-oci-support-in-helm-cli)
-- [Prepare Helm charts for publishing to ACR](#prepare-helm-charts-for-publishing-to-acr)
-- [Push a Helm chart to ACR](#push-a-helm-chart-to-acr)
-- [Pull a Helm chart from ACR](#pull-a-helm-chart-from-acr)
-- [Export Helm chart once pulled](#export-helm-chart-once-pulled)
-- [Deploy the Helm chart to AKS](#deploy-the-helm-chart-to-aks)
-- [Azure CLI Commands for Helm charts](#azure-cli-commands-for-helm-charts)
-- [Recap](#recap)
-- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
+- [Authenticate Helm CLI Against ACR](#authenticate-helm-cli-against-acr)
+- [Enable OCI Support In Helm CLI](#enable-oci-support-in-helm-cli)
+- [Prepare Helm Charts For Publication On ACR](#prepare-helm-charts-for-publication-on-acr)
+- [Push A Helm Chart To ACR](#push-a-helm-chart-to-acr)
+- [Pull A Helm Chart From ACR](#pull-a-helm-chart-from-acr)
+- [Export Helm Chart Once Pulled](#export-helm-chart-once-pulled)
+- [Deploy Helm Chart To AKS](#deploy-helm-chart-to-aks)
+- [Azure CLI Commands For Helm charts](#azure-cli-commands-for-helm-charts)
+- [Conclusion](#conclusion)
+- [The ACR Unleashed series](#the-acr-unleashed-series)
 
 ---
 
-## What are OCI and OCI artifacts
+## What Is OCI And What Are OCI artifacts
 
 On top of Docker Registry 2.0, Azure Container Registry supports OCI artifacts. The [OCI specification](https://github.com/opencontainers/image-spec){:target="_blank"} defines a general format for interchanging various artifacts like Docker Images or application bundles such as Helm charts. The official definition of OCI's responsibility is
 
@@ -61,7 +61,7 @@ On your local development system, you should have installed and configured the f
 - The *Azure CLI* version `2.0.71` or later
 - The *Kubernetes CLI* `kubectl` with a proper context configuration pointing to the previously mentioned AKS instance
 
-## Authenticate Helm CLI against ACR
+## Authenticate Helm CLI Against ACR
 
 To publish or `push` Helm charts to ACR, your local installation of `helm` has to establish an authenticated connection to ACR. In contrast to other Command-Line Interfaces, `helm` is not able to re-use the existing authentication token from Azure CLI. That said, you have to create a dedicated *Service Principal* and assign the role  `AcrPush` to it. (Learn more about RBAC in the context of ACR by reading [this part of the series]({% post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}).
 
@@ -93,7 +93,7 @@ echo $AZ_SP_PASSWD | helm registry login unleashed.azurecr.io \
 
 ```
 
-## Enable OCI support in Helm CLI
+## Enable OCI Support In Helm CLI
 
 To enable OCI support in Helm 3, you have to set the `HELM_EXPERIMENTAL_OCI` environment variable to `1`:
 
@@ -105,7 +105,7 @@ export HELM_EXPERIMENTAL_OCI=1
 
 OCI support is currently flagged as **experimental**. Perhaps, this has changed in the meantime. Consult the  [official Helm documentation](https://helm.sh/docs/topics/registries/#enabling-oci-support){:target="_blank"} to verify.
 
-## Prepare Helm charts for publishing to ACR
+## Prepare Helm Charts For Publication On ACR
 
 For demonstration purposes, let's create a simple *Hello World* Helm chart, which we can use throughout this article to verify ACR can deal with custom Helm charts.
 
@@ -125,7 +125,7 @@ helm chart save . unleashed.azurecr.io/hello-acr:1.0.0
 
 At any point, you can use `helm chart list` to get a list of Helm charts stored in your local registry cache. (No worries we will delete the local version later)
 
-## Push a Helm chart to ACR
+## Push A Helm Chart To ACR
 
 Pushing a Helm chart to ACR is similar to pushing Docker images to ACR. We have logged in previously to access our custom registry, so all correctly qualified charts (those, starting with `youracrname.azurecr.io`) will automatically be routed to the corresponding registry by Helm CLI. Let's give it a try.
 
@@ -147,7 +147,7 @@ Although Helm CLI confirms the push operation, you can also use the Azure Portal
 {% include image-caption.html imageurl="/assets/images/posts/2020/acr-helm-1.png"
 title="Azure Container Registry - Our Helm chart in ACR" caption="Azure Container Registry - Our Helm chart in ACR" %}
 
-## Pull a Helm chart from ACR
+## Pull A Helm Chart From ACR
 
 We still have our Helm chart stored in the local registry cache. Delete it now using `helm chart remove`, because otherwise, Helm would not try to download it from ACR.
 
@@ -183,7 +183,7 @@ unleashed.azurecr.io/hello-acr:1.0.0	hello-acr	0.1.0  	33c8724	3.2 KiB	26 minute
 
 ```
 
-## Export Helm chart once pulled
+## Export Helm Chart Once Pulled
 
 Since we pushed and now pulled the Helm chart as OCI artifact, we have to extract or `export` it for further usage. To export a chart, use `helm chart export` command as shown here:
 
@@ -192,7 +192,7 @@ helm chart export unleashed.azurecr.io/hello-acr:1.0.0 --destination ./chart-exp
 
 ```
 
-## Deploy the Helm chart to AKS
+## Deploy Helm Chart To AKS
 
 Once you have successfully pulled a Helm chart from ACR, you can interact with it like with any other chart. Let's quickly install the chart to kubernetes, verify it has been installed correctly, and then retract the chart again.
 
@@ -233,17 +233,17 @@ kubectl delete ns acr-hello-demo
 
 If you encounter an error while trying to install the Helm chart into Kubernetes, verify if your ACR instance is attached to AKS. If not, you can do so using the `az aks update --attach-acr` command.
 
-## Azure CLI Commands for Helm charts
+## Azure CLI Commands For Helm charts
 
 The Azure CLI ships several commands to interact with Helm charts in the context of ACR. However, all sub-comamnds of `az acr helm` are **targetting Helm 2**.
 
 To manage OCI artifacts in ACR using Azure CLI, you can use the regular commands such as `az acr repository list` or orthers.
 
-## Recap
+## Conclusion
 
 I enjoy using Helm since they have removed the server-side component (Tiller). Being able to push and pull my Helm charts to and from Azure Container Registry is fantastic. Finally, ACR becomes the go-to resource for all my container-related distributable packages. If you have not looked into Helm as package-manager for your Kubernetes workloads, this is an additional argument why you should do so.
 
-## The Azure Container Registry Unleashed series
+## The ACR Unleashed series
 
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}

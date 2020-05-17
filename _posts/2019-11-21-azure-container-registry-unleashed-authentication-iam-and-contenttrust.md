@@ -1,5 +1,5 @@
 ---
-title: Azure Container Registry Unleashed – Authentication, Identity Access Management and Content-Trust
+title: ACR Unleashed – Authentication, Identity Access Management And Content-Trust
 layout: post
 permalink: azure-container-registry-unleashed-authentication-iam-contenttrust
 published: true
@@ -7,7 +7,7 @@ tags:
   - Azure
   - Docker
   - Azure Container Registry
-excerpt: 'In part two of Azure Container Registry Unleashed you will dive into Authentication, Identity Access Management and Content-Trust'
+excerpt: 'Deep Dive Authentication and Authorization for Azure Container Registry. Guide to understand and lockdown your ACR instances.'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -16,23 +16,23 @@ unsplash_user_ref: tata_morais
 This is the second part of Azure Container Registry Unleashed. Today, we will go one step further and talk about Authentication (AuthN), Identity Access Management (IAM) and Content-Trust in the scope of ACR. To be a bit more precisely, this post contains the following sections:
 
 - [ACR Authentication](#acr-authentication)
-- [ACR Identity Access Management](#acr-identity-access-management)
-  - [IAM for AAD Users and Groups](#iam-for-aad-users-and-groups)
-  - [IAM for Service Principals](#iam-for-service-principals)
-- [What is Content-Trust in ACR and Docker](#what-is-content-trust-in-acr-and-docker)
-  - [Configure Content-Trust in ACR](#configure-content-trust-in-acr)
-  - [Configure Docker CLI for Content-Trust](#configure-docker-cli-for-content-trust)
-    - [Configure Content-Trust globally](#configure-content-trust-globally)
-    - [Configure Content-Trust explicitly](#configure-content-trust-explicitly)
-  - [Content-Trust by example](#content-trust-by-example)
-    - [Pushing a signed image with system wide Content-Trust](#pushing-a-signed-image-with-system-wide-content-trust)
-    - [Pushing a signed image with contextual Content-Trust](#pushing-a-signed-image-with-contextual-content-trust)
+- [ACR Identity Access Management (IAM)](#acr-identity-access-management-iam)
+  - [IAM For Azure Active Directory Users And Groups](#iam-for-azure-active-directory-users-and-groups)
+  - [IAM For Service Principals](#iam-for-service-principals)
+- [What Is Docker Content-Trust](#what-is-docker-content-trust)
+  - [Configure Content-Trust In ACR](#configure-content-trust-in-acr)
+  - [Enable Content-Trust For Docker CLI](#enable-content-trust-for-docker-cli)
+    - [Configure Content-Trust Globally](#configure-content-trust-globally)
+    - [Configure Content-Trust Explicitly](#configure-content-trust-explicitly)
+  - [Content-Trust By Example](#content-trust-by-example)
+    - [Push Signed Docker Images With Global Content-Trust](#push-signed-docker-images-with-global-content-trust)
+    - [Push Signed Docker Images With Contextual Content-Trust](#push-signed-docker-images-with-contextual-content-trust)
   - [Content-Trust Key Management](#content-trust-key-management)
-  - [ACR Content-Trust pitfalls](#acr-content-trust-pitfalls)
-  - [Docker Content-Trust pitfalls](#docker-content-trust-pitfalls)
-  - [Further information on Content-Trust](#further-information-on-content-trust)
-- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
-- [What is next](#what-is-next)
+  - [ACR Content-Trust Pitfalls](#acr-content-trust-pitfalls)
+  - [Docker Content-Trust Pitfalls](#docker-content-trust-pitfalls)
+  - [Further Information On Content-Trust](#further-information-on-content-trust)
+- [The ACR Unleashed series](#the-acr-unleashed-series)
+- [Conclusion](#conclusion)
 
 ## ACR Authentication
 
@@ -42,7 +42,7 @@ The story for the first category is told quickly. If a user wants to access ACR,
 
 Headless authentication is achieved either by using Service Principals (SP) or by leveraging a Managed Service Identity (MSI). Unfortunately, not all Azure services support Managed Service Identity. However, if they support MSI, you should use MSI to authenticate against ACR instead of SPs because an MSI is managed automatically by AAD and you don’t need to pass around identifiers and passwords.  
 
-## ACR Identity Access Management
+## ACR Identity Access Management (IAM)
 
 Identity Access Management (IAM) is how RBAC (Role Based Access Control) is referred to in Azure. Identity Access Management allows you to attach roles to an identity on a resource.
 Where an identity is something like an AAD User, a AAD Group, a Service Principal or a Managed Service Identitie; A resource is something like an Azure Subscription, an Azure Resource Group or an Azure service.
@@ -61,7 +61,7 @@ Because RBAC is a global Azure thing, you manage RBAC using the `az role` comman
 
 On top of that, the Azure Container Registry team released [authorization on repository level as preview](https://azure.microsoft.com/en-us/blog/azure-container-registry-preview-of-repository-scoped-permissions/){:target="_blank"} a couple of days ago. We will cover this definetly in a dedicated post on ACR.
 
-### IAM for AAD Users and Groups
+### IAM For Azure Active Directory Users And Groups
 
 For example, consider having a set of random AAD users that you want to put into a single AAD group called *Developers*. Users of that AAD group should be able to push and pull Docker Images from our ACR instance. You can configure ACR to support this by executing
 
@@ -94,7 +94,7 @@ az role assignment create --scope $ACR_ID --role AcrPull --assignee $USER_ID
 
 ```
 
-### IAM for Service Principals
+### IAM For Service Principals
 
 Typical scenarios for authorizing a Service Principal to access Azure Container Registry instances are automated builds. In Azure DevOps, you can configure so-called “Service Connections” to connect Azure DevOps with ACR using the Azure DevOps administrative user interface. Under the hood, it is technically just a plain Service Principal with corresponding Role Assignments.
 
@@ -118,7 +118,7 @@ az role assignment create --scope $ACR_IR --role AcrPush --assignee 11111111-111
 
 ```
 
-## What is Content-Trust in ACR and Docker
+## What Is Docker Content-Trust
 
 Content-Trust allows you to verify the source and integrity of Docker Images. From security- and operations perspective, you can guarantee that all Docker Images - that enter your environment - are consumed from a trusted origin (ACR) and have not been modified since they were published.
 
@@ -126,7 +126,7 @@ On top of that, you can configure your Docker CLI to pull only signed Images. On
 
 As image publisher, you can sign Docker Images before uploading them to a Docker Registry.
 
-### Configure Content-Trust in ACR
+### Configure Content-Trust In ACR
 
 You can turn on Content-Trust in ACR using the `config content-trust`, alternatively, you can enable it directly in Azure Portal
 
@@ -165,11 +165,11 @@ az acr login -n unleashed -u 22222222-2222-2222-2222-222222222222 \
 
 ```
 
-### Configure Docker CLI for Content-Trust
+### Enable Content-Trust For Docker CLI
 
 Your local docker installation must also be configured to use Content-Trust. In Docker you can enable Content-Trust either system-wide, or you specify it conditionally by appending corresponding arguments to your `docker` commands. I prefer enabling Content-Trust globally. That said you may want turn it off when pulling unsigned, but trusted images from other registries.
 
-#### Configure Content-Trust globally
+#### Configure Content-Trust Globally
 
 You can enable Content-Trust globally by setting the `DOCKER_CONTENT_TRUST` environment variable in your shell profile (eg. Bash or ZSH).
 
@@ -207,7 +207,7 @@ Status: Downloaded newer image for thorstenhans/helm3:latest
 docker.io/thorstenhans/helm3:latest
 ```
 
-#### Configure Content-Trust explicitly
+#### Configure Content-Trust Explicitly
 
 If you want to enable Content-Trust only when interacting with our ACR instance, you have to append `--disable-content-trust=false` to your docker command like shown below.
 
@@ -222,13 +222,13 @@ docker push --disable-content-trust=false unleahed.azurecr.io/foo:bar
 
 ```
 
-### Content-Trust by example
+### Content-Trust By Example
 
 Having Content-Trust configured on both ends (ACR and local Docker CLI), we can give it a try.
 
 When you want to push your first signed Image to ACR, two signing keys will be generated. First, a so called **root key** is generated. Which acts as parent for all **repository keys**. For each key, you must specify a passphrase (and remember it or store it in your password manager...). Those keys, together with all required image layers, will be pushed and stored in your ACR instance.
 
-#### Pushing a signed image with system wide Content-Trust
+#### Push Signed Docker Images With Global Content-Trust
 
 ```bash
 echo 'FROM nginx:alpine' > SigningDemo.Dockerfile
@@ -249,7 +249,7 @@ Successfully signed unleashed.azurecr.io/signed:1
 
 ```
 
-#### Pushing a signed image with contextual Content-Trust
+#### Push Signed Docker Images With Contextual Content-Trust
 
 ```bash
 echo 'FROM nginx:alpine' > SingingDemo.Dockerfile
@@ -277,7 +277,7 @@ Please backup your local signing keys securely, if you lose your root key, you w
 
 Additional [information about key management is available in Docker documentation](https://docs.docker.com/engine/security/trust/trust_key_mng/){:target="_blank"}.
 
-### ACR Content-Trust pitfalls
+### ACR Content-Trust Pitfalls
 
 Although Content-Trust is enabled quickly, there are several pitfalls that you should be aware of, when rolling out ACR Content-Trust.
 
@@ -285,7 +285,7 @@ Currently, it is not possible to assign `AcrImageSigner` role to an Subscription
 
 If you assign the `AcrImageSigner` role to your user account or to the Service Principal you are currently using in Azure CLI, you have to execute `az acr login` again in order to update your local tokens.
 
-### Docker Content-Trust pitfalls
+### Docker Content-Trust Pitfalls
 
 If you enabled Content-Trust globally on your system, you will encounter issues when trying to pull unsigned images from public Docker Hub or other registries. Remember, your system will only accept signed images when Content-Trust is enabled.
 
@@ -315,11 +315,11 @@ docker.io/thorstenhans/helm3:latest
 
 ```
 
-### Further information on Content-Trust
+### Further Information On Content-Trust
 
 The official Docker documentation [hosts a great guide and conceptual introduction on Content-Trust](https://docs.docker.com/engine/security/trust/content_trust/){:target="_blank"}. It is worth reading to understand all the insights and nitty-gritty details of Content-Trust.
 
-## The Azure Container Registry Unleashed series
+## The ACR Unleashed series
 
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
@@ -329,8 +329,8 @@ The official Docker documentation [hosts a great guide and conceptual introducti
 - [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
 - [Part 7 - Use ACR as Registry for Helm charts]({%post_url 2020-04-29-azure-container-registry-unleashed-use-acr-as-regisrty-for-helm-charts %}){:target="_blank"}
 
-## What is next
+## Conclusion
 
-Before we dived into Content-Trust to verify the origin and integrity of images, we looked at essential things such as Authentication mechanisms and Identity Access Management for ACR. The next part of *Azure Container Registry Unleashed* will guide you through the process of integrating ACR with Azure Monitor.
+Before we dived into Docker Content-Trust to verify the origin and integrity of images, we looked at essential things such as Authentication mechanisms and Identity Access Management for ACR. The next part of *Azure Container Registry Unleashed* will guide you through the process of integrating ACR with Azure Monitor.
 
 You can subscribe to my blog newsletter and get automatically notified once the next article has been published. That’s the best way to stay current and never miss an article.

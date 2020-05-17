@@ -1,5 +1,5 @@
 ---
-title: Azure Container Registry Unleashed – Tasks
+title: ACR Unleashed – Tasks
 layout: post
 permalink: azure-container-registry-unleashed-tasks
 published: true
@@ -7,7 +7,7 @@ tags:
   - Azure
   - Docker
   - Azure Container Registry
-excerpt: "The fifth part of ACR Unleashed will cover Tasks and Container Build - an easy way to offload Docker Image related tasks"
+excerpt: "Leverage ACR tasks to create Docker Image automatically. Start small with Quick Tasks, grow by adding different Triggers and master Multi-Step Tasks by example"
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -15,23 +15,23 @@ unsplash_user_ref: tata_morais
 
 The fifth part of _Azure Container Registry Unleashed_ is all about automating things in the context of Docker Images and ACR. Starting from scratch with simple, yet useful ACR Quick Tasks, over regular ACR Tasks to full-fledged ACR Multi-Step Tasks, this article covers everything you need to know about Tasks in ACR.
 
-- [ARC Tasks introduction](#arc-tasks-introduction)
-  - [ACR Task pricing](#acr-task-pricing)
+- [What Are ARC Tasks](#what-are-arc-tasks)
+  - [ACR Tasks Pricing](#acr-tasks-pricing)
   - [Source Code Context](#source-code-context)
 - [ACR Quick Tasks](#acr-quick-tasks)
-  - [ACR Quick Tasks with remote contexts](#acr-quick-tasks-with-remote-contexts)
-- [Automatically triggered ACR Tasks](#automatically-triggered-acr-tasks)
+  - [ACR Quick Tasks With Remote Contexts](#acr-quick-tasks-with-remote-contexts)
+- [Trigger ACR Tasks Automatically](#trigger-acr-tasks-automatically)
 - [Multi-Step ACR Tasks](#multi-step-acr-tasks)
-  - [Building a blog search with Azure Cognitive Search](#building-a-blog-search-with-azure-cognitive-search)
-  - [Spinning up required Azure Resources](#spinning-up-required-azure-resources)
-  - [Extracting ACR Tasks from requirements](#extracting-acr-tasks-from-requirements)
+  - [Build A Blog Search With Azure Cognitive Search](#build-a-blog-search-with-azure-cognitive-search)
+  - [Create Required Azure Resources](#create-required-azure-resources)
+  - [Identify ACR Tasks](#identify-acr-tasks)
     - [The build-index ACR Task](#the-build-index-acr-task)
     - [The feed-index ACR Task](#the-feed-index-acr-task)
-- [Recap](#recap)
-- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
-- [What is next](#what-is-next)
+- [Conclusion](#conclusion)
+- [The ACR Series](#the-acr-series)
+- [What Is Next](#what-is-next)
 
-## ARC Tasks introduction
+## What Are ARC Tasks
 
 With Azure Container Registry (ACR), customers can use so-called tasks to offload several workloads from local machines, and services such as GitHub or Azure DevOps to Azure Container Registry. With ACR Tasks, customers can build, push, and run Docker Images for different platforms, including Linux, Windows, and ARM. As of today, there are three different types of Tasks available in ACR:
 
@@ -41,7 +41,7 @@ With Azure Container Registry (ACR), customers can use so-called tasks to offloa
 
 At the end of the article, you will be able to choose the correct kind of Task depending on the given requirements and know how to configure it properly.
 
-### ACR Task pricing
+### ACR Tasks Pricing
 
 ACR Tasks are charged per second. At the point of writing this article (Feb 2020), 1 second costs 0,00009 Euro when running ACR in West Europe. The costs for task executions are added to the monthly ACR fee. Keep in mind that you will be charged per second for every ACR Task you and your teammates execute. The total cost is driven by different factors such as
 
@@ -104,7 +104,7 @@ title="Fire and Forget: ACR Quick Task" caption="Fire and Forget: ACR Quick Task
 
 ACR Quick Tasks are a great way to check if your spike or local changes result in the desired Docker Image or if further investigation is required. On top of that, ACR Quick Tasks allow you to build Docker Images without relying on a local installation of Docker at all.
 
-### ACR Quick Tasks with remote contexts
+### ACR Quick Tasks With Remote Contexts
 
 We can take the previous example one step further by leveraging a remote context. Instead of uploading the source code from the local filesystem, we will consult an existing GitHub repository. ACR Tasks are flexible when it comes to Git repository contexts. ACR Tasks can either be executed in the scope of:
 
@@ -124,7 +124,7 @@ Again, ACR will go ahead and verify if the Docker image could be created success
 {% include image-caption.html imageurl="/assets/images/posts/2020/acr-tasks-quick-task-3.png"
 title="ACR Quick Task with remote context" caption="ACR Quick Task with remote context" width="850px" %}
 
-## Automatically triggered ACR Tasks
+## Trigger ACR Tasks Automatically
 
 Having Quick Tasks covered now is the time to create our first, full-fledged ACR Task. Regular ACR Tasks consist of two different kinds of objects. They always have a task definition (managed by `az acr task`), and every execution is represented as a "run". (You can see both of them in Azure Portal too.)
 
@@ -202,7 +202,7 @@ It specifies three major steps `build`, `push` and `cmd`. First, a new Docker Im
 
 Instead of explaining the concepts theoretically, I want to share a real-world example, the upcoming serach for my blog.
 
-### Building a blog search with Azure Cognitive Search
+### Build A Blog Search With Azure Cognitive Search
 
 Let's consider adding search capabilities to a blog like mine. I use [Jekyll](https://jekyllrb.com/){:target="_blank"}, a static site generator, to run my blog. Instead of implementing search capabilities on my own, I want to utilize [Azure Cognitive Search](https://azure.microsoft.com/en-us/services/search/){:target="_blank"} and forward user's search queries to the managed search service.
 
@@ -216,7 +216,7 @@ During Docker Image build time, the latest code from the blog repository will be
 
 All sensitive configuration data (such as the instance name of Azure Cognitive Search and the Admin API Key) should be pulled during Docker container initialization and attached to the container as environment variables. Communication between the ACR Task and Azure KeyVault should happen on behalf of a dedicated Managed Service Identity (MSI). (I prefer a dedicated, pre-provisioned MSI to have full control over Access-Policies.)
 
-### Spinning up required Azure Resources
+### Create Required Azure Resources
 
 You can use the following script to spin-up all required Azure resources (besides ACR).
 
@@ -261,7 +261,7 @@ echo "Managed Service Identity ID " $MSI_ID
 
 ```
 
-### Extracting ACR Tasks from requirements
+### Identify ACR Tasks
 
 Once all resources are created and available in your Azure subscription, we can dive into the ACR Task configuration. Extracting all requirements from the sentences above, we may end up with two independent ACR Tasks.
 
@@ -376,7 +376,7 @@ The nitty and gritty part of ACR Multi-Step tasks is, of course, the `yaml` defi
 
 However, the ACR team keeps on improving the `yaml` schema and is continuously working on the official documentation.
 
-## Recap
+## Conclusion
 
 ACR Tasks offer a great utility to verify Docker Image creation in the inner-loop. I use them often to offload building and pushing new Docker Images directly to ACR. Creating Docker Images from the local filesystem maybe interesting while having limited local computing power.
 
@@ -384,7 +384,7 @@ However, I found multi-step ACR Tasks being a bit tricky. Especially in real-wor
 
 Once you made it through the combination of nitty, gritty arguments, ACR Tasks could be the vehicle to build, push and run Docker Images for one time tasks. Personally, I would offload execution of the Docker Image to other services such as Azure Functions, Azure AppServices, Azure Container Instances or Azure Kubernetes Service.
 
-## The Azure Container Registry Unleashed series
+## The ACR Series
 
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
@@ -394,7 +394,7 @@ Once you made it through the combination of nitty, gritty arguments, ACR Tasks c
 - [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
 - [Part 7 - Use ACR as Registry for Helm charts]({%post_url 2020-04-29-azure-container-registry-unleashed-use-acr-as-regisrty-for-helm-charts %}){:target="_blank"}
 
-## What is next
+## What Is Next
 
 In the sixth part of ACR Unleashed, we will look into Scanning Docker Images in ACR with Azure Security Center to prevent distribution of malicious Docker Images.
 

@@ -1,5 +1,5 @@
 ---
-title: Azure Container Registry Unleashed – Webhooks
+title: ACR Unleashed – Webhooks
 layout: post
 permalink: azure-container-registry-unleashed-webhooks
 published: true
@@ -7,7 +7,7 @@ tags:
   - Azure
   - Docker
   - Azure Container Registry
-excerpt: 'In part four of Azure Container Registry Unleashed you will learn how to integrate ACR with custom apps and services using webhooks.'
+excerpt: 'Connect any external service to Azure Container Registry using ACR webhooks. Learn which ACR webhooks exist and how to use them'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -15,20 +15,20 @@ unsplash_user_ref: tata_morais
 
 In the fourth part of Azure Container Registry Unleashed, we will dive into webhooks offered by ACR and learn how to use them to build simple, yet powerful automations based on ACR interactions such as pushing new tags of an image.
 
-- [What is a webhook](#what-is-a-webhook)
-- [ACR webhooks](#acr-webhooks)
-- [ACR SKU based webhook limits](#acr-sku-based-webhook-limits)
-- [Azure Integrations using ACR webhooks](#azure-integrations-using-acr-webhooks)
+- [What Is A Webhook](#what-is-a-webhook)
+- [ACR Webhooks](#acr-webhooks)
+- [ACR Webhook Limits By SKU](#acr-webhook-limits-by-sku)
+- [Integrate Azure Services Using ACR Webhooks](#integrate-azure-services-using-acr-webhooks)
 - [The Demo Project](#the-demo-project)
   - [The Azure Functions Project](#the-azure-functions-project)
-  - [Create ACR webhook](#create-acr-webhook)
-  - [Testing the webhook](#testing-the-webhook)
-  - [Pushing new tags to ACR](#pushing-new-tags-to-acr)
-  - [Check results in CosmosDB](#check-results-in-cosmosdb)
-- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
-- [What is next](#what-is-next)
+  - [Create ACR Webhook](#create-acr-webhook)
+  - [Test The Webhook](#test-the-webhook)
+  - [Push New Docker Image Tags To ACR](#push-new-docker-image-tags-to-acr)
+  - [Check Results In Azure CosmosDB](#check-results-in-azure-cosmosdb)
+- [The ACR Unleashed series](#the-acr-unleashed-series)
+- [Conclusion](#conclusion)
 
-## What is a webhook
+## What Is A Webhook
 
 Before we dive into ACR webhooks, let us do a quick refresher on webhooks. However, if you are familiar with webhooks, skip this paragraph and move on to (ACR webhooks).
 
@@ -40,7 +40,7 @@ By using webhooks, you can communicate between different applications or service
 - [https://docs.microsoft.com/en-us/aspnet/webhooks/#webhooks-overview](https://docs.microsoft.com/en-us/aspnet/webhooks/#webhooks-overview){:target="_blank"}
 - [https://buttercms.com/blog/webhook-vs-api-whats-the-difference](https://buttercms.com/blog/webhook-vs-api-whats-the-difference){:target="_blank"}
 
-## ACR webhooks
+## ACR Webhooks
 
 Like many other Azure Services, Azure Container Registry offers different kinds of webhooks, that you can consume to integrate or automate things. Currently, ACR offers the following webhooks:
 
@@ -56,13 +56,13 @@ Conceptionally, all webhooks work the same way. However, based on the type of we
 
 `quarantine` is another webhook that I want to offload, for now. We will cover image scanning in another, upcoming post. However, you can subscribe to the `quarantine` event now. The webhook is currently invoked by ACR when you push a new Docker Image.
 
-## ACR SKU based webhook limits
+## ACR Webhook Limits By SKU
 
 You have a limited number of webhooks that could be registered per ACR instance. Those limits are hard limits. As far as I know, it is not possible to “buy” more webhooks to exceed that ACR SKU limit. See the following table displaying the hard ACR webhook limitations, based on chosen SKU.
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/acr-unleashed-webhooks-sku.png" width="800px" title="ACR webhook limits" caption="ACR webhook limits" %}
 
-## Azure Integrations using ACR webhooks
+## Integrate Azure Services Using ACR Webhooks
 
 There are some Azure Services available that use ACR webhooks to integrate with ACR and react on new tags being pushed to ACR. You can configure an Azure WebApp for Containers to run a specific Docker Image from ACR. Based on the ACR push webhook, you can enable continuous deployment (CD) on your WebApp. The Host will react on the webhook execution by spinning up a new Docker container based on the pushed Docker Image. This is easy to achieve using Azure Portal and well documented on [docs.microsoft.com](https://docs.microsoft.com){:target="_blank"} and that is why I skip that part here.
 
@@ -159,7 +159,7 @@ az functionapp config appsettings set --name $azFnApp -g $rg \
   --settings "CosmosDbConStr=$connectionString"
 ```
 
-### Create ACR webhook
+### Create ACR Webhook
 
 To create our webhook in ACR, we need a couple of information from our invocation target (the previously deployed Azure Functions). Obviously, we need the URI of our endpoint. We can acquire this with the following command
 
@@ -207,7 +207,7 @@ az acr webhook list -r  $acrName
 
 ```
 
-### Testing the webhook
+### Test The Webhook
 
 You can test any webhook without changing something in ACR. There is the dedicated `ping` sub-command, which we will use to test our custom webhook:
 
@@ -220,7 +220,7 @@ az acr webhook list-events -r $acrName -n ImagePushDemo -o table
 
 ```
 
-### Pushing new tags to ACR
+### Push New Docker Image Tags To ACR
 
 We will create a bunch of new tags for our NGINX image and push them over to Azure Container Registry to add some load on our webhook. To do so, create a small shell script - similar to the script we created in part three of the series. The script below will create 10 new tags for the demo image and push all of them to ACR. However, because all tags point to the same docker layer, pushing all those should be finished quickly.
 
@@ -245,13 +245,13 @@ done
 
 ```
 
-### Check results in CosmosDB
+### Check Results In Azure CosmosDB
 
 Finally, it is the right time to go back to CosmosDB Data-Explorer and check all tags being persisted in Azure CosmosDB. Depending on other activities being executed on your ACR instance, the represented list of documents may contain a lot more items than mine.
 
 {% include image-caption.html imageurl="/assets/images/posts/2019/acr-unleashed-cosmosdb.png" width="800px" title="ACR metadata in CosmosDB" caption="ACR metadata in CosmosDB" %}
 
-## The Azure Container Registry Unleashed series
+## The ACR Unleashed series
 
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
@@ -261,7 +261,7 @@ Finally, it is the right time to go back to CosmosDB Data-Explorer and check all
 - [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
 - [Part 7 - Use ACR as Registry for Helm charts]({%post_url 2020-04-29-azure-container-registry-unleashed-use-acr-as-regisrty-for-helm-charts %}){:target="_blank"}
   
-## What is next
+## Conclusion
 
 We have seen, it is easy and straight forward to integration ACR with your products / services using webhooks to react on critical events such as Images being pushed or deleted.
 

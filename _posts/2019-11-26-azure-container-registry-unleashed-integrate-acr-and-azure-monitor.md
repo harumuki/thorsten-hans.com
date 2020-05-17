@@ -1,5 +1,5 @@
 ---
-title: Azure Container Registry Unleashed – Integrate ACR and Azure Monitor
+title: ACR Unleashed – Integrate ACR And Azure Monitor
 layout: post
 permalink: azure-container-registry-unleashed-integrate-acr-and-azure-monitor
 published: true
@@ -7,7 +7,7 @@ tags:
   - Azure
   - Docker
   - Azure Container Registry
-excerpt: 'In part three of Azure Container Registry Unleashed you will learn how to integrate ACR and Azure Monitor to get important insights'
+excerpt: 'Get ACR metricts with Azure Monitor. Configure individual alrets and notifications. Integrate ACR and Azure Monitor with Log Analytics Workspaces now. Start now and get deep insights'
 image: /acr-unleashed.jpg
 unsplash_user_name: Thais Morais
 unsplash_user_ref: tata_morais
@@ -15,16 +15,16 @@ unsplash_user_ref: tata_morais
 
 The third part of Azure Container Registry Unleashed will guide you through the process of integrating ACR and Azure Monitor to collect essential information and metrics about your ACR instances at runtime. The integration of ACR and Azure Monitor is currently in public preview. However, retrieving insights about your ACR instance is mission-critical, so we will dive into this topic now.
 
-- [What is Azure Monitor](#what-is-azure-monitor)
-- [Create a Log Analytics Workspace](#create-a-log-analytics-workspace)
-- [Connect ACR to Azure Monitor](#connect-acr-to-azure-monitor)
-- [Feed data into Azure Monitor](#feed-data-into-azure-monitor)
-- [Query ACR events and metrics from Azure Monitor](#query-acr-events-and-metrics-from-azure-monitor)
-- [Create Alerts based on ACR events](#create-alerts-based-on-acr-events)
-- [The Azure Container Registry Unleashed series](#the-azure-container-registry-unleashed-series)
-- [What’s next](#whats-next)
+- [What Is Azure Monitor](#what-is-azure-monitor)
+- [Create A Log Analytics Workspace](#create-a-log-analytics-workspace)
+- [Connect ACR To Azure Monitor](#connect-acr-to-azure-monitor)
+- [Populate Sample Data Into Azure Monitor](#populate-sample-data-into-azure-monitor)
+- [Query ACR Events And Metrics Using Azure Monitor](#query-acr-events-and-metrics-using-azure-monitor)
+- [Create Alerts For ACR Events](#create-alerts-for-acr-events)
+- [The ACR Unleashed series](#the-acr-unleashed-series)
+- [Conclusion](#conclusion)
 
-## What is Azure Monitor
+## What Is Azure Monitor
 
 Azure Monitor is a centralized hub for aggregating, analyzing, visualizing and working with data. It consumes data from different sources and collects that data in data stores. All data collected by Azure Monitor fits into on of two categories, logs and metrics.
 
@@ -39,7 +39,7 @@ title="Azure Monitor - Azure Resource Flow (https://docs.microsoft.com)" caption
 To ship data from ACR to Azure Monitor, we have to utilize an Azure Log Analytics workspace. Although chances are good that your subscription already contains a Log Analytics Workspace, we are going create a new instance to isolate our ACR related data.
 If you want to dive deeper into concepts and features offered by Azure monitor, consult the [official product documentation](https://docs.microsoft.com/en-us/azure/azure-monitor/overview){:target="_blank"}.
 
-## Create a Log Analytics Workspace
+## Create A Log Analytics Workspace
 
 You can quickly create a new Azure Log Analytics Workspace using Azure CLI. We will create the new Azure Log Analytics Workspace in Azure Resource Group “acr-unleashed” to group it logically with our ACR instance.
 
@@ -51,7 +51,7 @@ az monitor log-analytics create -g acr-unleashed \
 
 Provisioning a new workspace can take a couple of seconds, wait for the command to finish. Alternatively, you can examine your currently selected subscription and list all available Azure Log Analytics Workspaces using the `az monitor log-analytics workspace list` command.
 
-## Connect ACR to Azure Monitor
+## Connect ACR To Azure Monitor
 
 You integrate ACR with Azure Monitor by adding a corresponding diagnostic-settings to the ACR instance. Although this could be done via Azure Portal, we will use Azure CLI.
 
@@ -98,7 +98,7 @@ az monitor diagnostic-settings create --resource $acrid \
 
 The snippet configures diagnostic-settings for all events and metrics currently available as part of the preview. Chances are good that we will see more and more log types in the near future.
 
-## Feed data into Azure Monitor
+## Populate Sample Data Into Azure Monitor
 
 Once ACR is connected to Azure Monitor, it could take a couple of minutes until first logs and metrics show up in Azure Monitor. To populate some data, we will feed some Docker Images into the ACR instance. The following script will create a simple Docker Image and publish it in ACR using different tags.
 
@@ -124,7 +124,7 @@ done
 
 Store the content of the snippet above to a local file (I called mine feed-acr.sh). Change the file mode bits to allow script execution via `chmod +x feed-acr.sh` and run the script via `./feed-acr.sh`.
 
-## Query ACR events and metrics from Azure Monitor
+## Query ACR Events And Metrics Using Azure Monitor
 
 Having some data in Azure Monitor, you can move over to Azure Portal and examine the collected data. First let’s look at the ACR Logs. In Preview, ACR logs just two kinds of events.
 
@@ -151,7 +151,7 @@ To examine the ACR Mertics, open the Metrics blade in Azure Monitor and add the 
 {% include image-caption.html imageurl="/assets/images/posts/2019/acr-unleashed-azure-monitor-metrics.png"
 title="Azure Monitor Metrics" caption="Azure Monitor Metrics" %}
 
-## Create Alerts based on ACR events
+## Create Alerts For ACR Events
 
 Last but not least, we are going to instruct Azure Monitor to send notifications via text and mail if our ACR instance inspects higher load as expected. For demonstration purpose, we define a unexpected, high load when more than five images or tags were successfully pushed within the timeframe of five minutes.
 
@@ -201,7 +201,7 @@ Some seconds after all images have been pushed to ACR, you will receive both, a 
 {% include image-caption.html imageurl="/assets/images/posts/2019/acr-unleashed-alerts.png"
 title="Azure Monitor Alerts" caption="Azure Monitor Alerts" %}
 
-## The Azure Container Registry Unleashed series
+## The ACR Unleashed series
 
 - [Part 1 - Introduction and Geo Replication]({%post_url 2019-11-19-azure-container-registry-unleashed-acr-up-and-running %}){:target="_blank"}
 - [Part 2 - Authentication, IAM and Content Trust]({%post_url 2019-11-21-azure-container-registry-unleashed-authentication-iam-and-contenttrust %}){:target="_blank"}
@@ -211,7 +211,7 @@ title="Azure Monitor Alerts" caption="Azure Monitor Alerts" %}
 - [Part 6 - Image scanning with Azure Security Center]({%post_url 2020-04-20-azure-container-registry-unleashed-image-scanning-with-security-center %}){:target="_blank"}
 - [Part 7 - Use ACR as Registry for Helm charts]({%post_url 2020-04-29-azure-container-registry-unleashed-use-acr-as-regisrty-for-helm-charts %}){:target="_blank"}
 
-## What’s next
+## Conclusion
 
 Integrating ACR and Azure Monitor is straight forward and pretty much self-explaining. To monitor and operate your private Docker Registry professionally, you should enable Azure Monitor integration immediately for all your critical ACR instances. We will look into ACR Webhooks in the next part of the Azure Container Registry Unleashed series.
 
