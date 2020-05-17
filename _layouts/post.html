@@ -65,14 +65,14 @@ post_class: post-template
         "image": "{{ page.image | prepend: site.image_folder | absolute_url }}",  
         "author": {
           "@type": "Person",
-          "name": "{{ site.data.author.name }}"
+          "name": "{{ site.data.author.full_name }}"
         },  
         "publisher": {
           "@type": "Organization",
-          "name": "{{ site.data.author.name }}",
+          "name": "{{ site.data.author.full_name }}",
           "logo": {
             "@type": "ImageObject",
-            "url": "{{ site.author.image | prepend: "/assets/images/" | absolute_url }}",
+            "url": "{{ site.data.author.image | prepend: "/assets/images/" | absolute_url }}",
             "width": 60,
             "height": 60
           }
