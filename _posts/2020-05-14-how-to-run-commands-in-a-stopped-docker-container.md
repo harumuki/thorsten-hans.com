@@ -11,7 +11,7 @@ unsplash_user_name: NOAA
 unsplash_user_ref: noaa
 ---
 
-You may already know the `exec` command, which allows you to execute a command inside of a running Docker container. This works excellent and will enable us to dive into a running container to inspect certain things like files in the file system, running processes, and other stuff. However, `exec` does not work when the Docker container stopped already.  
+You may already know the `exec` command, which allows you to execute a command inside of a running Docker container. This works excellent and will enable us to dive into a running container to inspect certain things like files in the file system, running processes, and other stuff. However, `exec` does not work when the Docker container stopped already. The following lines will explain and demonstrate how to run commands in stopped Docker containers.
 
 When we try to run `/bin/sh` on a stopped container using `docker exec`, Docker will throw a `No such container` error. We have to transform the stopped Docker container into a new Docker image before we can inspect the internals of the container.
 We can transform a container into a Docker image using the  `commit` command. All we need to know is the name or the identifier of the stopped container. (You can get a list of all stopped containers with `docker ps -a`).
@@ -49,4 +49,8 @@ docker image rm debug/ubuntu
 
 ```
 
-As you can see, it is easy to inspect certain things of stopped containers by re-using them as Docker image for investigation. Did you like the article? Were all questions answered? Please let me know. 👇🏻
+### Conclusion
+
+Being able to run commands in stopped Docker containers is a great way to inspect and debug certain things in stopped Docker containers.
+
+Did you like the article? Were all questions answered? Please let me know. 👇🏻

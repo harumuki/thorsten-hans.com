@@ -1,5 +1,5 @@
 ---
-title: Getting started with Helm 3
+title: Getting Started With Helm 3
 layout: post
 permalink: getting-started-with-helm3
 published: true

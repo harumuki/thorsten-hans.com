@@ -1,12 +1,12 @@
 ---
-title: Limit Memory For Docker Containers
+title: Docker Container Memory Limits Explained
 layout: post
 permalink: limit-memory-for-docker-containers
 published: true
 date: 2020-05-15 08:30:00
 tags: 
   - Docker
-excerpt: "Applying memory limits to Docker containers is important to keep your local machine fast and healthy. This post shows how to set memory and swap limits. Get your Docker containers under control."
+excerpt: "Specifying Docker container memory limits is essential to keep your local machine fast and healthy. This post shows how to set memory and swap limits for Docker Containers."
 image: /memory.jpg
 unsplash_user_name: Liam Briese
 unsplash_user_ref: liam_1
@@ -18,14 +18,14 @@ By default, Docker does not apply memory limitations to individual containers. C
 No need to panic (for most of the users)! If you are using [Docker Desktop](https://www.docker.com/products/docker-desktop){:target="_blank"}, the **host** is actually a **virtualized host**. On macOS, the **host** is a virtualized system leveraging Apple’s Hypervisor framework (which has been released with macOS 10.10 Yosemite). We use the Docker Desktop app, to specify an overall limit for containerized workloads.
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/docker-memory-1.png"
-title="Docker Desktop - Specify global memory limit" caption="Docker Desktop - Specify global memory limit" width="750px" %}
+title="Docker Container Memory Limits - Set global memory limit" caption="Docker Desktop - Set global memory limit" width="750px" %}
 
 When starting a container with Docker CLI using `docker run`, two flags - `--memory` and `--memory-swap` - are available, which you can use to control the available memory for the container.
 
-We can specify the memory limit (excluding swap) using the `--memory` or the shortcut `-m`.  When the container exceeds the specified amount of memory, the container will start to swap. By default, the container can swap the same amount of assigned memory, which means that the overall hard limit would be around 256m when you set `--memory 128m`. I quickly create a diagram to explain how both values relate to each other.
+We can specify the Docker container memory limits (excluding swap) using the `--memory` or the shortcut `-m`.  When the container exceeds the specified amount of memory, the container will start to swap. By default, the container can swap the same amount of assigned memory, which means that the overall hard limit would be around 256m when you set `--memory 128m`. I quickly create a diagram to explain how both values relate to each other.
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/docker-memory-2.png"
-title="Docker - Relationship of memory and swap" caption="Docker - Relationship of memory and swap" width="750px" %}
+title="Docker Container Memory Limits - Relationship of memory and swap" caption="Docker Memory Limits - Relationship of memory and swap" %}
 
 ## Testing Docker Memory Limits
 
@@ -140,4 +140,6 @@ stress: info: [1] successful run completed in 10s
 
 ## Conclusion
 
-Using the `--memory` and `- memory-swap` flags, you have fine-granular control over memory limits for individual Docker containers, preventing them from draining the overall environment's performance.
+Using the `--memory` and `- memory-swap` flags, you have fine-granular control over Docker container memory limits. Understanding how Docker handles memory and swap limits you are able to control how many memory your containers may consume.
+
+By setting memory and swap limits explicitly to all your Docker containers, you can balance resource utilization and control priority between different containers running at the same time on your local machine.

@@ -12,7 +12,7 @@ unsplash_user_name: Fabian Grohs
 ---
 I am super fussy when it comes to terminal configuration. I tweak my dotfiles now and then to optimize my workflow and improve my overall productivity.
 
-I love having features like auto-suggestion. However, I work for different customers, and I do quite a lot of public speaking at developer conferences (or virtual events these days). In situations like these, I have to clear the entire ZSH history for the current terminal session, to prevent me from leaking sensitive information unintentionally.
+I love having features like auto-suggestion. However, I work for different customers, and I do quite a lot of public speaking at developer conferences (or virtual events these days). In situations like these, I have to clean ZSH history entirely for the current terminal session, to prevent me from leaking sensitive information unintentionally.
 
 ## Clean ZSH History Temporary
 
