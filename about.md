@@ -2,7 +2,7 @@
 layout: page
 title: About
 image: /assets/images/pages/about-me.jpg
-excerpt: Kubernetes, cloud-native development and infrastructure as code are Thorsten's main focus areas. Read this "About" page, if you want to learn more about Thorsten Hans.
+excerpt: My name is Thorsten Hans. I focus on Azure, Kubernetes and Cloud-Native Application development. Additionally, I am awarded as Microsoft Azure MVP for the 9th time in a row now...
 ---
 
 Thorsten Hans lives in the most beautiful state of the world, called Saarland in the south-west of Germany. He's working as a consultant at Thinktecture, a German software consultancy.
