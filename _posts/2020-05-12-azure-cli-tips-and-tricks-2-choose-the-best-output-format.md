@@ -1,5 +1,5 @@
 ---
-title: Azure CLI Tips & Tricks 2 – Choose the best output format
+title: Choose the best output format - Azure CLI Tips & Tricks 2
 layout: post
 permalink: azure-cli-tips-and-tricks-2-choose-the-best-output-format
 published: true

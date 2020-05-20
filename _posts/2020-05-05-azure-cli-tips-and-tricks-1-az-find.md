@@ -1,5 +1,5 @@
 ---
-title: Azure CLI Tips & Tricks 1 – Get samples with az find 
+title: Get samples with az find - Azure CLI Tips & Tricks 1
 layout: post
 permalink: azure-cli-tips-and-tricks-1-get-samples-with-az-find
 published: true
