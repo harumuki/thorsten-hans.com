@@ -1,0 +1,12 @@
+{
+    "appPort": 4000,
+    "extensions": [
+        "yzhang.markdown-all-in-one",
+        "aaron-bond.better-comments",
+        "DavidAnson.vscode-markdownlint",
+        "johnpapa.vscode-peacock"
+    ],
+    "settings": {
+        "peacock.remoteColor": "#d20068"
+    }
+}
