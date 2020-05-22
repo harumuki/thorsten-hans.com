@@ -21,7 +21,7 @@ unsplash_user_ref: ecasap
   - [Terraform Providers](#terraform-providers)
   - [The HashiCorp Configuration Language (HCL)](#the-hashicorp-configuration-language-hcl)
   - [Preview Changes - Terraform Execution Plan](#preview-changes---terraform-execution-plan)
-- [Setuo Terraform On Your Machine](#setuo-terraform-on-your-machine)
+- [Setup Terraform On Your Machine](#setup-terraform-on-your-machine)
   - [Terraform in VisualStudio Code](#terraform-in-visualstudio-code)
 - [DataTypes in HCL](#datatypes-in-hcl)
   - [Booleans in HCL](#booleans-in-hcl)
@@ -113,7 +113,7 @@ Besides those three major benefits, *Terraform* offers things like:
 
 and many more.
 
-## Setuo Terraform On Your Machine
+## Setup Terraform On Your Machine
 
 Setting up *Terraform* is quite smooth. *Terraform* can be used on every popular operating system. It can be downloaded directly from the [official website](https://www.terraform.io/downloads.html){:target="_blank"}.
 
