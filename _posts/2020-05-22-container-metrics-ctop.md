@@ -1,7 +1,7 @@
 ---
 title: Container Metrics With CTOP
 layout: post
-permalink: container-metrics-ctop
+permalink: docker-container-metrics-ctop
 published: true
 tags: 
   - Docker
