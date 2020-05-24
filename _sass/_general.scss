@@ -433,17 +433,20 @@ img {
 
 .post-content > ul {
     margin-top: 16px;
+    
+}
+
+.post-content ul {
     list-style: none;
 }
 
-
-.post-content > ul > li {
+.post-content  ul  li {
     padding-left: 1em; 
     text-indent: -.7em;
     margin-bottom: 8px;
 }
 
-.post-content > ul> li::before {
+.post-content  ul  li::before {
     content: "• ";
     color: $color-accent;
 }
