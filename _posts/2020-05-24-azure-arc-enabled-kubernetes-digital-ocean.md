@@ -5,8 +5,8 @@ permalink: azure-arc-enabled-kubernetes-digital-ocean
 published: true
 date: 2020-05-24 08:00:00
 tags: 
+  - Azure Kubernetes Service
   - Azure
-  - AKS
   - Azure Arc
 excerpt: "Use Azure Arc to manage your Digital Ocean Kubernetes cluster in Microsoft Azure. Learn to connect, tag and query Azure Arc enabled Kubernetes."
 image: /azure-arc-enabled-kubernetes.jpg
