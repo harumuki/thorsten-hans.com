@@ -20,7 +20,7 @@ Cluster auto-scaling for [Azure Kubernetes Service (AKS)](https://azure.microsof
 
 - [What is the AKS cluster auto-scaler](#what-is-the-aks-cluster-auto-scaler)
 - [Why should you use cluster auto-scaler](#why-should-you-use-cluster-auto-scaler)
-- [Enable AKS cluster auto-scaler](#enable-aks-cluster-auto-scaler)
+- [Enable Azure Kubernetes cluster auto-scaler](#enable-azure-kubernetes-cluster-auto-scaler)
 - [Modify auto-scaler boundaries](#modify-auto-scaler-boundaries)
 - [Disable cluster auto-scaler](#disable-cluster-auto-scaler)
 - [Verify AKS cluster auto-scaling](#verify-aks-cluster-auto-scaling)
@@ -51,7 +51,7 @@ The AKS cluster auto-scaler allows you to keep your application _responsive_ and
 
 Automated scaling behavior of the entire cluster makes the AKS cluster auto-scaler a mandatory and essential feature, which every AKS customer should know about.
 
-## Enable AKS cluster auto-scaler
+## Enable Azure Kubernetes cluster auto-scaler
 
 To enable AKS cluster auto-scaling while creating a new AKS cluster with [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){:target="_blank"}, just append the `--enable-cluster-autoscaler` in combination with `--min-count` and `--max-count` which specify the outer boundaries for the auto-scaler.
 
@@ -74,7 +74,7 @@ az aks create -g $RESOURCE_GROUP_NAME \
 
 Azure will provision a new AKS instance and enable cluster auto-scaling. It can take a few minutes to bring everything up and enable cluster auto-scaling. So this may be the right time for a nice cup of coffee ☕️.
 
-If you already have an existing AKS cluster, you can enable the cluster auto-scaler using `az aks nodepool update`. I am always defensive when enabling cluster auto-scaler on existing AKS clusters. That said, I check the actual worker-node count before enabling it and use the number of currently assigned worker-nodes as `min-count`, to set the lower boundary of the auto-scaler.
+If you already have an existing Azure Kubernetes cluster, you can enable the cluster auto-scaler using `az aks nodepool update`. I am always defensive when enabling cluster auto-scaler on existing AKS clusters. That said, I check the actual worker-node count before enabling it and use the number of currently assigned worker-nodes as `min-count`, to set the lower boundary of the auto-scaler.
 
 ```bash
 AKS_NAME=aks-scaling-demo

@@ -17,8 +17,8 @@ title="Docker Container Metrics with ctop" caption="ctop - Essential metrics for
 
 With `ctop`, you get more than just fundamental metrics. Overall, `ctop` combines the following features in one single tool:
 
-- display memory consumption per container
-- display CPU utilization per container
+- display memory consumption per container ([learn how to limit memory consumption]({% post_url 2020-05-15-limit-memory-for-docker-containers %}))
+- display CPU utilization per container  ([learn how to limit CPU utilization]({% post_url 2020-05-18-limit-cpu-usage-for-docker-containers %}))
 - direct access to the container log stream
 - essential container interaction like starting. stopping and so on
 - execute commands in containers

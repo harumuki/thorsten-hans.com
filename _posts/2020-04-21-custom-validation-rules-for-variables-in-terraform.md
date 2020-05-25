@@ -12,7 +12,7 @@ unsplash_user_name: Elaine Casap
 unsplash_user_ref: ecasap
 ---
 
-In Terraform, we use *Variables* to make projects configurable and to reduce code duplication. We can harden variables, by applying individual validations to them. 
+In Terraform, we use *Variables* to make projects configurable and to reduce code duplication. We can harden variables, by applying individual validations to them.
 
 Obviously, providers like [the official Azure Provider](https://www.terraform.io/docs/providers/azurerm/index.html){:target="_blank"} come with validations on resource attributes. For example, consider describing an instance of [Azure Container Registry (ACR)](https://azure.microsoft.com/en-us/services/container-registry/){:target="_blank"}.  
 
