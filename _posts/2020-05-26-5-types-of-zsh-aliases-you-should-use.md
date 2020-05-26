@@ -19,7 +19,7 @@ I use Docker, Kubernetes, and Microsoft Azure every day.  That said, it makes se
 
 All your aliases are defined in `~/.zshrc`. ZSH loads the configuration file during startup. However, you can always force to reload your configuration file use `source ~/.zshrc`.
 
-This article will teach you how to create and use these four types of aliases:
+This article will teach you how to create and use these five types of aliases:
 
 - [Simple Aliases](#simple-aliases)
 - [Suffix Aliases](#suffix-aliases)
@@ -63,6 +63,8 @@ alias -s md=code
 # JSON files
 alias -s json=code
 
+# bulk association
+alias -s {cs,ts,html}=code
 ```
 
 Load the modified `~/.zshrc` and execute the following:
@@ -158,10 +160,12 @@ alias sc="source $HOME/.zshrc"
 
 ## Conclusion <!-- omit in toc -->
 
-You have seen four different types of ZSH aliases that will boost your productivity. Foud different types of aliases used to achieve almost everything in your shell.
+You have seen five different types of ZSH aliases (counting os-specific aliases as dedicated type) that will boost your productivity. Foud different types of aliases used to achieve almost everything in your shell.
 
 Take your time. Do some research. Identify the command-line tools you are using daily or regularly, find patterns, and create corresponding aliases that increase your productivity by reducing keystrokes.
 
 Having powerful shells on all operating systems (finally including windows using WSL 2.0), you should care about your shell performance. Make ZSH your own.
 
 I do a lot of conference speaking; if you are presenting at conferences or meetups too, you should start your presentation by quickly explaining the aliases you will use throughout the talk to onboard your audience. Maybe they are using `kc` instead of `k` for `kubectl`. 😂
+
+Special thanks to [Sundeep Agarwal](https://github.com/learnbyexample){:target="_blank"} for pointing me to some typos and to [simohamed](https://github.com/smhmd){:target="_blank"} for the tip regarding bulk association for suffix aliases.
