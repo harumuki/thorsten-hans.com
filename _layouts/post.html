@@ -4,44 +4,42 @@ disqus: false
 post_class: post-template
 ---
 <div id="content" class="site-content fadeInDown">
-    <main id="main" class="site-main outer">
-        <article class="post-full inner">
-            <header class="post-header">
-                <div class="post-meta"><time class="post-date"
-                        datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,%Y" }}</time></div>
-                <h1 class="posttitle">{{ page.title }}</h1>
-                <div class="post-meta">
-                    {% if page.tags.size > 0 %}
-                    <span class="post-tags">
-                        <span>tags</span>
-                        {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
-                        <a
-                            href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
-                        {% else %}
-                        <a
-                            href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
-                        {% endif %}
-                        {% endfor %}
-                    </span>
-                    {% endif %}
-                </div><!-- .post-meta -->
-            </header><!-- .post-header -->
+  <main id="main" class="site-main outer">
+    <article class="post-full inner">
+      <header class="post-header">
+        <div class="post-meta"><time class="post-date"
+            datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,%Y" }}</time></div>
+        <h1 class="posttitle">{{ page.title }}</h1>
+        <div class="post-meta">
+          {% if page.tags.size > 0 %}
+          <span class="post-tags">
+            <span>tags</span>
+            {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
+            <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
+            {% else %}
+            <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '-' }}/'>{{ tag | camelcase }}</a>
+            {% endif %}
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div><!-- .post-meta -->
+      </header><!-- .post-header -->
+      {% include carbon-ad.html %}
+      <div class="post-content">
+        {{content}}
+      </div>
+      <footer class="post-footer">
+      </footer>
+      {% include disqus.html %}
+    </article>
 
-            <div class="post-content">
-                {{content}}
-            </div>
-            <footer class="post-footer">
-            </footer>
-            {% include disqus.html %}
-        </article>
-
-        <section class="read-next inner">
-            {% include related-posts.html%}
-        </section><!-- .read-next -->
-        {% if site.mailchimp_url %}
-        {% include newsletter-box.html %}
-        {% endif %}
-    </main><!-- .site-main -->
+    <section class="read-next inner">
+      {% include related-posts.html%}
+    </section>
+    {% if site.mailchimp_url %}
+    {% include newsletter-box.html %}
+    {% endif %}
+  </main><!-- .site-main -->
 </div><!-- .site-content -->
 <script type="application/ld+json">
     {
