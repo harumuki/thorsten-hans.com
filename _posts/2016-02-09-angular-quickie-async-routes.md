@@ -4,7 +4,7 @@ layout: post
 permalink: angular-quickie-async-routes
 published: true
 tags: [Angular]
-excerpt: null
+excerpt: Learn how to use async routes in Angular
 image: /2016-angular-quickie.jpg
 ---
 

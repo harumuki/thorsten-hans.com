@@ -8,7 +8,7 @@ tags:
   - Terraform
   - Azure
   - AWS
-excerpt: 'Slidedeck and Demos from my "IaC for everyone with Terraform" talk at API Summit 2019 in Berlin.'
+excerpt: 'Slidedeck and Demos from my IaC for everyone with Terraform talk at API Summit 2019 in Berlin.'
 image: /terraform.jpg
 unsplash_user_name: Elaine Casap
 unsplash_user_ref: ecasap

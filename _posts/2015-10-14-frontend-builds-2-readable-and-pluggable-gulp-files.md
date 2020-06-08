@@ -4,7 +4,7 @@ layout: post
 permalink: frontend-builds-2-readable-and-pluggable-gulp-files
 published: true
 tags: [Build, Gulp.js]
-excerpt: null
+excerpt: Learn how to build composible Gulpfiles in the second part of the series on frontend builds
 image: /frontend-builds.jpg
 unsplash_user_name: Iker Urteaga
 unsplash_user_ref: iurte
@@ -25,7 +25,7 @@ unsplash_user_ref: iurte
 
 ## The idea
 
-Within this post, I'll explain the steps I've used to move from the [initial gulpfile](https://github.com/ThorstenHans/x-note/blob/3969b13344ff5992786fc890893949265727c869/gulpfile.js){:target="_blank"} to a readable and maintainable version of it. However, before explaining the technical steps, let's talk about the target. Over the past year I've seen so many different styles and approaches for writing and organizing Gulpfiles, but most of them share the same problem. Once you revisit the project and its gulpfile after a few weeks or months, you need much time for reading and understanding what gulp is doing in this particular project when executing `gulp default` or just `gulp`. To reduce this effort, I've outlined my idea of how to align tasks and how things should interact using a small mockup
+Within this post, I will explain the steps I used to move from the [initial gulpfile](https://github.com/ThorstenHans/x-note/blob/3969b13344ff5992786fc890893949265727c869/gulpfile.js){:target="_blank"} to a readable and more maintainable version. Before explaining the technical steps, let's talk about the target. Over the past year I've seen so many different styles and approaches for writing and organizing Gulpfiles, but most of them share the same problem. Once you revisit the project and its gulpfile after a few weeks or months, you need much time for reading and understanding what gulp is doing in this particular project when executing `gulp default` or just `gulp`. To reduce this effort, I've outlined my idea of how to align tasks and how things should interact using a small mockup
 
 {% include image-caption.html imageurl="/assets/images/posts/2015/frontend-builds-2-task-architecture.png"
 title="Gulp Build Architecture" caption="Gulp Build Architecture" %}

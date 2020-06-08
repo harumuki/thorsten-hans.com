@@ -7,7 +7,7 @@ tags:
   - Conferences
   - Terraform
   - Azure
-excerpt: 'Slidedeck and Demos from my "Code your Azure Deployments using HashiCorp Terraform" talk at European SharePoint and Azure Conference 2019 in Prague.'
+excerpt: 'Slidedeck and Demos from my Code your Azure Deployments using HashiCorp Terraform talk at European SharePoint and Azure Conference 2019 in Prague.'
 image: /terraform.jpg
 unsplash_user_name: Elaine Casap
 unsplash_user_ref: ecasap
