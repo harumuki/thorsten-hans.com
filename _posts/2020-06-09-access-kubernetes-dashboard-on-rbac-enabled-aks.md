@@ -7,9 +7,9 @@ date: 2020-06-09 09:00:00
 tags: 
   - Kubernetes
 excerpt: "Get quick access to the Kubernetes Dashboard in Azure Kubernetes Service (AKS) with RBAC enabled by creating a ClusterRoleBinding."
-image: /six.jpg
-unsplash_user_name: Clem Onojeghuo
-unsplash_user_ref: clemono2
+image: /chain.jpg
+unsplash_user_name: Kaley Dykstra
+unsplash_user_ref: kaleyloved
 ---
 
 The Kubernetes dashboard is quite useful to drill through existing Kubernetes clusters and inspect things without using `kubectl`. However, starting with version `2.0.40` of Azure CLI, Azure Kubernetes clusters are deployed with Role-Based-Access-Control (RBAC)  enabled by default. Since that point in time, you will be presented with a bunch of errors when trying to access the traditional Kubernetes dashboard using `az aks browse`.
