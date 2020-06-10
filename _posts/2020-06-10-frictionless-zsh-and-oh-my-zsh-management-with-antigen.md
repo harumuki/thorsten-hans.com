@@ -13,7 +13,7 @@ unsplash_user_name: Fabian Grohs
 
 I love tinkering my shell environment. I found myself sitting down during the weekend and doing an overhaul of my configuration approach for ZSH. That said, I decided to change my ZSH plugin management and started using [Antigen](http://antigen.sharats.me/){:target="_blank"}.
 
-Antigen is a small set of helper functions that allow you to frictionless management of ZSH plugins. Personally, I was addicted to vim for decades and used vundle to manage my vim customizations. As the official Antigen website mentions: "*Antigen is to ZSH what Vundle is to vim.*"
+Antigen is a small set of helper functions that allow friction-less management of ZSH plugins. Personally, I was addicted to vim for decades and used vundle to manage my vim customizations. As the official Antigen website mentions: "*Antigen is to ZSH what Vundle is to vim.*"
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/zsh-configuration-antigen.png"
 title="ZSH and oh-my-zsh configuration with Antigen" caption="ZSH and oh-my-zsh configuration with Antigen" %}
