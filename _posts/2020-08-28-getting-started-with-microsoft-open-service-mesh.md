@@ -3,7 +3,7 @@ title: "Getting Started With Microsoft Open Service Mesh"
 layout: post
 permalink: getting-started-with-microsoft-open-service-mesh
 published: true
-date: 2020-08-28 07:56:00
+date: 2020-08-28 06:56:00
 tags: 
   - Kubernetes
   - Service Mesh
