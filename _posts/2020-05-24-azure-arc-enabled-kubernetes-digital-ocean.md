@@ -14,7 +14,7 @@ unsplash_user_name: Taylor Vick
 unsplash_user_ref: tvick
 ---
 
-Dugin Microsoft Build Conference 2020, Microsoft demonstrated Azure Arc enabled Kubernetes, which allows you to connect and manage external Kubernetes clusters in Azure.
+During Microsoft Build Conference 2020, Microsoft demonstrated Azure Arc enabled Kubernetes, which allows you to connect and manage external Kubernetes clusters in Azure.
 
 By attaching your existing Kubernetes clusters to Azure, you can use all the Azure goodness to control external clusters like any other internal Azure resource. Once connected, you can do certain things with the external Kubernetes cluster, like for example:
 
