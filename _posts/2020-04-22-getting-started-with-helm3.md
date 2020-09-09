@@ -154,7 +154,7 @@ source <(helm completion bash)
 
 # zsh
 ## in .zshrc
-source <(helm completion zsh)>
+source <(helm completion zsh)
 
 ```
 
