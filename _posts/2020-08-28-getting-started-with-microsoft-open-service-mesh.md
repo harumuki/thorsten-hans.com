@@ -24,8 +24,8 @@ A couple of weeks ago, Microsoft announced the first public release of [Open Ser
 - [Introducing Microsoft Open Service Mesh](#introducing-microsoft-open-service-mesh)
   - [Install the Open Service Mesh CLI](#install-the-open-service-mesh-cli)
   - [Install Open Service Mesh on Kubernetes](#install-open-service-mesh-on-kubernetes)
-- [Traffic Access Control sor simple Applications](#traffic-access-control-sor-simple-applications)
-  - [Create snd Onboard the Kubernetes Namespace](#create-snd-onboard-the-kubernetes-namespace)
+- [Traffic Access Control for simple Applications](#traffic-access-control-for-simple-applications)
+  - [Create and Onboard the Kubernetes Namespace](#create-and-onboard-the-kubernetes-namespace)
   - [Deploy the Sample Application](#deploy-the-sample-application)
   - [Deploy Traffic Access Control](#deploy-traffic-access-control)
 - [Canary Deployments with Open Service Mesh](#canary-deployments-with-open-service-mesh)
@@ -146,14 +146,14 @@ osm install --namespace my-osm-namespace --mesh-name my-osm
 
 ```
 
-## Traffic Access Control sor simple Applications
+## Traffic Access Control for simple Applications
 
 The first sample application we will use in this article is a two-tier application. It consists of an API and a fronted. The API exposes data via HTTP, that will be presented to the end-user by the frontend.
 
 {% include image-caption.html imageurl="/assets/images/posts/2020/osm-sample-architecture-1.png"
 title="OSM sample application architecture" caption="OSM sample application architecture" %}
 
-### Create snd Onboard the Kubernetes Namespace
+### Create and Onboard the Kubernetes Namespace
 
 First, let us create a new Kubernetes namespace and onboard it using the `osm` CLI:
 
