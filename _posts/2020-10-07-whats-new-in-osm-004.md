@@ -3,7 +3,7 @@ title: "What is new in Open Service Mesh 0.0.4"
 layout: post
 permalink: what-is-new-in-open-service-mesh-004
 published: true
-date: 2020-08-28
+date: 2020-10-07
 tags: 
   - Kubernetes
   - Service Mesh
