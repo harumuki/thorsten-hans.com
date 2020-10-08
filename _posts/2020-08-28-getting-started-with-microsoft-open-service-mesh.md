@@ -18,6 +18,7 @@ A couple of weeks ago, Microsoft announced the first public release of [Open Ser
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
+  - [Update 2020-10-08](#update-2020-10-08)
 - [What is a Service Mesh](#what-is-a-service-mesh)
 - [What is the Service Mesh Interface specification](#what-is-the-service-mesh-interface-specification)
 - [Should you consider using a Service Mesh](#should-you-consider-using-a-service-mesh)
@@ -36,6 +37,10 @@ A couple of weeks ago, Microsoft announced the first public release of [Open Ser
 - [The Open Service Mesh Dashboard](#the-open-service-mesh-dashboard)
 - [Sample Code](#sample-code)
 - [Conclusion](#conclusion)
+
+### Update 2020-10-08
+
+In the meantime, Microsoft has released version `0.0.4` of Open Service Mesh. The updates reflect the upstream changes.
 
 ## What is a Service Mesh
 
@@ -116,7 +121,7 @@ You can verify the OSM CLI installation on your local machine, by invoking:
 
 ```bash
 osm version
-# Version: dev; Commit: ; Date: 2020-08-17-08:07
+# Version: dev; Commit: ; Date: 2020-10-03-21:22
 
 ```
 
@@ -138,11 +143,11 @@ Now that `kubectl` points to the correct Kubernetes cluster, you can install it.
 
 ```bash
 # install OSM with the default configuration
-osm install
+osm install --enable-grafana
 
 # Alternatively!
 # install OSM with custom instance name and into a custom namespace
-osm install --namespace my-osm-namespace --mesh-name my-osm
+osm install --enable-grafana --namespace my-osm-namespace --mesh-name my-osm
 
 ```
 
@@ -162,7 +167,7 @@ First, let us create a new Kubernetes namespace and onboard it using the `osm` C
 kubectl create namespace osm-simple-app
 
 # onboard new namespace
-osm namespace add osm-simple-app
+osm namespace add osm-simple-app --enable-sidecar-injection
 
 ```
 
@@ -282,7 +287,7 @@ Again, let us start with creating a dedicated namespace for the canary deploymen
 kubectl create namespace osm-canary-deployment-sample-app
 
 # onboard the namespace to OSM
-osm namespace add osm-canary-deployment-sample-app
+osm namespace add osm-canary-deployment-sample-app --enable-sidecar-injection
 ```
 
 ### Deploy the Canary Deployment Sample Application
